@@ -58,19 +58,22 @@
   {
    "fieldname": "unit",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Unit",
-   "options": "\nNos\nSet"
+   "options": "\nNos\nSet\nKg",
+   "reqd": 1
   },
   {
    "fieldname": "price",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Price",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-31 21:12:02.501878",
+ "modified": "2024-09-24 00:00:15.545189",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Menu",
