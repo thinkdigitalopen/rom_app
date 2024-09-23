@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-09-03 17:04:07.768410",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branch_id",
+  "date",
+  "raw_material",
+  "unit",
+  "price",
+  "quantity",
+  "price_x_qty",
+  "closing_quantity",
+  "closing_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch Id",
+   "options": "Branch"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "raw_material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Raw Material",
+   "options": "Raw Material Only"
+  },
+  {
+   "fieldname": "closing_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Clos Qty"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Unit Price"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Kg\nLtr\nBox\nPkt\nPcs\nBtl\nTry"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "price_x_qty",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price x Qty",
+   "precision": "2"
+  },
+  {
+   "fieldname": "closing_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Clos Amount",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-12 12:44:03.638958",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Inventory Summary",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "branch_id"
+}

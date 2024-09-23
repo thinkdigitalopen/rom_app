@@ -1,0 +1,3 @@
+Rom_Settings docType
+select * from `tabRom Settings` trs
+domain_name  http://rom_site:8000
