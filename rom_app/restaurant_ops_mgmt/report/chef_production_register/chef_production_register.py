@@ -21,6 +21,7 @@ def execute(filters=None):
             'item': d.item,
             'production_qty': d.production_qty,
             'portions': d.portions,
+            'port_x_qty': d.port_x_qty,
             'wastage_qty': d.wastage_qty,
             'wastage_uom': d.wastage_uom,
             'rate': d.rate,
@@ -57,12 +58,6 @@ def get_columns():
             'fieldtype': 'Data',
 
         },
-        # {
-        #     'fieldname': 'branch_id',
-        #     'label': 'Branch Id',
-        #     'fieldtype': 'Data',
-        #     'width': '90'
-        # },
         {
             'fieldname': 'category',
             'label': 'Category',
@@ -84,6 +79,11 @@ def get_columns():
         {
             'fieldname': 'portions',
             'label': 'Portions',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'port_x_qty',
+            'label': 'Port X Qty',
             'fieldtype': 'Data',
         },
         {
@@ -119,54 +119,57 @@ def get_data(filters):
     print("-------- get data ------------")
     print(conditions)
     build_sql = """
-        SELECT * FROM
+    SELECT
+    *
+    FROM
+    (
         (
-        (
-        SELECT
-            parent1.`name`,
-            parent1.`date`,
-            parent1.`user_name`,
-            parent1.`branch_name`,
-            parent1.`branch_id`,
-            'Briyani' as category,
-            child1.`briyani_category` as item,
-            child1.`product_qtykg` as production_qty,
-            child1.`portion_x_prod_qty` as portions,
-            child1.`balance_portion` as wastage_qty,
-            child1.`portion` as wastage_uom,
-            child1.`rateportion` as rate,
-            child1.`wastage_amount` as wastage_amount
-        FROM
-            `tabChef Production` parent1
-        JOIN `tabChef Prod Child Briyani` child1
+    SELECT
+        parent1.`name`,
+        parent1.`date`,
+        parent1.`user_name`,
+        parent1.`branch_name`,
+        parent1.`branch_id`,
+        'Briyani' as category,
+        child1.`briyani_category` as item,
+        child1.`product_qtykg` as production_qty,
+        child1.`portion` as portions,
+        child1.`portion_x_prod_qty` as port_x_qty,
+        child1.`balance_portion` as wastage_qty,
+        "" as wastage_uom,
+        child1.`rateportion` as rate,
+        child1.`wastage_amount` as wastage_amount
+    FROM
+        `tabChef Production` parent1
+    JOIN `tabChef Prod Child Briyani` child1
         ON
-            parent1.`name` = child1.`parent`
+        parent1.`name` = child1.`parent`
         )
-        UNION
+    UNION
         (
-        SELECT
-            parent2.`name`,
-            parent2.`date`,
-            parent2.`user_name`,
-            parent2.`branch_name`,
-            parent2.`branch_id`,
-            'Chicken' as category,
-            child2.`chicken_category` as item,
-            child2.`production_qty` as production_qty,
-            "" as portions,
-            child2.`wastage_pcs` as wastage_qty,
-            child2.`uom` as wastage_uom,
-            child2.`rate` as rate,
-            child2.`wastage_amt` as wastage_amount
-        FROM
-            `tabChef Production` parent2
-        JOIN `tabChef Prod Child Chicken` child2
+    SELECT
+        parent2.`name`,
+        parent2.`date`,
+        parent2.`user_name`,
+        parent2.`branch_name`,
+        parent2.`branch_id`,
+        'Chicken' as category,
+        child2.`chicken_category` as item,
+        child2.`production_qty` as production_qty,
+        '' as portions,
+        '' as port_x_qty,
+        child2.`wastage_pcs` as wastage_qty,
+        child2.`uom` as wastage_uom,
+        child2.`rate` as rate,
+        child2.`wastage_amt` as wastage_amount
+    FROM
+        `tabChef Production` parent2
+    JOIN `tabChef Prod Child Chicken` child2
         ON
-            parent2.`name` = child2.`parent`
+        parent2.`name` = child2.`parent`
         )
         )
-            AS prod
-
+    AS prod
         """
     where_cond = f" WHERE date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:

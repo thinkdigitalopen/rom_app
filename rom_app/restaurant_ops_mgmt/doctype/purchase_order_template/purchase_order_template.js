@@ -45,41 +45,6 @@ frappe.ui.form.on("Purchase Order Template", {
 				};
 
 
-			//-- frappe call start --
-			// frm.call({
-			// 	doc: frm.doc,
-			// 	method: 'get_raw_material',
-			// 	args: {
-			// 		branch: branch__id
-			// 	},
-			// 	freeze:true,
-			// 	freeze_message: "Processing",
-			// 	callback: function(r){
-			// 		if (r.message) {
-			// 			let msg = r.message;
-   //
-			// 			console.log(msg);
-			// 			console.log('lenght',msg.length);
-			// 			frm.doc.raw_material_list = []
-			// 			if (msg.length == 0){
-			// 				frappe.show_alert("The template records for the department could not be found.");
-			// 			}
-			// 			else
-			// 			{
-			// 				// ---- load start ------
-			// 				$.each(msg, function(_i, e){
-			// 					let entry = frm.add_child("raw_material_list");
-			// 					console.log(e);
-			// 					entry.raw_material = e[0];
-			// 					entry.unit = e[1];
-			// 				});
-			// 				// ------ load end --------
-			// 			}
-			// 			refresh_field("raw_material_list");
-			// 		}
-			// 	}
-			// });
-			//-- frappe call end --
 
 	 		}
 	 		});
