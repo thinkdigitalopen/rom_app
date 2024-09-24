@@ -1,68 +1,21 @@
-
-
 frappe.ui.form.on("Chef Indent By Dept", {
-	setup(frm){
-		frm.fields_dict["raw_materials"].grid.get_field("raw_material").get_query = function(doc) {
-			return {
-				filters: {
-				'branch': frm.doc.branch_id,
-				}
-			}
-		}
-	},
 	refresh(frm) {
-
-		// frm.add_custom_button('Call Apis', function(){
-		// 	//resolve_title_by_calling_api();
-  //
-		// }, );
-
-
-		// frm.set_df_property('raw_materials', 'cannot_add_rows', true);
-  //       frm.set_df_property('raw_materials', 'cannot_delete_rows', true);
-  //       frm.set_df_property('raw_materials', 'cannot_delete_all_rows', true);
 		disable_drag_drop(frm);
-
-		// if(frm.doc.department){
-		// 	let dept_sel = frm.doc.department;
-		// 	console.log(dept_sel);
-		// } else {
-		// 	console.log("no value in department ");
-		// }
-/*
-		frm.add_custom_button('test_but', function(){
-
-				frappe.db.get_value('Raw Material Only', 1, 'item')
-				.then(r => {
-					console.log(r.message.item);
-				});
-		});*/
-
 	},
-
 	onload(frm) {
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_title) {
-				// console.log("link_formatters 5656 - > ", value, doc);
-				// let value_number = Number(value);
-				// let ress = frappe.db.get_value('Raw Material Only', 2, 'item');
-				// console.log(ress.message);
-				// 	//return r.message.item;
-				// return 'Rice'
-				//return var1;
 				return doc.raw_material_title;
 			}
-  //             //refresh_field("raw_materials");
 			return value;
 		 }
 
 		if (frm.is_new()) {
-
 			console.log('is_new');
 
 			let useremail = frappe.user.get_emails();
 			let email = useremail[0];
-			//console.log('email ',email);
+
 			let api_url = "rom_app.restaurant_ops_mgmt.api.get_the_branch_name_for_the_user"
 
 			//------------------------------------
@@ -75,9 +28,53 @@ frappe.ui.form.on("Chef Indent By Dept", {
 				frm.set_value('branch_id', branch__id);
 				frm.set_value('branch_name', branch__name);
 				frm.set_df_property('branch_name', 'read_only', 1);
-				//console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
+
+				// console.log('callback- branch__id', branch__id);
+				// set_query_for_department(frm, branch__id);
+				// set_query_for_raw_material(frm, branch__id);
+    //
+				// branch__id = frm.doc.branch_id;
+				// console.log('branch__id-', branch__id);
+				frm.set_query("department", function() {
+					return {
+						"filters": {
+							"branch": branch__id,
+						}
+					};
+				});
+
+				frm.fields_dict["raw_materials"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': branch__id,
+						}
+					}
+				};
+
+
 			}
 			});
+		}
+		else{
+			let branch__id = frm.doc.branch_id;
+			console.log('else part --> branch__id-', branch__id);
+			frm.set_query("department", function() {
+					return {
+						"filters": {
+							"branch": branch__id
+						}
+					};
+			});
+
+			frm.fields_dict["raw_materials"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': branch__id,
+						}
+					}
+				};
+
+
 		}
 	},
 
@@ -137,61 +134,6 @@ frappe.ui.form.on("Chef Indent By Dept", {
 });
 
 
-
-function resolve_title_by_calling_api()
-{
-	x='Raw+Material+Only';
-	y=2;
-	frappe.utils.fetch_link_titlee(x, y);
-
-	// let api_url = "http://rom_site:8000/api/method/frappe.desk.search.get_link_title";
- //
-	// frappe.call({
-	// 	method: api_url,
-	// 	type: "POST",
-	// 	args: {"doctype": "Raw+Material+Only","docname": "2"},
-	// 	callback: function(res) {
-	// 		let res_message = res.message;
-	// 		console.log('res_message->',res_message);
-	// 	}
-	// });
-};
-
-
-// function fetch_link_title(doctype, name) {
-// 		if (!doctype || !name) {
-// 			return;
-// 		}
-// 		try {
-// 			return frappe
-// 				.xcall("frappe.desk.search.get_link_title", {
-// 					doctype: doctype,
-// 					docname: name,
-// 				})
-// 				.then((title) => {
-// 					frappe.utils.add_link_title(doctype, name, title);
-// 					return title;
-// 				});
-// 		} catch (error) {
-// 			console.log("Error while fetching link title.");
-// 			console.log(error);
-// 			return Promise.resolve(name);
-// 		}
-// 	};
-//
-// add_link_title(doctype, name, value) {
-// 		if (!doctype || !name) {
-// 			return;
-// 		}
-//
-// 		if (!frappe._link_titles) {
-// 			// for link titles
-// 			frappe._link_titles = {};
-// 		}
-//
-// 		frappe._link_titles[doctype + "::" + name] = value;
-// 	}
-
 // Chef Indent By Dept Child  raw_materials
 // branch_name department user_name date branch_id total_price raw_materials
 // raw_material unit req_qty issued_qty price  amount closing_qty remarks
@@ -239,3 +181,19 @@ function resolve_title_by_calling_api()
 function disable_drag_drop(frm) {
 		frm.page.body.find('[data-fieldname="raw_materials"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
 	}
+
+function set_query_for_department (frm, branch__id) {
+	console.log('set_query_for_department->', branch_id);
+
+
+}
+
+
+function set_query_for_raw_material (frm, branch_id) {
+	console.log('set_query_for_raw_material->', branch_id);
+
+
+}
+
+
+

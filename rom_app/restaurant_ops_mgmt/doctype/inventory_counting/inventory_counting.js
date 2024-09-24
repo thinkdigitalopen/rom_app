@@ -20,8 +20,29 @@ frappe.ui.form.on("Inventory Counting", {
 				frm.set_value('branch_name', branch__name);
 				frm.set_df_property('branch_name', 'read_only', 1);
 				console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
+
+
+
+				frm.fields_dict["items"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': branch__id,
+						}
+					}
+				}
+
 				}
 			});
+		} else {
+			let branch__id = frm.doc.branch_id;
+			frm.fields_dict["items"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': branch__id,
+						}
+					}
+				}
+
 		}
     },
 });

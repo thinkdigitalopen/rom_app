@@ -87,6 +87,26 @@ frappe.ui.form.on("Purchase Order Template", {
 			//------------------------------------
 
 	 	}
+	 	else{
+
+			    let branch__id =  frm.doc.branch_id;
+				frm.set_query("po_template", function() {
+					return {
+						"filters": {
+							"branch": branch__id
+						}
+					};
+				});
+
+				frm.fields_dict["raw_material_list"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': branch__id,
+						}
+					}
+				};
+
+		}
 	 }
 });
 

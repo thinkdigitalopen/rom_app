@@ -5,5 +5,16 @@ frappe.ui.form.on("Raw Material For Indent", "onload", function(frm) {
 			'branch': frm.doc.branch,
 			}
 		}
-	}
+	};
+
+
+	frm.set_query("department", function() {
+		return {
+			"filters": {
+				"branch": frm.doc.branch,
+			}
+		};
+	});
+
+
 });

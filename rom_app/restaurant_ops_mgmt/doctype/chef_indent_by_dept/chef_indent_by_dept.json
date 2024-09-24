@@ -57,8 +57,7 @@
    "fieldname": "branch_id",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Branch Id",
-   "read_only": 1
+   "label": "Branch Id"
   },
   {
    "fieldname": "branch_name",
@@ -90,7 +89,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-21 23:28:17.550409",
+ "modified": "2024-09-24 15:23:56.537024",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",
