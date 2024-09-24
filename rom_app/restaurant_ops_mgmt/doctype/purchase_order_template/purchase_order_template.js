@@ -3,7 +3,10 @@ frappe.ui.form.on("Purchase Order Template", {
 
 	},
 
-		onload(frm) {
+	onload(frm) {
+
+
+
 		if (frm.is_new()) {
 
 			console.log('is_new');
@@ -32,6 +35,14 @@ frappe.ui.form.on("Purchase Order Template", {
 						}
 					};
 				});
+
+				frm.fields_dict["raw_material_list"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': frm.doc.branch_id,
+						}
+					}
+				};
 
 
 			//-- frappe call start --

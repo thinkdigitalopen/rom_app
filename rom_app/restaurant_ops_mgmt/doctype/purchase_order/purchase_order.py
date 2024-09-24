@@ -11,10 +11,12 @@ class PurchaseOrder(Document):
         print("po_template")
         print(po_template)
         sql = """
-        SELECT chi.raw_material, chi.unit, chi.price
+        SELECT chi.raw_material, chi.unit, chi.price, raw.item
         FROM `tabPurchase Order Template` par
         INNER JOIN `tabPurchase Order Template Child` chi
         ON par.name = chi.parent
+        INNER JOIN `tabRaw Material Only` raw
+        ON raw.name = chi.raw_material
         WHERE par.branch_id = {} AND par.po_template = {}
         """
         sql = sql.format(branch, po_template)

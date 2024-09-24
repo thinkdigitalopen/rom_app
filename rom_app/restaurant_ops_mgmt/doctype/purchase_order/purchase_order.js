@@ -1,11 +1,18 @@
  frappe.ui.form.on("Purchase Order", {
 refresh(frm) {
-		  //  frm.set_df_property('raw_material_list', 'cannot_add_rows', true);
-  //       frm.set_df_property('raw_material_list', 'cannot_delete_rows', true);
-  //       frm.set_df_property('raw_material_list', 'cannot_delete_all_rows', true);
+		// frm.set_df_property('raw_material_list', 'cannot_add_rows', true);
+		// frm.set_df_property('raw_material_list', 'cannot_delete_rows', true);
+		// frm.set_df_property('raw_material_list', 'cannot_delete_all_rows', true);
 		disable_drag_drop(frm);
 	},
 	onload(frm) {
+		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
+			if(doc.raw_material_text) {
+				return doc.raw_material_text;
+			}
+			return value;
+		}
+
 		if (frm.is_new()) {
 			console.log('is_new');
 			let useremail = frappe.user.get_emails();
@@ -32,6 +39,14 @@ refresh(frm) {
 						}
 					};
 				});
+
+				frm.fields_dict["raw_material_list"].grid.get_field("raw_material").get_query = function(doc) {
+					return {
+						filters: {
+							'branch': frm.doc.branch_id,
+						}
+					}
+				};
 
 					// =======
 					// let entry = frm.add_child("raw_material_from_template");
@@ -94,8 +109,9 @@ refresh(frm) {
 								console.log(entry);
 								entry.unit = e[1];
 								entry.price = e[2];
+								entry.raw_material_text = e[3];
 								console.log('after',entry);
-								frm.refresh_field("raw_material");
+								//frm.refresh_field("raw_material_from_template");
 
 
 								//frappe.model.set_value(v.doctype, v.name, "name1", r.message.full_name)
@@ -106,8 +122,8 @@ refresh(frm) {
 							frm.refresh_field("raw_material_from_template");
 
 
-							let ct = frm.doc.raw_material_from_template;
-							let mm = "";
+							//let ct = frm.doc.raw_material_from_template;
+							//let mm = "";
 							//frm.save();
 							//frappe.db.commit();
 							//frm.refresh();
