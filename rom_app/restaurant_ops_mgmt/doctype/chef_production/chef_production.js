@@ -184,7 +184,8 @@ frappe.ui.form.on("Chef Prod Child Briyani", {
 		console.log('portion_x_prod_qty_temp->', portion_x_prod_qty_temp);
 
 		frappe.model.set_value(cdt, cdn, 'portion_x_prod_qty', portion_x_prod_qty_temp);
-    }
+	}
+
 });
 
 

@@ -1,8 +1,19 @@
 frappe.ui.form.on("Chef Indent By Dept", {
-	refresh(frm) {
+	setup: function(frm){
+  // compute total
+      frm.compute_total = function(frm){
+       console.log('total_price');
+		var total_price = 0;
+		frm.doc.raw_materials.forEach(function(d) { total_price += d.amount; });
+		console.log('total_price', total_price);
+		frm.set_value("total_price", total_price);
+        refresh_field('raw_materials');
+      }
+	},
+	refresh: function(frm) {
 		disable_drag_drop(frm);
 	},
-	onload(frm) {
+	on: function(frm) {
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_title) {
 				return doc.raw_material_title;
@@ -168,13 +179,18 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		console.log('d->', d);
 
 		//total_price_temp
-		console.log('total_price');
-		var total_price = 0;
-		frm.doc.raw_materials.forEach(function(d) { total_price += d.amount; });
-		console.log('total_price', total_price);
-		frm.set_value("total_price", total_price);
-        refresh_field('raw_materials');
+		// console.log('total_price');
+		// var total_price = 0;
+		// frm.doc.raw_materials.forEach(function(d) { total_price += d.amount; });
+		// console.log('total_price', total_price);
+		// frm.set_value("total_price", total_price);
+		//       refresh_field('raw_materials');
+		frm.compute_total(frm);
     },
+	raw_materials_remove:function (frm, cdt, cdn) {
+		console.log('raw_materials_remove');
+		frm.compute_total(frm);
+	},
 });
 
 
@@ -182,18 +198,18 @@ function disable_drag_drop(frm) {
 		frm.page.body.find('[data-fieldname="raw_materials"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
 	}
 
-function set_query_for_department (frm, branch__id) {
-	console.log('set_query_for_department->', branch_id);
-
-
-}
-
-
-function set_query_for_raw_material (frm, branch_id) {
-	console.log('set_query_for_raw_material->', branch_id);
-
-
-}
+// function set_query_for_department (frm, branch__id) {
+// 	console.log('set_query_for_department->', branch_id);
+//
+//
+// }
+//
+//
+// function set_query_for_raw_material (frm, branch_id) {
+// 	console.log('set_query_for_raw_material->', branch_id);
+//
+//
+// }
 
 
 

@@ -1,4 +1,15 @@
  frappe.ui.form.on("Purchase Order", {
+	 	setup: function(frm){
+  // compute total
+      frm.compute_total = function(frm){
+       console.log('total_price_temp');
+		var total_price_temp = 0;
+		frm.doc.raw_material_from_template.forEach(function(d) { total_price_temp += d.amount; });
+		console.log('total_price_temp', total_price_temp);
+		frm.set_value("total_price", total_price_temp);
+        refresh_field('raw_material_from_template');
+      }
+	},
 refresh(frm) {
 		// frm.set_df_property('raw_material_list', 'cannot_add_rows', true);
 		// frm.set_df_property('raw_material_list', 'cannot_delete_rows', true);
@@ -181,13 +192,13 @@ refresh(frm) {
 		console.log('d->', d);
 
 		//total_price_temp
-		console.log('total_price_temp');
-		var total_price_temp = 0;
-		frm.doc.raw_material_from_template.forEach(function(d) { total_price_temp += d.amount; });
-		console.log('total_price_temp', total_price_temp);
-		frm.set_value("total_price", total_price_temp);
-        refresh_field('raw_material_from_template');
+		frm.compute_total(frm);
+
     },
+	raw_material_from_template_remove:function (frm, cdt, cdn) {
+		console.log('raw_materials_remove');
+		frm.compute_total(frm);
+	},
 });
 
 

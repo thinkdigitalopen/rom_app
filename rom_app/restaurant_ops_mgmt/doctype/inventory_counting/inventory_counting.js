@@ -1,4 +1,15 @@
 frappe.ui.form.on("Inventory Counting", {
+	setup: function(frm){
+		// compute total
+      frm.compute_total = function(frm){
+		var total_amount = 0;
+		frm.doc.items.forEach(function(d) { total_amount += d.amount; });
+		console.log('total_amount', total_amount);
+		frm.set_value("total_amount", total_amount);
+
+		refresh_field("items");
+	  }
+	},
 	refresh(frm) {
 
 	},
@@ -77,11 +88,10 @@ frappe.ui.form.on("Inventory Counting Child", {
 		console.log('cal_amount->', cal_amount);
 		frappe.model.set_value(cdt, cdn, 'amount', cal_amount);
 
-		var total_amount = 0;
-		frm.doc.items.forEach(function(d) { total_amount += d.amount; });
-		console.log('total_amount', total_amount);
-		frm.set_value("total_amount", total_amount);
-
-		refresh_field("items");
-    }
+		frm.compute_total(frm);
+    },
+	items_remove:function (frm, cdt, cdn) {
+		console.log('items_remove');
+		frm.compute_total(frm);
+	},
 });

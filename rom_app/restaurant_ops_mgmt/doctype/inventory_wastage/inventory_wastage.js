@@ -1,4 +1,14 @@
 frappe.ui.form.on("Inventory Wastage", {
+	setup: function(frm){
+		// compute total
+      frm.compute_total = function(frm){
+		var total_price = 0;
+		frm.doc.items.forEach(function(d) { total_price += d.amount; });
+		console.log('total_price', total_price);
+		frm.set_value("total_price", total_price);
+        refresh_field('items');
+	}
+	},
 	refresh(frm) {
 	},
 		onload(frm) {
@@ -91,12 +101,12 @@ frappe.ui.form.on("Inventory Wastage", {
 
 		//total_price_temp
 		console.log('total_price_temp');
-		var total_price = 0;
-		frm.doc.items.forEach(function(d) { total_price += d.amount; });
-		console.log('total_price', total_price);
-		frm.set_value("total_price", total_price);
-        refresh_field('items');
+		frm.compute_total(frm);
     },
+	items_remove:function (frm, cdt, cdn) {
+		console.log('items_remove');
+		frm.compute_total(frm);
+	},
 });
 
 function disable_drag_drop(frm) {

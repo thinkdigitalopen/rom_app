@@ -39,12 +39,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "raw_materials",
-   "fieldtype": "Table",
-   "label": "Raw Materials",
-   "options": "Chef Indent By Dept Child"
-  },
-  {
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
@@ -85,11 +79,17 @@
   {
    "fieldname": "section_break_fjsc",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "raw_materials",
+   "fieldtype": "Table",
+   "label": "Raw Materials",
+   "options": "Chef Indent By Dept Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 15:23:56.537024",
+ "modified": "2024-09-24 22:24:28.942334",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",
