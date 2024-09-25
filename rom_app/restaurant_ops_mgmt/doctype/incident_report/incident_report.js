@@ -30,8 +30,36 @@ frappe.ui.form.on("Incident Report", {
 					};
 				});
 
+				frm.set_query("responsible_department", function() {
+					return {
+						"filters": {
+							"branch": branch__id
+						}
+					};
+				});
+
 				}
 			});
+		}
+		else
+		{
+			let branch__id = frm.doc.branch_id;
+			frm.set_query("menu_item", function() {
+					return {
+						"filters": {
+							"branch_id": branch__id
+						}
+					};
+				});
+
+			frm.set_query("responsible_department", function() {
+					return {
+						"filters": {
+							"branch": branch__id
+						}
+					};
+				});
+
 		}
 	},
 

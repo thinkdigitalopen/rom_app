@@ -13,7 +13,7 @@ frappe.ui.form.on("Chef Indent By Dept", {
 	refresh: function(frm) {
 		disable_drag_drop(frm);
 	},
-	on: function(frm) {
+	onload: function(frm) {
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_title) {
 				return doc.raw_material_title;
@@ -128,6 +128,8 @@ frappe.ui.form.on("Chef Indent By Dept", {
 								entry.raw_material = e[0];
 								entry.unit = e[1];
 								entry.raw_material_title = e[2];
+								entry.price = e[3];
+								entry.closing_qty = e[4];
 							});
 							// ------ load end --------
 						}

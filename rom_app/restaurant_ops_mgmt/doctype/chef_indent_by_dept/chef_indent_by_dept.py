@@ -49,7 +49,8 @@ class ChefIndentByDept(Document):
     def get_raw_material_with_id(self, branch, department):
         print("inside python")
         sql = """
-        SELECT child.raw_material, child.indent_unit, trmo.item
+        SELECT child.raw_material, child.indent_unit, trmo.item,
+        trmo.price, trmo.closing_stock
         FROM `tabRaw Material For Indent` parent
         JOIN `tabRaw Material For Indent Child` child
         ON	parent.name = child.parent
