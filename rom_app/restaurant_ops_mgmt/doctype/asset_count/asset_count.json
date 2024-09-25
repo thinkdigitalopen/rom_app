@@ -60,7 +60,7 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "Asset Inventory Count Child2"
+   "options": "Asset Count Child"
   },
   {
    "fieldname": "category_id",
@@ -79,10 +79,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-29 20:43:55.942117",
+ "modified": "2024-09-26 00:33:39.856787",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
- "name": "Asset Inventory Count",
+ "name": "Asset Count",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [

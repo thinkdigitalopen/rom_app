@@ -3,7 +3,7 @@ from datetime import datetime
 from frappe.model.document import Document
 
 
-class AssetInventoryCount(Document):
+class AssetCount(Document):
     def before_insert(self):
         branch_id = self.branch_id
         user_name = self.user_name
@@ -32,7 +32,7 @@ class AssetInventoryCount(Document):
             frappe.throw("Editing records from the past is not permitted")
 
     def get_the_record_count(self, branch_id, user_name, date_obj, category_name):
-        rec_count = frappe.db.count('Asset Inventory Count', filters={
+        rec_count = frappe.db.count('Asset Count', filters={
             'user_name': user_name,
             'branch_id': branch_id,
             'date': date_obj,

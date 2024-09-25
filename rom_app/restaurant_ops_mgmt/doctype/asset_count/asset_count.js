@@ -1,5 +1,5 @@
 
-frappe.ui.form.on("Asset Inventory Count", {
+frappe.ui.form.on("Asset Count", {
 	refresh(frm) {
 		frm.set_df_property('items', 'cannot_add_rows', true);
         frm.set_df_property('items', 'cannot_delete_rows', true);
@@ -109,7 +109,7 @@ frappe.ui.form.on("Asset Inventory Count", {
 });
 
 
-frappe.ui.form.on("Asset Inventory Count Child2", {
+frappe.ui.form.on("Asset Count Child", {
     current_stock:function(frm,cdt,cdn) {
 		var d = locals[cdt][cdn];
 

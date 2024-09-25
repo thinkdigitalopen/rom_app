@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class AssetInventoryCountChild2(Document):
+class AssetCountChild(Document):
 	pass

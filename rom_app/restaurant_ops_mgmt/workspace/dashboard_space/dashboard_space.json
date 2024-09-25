@@ -123,45 +123,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Common Reports",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Breakages",
-   "link_count": 0,
-   "link_to": "Breakages Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Ticket",
-   "link_count": 0,
-   "link_to": "Ticket Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Asset Inventory Count",
-   "link_count": 0,
-   "link_to": "Asset Inventory Count Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Dashboard",
    "link_count": 2,
    "link_type": "DocType",
@@ -295,9 +256,48 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Common Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Breakages",
+   "link_count": 0,
+   "link_to": "Breakages Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Ticket",
+   "link_count": 0,
+   "link_to": "Ticket Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Asset Count",
+   "link_count": 0,
+   "link_to": "Asset Count Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-09-25 22:06:31.111143",
+ "modified": "2024-09-25 23:40:09.282610",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dashboard Space",

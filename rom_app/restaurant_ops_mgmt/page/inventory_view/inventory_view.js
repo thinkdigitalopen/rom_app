@@ -94,7 +94,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 			top_ten_items_below_min_stock('on-submit');
 			inventory_valuation('on-submit');
 			inventory_wastage('on-submit');
-			inventory_po('on-submit');
+			inventory_stock_entry('on-submit');
 		}
 	});
 
@@ -557,9 +557,9 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 	}
 
 
-// --------------------  inventory_po chart  ---------------------------
-	let inventory_po  = function(time_of_invoke){
-		console.log('inventory_po')
+// --------------------  inventory_stock_entry chart  ---------------------------
+	let inventory_stock_entry  = function(time_of_invoke){
+		console.log('inventory_stock_entry')
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
 			console.log('on-load');
@@ -570,19 +570,19 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 		}
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.page.inventory_view.inventory_view_sql.inventory_po",
+			method: "rom_app.restaurant_ops_mgmt.page.inventory_view.inventory_view_sql.inventory_stock_entry",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
 				console.log(data);
-				inventory_po_chart(data);
+				inventory_stock_entry_chart(data);
 			}
 		})
 	}
 
-	let inventory_po_chart  = function(data){
-		console.log("-- inventory_po_chart -------------- ");
+	let inventory_stock_entry_chart  = function(data){
+		console.log("-- inventory_stock_entry_chart -------------- ");
 		// http://rom_site:8000/app/query-report/Chef%20Production%20Register
 		// ?from_date_filter=2024-07-29&to_date_filter=2024-08-12&
 		//category_filter=Briyani&item_filter=Mandi+Briyani
@@ -624,7 +624,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 		axis: {
 			x: {type: "category",categories: date,},
 		},
-		bindto: "#inventory_po",
+		bindto: "#inventory_stock_entry",
 		});
 	}
 
@@ -635,6 +635,6 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
     top_ten_items_below_min_stock('on-load');
 	inventory_valuation('on-load');
 	inventory_wastage('on-load');
-	inventory_po('on-load');
+	inventory_stock_entry('on-load');
 
 }
