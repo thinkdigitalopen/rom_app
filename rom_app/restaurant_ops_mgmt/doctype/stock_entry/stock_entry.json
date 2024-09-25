@@ -1,23 +1,35 @@
 {
  "actions": [],
  "autoname": "autoincrement",
- "creation": "2024-09-02 11:18:51.337826",
+ "creation": "2024-08-29 16:02:43.552066",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "branch_name",
-  "po_template",
+  "stock_entry_template",
+  "branch_id",
   "column_break_oiog",
   "date",
   "user_name",
-  "branch_id",
+  "total_price",
   "section_break_wqyo",
-  "raw_material_list"
+  "raw_material_from_template"
  ],
  "fields": [
   {
-   "fieldname": "column_break_oiog",
-   "fieldtype": "Column Break"
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Branch Id",
+   "read_only": 1
   },
   {
    "default": "Today",
@@ -29,10 +41,15 @@
    "read_only": 1
   },
   {
+   "fieldname": "column_break_oiog",
+   "fieldtype": "Column Break"
+  },
+  {
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "User Name",
    "read_only": 1
   },
@@ -41,40 +58,33 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "raw_material_list",
+   "fieldname": "raw_material_from_template",
    "fieldtype": "Table",
-   "label": "Raw Material List",
-   "options": "Purchase Order Template Child"
+   "label": "Raw Material From Template",
+   "options": "Stock Entry Child"
   },
   {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
+   "columns": 1,
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name"
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id",
+   "label": "Total Price",
    "read_only": 1
   },
   {
-   "fieldname": "po_template",
+   "fieldname": "stock_entry_template",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "PO Template",
-   "options": "Purchase Order Template Type",
-   "reqd": 1
+   "label": "Stock Entry Template",
+   "options": "Stock Entry Template Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-05 11:43:55.252974",
+ "modified": "2024-09-25 21:46:55.375679",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
- "name": "Purchase Order Template",
+ "name": "Stock Entry",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
@@ -95,5 +105,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "po_template"
+ "title_field": "branch_name"
 }

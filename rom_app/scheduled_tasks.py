@@ -9,7 +9,7 @@ def inventory_summary():
     pd.set_option('display.max_columns', None)
     print("================ inventory_summary START >>>>>>>>>>>>>>>>>")
     df_raw_materials = pd.DataFrame.from_records(get_raw_materials())
-    df_pur_orders = pd.DataFrame.from_records(get_purchase_orders())
+    df_stock_entry = pd.DataFrame.from_records(get_stock_entry())
     df_indnets = pd.DataFrame.from_records(get_indents())
     df_wastages = pd.DataFrame.from_records(get_wastages())
     df_inv_counting = pd.DataFrame.from_records(get_inv_counting())
@@ -28,7 +28,7 @@ def inventory_summary():
     df_inventory = df_inventory.astype({"branch_id": int, "raw_material": int})
     # print(df_inventory.dtypes)
     print('df_raw_materials \n', df_raw_materials)
-    print('df_pur_orders  \n', df_pur_orders)
+    print('df_stock_entry  \n', df_stock_entry)
     print('df_indnets  \n', df_indnets)
     print('df_wastages  \n', df_wastages)
     print('df_inv_counting  \n', df_inv_counting)
@@ -38,8 +38,8 @@ def inventory_summary():
     print("------ 1 transfer raw_materials to inventory_summary -------")
     df_inventory = transfer_raw_materials_to_inventory_summary(df_inventory, df_raw_materials)
     print('after transfer_raw_materials_to_inventory_summary \n', df_inventory)
-    print("------ 2 process purchase order --------------")
-    df_inventory = process_purchase_orders(df_inventory, df_pur_orders)
+    print("------ 2 process stock entry --------------")
+    df_inventory = process_stock_entry(df_inventory, df_stock_entry)
     print("after process_purchase_orders  \n  ", df_inventory)
     print("------ 3 process indent ----------------")
     df_inventory = process_indents(df_inventory, df_indnets)
@@ -54,7 +54,8 @@ def inventory_summary():
     print("------- 6 delete today records ---------------")
     delete_inventory_summary_of_today_data()
     print("------- 7 process cumulative data in inv summary ---")
-    df_inventory = process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials)
+    df_inventory = process_cumulative_data(
+        df_inventory, df_inv_by_date, df_raw_materials)
     print('after process_cumulative_data \n', df_inventory)
     print("------- 8 bulk insert --------------------")
     bulk_insert_inventory_summary(df_inventory)
@@ -69,16 +70,21 @@ def inventory_summary():
 
 
 #  -------- 1 transfer raw material to inventory summary ------------
-def transfer_raw_materials_to_inventory_summary(
-        df_inventory, df_raw_materials):
+def transfer_raw_materials_to_inventory_summary(df_inventory, df_raw_materials):
     # df_raw_materials => name, branch, `date`, item,
     # unit, price, opening_stock
     # df_inventory => branch_id, date, raw_material, quantity,
     # closing_quantity, price, unit
     # columns_add = ['branch_id', 'date',
-    #                'raw_material', 'unit', 'price', 'quantity', 'price_x_qty',
+    #                'raw_material', 'unit',
+    # 'price', 'quantity', 'price_x_qty',
     #                'closing_quantity', 'closing_amount']
     print('1 transfer_raw_materials_to_inventory_summary')
+    print('**()()*** df_inventory ***')
+    print(df_inventory)
+    print(' ^^()()^^ df_raw_materials ^^^^ ')
+    print(df_raw_materials)
+
     for i in range(0, len(df_raw_materials)):
         # print("-------- for loop ---------")
         branch_id = df_raw_materials.iloc[i]['branch_id']
@@ -99,29 +105,69 @@ def transfer_raw_materials_to_inventory_summary(
                                                      raw_material,
                                                      unit, price,
                                                      0, 0, 0, 0]
+
     return df_inventory
 
 
-# ----------- 2 process purchase order --------------------------
-def process_purchase_orders(df_inventory, df_pur_orders):
+# # ----------- 2 process purchase order --------------------------
+# def process_purchase_orders(df_inventory, df_pur_orders):
+#     # branch_id, date, raw_material, quantity, closing_quantity, price, unit
+#     print(" $$$$ process_purchase_orders $$$$$  ")
+#     for i in range(0, len(df_pur_orders)):
+#         # print("-------- for loop ---------")
+#         # par_name = df_pur_orders.iloc[i]['par_name']
+#         # chi_name = df_pur_orders.iloc[i]['chi_name']
+#         branch_id = df_pur_orders.iloc[i]['branch_id']
+#         # date = df_pur_orders.iloc[i]['date']
+#         raw_material = df_pur_orders.iloc[i]['raw_material']
+#         # unit = df_pur_orders.iloc[i]['unit']
+#         # price = df_pur_orders.iloc[i]['price']
+#         ord_qty = df_pur_orders.iloc[i]['ord_qty']
+#         pur_item_amount = df_pur_orders.iloc[i]['amount']
+#         # total_amount = df_pur_orders.iloc[i]['total_price']
+#         # print(par_name, chi_name, branch_id, ' -- ', raw_material, ' -- ',
+#         #       unit, ' -- ', price, ' -- ', ord_qty, '-- ', date)
+#         df_filter = df_inventory.loc[(df_inventory['branch_id'] == branch_id)
+#                       & (df_inventory['raw_material'] == int(raw_material))]
+#         # print('df_filter', df_filter)
+#         index_val = df_filter.index[0]
+#         # print('index_val', index_val)
+#         quantity = df_filter.loc[index_val, 'quantity']
+#         price_x_qty = df_filter.loc[index_val, 'price_x_qty']
+#         # print('quantity-', quantity, '  price_x_qty-', price_x_qty)
+#         total_quantity = quantity + ord_qty
+#         total_amount = price_x_qty + pur_item_amount
+#         df_inventory.loc[index_val, 'quantity'] = total_quantity
+#         df_inventory.loc[index_val, 'price_x_qty'] = total_amount
+#
+#     return df_inventory
+
+
+# ----------- 2 process_stock_entryr --------------------------
+def process_stock_entry(df_inventory, df_stock_entry):
     # branch_id, date, raw_material, quantity, closing_quantity, price, unit
-    print(" $$$$ process_purchase_orders $$$$$  ")
-    for i in range(0, len(df_pur_orders)):
+    print(" $$$$ process_stock_entry $$$$$  ")
+    print('~~~~~ df_inventory ~~~~~~')
+    print(df_inventory)
+    print('~~~~ df_stock_entry ~~~~~')
+    print(df_stock_entry)
+    for i in range(0, len(df_stock_entry)):
         # print("-------- for loop ---------")
-        # par_name = df_pur_orders.iloc[i]['par_name']
-        # chi_name = df_pur_orders.iloc[i]['chi_name']
-        branch_id = df_pur_orders.iloc[i]['branch_id']
-        # date = df_pur_orders.iloc[i]['date']
-        raw_material = df_pur_orders.iloc[i]['raw_material']
-        # unit = df_pur_orders.iloc[i]['unit']
-        # price = df_pur_orders.iloc[i]['price']
-        ord_qty = df_pur_orders.iloc[i]['ord_qty']
-        pur_item_amount = df_pur_orders.iloc[i]['amount']
-        # total_amount = df_pur_orders.iloc[i]['total_price']
+        # par_name = df_stock_entry.iloc[i]['par_name']
+        # chi_name = df_stock_entry.iloc[i]['chi_name']
+        branch_id = df_stock_entry.iloc[i]['branch_id']
+        # date = df_stock_entry.iloc[i]['date']
+        raw_material = df_stock_entry.iloc[i]['raw_material']
+        # unit = df_stock_entry.iloc[i]['unit']
+        # price = df_stock_entry.iloc[i]['price']
+        ord_qty = df_stock_entry.iloc[i]['ord_qty']
+        pur_item_amount = df_stock_entry.iloc[i]['amount']
+        # total_amount = df_stock_entry.iloc[i]['total_price']
         # print(par_name, chi_name, branch_id, ' -- ', raw_material, ' -- ',
         #       unit, ' -- ', price, ' -- ', ord_qty, '-- ', date)
         df_filter = df_inventory.loc[(df_inventory['branch_id'] == branch_id)
-                                     & (df_inventory['raw_material'] == int(raw_material))]
+                                     & (df_inventory['raw_material'] ==
+                                        int(raw_material))]
         # print('df_filter', df_filter)
         index_val = df_filter.index[0]
         # print('index_val', index_val)
@@ -161,10 +207,12 @@ def process_indents(df_inventory, df_indnets):
         # total_amount = df_pur_orders.iloc[i]['total_price']
 
         # print('****************', i)
-        print(branch_id, '-', raw_material, '-',  issued_qty, '-', indent_item_amount)
+        print(branch_id, '-', raw_material,
+              '-',  issued_qty, '-', indent_item_amount)
         # print("**********************************")
         # print(df_inventory.dtypes)
-        df_inventory = df_inventory.astype({"branch_id": int, "raw_material": int})
+        df_inventory = df_inventory.astype({"branch_id": int,
+                                            "raw_material": int})
         # print(df_inventory.dtypes)
         # print("**********************************")
         df_filter = df_inventory.loc[
@@ -210,12 +258,14 @@ def process_wastages(df_inventory, df_wastages):
         # print(df_inventory)
         # print("**********************************")
         # print(df_inventory.dtypes)
-        df_inventory = df_inventory.astype({"branch_id": int, "raw_material": int})
+        df_inventory = df_inventory.astype({"branch_id": int,
+                                            "raw_material": int})
         # print("**********************************")
         # print(df_inventory.dtypes)
         # print("**********************************")
         df_filter = df_inventory.loc[
-                                 (df_inventory['branch_id'] == int(branch_id)) &
+                                 (df_inventory['branch_id'] == int(branch_id))
+                                 &
                                  (df_inventory['raw_material'] == int(raw_material))
                                  ]
         index_val = df_filter.index[0]
@@ -258,7 +308,8 @@ def process_inv_counting(df_inventory, df_inv_counting):
         #       unit, '-', price, 'diff', diff)
         # print("**********************************")
         # print(df_inventory.dtypes)
-        df_inventory = df_inventory.astype({"branch_id": int, "raw_material": int})
+        df_inventory = df_inventory.astype({"branch_id": int,
+                                            "raw_material": int})
         # print("**********************************")
         # print(df_inventory.dtypes)
         # print("**********************************")
@@ -304,7 +355,8 @@ def process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials):
         raw_material = df_inventory.iloc[i]['raw_material']
         quantity = df_inventory.iloc[i]['quantity']
         price_x_qty = df_inventory.iloc[i]['price_x_qty']
-        # print('i->', i, 'branch_id', branch_id, 'raw_material', raw_material, 'quantity', quantity, 'price_x_qty', price_x_qty)
+        # print('i->', i, 'branch_id', branch_id, 'raw_material',
+        # raw_material, 'quantity', quantity, 'price_x_qty', price_x_qty)
         closing_quantity = 0
         closing_amount = 0
         total_quantity = 0
@@ -325,7 +377,8 @@ def process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials):
                 closing_amount = df_filter.loc[index_val, 'closing_amount']
                 # print('df_filter', df_filter)
                 # print('index_val', index_val)
-                # print('closing_quantity-', closing_quantity, ' closing_amount-', closing_amount)
+                # print('closing_quantity-', closing_quantity,
+                #  ' closing_amount-', closing_amount)
                 if closing_quantity > 0:
                     # print("closing_quantity > 0")
                     total_quantity = quantity + closing_quantity
@@ -337,7 +390,8 @@ def process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials):
 
         if closing_quantity == 0:
             # print("closing_quantity == 0")
-            df_raw_materials = df_raw_materials.astype({"branch_id": int, "raw_material": int})
+            df_raw_materials = df_raw_materials.astype({"branch_id": int,
+                                                        "raw_material": int})
             df_filter_raw = df_raw_materials.loc[
                                  (df_raw_materials['branch_id'] == int(branch_id))
                                  &
@@ -426,14 +480,28 @@ def get_raw_materials():
     table = select_db_data(sql)
     return table
 
+# def get_purchase_orders():
+#     sql = """
+#     SELECT par.name AS par_name, chi.name AS chi_name,
+#     par.branch_id, chi.raw_material, chi.unit, chi.unit_price as price,
+#     chi.ord_qty, par.date, chi.amount, par.total_price
+#     FROM `tabPurchase Order` par
+#     INNER JOIN `tabPurchase Order Child2` chi
+#     ON par.name = chi.parent
+#     WHERE date = DATE(NOW())
+#     ORDER BY par.branch_id, chi.raw_material
+#     """
+#     table = select_db_data(sql)
+#     return table
 
-def get_purchase_orders():
+
+def get_stock_entry():
     sql = """
     SELECT par.name AS par_name, chi.name AS chi_name,
     par.branch_id, chi.raw_material, chi.unit, chi.unit_price as price,
     chi.ord_qty, par.date, chi.amount, par.total_price
-    FROM `tabPurchase Order` par
-    INNER JOIN `tabPurchase Order Child2` chi
+    FROM `tabStock Entry` par
+    INNER JOIN `tabStock Entry Child` chi
     ON par.name = chi.parent
     WHERE date = DATE(NOW())
     ORDER BY par.branch_id, chi.raw_material
@@ -460,7 +528,8 @@ def get_indents():
 def get_wastages():
     sql = """
     SELECT par.branch_id, par.date, chi.raw_material,
-    chi.unit, chi.unit_price as price,  chi.wastage_qty, chi.amount, par.total_price
+    chi.unit, chi.unit_price as price,  chi.wastage_qty,
+    chi.amount, par.total_price
     FROM `tabInventory Wastage` par
     INNER JOIN `tabInventory Wastage Child` chi
     ON par.name = chi.parent
@@ -474,7 +543,8 @@ def get_wastages():
 def get_inv_counting():
     sql = """
     SELECT par.branch_id, par.date, chi.raw_material,
-    chi.unit, chi.price,  chi.clos_stock, chi.quantity, chi.diff, chi.amount, par.total_amount
+    chi.unit, chi.price,  chi.clos_stock, chi.quantity, chi.diff,
+    chi.amount, par.total_amount
     FROM `tabInventory Counting` par
     INNER JOIN `tabInventory Counting Child` chi
     ON par.name = chi.parent
@@ -531,4 +601,3 @@ def log_into_developlog(log_text):
             'log': log_text,
         })
     doc.insert()
-

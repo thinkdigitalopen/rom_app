@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"ZqnuJ3oLig\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Restaurant Manager Space</span>\",\"col\":12}},{\"id\":\"75XiR7l_5h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Chef <br></b></span>\",\"col\":12}},{\"id\":\"Y18_rKQUVf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":4}},{\"id\":\"1f-KhWTotN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":4}},{\"id\":\"wwAD3yYMFJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Production\",\"col\":4}},{\"id\":\"tWTxPI8xch\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Indent\",\"col\":4}},{\"id\":\"bZvAlWBLDJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Dining Manager<br></b></span>\",\"col\":12}},{\"id\":\"bvY43cG9-y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dm Opening Checklist\",\"col\":4}},{\"id\":\"iguA7FpZGQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dm Closing Checklist\",\"col\":4}},{\"id\":\"iFLxD_cElz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Cashier <br></b></span>\",\"col\":12}},{\"id\":\"62_kqXzIkE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":4}},{\"id\":\"3GHPre2fJJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":4}},{\"id\":\"qcl-M554Do\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Store Manager <br></b></span>\",\"col\":12}},{\"id\":\"FesQQktJFX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":4}},{\"id\":\"FaZMJT1jGc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":4}},{\"id\":\"ihtJ8wO-JY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":4}},{\"id\":\"mRudU-LTh0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"wQ6GNJduL8\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Restaurant Manager <br></b></span>\",\"col\":12}},{\"id\":\"gIM87TU5Jk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":4}},{\"id\":\"mMafXYNQSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Common Forms<br></b></span>\",\"col\":12}},{\"id\":\"VR3S1EO5KB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"th51n6vOyp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":4}},{\"id\":\"u5apW1bBhS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"auKQNj3f2f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Inventory Count\",\"col\":4}},{\"id\":\"PdVyevIrpr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":4}}]",
+ "content": "[{\"id\":\"ZqnuJ3oLig\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Restaurant Manager Space</span>\",\"col\":12}},{\"id\":\"75XiR7l_5h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Chef <br></b></span>\",\"col\":12}},{\"id\":\"Y18_rKQUVf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":4}},{\"id\":\"1f-KhWTotN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":4}},{\"id\":\"wwAD3yYMFJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Production\",\"col\":4}},{\"id\":\"tWTxPI8xch\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Indent\",\"col\":4}},{\"id\":\"bZvAlWBLDJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Dining Manager<br></b></span>\",\"col\":12}},{\"id\":\"bvY43cG9-y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dm Opening Checklist\",\"col\":4}},{\"id\":\"iguA7FpZGQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dm Closing Checklist\",\"col\":4}},{\"id\":\"iFLxD_cElz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Cashier <br></b></span>\",\"col\":12}},{\"id\":\"62_kqXzIkE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":4}},{\"id\":\"3GHPre2fJJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":4}},{\"id\":\"qcl-M554Do\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Store Manager <br></b></span>\",\"col\":12}},{\"id\":\"FesQQktJFX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":4}},{\"id\":\"FaZMJT1jGc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":4}},{\"id\":\"ihtJ8wO-JY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":4}},{\"id\":\"mRudU-LTh0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"wQ6GNJduL8\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Restaurant Manager <br></b></span>\",\"col\":12}},{\"id\":\"gIM87TU5Jk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":4}},{\"id\":\"mMafXYNQSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Common Forms<br></b></span>\",\"col\":12}},{\"id\":\"VR3S1EO5KB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"th51n6vOyp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":4}},{\"id\":\"u5apW1bBhS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"auKQNj3f2f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Inventory Count\",\"col\":4}},{\"id\":\"PdVyevIrpr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":4}}]",
  "creation": "2024-07-20 08:21:53.613397",
  "custom_blocks": [],
  "docstatus": 0,
@@ -8,12 +8,12 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "color-monthly-rank",
- "idx": 1,
+ "idx": 3,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Restaurant Mgr Space",
  "links": [],
- "modified": "2024-09-23 19:38:52.287445",
+ "modified": "2024-09-25 17:39:31.469014",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Restaurant Mgr Space",
@@ -32,8 +32,8 @@
   {
    "color": "Green",
    "doc_view": "List",
-   "label": "Purchase Order",
-   "link_to": "Purchase Order",
+   "label": "Stock Entry",
+   "link_to": "Stock Entry",
    "stats_filter": "[]",
    "type": "DocType"
   },

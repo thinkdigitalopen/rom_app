@@ -6,17 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
-  "po_template_name"
+  "template_type_name"
  ],
  "fields": [
-  {
-   "fieldname": "po_template_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "PO Template Name",
-   "reqd": 1
-  },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
@@ -25,14 +17,22 @@
    "label": "Branch",
    "options": "Branch",
    "reqd": 1
+  },
+  {
+   "fieldname": "template_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Template Type Name",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-02 16:17:42.747391",
+ "modified": "2024-09-25 18:35:21.647092",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
- "name": "Purchase Order Template Type",
+ "name": "Stock Entry Template Type",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
@@ -53,5 +53,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "po_template_name"
+ "title_field": "template_type_name"
 }

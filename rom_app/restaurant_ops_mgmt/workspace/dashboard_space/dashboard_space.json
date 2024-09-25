@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "solid-success",
- "idx": 1,
+ "idx": 3,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Dashboard Space",
@@ -239,9 +239,9 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Purchase Order",
+   "label": "Stock Entry",
    "link_count": 0,
-   "link_to": "Purchase Order Register",
+   "link_to": "Stock Entry Register",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -297,7 +297,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-16 00:43:29.976234",
+ "modified": "2024-09-25 22:06:31.111143",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dashboard Space",
@@ -311,7 +311,7 @@
    "role": "Rom_Dashboard_Role"
   }
  ],
- "sequence_id": 6.0,
+ "sequence_id": 7.0,
  "shortcuts": [],
  "title": "Dashboard Space"
 }

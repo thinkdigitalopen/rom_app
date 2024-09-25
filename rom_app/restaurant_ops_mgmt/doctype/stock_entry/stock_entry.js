@@ -1,4 +1,4 @@
- frappe.ui.form.on("Purchase Order", {
+ frappe.ui.form.on("Stock Entry", {
 	 	setup: function(frm){
   // compute total
       frm.compute_total = function(frm){
@@ -43,7 +43,7 @@ refresh(frm) {
 				console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
 
 
-				frm.set_query("po_template", function() {
+				frm.set_query("stock_entry_template", function() {
 					return {
 						"filters": {
 							"branch": branch__id
@@ -51,7 +51,7 @@ refresh(frm) {
 					};
 				});
 
-				frm.fields_dict["raw_material_list"].grid.get_field("raw_material").get_query = function(doc) {
+				frm.fields_dict["raw_material_from_template"].grid.get_field("raw_material").get_query = function(doc) {
 					return {
 						filters: {
 							'branch': frm.doc.branch_id,
@@ -65,7 +65,7 @@ refresh(frm) {
 					// 	entry.item =  2;
 					// entry.unit = 'Kg';
 					// entry.price = 78;
-					// frm.refresh_field("raw_material_from_template");
+					frm.refresh_field("raw_material_from_template");
 					//frm.fields_dict[<fieldname>].disp_area.innerText = "Text to Display".
 					// =========
 
@@ -77,11 +77,11 @@ refresh(frm) {
 	},
 
 
-	po_template: function(frm) {
-		if(frm.doc.po_template) {
-			console.log('po_template - succeeded ');
-			console.log(frm.doc.po_template);
-			let po_template = frm.doc.po_template;
+	stock_entry_template: function(frm) {
+		if(frm.doc.stock_entry_template) {
+			console.log('stock_entry_template - succeeded ');
+			console.log(frm.doc.stock_entry_template);
+			let stock_entry_template_temp = frm.doc.stock_entry_template;
 			let branch__id = frm.doc.branch_id;
 
 			//-- frappe call start --
@@ -89,8 +89,8 @@ refresh(frm) {
 				doc: frm.doc,
 				method: 'get_raw_material',
 				args: {
-					po_template: po_template,
-					branch: branch__id
+					branch: branch__id,
+					stock_entry_template: stock_entry_template_temp
 				},
 				freeze:true,
 				freeze_message: "Processing",
@@ -122,23 +122,12 @@ refresh(frm) {
 								entry.price = e[2];
 								entry.raw_material_text = e[3];
 								console.log('after',entry);
-								//frm.refresh_field("raw_material_from_template");
-
-
-								//frappe.model.set_value(v.doctype, v.name, "name1", r.message.full_name)
 							});
 
 
-							//frm.refresh_field("raw_material_from_template");
-							frm.refresh_field("raw_material_from_template");
 
-
-							//let ct = frm.doc.raw_material_from_template;
-							//let mm = "";
-							//frm.save();
-							//frappe.db.commit();
-							//frm.refresh();
 						}
+						frm.refresh_field("raw_material_from_template");
 
 					}
 				}
@@ -146,7 +135,7 @@ refresh(frm) {
 			//-- frappe call end --
 		}
 		else {
-			console.log('po_template - failed ');
+			console.log('stock_entry_template - failed ');
 			frm.doc.raw_material_from_template = [];
 			//refresh_field("raw_material_from_template");
 		}
@@ -154,14 +143,8 @@ refresh(frm) {
 
 });
 
-//  frappe.ui.form.on("Purchase Order Child2", "article_name", function(frm, cdt, cdn) {
-//     let item = locals[cdt][cdn];
-//     let articleId = Math.round(+new Date()/1000);
-//     item.article_id = articleId;
-//     frm.refresh_field('my_article');
-// });
 
- frappe.ui.form.on('Purchase Order Child2', {
+ frappe.ui.form.on('Stock Entry Child', {
     form_render: function(frm,cdt,cdn) {
 		console.log(' child row added event form_render');
     },

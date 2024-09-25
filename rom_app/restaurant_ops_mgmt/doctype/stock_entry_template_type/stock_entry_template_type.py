@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class PurchaseOrderTemplateType(Document):
+class StockEntryTemplateType(Document):
 	pass

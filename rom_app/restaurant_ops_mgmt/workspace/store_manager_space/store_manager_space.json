@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Manager Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent\",\"col\":7}},{\"id\":\"rMjqEDjRrG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":7}},{\"id\":\"l2p9NHdc6z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"6QZ857IVw8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"TkAdLtyLGA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"484sbrDrIg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vqQ1ZnXbRd\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Manager Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent\",\"col\":7}},{\"id\":\"rMjqEDjRrG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"l2p9NHdc6z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"6QZ857IVw8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"TkAdLtyLGA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"484sbrDrIg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vqQ1ZnXbRd\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2024-08-26 20:57:34.050043",
  "custom_blocks": [],
  "docstatus": 0,
@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "color-energy-points",
- "idx": 1,
+ "idx": 3,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Store Manager Space",
@@ -53,7 +53,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-16 01:54:42.518658",
+ "modified": "2024-09-25 17:39:14.090019",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store Manager Space",
@@ -67,8 +67,16 @@
    "role": "Rom_Store_Role"
   }
  ],
- "sequence_id": 4.0,
+ "sequence_id": 5.0,
  "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Stock Entry",
+   "link_to": "Stock Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Green",
    "doc_view": "List",
@@ -99,14 +107,6 @@
    "label": "Inventory Counting",
    "link_to": "Inventory Counting",
    "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Purchase Order",
-   "link_to": "Purchase Order",
-   "stats_filter": "[[\"Purchase Order\",\"creation\",\"Timespan\",\"today\",false]]",
    "type": "DocType"
   }
  ],

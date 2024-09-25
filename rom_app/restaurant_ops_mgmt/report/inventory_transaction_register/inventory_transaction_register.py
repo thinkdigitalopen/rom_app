@@ -97,11 +97,11 @@ def get_data(filters):
     conditions = get_conditions(filters)
     print("-------- get data ------------")
     print(conditions)
-    sql_po = build_sql_po(conditions)
+    sql_se = build_sql_se(conditions)
     sql_indent = build_sql_indent(conditions)
     sql_waste = build_sql_waste(conditions)
     sql_invcount = build_sql_invcount(conditions)
-    full_sql = find_transtype_only_sql(conditions, sql_po, sql_indent, sql_waste, sql_invcount)
+    full_sql = find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invcount)
     print("-------- full sql ------------")
     print(full_sql)
     data = frappe.db.sql(full_sql, as_dict=True)
@@ -111,31 +111,31 @@ def get_data(filters):
     return data_with_anchor
 
 
-def find_transtype_only_sql(conditions, sql_po, sql_indent, sql_waste, sql_invcount):
+def find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invcount):
     print('find_transtype_only_sql')
 
     if "trans_type_filter" in conditions:
         filter_val = conditions['trans_type_filter']
-        if filter_val == 'PO':
-            return sql_po
+        if filter_val == 'SE':
+            return sql_se
         elif filter_val == 'Indent':
             return sql_indent
         elif filter_val == 'Waste':
             return sql_waste
         elif filter_val == 'InvCount':
             return sql_invcount
-    full_sql = f"{sql_po}  UNION  {sql_indent}  UNION  {sql_waste}  UNION  {sql_invcount}"
+    full_sql = f"{sql_se}  UNION  {sql_indent}  UNION  {sql_waste}  UNION  {sql_invcount}"
     return full_sql
 
 
-def build_sql_po(conditions):
+def build_sql_se(conditions):
     sql = """
-    SELECT "PO" as trans_type,
+    SELECT "Stock" as trans_type,
     par.name, par.date, par.branch_name,  par.user_name,
     raw.item as raw_material, chi.unit, chi.ord_qty as qty,
     chi.unit_price AS price, chi.amount, chi.clos_qty as closing_qty
-    FROM `tabPurchase Order` par
-    INNER JOIN `tabPurchase Order Child2` chi ON chi.parent = par.name
+    FROM `tabStock Entry` par
+    INNER JOIN `tabStock Entry Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
     """
     full_sql = get_where_filter(sql, conditions)
@@ -230,8 +230,8 @@ def formate_the_url(domain_name, trans_type, trans_id):
 
 
 def get_url_path_based_on_trans_type(trans_type):
-    if trans_type == 'PO':
-        return 'purchase-order'
+    if trans_type == 'Stock':
+        return 'stock-entry'
     elif trans_type == 'Indent':
         return 'chef-indent-by-dept'
     elif trans_type == 'Waste':

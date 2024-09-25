@@ -1,12 +1,8 @@
-frappe.ui.form.on("Purchase Order Template", {
+frappe.ui.form.on("Stock Entry Template", {
 	refresh(frm) {
 
 	},
-
 	onload(frm) {
-
-
-
 		if (frm.is_new()) {
 
 			console.log('is_new');
@@ -26,9 +22,9 @@ frappe.ui.form.on("Purchase Order Template", {
 				frm.set_value('branch_id', branch__id);
 				frm.set_value('branch_name', branch__name);
 				frm.set_df_property('branch_name', 'read_only', 1);
-				console.log('branch_id-', branch__name, '=== branch_name-', branch__name);
+				console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
 
-				frm.set_query("po_template", function() {
+				frm.set_query("stock_entry_template", function() {
 					return {
 						"filters": {
 							"branch": branch__id
@@ -44,8 +40,6 @@ frappe.ui.form.on("Purchase Order Template", {
 					}
 				};
 
-
-
 	 		}
 	 		});
 
@@ -55,7 +49,7 @@ frappe.ui.form.on("Purchase Order Template", {
 	 	else{
 
 			    let branch__id =  frm.doc.branch_id;
-				frm.set_query("po_template", function() {
+				frm.set_query("stock_entry_template", function() {
 					return {
 						"filters": {
 							"branch": branch__id

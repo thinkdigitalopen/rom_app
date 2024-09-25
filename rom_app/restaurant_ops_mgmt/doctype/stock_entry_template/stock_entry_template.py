@@ -2,7 +2,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class PurchaseOrderTemplate(Document):
+class StockEntryTemplate(Document):
     @frappe.whitelist()
     def get_raw_material(self, branch):
         print("inside python")
