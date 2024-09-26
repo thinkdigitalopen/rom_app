@@ -67,6 +67,15 @@ def inventory_summary():
     print("------- 9 bulk_insert_inventory_summary ----------")
     update_raw_material_table_closing_stock(df_inventory)
     print("================ inventory_summary END >>>>>>>>>>>")
+    df_print = df_inventory.astype('string')
+    print(df_print)
+    # df_string = df_print.to_string(header=False, index=False, index_names=False).split('\n')
+    # df_string_nl = [','.join(x.split()) + '\n' for x in df_string]
+    # print(df_string_nl)
+    df_str = df_print.apply("    ".join, axis=1).tolist()
+    print('******************* df_str ******************')
+    print(df_str)
+    return df_str
 
 
 #  -------- 1 transfer raw material to inventory summary ------------
