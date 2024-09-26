@@ -14,7 +14,7 @@ def execute(filters=None):
     data = []
     for d in cs_data:
         row = frappe._dict({
-            # 'name': d.name,
+            'name': d.name,
             'date': d.date,
             'branch_name': d.branch_name,
             'item': d.item,
@@ -32,11 +32,12 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        # {
-        #     'fieldname': 'name',
-        #     'label': 'Id',
-        #     'fieldtype': 'Data',
-        # },
+        {
+            'fieldname': 'name',
+            'label': 'Id',
+            'fieldtype': 'Link',
+            'options': 'Raw Material Only',
+        },
         {
             'fieldname': 'date',
             'label': 'Date',
@@ -104,18 +105,18 @@ def build_sql(conditions):
     raw.min_stock, raw.`date` FROM `tabRaw Material Only` raw
     INNER JOIN `tabBranch` bra ON branch = bra.name
     """
-    # full_sql = get_where_filter(sql, conditions)
+    full_sql = get_where_filter(sql, conditions)
+    return full_sql
+
+
+def get_where_filter(sql, conditions):
+    where_cond = " WHERE  1=1 "
+    if "branch_filter" in conditions:
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
+    if "raw_material_filter" in conditions:
+        where_cond = where_cond + f" AND item  LIKE '%{conditions['raw_material_filter']}%'  "
+    sql = f"{sql}  {where_cond}"
     return sql
-
-
-# def get_where_filter(sql, conditions):
-#     where_cond = f" WHERE par.`date` between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
-#     if "branch_filter" in conditions:
-#         where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
-#     if "raw_material_filter" in conditions:
-#         where_cond = where_cond + f" AND raw_material = '{conditions['raw_material_filter']}' "
-#     sql = f"{sql}  {where_cond}"
-#     return sql
 
 
 def get_conditions(filters):
