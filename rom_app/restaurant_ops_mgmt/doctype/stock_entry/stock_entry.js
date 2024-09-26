@@ -119,8 +119,9 @@ refresh(frm) {
 								entry.raw_material =  raw_material_number;
 								console.log(entry);
 								entry.unit = e[1];
-								entry.price = e[2];
+								entry.unit_price = e[2];
 								entry.raw_material_text = e[3];
+								entry.clos_qty = e[4];
 								console.log('after',entry);
 							});
 

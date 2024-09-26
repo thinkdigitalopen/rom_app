@@ -39,13 +39,6 @@ frappe.ui.form.on("Chef Indent By Dept", {
 				frm.set_value('branch_id', branch__id);
 				frm.set_value('branch_name', branch__name);
 				frm.set_df_property('branch_name', 'read_only', 1);
-
-				// console.log('callback- branch__id', branch__id);
-				// set_query_for_department(frm, branch__id);
-				// set_query_for_raw_material(frm, branch__id);
-    //
-				// branch__id = frm.doc.branch_id;
-				// console.log('branch__id-', branch__id);
 				frm.set_query("department", function() {
 					return {
 						"filters": {

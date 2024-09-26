@@ -11,7 +11,7 @@ class StockEntry(Document):
         print("stock_entry_template")
         print(stock_entry_template)
         sql = """
-        SELECT chi.raw_material, chi.unit, chi.price, raw.item
+        SELECT chi.raw_material, chi.unit, chi.price, raw.item, raw.closing_stock
         FROM `tabStock Entry Template` par
         INNER JOIN `tabStock Entry Template Child` chi
         ON par.name = chi.parent
