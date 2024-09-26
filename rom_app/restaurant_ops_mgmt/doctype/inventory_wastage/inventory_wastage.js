@@ -68,7 +68,7 @@ frappe.ui.form.on("Inventory Wastage", {
 
        //item.refresh_field('raw_material');
     },
-	wastage_qty: function(frm,cdt,cdn) {
+	waste_qty_entry: function(frm,cdt,cdn) {
 		/*
 		Inventory Wastage Child  items
 		branch_name user_name date branch_id total_price
@@ -79,18 +79,20 @@ frappe.ui.form.on("Inventory Wastage", {
 		let unit_price = 0;
 		let cal_val = 0;
 
-		if(parseFloat(d.wastage_qty)>=0)
-			wastage_qty = d.wastage_qty;
+		//if(parseFloat(d.wastage_qty)>=0)
+			wastage_qty = (-1) * d.wastage_qty;
 
-		if(parseFloat(d.unit_price)>=0)
+		//if(parseFloat(d.unit_price)>=0)
 			unit_price = d.unit_price;
 
 		cal_val = wastage_qty * unit_price;
-		cal_val = cal_val * -1;
+		//cal_val = cal_val * -1;
 
 		console.log('wastage_qty->', wastage_qty);
 		console.log('unit_price->',unit_price);
 		console.log('cal_val->', cal_val);
+
+		frappe.model.set_value(cdt, cdn, 'wastage_qty', wastage_qty);
 
 		frappe.model.set_value(cdt, cdn, 'amount', cal_val);
 

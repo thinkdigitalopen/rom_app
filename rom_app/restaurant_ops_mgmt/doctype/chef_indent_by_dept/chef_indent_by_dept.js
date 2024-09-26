@@ -1,4 +1,8 @@
 frappe.ui.form.on("Chef Indent By Dept", {
+	before_save: function(frm){
+		console.log('before save');
+
+	},
 	setup: function(frm){
   // compute total
       frm.compute_total = function(frm){
@@ -12,8 +16,14 @@ frappe.ui.form.on("Chef Indent By Dept", {
 	},
 	refresh: function(frm) {
 		disable_drag_drop(frm);
+
 	},
 	onload: function(frm) {
+
+		// frm.add_custom_button('Iss Qty', function(){
+  //
+		// }, );
+
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_title) {
 				return doc.raw_material_title;
@@ -77,7 +87,6 @@ frappe.ui.form.on("Chef Indent By Dept", {
 						}
 					}
 				};
-
 
 		}
 	},
@@ -147,39 +156,28 @@ frappe.ui.form.on("Chef Indent By Dept", {
     form_render: function(frm,cdt,cdn) {
 		console.log(' child row added event form_render');
     },
-	issued_qty: function(frm,cdt,cdn) {
+	issu_qty_entry: function(frm,cdt,cdn) {
 		// ord_qty_temp   unit_price_temp  amount_temp    total_price_temp
         var d = locals[cdt][cdn];
 		let issued_qty = 0;
 		let amount = 0;
 		let cal_val = 0;
 
-		if(parseFloat(d.issued_qty)>=0)
-			issued_qty = d.issued_qty;
+		// if(parseFloat(d.issued_qty)>=0) {
+			issued_qty = (-1) * d.issued_qty;
+			frappe.model.set_value(cdt, cdn, 'issued_qty', issued_qty);
+			//refresh_field("raw_materials");
+		// }
 
-		if(parseFloat(d.price)>=0)
+		// if(parseFloat(d.price)>=0)
 			price = d.price;
 
 		cal_val = issued_qty * price;
 
-		console.log('issued_qty->', issued_qty);
-		console.log('price->',price);
-		console.log('cal_val->', cal_val);
+		console.log('issued_qty->', issued_qty,'price->',price,'cal_val->', cal_val);
 
 		frappe.model.set_value(cdt, cdn, 'amount', cal_val);
 
-		console.log('locals->', locals);
-		console.log('cdt->', cdt);
-		console.log('cdn->', cdn);
-		console.log('d->', d);
-
-		//total_price_temp
-		// console.log('total_price');
-		// var total_price = 0;
-		// frm.doc.raw_materials.forEach(function(d) { total_price += d.amount; });
-		// console.log('total_price', total_price);
-		// frm.set_value("total_price", total_price);
-		//       refresh_field('raw_materials');
 		frm.compute_total(frm);
     },
 	raw_materials_remove:function (frm, cdt, cdn) {
@@ -192,19 +190,6 @@ frappe.ui.form.on("Chef Indent By Dept", {
 function disable_drag_drop(frm) {
 		frm.page.body.find('[data-fieldname="raw_materials"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
 	}
-
-// function set_query_for_department (frm, branch__id) {
-// 	console.log('set_query_for_department->', branch_id);
-//
-//
-// }
-//
-//
-// function set_query_for_raw_material (frm, branch_id) {
-// 	console.log('set_query_for_raw_material->', branch_id);
-//
-//
-// }
 
 
 
