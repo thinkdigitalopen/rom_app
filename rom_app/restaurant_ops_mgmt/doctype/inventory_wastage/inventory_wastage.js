@@ -80,7 +80,7 @@ frappe.ui.form.on("Inventory Wastage", {
 		let cal_val = 0;
 
 		//if(parseFloat(d.wastage_qty)>=0)
-			wastage_qty = (-1) * d.wastage_qty;
+			wastage_qty = (-1) * d.waste_qty_entry;
 
 		//if(parseFloat(d.unit_price)>=0)
 			unit_price = d.unit_price;
