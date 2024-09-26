@@ -164,7 +164,7 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		let cal_val = 0;
 
 		// if(parseFloat(d.issued_qty)>=0) {
-			issued_qty = (-1) * d.issued_qty;
+			issued_qty = (-1) * d.issu_qty_entry;
 			frappe.model.set_value(cdt, cdn, 'issued_qty', issued_qty);
 			//refresh_field("raw_materials");
 		// }
