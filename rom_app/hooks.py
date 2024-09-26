@@ -109,7 +109,7 @@ app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
-#doctype_list_js = {"Chef Opening Checklist": "public/js/chef_opening_checklist_list.js"}
+# doctype_list_js = {"Chef Opening Checklist": "public/js/chef_opening_checklist_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -213,12 +213,12 @@ app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#     "cron": {
-#         "*/5 * * * *":
-#             ["rom_app.scheduled_tasks.inventory_summary"]
-#     }
-#     }
+scheduler_events = {
+    "cron": {
+        "*/5 * * * *":
+            ["rom_app.scheduled_tasks.inventory_summary"]
+    }
+    }
 
 # Testing
 # -------
