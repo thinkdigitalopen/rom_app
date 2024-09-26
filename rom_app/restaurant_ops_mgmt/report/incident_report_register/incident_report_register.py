@@ -21,14 +21,14 @@ def execute(filters=None):
             'table_no': d.table_no,
             'incident_date_time': d.incident_date_time,
             'captain_name': d.captain_name,
-            'amount': d.amount,
-            'handled_by': d.handled_by,
+            'menu_item': d.menu_item,
+            'menu_item_price': d.menu_item_price,
+            # 'handled_by': d.handled_by,
             'type_of_complaint': d.type_of_complaint,
             'action_for_complaint': d.action_for_complaint,
             'result_of_action': d.result_of_action,
             'department_name': d.department_name,
-            'remarks': d.remarks,
-            'informed_to_authority': d.informed_to_authority,
+            'remarks': d.remarks
         })
         data.append(row)
 
@@ -79,15 +79,20 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'amount',
-            'label': 'Amount',
+            'fieldname': 'menu_item',
+            'label': 'Menu Item',
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'handled_by',
-            'label': 'Handled By',
+            'fieldname': 'menu_item_price',
+            'label': 'Menu Item Price',
             'fieldtype': 'Data',
         },
+        # {
+        #     'fieldname': 'handled_by',
+        #     'label': 'Handled By',
+        #     'fieldtype': 'Data',
+        # },
         {
             'fieldname': 'type_of_complaint',
             'label': 'Type of Complaint',
@@ -112,12 +117,7 @@ def get_columns():
             'fieldname': 'remarks',
             'label': 'Remarks',
             'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'informed_to_authority',
-            'label': 'Informed to Authority',
-            'fieldtype': 'Data',
-        },
+        }
     ]
 
 
@@ -135,20 +135,20 @@ def get_data(filters):
     ir.table_no,
     ir.incident_date_time,
     ir.captain_name,
-    ir.amount,
-    ir.handled_by,
+    tm.menu_item,
+    ir.menu_item_price,
     ir.type_of_complaint,
     ir.action_for_complaint,
     ir.result_of_action,
     td.department_name,
-    ir.remarks,
-    ir.informed_to_authority
+    ir.remarks
     FROM
     `tabIncident Report` ir
     INNER JOIN
     tabDepartment td
     ON
     ir.responsible_department  = td.name
+    INNER JOIN tabMenu tm ON tm.name  = ir.menu_item
         """
     where_cond = f" WHERE ir.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 

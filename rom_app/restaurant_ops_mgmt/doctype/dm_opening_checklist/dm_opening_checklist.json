@@ -51,7 +51,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Branch Name"
+   "label": "Branch Name",
+   "permlevel": 2
   },
   {
    "fieldname": "branch_id",
@@ -62,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 20:47:14.339149",
+ "modified": "2024-09-26 11:35:55.405379",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dm Opening Checklist",

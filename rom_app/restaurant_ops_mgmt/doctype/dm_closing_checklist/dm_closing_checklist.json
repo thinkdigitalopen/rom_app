@@ -51,7 +51,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Branch Name"
+   "label": "Branch Name",
+   "permlevel": 2
   },
   {
    "fieldname": "branch_id",
@@ -62,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-24 07:10:42.314265",
+ "modified": "2024-09-26 11:36:52.234204",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dm Closing Checklist",

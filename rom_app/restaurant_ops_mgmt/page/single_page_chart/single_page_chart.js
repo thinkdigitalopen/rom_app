@@ -100,7 +100,7 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 
 			nc_report_register_by_count('on-submit');
 			incident_report_register_by_count('on-submit');
-			asset_inventory_count_register_by_difference('on-submit');
+			asset_count_register_by_difference('on-submit');
 			discount_form_by_percentage('on-submit');
 
 			ticket_report_register_by_count('on-submit');
@@ -1198,9 +1198,9 @@ let incident_report_register_by_count  = function(time_of_invoke){
 
 
 
-	// ~~~~~~~~~~~~~~~~~~ Asset Inventory Count Register ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~ Asset Count Register ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-let asset_inventory_count_register_by_difference  = function(time_of_invoke){
+let asset_count_register_by_difference  = function(time_of_invoke){
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
 			console.log('on-load');
@@ -1210,24 +1210,24 @@ let asset_inventory_count_register_by_difference  = function(time_of_invoke){
 			filters = global_get_filters_on_submit();
 		}
 
-		console.log('-----filters----- asset_inventory_count_register_by_difference')
+		console.log('-----filters----- asset__count_register_by_difference')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.asset_inventory_count_register.asset_inventory_count_register.get_data_by_difference",
+			method: "rom_app.restaurant_ops_mgmt.report.asset_count_register.asset_count_register.get_data_by_difference",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
 				console.log('data', data);
-				asset_inventory_count_register_by_difference_draw(data);
+				asset_count_register_by_difference_draw(data);
 			}
 		});
 	}
 
 
-	let asset_inventory_count_register_by_difference_draw  = function(data){
-		console.log("-------------- asset_inventory_count_register_by_difference_draw -------------- ");
-		let report_name = "Asset Inventory Count Register";
+	let asset_count_register_by_difference_draw  = function(data){
+		console.log("-------------- asset_count_register_by_difference_draw -------------- ");
+		let report_name = "Asset Count Register";
 		console.log(data);
 		let date = [];
 		let difference = [];
@@ -1244,7 +1244,7 @@ let asset_inventory_count_register_by_difference  = function(time_of_invoke){
 		console.log('difference', difference);
 
 		var chart = bb.generate({
-			title: {text: "Asset Inventory Count by Difference "},
+			title: {text: "Asset Count by Difference "},
 			data: {
 				type: "bar",
 				onclick: function(arg1){
@@ -1260,7 +1260,7 @@ let asset_inventory_count_register_by_difference  = function(time_of_invoke){
 		axis: {
 			x: {type: "category",categories: date,},
 		},
-		bindto: "#asset_inventory_count_register_by_difference",
+		bindto: "#asset_count_register_by_difference",
 		});
 	}
 
@@ -1583,7 +1583,7 @@ let chef_indent_by_quantity  = function(time_of_invoke){
 	nc_report_register_by_count('on-load');
 	incident_report_register_by_count('on-load');
 
-	asset_inventory_count_register_by_difference('on-load');
+	asset_count_register_by_difference('on-load');
 	discount_form_by_percentage('on-load');
 	ticket_report_register_by_count('on-load');
 	expense_report_register_by_amount('on-load');
