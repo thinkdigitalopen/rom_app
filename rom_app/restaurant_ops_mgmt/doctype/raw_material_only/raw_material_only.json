@@ -97,12 +97,13 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Open. Amount",
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 15:12:18.845802",
+ "modified": "2024-09-26 13:42:30.296087",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only",
