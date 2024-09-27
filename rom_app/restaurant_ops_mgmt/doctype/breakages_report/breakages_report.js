@@ -33,37 +33,34 @@ frappe.ui.form.on("Breakages Report", {
 					console.log('systemmanager_user_role_avail - ',systemmanager_user_role_avail);
 					console.log('chef_user_role_avail - ',chef_user_role_avail);
 					console.log('dm_user_role_avail - ',dm_user_role_avail);
+					let category_param = 0;
 
 					if (chef_user_role_avail){
-						console.log('chef role entered');
-						// Kitchen - 2 - hard coded
-						frm.set_value('category_name', 'Kitchen');
-						frm.set_value('category_id', 4);
-						category_param = 4;
+						frappe.db.get_doc('Category', null,
+										  {  branch: branch__id,
+											  category_type : 'Kitchen' })
+						.then(doc => {
+							frm.set_value('category_name', doc.category_name);
+							frm.set_value('category_id', doc.name);
+							asset_master_set_query(frm, branch__id,  doc.name);
+						})
 					}
 					else if (dm_user_role_avail){
-						console.log('dining role entered');
-						// Dining - 1 - hard coded
-						frm.set_value('category_name', 'Dining');
-						frm.set_value('category_id', 3);
-						category_param = 3;
+						frappe.db.get_doc('Category', null,
+										  {  branch: branch__id,
+											  category_type : 'Dining' })
+						.then(doc => {
+							frm.set_value('category_name', doc.category_name);
+							frm.set_value('category_id', doc.name);
+							 asset_master_set_query(frm, branch__id, doc.name);
+						})
 					}
-
-					console.log('===============================')
-					console.log('branch__id=', branch__id)
-					console.log('category_param', category_param)
-
-					frm.set_query("item", function(){
-						return {
-							"filters": [
-								["Asset Master", "branch", "=", branch__id],
-								["Asset Master", "category", "=",category_param]
-							]
-						}
-				    });
-
 				}
 			});
+		}else{
+            let branch__id = frm.doc.branch_id;
+			let category_id = frm.doc.category_id;
+			asset_master_set_query(frm, branch__id, category_id);
 		}
     },
 
@@ -77,6 +74,18 @@ frappe.ui.form.on("Breakages Report", {
 	},
 
 });
+
+function asset_master_set_query(frm, branch__id, category_id ) {
+
+	frm.set_query("item", function(){
+						return {
+							"filters": [
+								["Asset Master", "branch_id", "=", branch__id],
+								["Asset Master", "category", "=",category_id]
+							]
+						}
+				    });
+}
 
 function calculate_total_breakage_cost(frm) {
 	let item_price = frm.doc.item_price;

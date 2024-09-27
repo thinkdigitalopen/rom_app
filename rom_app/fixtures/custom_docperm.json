@@ -381,7 +381,7 @@
   "select": 1,
   "share": 1,
   "submit": 0,
-  "write": 0
+  "write": 1
  },
  {
   "amend": 0,
@@ -717,7 +717,7 @@
   "select": 0,
   "share": 0,
   "submit": 0,
-  "write": 1
+  "write": 0
  },
  {
   "amend": 0,
@@ -741,7 +741,7 @@
   "select": 0,
   "share": 0,
   "submit": 0,
-  "write": 0
+  "write": 1
  },
  {
   "amend": 0,
@@ -765,7 +765,7 @@
   "select": 0,
   "share": 0,
   "submit": 0,
-  "write": 1
+  "write": 0
  },
  {
   "amend": 0,
@@ -813,7 +813,7 @@
   "select": 0,
   "share": 0,
   "submit": 0,
-  "write": 1
+  "write": 0
  },
  {
   "amend": 0,
@@ -4124,6 +4124,78 @@
   "role": "Rom_Dashboard_Role",
   "select": 1,
   "share": 1,
+  "submit": 0,
+  "write": 0
+ },
+ {
+  "amend": 0,
+  "cancel": 0,
+  "create": 0,
+  "delete": 0,
+  "docstatus": 0,
+  "doctype": "Custom DocPerm",
+  "email": 0,
+  "export": 1,
+  "if_owner": 0,
+  "import": 0,
+  "modified": "2024-09-27 23:27:39.208853",
+  "name": "at60ohv00a",
+  "parent": "Chef Indent By Dept",
+  "permlevel": 2,
+  "print": 0,
+  "read": 1,
+  "report": 0,
+  "role": "Rom_RM_Role",
+  "select": 0,
+  "share": 0,
+  "submit": 0,
+  "write": 0
+ },
+ {
+  "amend": 0,
+  "cancel": 0,
+  "create": 0,
+  "delete": 0,
+  "docstatus": 0,
+  "doctype": "Custom DocPerm",
+  "email": 0,
+  "export": 1,
+  "if_owner": 0,
+  "import": 0,
+  "modified": "2024-09-28 00:05:15.740127",
+  "name": "bj75eei3be",
+  "parent": "Chef Indent By Dept",
+  "permlevel": 1,
+  "print": 0,
+  "read": 1,
+  "report": 0,
+  "role": "Rom_RM_Role",
+  "select": 0,
+  "share": 0,
+  "submit": 0,
+  "write": 1
+ },
+ {
+  "amend": 0,
+  "cancel": 0,
+  "create": 0,
+  "delete": 0,
+  "docstatus": 0,
+  "doctype": "Custom DocPerm",
+  "email": 0,
+  "export": 1,
+  "if_owner": 0,
+  "import": 0,
+  "modified": "2024-09-28 00:09:34.065955",
+  "name": "blnst9bjj5",
+  "parent": "Chef Indent By Dept",
+  "permlevel": 3,
+  "print": 0,
+  "read": 1,
+  "report": 0,
+  "role": "Rom_RM_Role",
+  "select": 0,
+  "share": 0,
   "submit": 0,
   "write": 0
  }

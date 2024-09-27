@@ -6,11 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "branch_name",
-  "user_name",
+  "category_name",
   "category_id",
   "column_break_wmqj",
   "date",
-  "category_name",
+  "user_name",
   "branch_id",
   "section_break_ryek",
   "items"
@@ -79,7 +79,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-26 00:33:39.856787",
+ "modified": "2024-09-27 21:00:02.624126",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Count",

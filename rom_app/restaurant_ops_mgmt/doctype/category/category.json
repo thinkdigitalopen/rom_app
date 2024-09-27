@@ -5,6 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "branch",
+  "category_type",
   "category_name"
  ],
  "fields": [
@@ -15,11 +17,27 @@
    "in_standard_filter": 1,
    "label": "Category Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "category_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category Type",
+   "options": "\nKitchen\nDining"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-26 15:46:27.607928",
+ "modified": "2024-09-27 14:33:53.105010",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Category",

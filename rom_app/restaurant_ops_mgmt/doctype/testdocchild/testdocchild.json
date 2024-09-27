@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-09-27 22:37:43.953393",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "assign"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "assign",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Assign"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-27 22:44:22.288053",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "TestDocChild",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

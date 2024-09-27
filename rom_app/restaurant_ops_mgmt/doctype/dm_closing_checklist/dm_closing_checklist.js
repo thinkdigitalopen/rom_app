@@ -24,7 +24,7 @@ frappe.ui.form.on("Dm Closing Checklist", {
 				let branch__name = res.message.branch_name;
 				frm.set_value('branch_id', branch__id);
 				frm.set_value('branch_name', branch__name);
-				frm.set_df_property('branch_name', 'read_only', 1);
+				frm.set_df_property('branch_name', 'read_only', branch__id);
 
 				//-----------------------------
 
