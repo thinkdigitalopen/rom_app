@@ -1507,7 +1507,7 @@ let chef_indent_by_quantity  = function(time_of_invoke){
 		console.log('-----filters----- chef_indent_by_quantity ')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.chef_indent_register.chef_indent_register.get_data_by_group_by_date",
+			method: "rom_app.restaurant_ops_mgmt.report.chef_indent_by_dept_register.chef_indent_by_dept_register.get_data_by_group_by_date",
 			args: {
 				'filters':filters
 			},
