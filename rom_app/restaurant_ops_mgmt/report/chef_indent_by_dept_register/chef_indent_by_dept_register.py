@@ -190,7 +190,6 @@ def get_data_by_group_by_date(filters):
     SELECT ci.`date`, cic.req_qty, cic.issued_qty
     FROM `tabChef Indent By Dept` ci
     INNER JOIN `tabChef Indent By Dept Child` cic on ci.name = cic.parent
-    INNER JOIN `tabDepartment` d on ci.department = d.name
     """
     where_cond_1 = f" WHERE ci.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
