@@ -39,14 +39,14 @@ frappe.ui.form.on("Breakages Report", {
 						// Kitchen - 2 - hard coded
 						frm.set_value('category_name', 'Kitchen');
 						frm.set_value('category_id', 2);
-						category_param = 2;
+						category_param = 4;
 					}
 					else if (dm_user_role_avail){
 						console.log('dining role entered');
 						// Dining - 1 - hard coded
 						frm.set_value('category_name', 'Dining');
 						frm.set_value('category_id', 1);
-						category_param = 1;
+						category_param = 3;
 					}
 
 					console.log('===============================')
