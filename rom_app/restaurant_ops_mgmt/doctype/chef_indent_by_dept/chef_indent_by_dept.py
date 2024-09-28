@@ -96,4 +96,26 @@ class ChefIndentByDept(Document):
             if (self.rm_approval == 1):
                 print('self.rm_approval == 1')
                 frappe.throw("Editing approved record is not permitted")
+#       find the document branch name
+        doc_branch_id = self.branch_id
+        print('doc_branch_id', doc_branch_id)
+#       find current user branch name
+        user_branch_id = self.find_user_branch()
+        print('user_branch_id', user_branch_id)
+        if (doc_branch_id != user_branch_id):
+            frappe.throw("Editing other branch record is not permitted")
 
+    def find_user_branch(self):
+        user_email = frappe.session.user
+        sql = """
+        select userbranch.branch from `tabUser to Branch Assignment` userbranch
+        WHERE
+        userbranch.user = '{}';
+        """
+        sql = sql.format(user_email)
+        print(sql)
+        item_data = frappe.db.sql(sql, as_dict=0)
+        res_length = len(item_data)
+        print(res_length)
+        print(item_data)
+        return item_data[0][0]
