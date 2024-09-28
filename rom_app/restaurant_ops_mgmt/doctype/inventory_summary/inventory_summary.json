@@ -34,7 +34,6 @@
    "read_only": 1
   },
   {
-   "columns": 2,
    "fieldname": "raw_material",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -84,7 +83,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 12:44:03.638958",
+ "modified": "2024-09-28 18:22:51.772108",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Summary",

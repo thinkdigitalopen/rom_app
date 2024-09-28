@@ -94,13 +94,14 @@
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "User Name",
    "read_only": 1
   },
   {
    "fieldname": "category_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Category Name",
    "read_only": 1
   },
@@ -121,7 +122,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-26 01:36:00.839435",
+ "modified": "2024-09-28 16:04:14.259131",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",

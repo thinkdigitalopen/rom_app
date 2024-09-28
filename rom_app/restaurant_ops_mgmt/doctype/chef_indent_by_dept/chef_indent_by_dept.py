@@ -12,10 +12,10 @@ class ChefIndentByDept(Document):
     #     if (rec_count > 0):
     #         frappe.throw("You are limited to adding just one record per day.")
 
-    def before_save(self):
-        print('before save python')
-        print('^^^^^^^^^^^^^^^^^^^')
-        print(self)
+    # def before_save(self):
+    #     print('before save python')
+    #     print('^^^^^^^^^^^^^^^^^^^')
+    #     print(self)
 
     def get_the_record_count(self, branch_id, user_name, date_obj):
         rec_count = frappe.db.count('Chef Indent By Dept', filters={

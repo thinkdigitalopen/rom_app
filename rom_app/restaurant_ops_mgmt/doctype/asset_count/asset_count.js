@@ -98,7 +98,7 @@ frappe.ui.form.on("Asset Count Child", {
 		if(parseInt(d.current_stock)>=0)
 			current_stock_temp = d.current_stock;
 
-		cal_val = standard_stock_temp - current_stock_temp;
+		cal_val = current_stock_temp - standard_stock_temp;
 
 		console.log('standard_stock_temp->', standard_stock_temp);
 		console.log('current_stock_temp->',current_stock_temp);

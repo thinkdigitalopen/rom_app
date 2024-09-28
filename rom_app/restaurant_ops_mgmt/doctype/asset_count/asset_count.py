@@ -13,13 +13,10 @@ class AssetCount(Document):
         print(roles)
         if "Rom_DM_Role" in roles:
             category_name = 'Dining'
-
         if "Rom_Chef_Role" in roles:
             category_name = 'Kitchen'
-
         print('-------------------------------------------')
         print(f" {branch_id} {user_name} {current_date} {category_name} " )
-
         rec_count = self.get_the_record_count(branch_id, user_name, current_date, category_name)
         print(f" rec_count {rec_count}  " )
         if (rec_count > 0):

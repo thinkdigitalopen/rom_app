@@ -1,10 +1,9 @@
 frappe.ui.form.on("Chef Indent By Dept", {
 	before_save: function(frm){
-		console.log('before save');
+		// console.log('before save');
 
 	},
 	setup: function(frm){
-  // compute total
       frm.compute_total = function(frm){
        console.log('total_price');
 		var total_price = 0;
@@ -19,10 +18,6 @@ frappe.ui.form.on("Chef Indent By Dept", {
 
 	},
 	onload: function(frm) {
-
-		// frm.add_custom_button('Iss Qty', function(){
-  //
-		// }, );
 
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_title) {

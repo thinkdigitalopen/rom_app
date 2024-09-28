@@ -1,4 +1,5 @@
 import frappe
+from datetime import datetime
 from frappe.model.document import Document
 
 
@@ -26,4 +27,9 @@ class StockEntry(Document):
         # # print(res_length)
         print(item_data)
         return item_data
-        # return ""
+
+    def on_update(self):
+        current_date = datetime.today().date()
+        doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
+        if (current_date > doc_save_date):
+            frappe.throw("Editing records from the past is not permitted")

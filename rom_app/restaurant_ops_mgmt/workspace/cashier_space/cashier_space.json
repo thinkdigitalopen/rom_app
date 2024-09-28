@@ -8,12 +8,12 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "add-round",
- "idx": 0,
+ "idx": 2,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Cashier Space",
  "links": [],
- "modified": "2024-09-13 13:10:04.966934",
+ "modified": "2024-09-28 14:41:22.425462",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Cashier Space",
@@ -27,7 +27,7 @@
    "role": "Rom_Cash_Role"
   }
  ],
- "sequence_id": 3.0,
+ "sequence_id": 4.0,
  "shortcuts": [
   {
    "color": "Green",
