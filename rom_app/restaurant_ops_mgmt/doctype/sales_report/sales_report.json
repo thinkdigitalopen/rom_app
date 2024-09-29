@@ -35,6 +35,8 @@
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "User Name",
    "read_only": 1
   },
@@ -66,6 +68,7 @@
   {
    "fieldname": "actual_sales",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Actual Sales",
    "reqd": 1
   },
@@ -108,7 +111,8 @@
   {
    "fieldname": "opening_cash",
    "fieldtype": "Currency",
-   "label": "Opening Cash",
+   "in_list_view": 1,
+   "label": "Open. Cash",
    "reqd": 1
   },
   {
@@ -120,13 +124,14 @@
   {
    "fieldname": "closing_cash",
    "fieldtype": "Currency",
-   "label": "Closing Cash",
+   "in_list_view": 1,
+   "label": "Clos. Cash",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-29 19:41:48.108476",
+ "modified": "2024-09-29 00:05:08.395675",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Sales Report",

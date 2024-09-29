@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Restaurant Mgr Space",
  "links": [],
- "modified": "2024-09-28 12:45:17.340505",
+ "modified": "2024-09-29 00:34:35.664173",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Restaurant Mgr Space",
@@ -29,6 +29,14 @@
  ],
  "sequence_id": 6.0,
  "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Chef Opening Checklist",
+   "link_to": "Chef Opening Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Green",
    "doc_view": "List",
@@ -67,14 +75,6 @@
    "label": "Dm Closing Checklist",
    "link_to": "Dm Closing Checklist",
    "stats_filter": "[[\"Dm Closing Checklist\",\"creation\",\"Timespan\",\"today\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Chef Opening Checklist",
-   "link_to": "Chef Opening Checklist",
-   "stats_filter": "[]",
    "type": "DocType"
   },
   {

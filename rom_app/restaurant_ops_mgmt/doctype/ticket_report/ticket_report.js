@@ -22,7 +22,7 @@ frappe.ui.form.on("Ticket Report", {
 				frm.set_value('branch_id', branch__id);
 				frm.set_value('branch_name', branch__name);
 				frm.set_df_property('branch_name', 'read_only', 1);
-				//console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
+				console.log('branch_id-', branch__id, '=== branch_name-', branch__name);
 
 				frm.set_query("department", function() {
 					return {
@@ -34,6 +34,16 @@ frappe.ui.form.on("Ticket Report", {
 
 			}
 			});
+		} else {
+			let branch__id = frm.doc.branch_id;
+			frm.set_query("department", function() {
+					return {
+						"filters": {
+							"branch": branch__id,
+						}
+					};
+				});
+
 		}
 	},
 });
