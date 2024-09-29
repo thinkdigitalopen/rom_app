@@ -19,13 +19,14 @@
    "fieldname": "chef_close_template_branch",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
    "reqd": 1
   }
  ],
  "links": [],
- "modified": "2024-07-22 18:17:26.029034",
+ "modified": "2024-09-29 18:14:18.756423",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Closing Checklist Template",
