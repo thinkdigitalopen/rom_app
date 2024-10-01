@@ -83,14 +83,14 @@
    "fieldname": "waste_qty_entry",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Waste Qty Entry",
+   "label": "Waste. Qty",
    "precision": "2"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-26 23:01:24.425735",
+ "modified": "2024-10-01 23:09:06.174542",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Wastage Child",

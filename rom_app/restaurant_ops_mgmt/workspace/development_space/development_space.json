@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Development Space",
  "links": [],
- "modified": "2024-09-28 12:55:07.923532",
+ "modified": "2024-10-01 23:24:17.360078",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Development Space",
@@ -25,6 +25,9 @@
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "Rom_Dev_Rule"
   }
  ],
  "sequence_id": 9.0,

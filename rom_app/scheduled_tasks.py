@@ -234,8 +234,8 @@ def process_indents(df_inventory, df_indnets):
         price_x_qty = df_filter.loc[index_val, 'price_x_qty']
 
         # print('quantity-', quantity, '  price_x_qty-', price_x_qty)
-        total_quantity = quantity - issued_qty
-        total_amount = price_x_qty - indent_item_amount
+        total_quantity = quantity + issued_qty
+        total_amount = price_x_qty + indent_item_amount
         df_inventory.loc[index_val, 'quantity'] = total_quantity
         df_inventory.loc[index_val, 'price_x_qty'] = total_amount
 
@@ -280,8 +280,8 @@ def process_wastages(df_inventory, df_wastages):
         index_val = df_filter.index[0]
         quantity = df_filter.loc[index_val, 'quantity']
         price_x_qty = df_filter.loc[index_val, 'price_x_qty']
-        total_quantity = quantity - wastage_qty
-        total_amount = price_x_qty - wast_item_amount
+        total_quantity = quantity + wastage_qty
+        total_amount = price_x_qty + wast_item_amount
         df_inventory.loc[index_val, 'quantity'] = total_quantity
         df_inventory.loc[index_val, 'price_x_qty'] = total_amount
 

@@ -179,6 +179,7 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		console.log('issued_qty->', issued_qty,'price->',price,'cal_val->', cal_val);
 		frappe.model.set_value(cdt, cdn, "amount", cal_val);
 		frm.compute_total(frm);
+		refresh_field("raw_materials");
     },
 	raw_materials_remove:function (frm, cdt, cdn) {
 		console.log('raw_materials_remove');

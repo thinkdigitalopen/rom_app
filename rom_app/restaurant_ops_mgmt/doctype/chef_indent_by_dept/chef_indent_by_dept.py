@@ -12,10 +12,20 @@ class ChefIndentByDept(Document):
     #     if (rec_count > 0):
     #         frappe.throw("You are limited to adding just one record per day.")
 
-    # def before_save(self):
-    #     print('before save python')
-    #     print('^^^^^^^^^^^^^^^^^^^')
-    #     print(self)
+    def before_save(self):
+        print('before save python')
+        print('^^^^^^^^^^^^^^^^^^^')
+        print(self)
+        print('^^^^^^^^^^^^^^^^^^^')
+        print(self.raw_materials)
+        for item in self.raw_materials:
+            print(item.issu_qty_entry)
+            print(item.issued_qty)
+            if (item.issu_qty_entry):
+                issu_qty_entry_minus = -1 * item.issu_qty_entry
+                if (issu_qty_entry_minus != item.issued_qty):
+                    item.issued_qty = issu_qty_entry_minus
+                    print(item.issued_qty)
 
     def get_the_record_count(self, branch_id, user_name, date_obj):
         rec_count = frappe.db.count('Chef Indent By Dept', filters={
