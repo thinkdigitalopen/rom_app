@@ -148,31 +148,36 @@ frappe.ui.form.on("Chef Indent By Dept", {
 // branch_name department user_name date branch_id total_price raw_materials
 // raw_material unit req_qty issued_qty price  amount closing_qty remarks
  frappe.ui.form.on('Chef Indent By Dept Child', {
-    form_render: function(frm,cdt,cdn) {
-		console.log(' child row added event form_render');
-    },
+  //   form_render: function(frm,cdt,cdn) {
+		// console.log(' child row added event form_render');
+  //   },
 	issu_qty_entry: function(frm,cdt,cdn) {
+		console.log('Chef Indent By Dept Child -> issu_qty_entry');
 		// ord_qty_temp   unit_price_temp  amount_temp    total_price_temp
         var d = locals[cdt][cdn];
 		let issued_qty = 0;
 		let amount = 0;
 		let cal_val = 0;
+		let price = 0;
 
 		// if(parseFloat(d.issued_qty)>=0) {
 			issued_qty = (-1) * d.issu_qty_entry;
-			frappe.model.set_value(cdt, cdn, 'issued_qty', issued_qty);
+			console.log('issued_qty ->',issued_qty);
+			console.log('cdt ->',cdt);
+			console.log('cdn ->',cdn);
+			frappe.model.set_value(cdt, cdn, "issued_qty", issued_qty);
 			//refresh_field("raw_materials");
 		// }
 
 		// if(parseFloat(d.price)>=0)
 			price = d.price;
+			console.log(" price ", price);
 
 		cal_val = issued_qty * price;
+			console.log(" cal_val ", cal_val);
 
 		console.log('issued_qty->', issued_qty,'price->',price,'cal_val->', cal_val);
-
-		frappe.model.set_value(cdt, cdn, 'amount', cal_val);
-
+		frappe.model.set_value(cdt, cdn, "amount", cal_val);
 		frm.compute_total(frm);
     },
 	raw_materials_remove:function (frm, cdt, cdn) {

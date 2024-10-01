@@ -56,6 +56,7 @@ frappe.ui.form.on("Asset Count", {
 										  {  branch: branch__id,
 											  category_type : 'Kitchen' })
 						.then(doc => {
+							console.log('chef_user_role_avail - suc ',doc);
 							frm.set_value('category_name', doc.category_name);
 							category_id = doc.name;
 							frm.set_value('category_id', category_id);
@@ -67,6 +68,7 @@ frappe.ui.form.on("Asset Count", {
 										  {  branch: branch__id,
 											  category_type : 'Dining' })
 						.then(doc => {
+							console.log('dm_user_role_avail - suc ',doc);
 							frm.set_value('category_name', doc.category_name);
 							category_id = doc.name;
 							frm.set_value('category_id', category_id);
@@ -123,32 +125,34 @@ function disable_drag_drop(frm) {
 
 function get_asset_master_items(frm, branch__id, category_param) {
 
+	console.log('branch__id, category_param', branch__id, category_param);
 	// -----------------------------
-					frappe.call({
-					method: "rom_app.restaurant_ops_mgmt.api.get_asset_master_singltable_child_based_on_branch_category",
-					args: {branch_param: branch__id, category_param: category_param},
-					callback: function(res_items) {
-						frm.doc.items = []
-						console.log('items');
-						console.log(res_items);
-						$.each(res_items.message, function(_i, e){
-							console.log('_i',_i);
-							console.log('e',e);
-							//let category = e[2];
-							let item = e[2];
-							let standard_stock = e[3];
-							//let category_name = e[5];
 
-							console.log(item, standard_stock);
+	frappe.call({
+	method: "rom_app.restaurant_ops_mgmt.api.get_asset_master_singltable_child_based_on_branch_category",
+	args: {branch_param: branch__id, category_param: category_param},
+	callback: function(res_items) {
+		frm.doc.items = []
+		console.log('items');
+		console.log(res_items);
+		$.each(res_items.message, function(_i, e){
+			console.log('_i',_i);
+			console.log('e',e);
+			//let category = e[2];
+			let item = e[2];
+			let standard_stock = e[3];
+			//let category_name = e[5];
 
-							let entry = frm.add_child("items");
-							//entry.category = category_name;
-							entry.item = item;
-							entry.standard_stock = standard_stock;
-						});
-						refresh_field("items");
-						}
-					});
+			console.log(item, standard_stock);
+
+			let entry = frm.add_child("items");
+			//entry.category = category_name;
+			entry.item = item;
+			entry.standard_stock = standard_stock;
+		});
+		refresh_field("items");
+		}
+	});
 						//console.log('*************************');
 					//-----------------------------
 }

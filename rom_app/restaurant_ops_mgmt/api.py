@@ -244,7 +244,7 @@ def get_asset_master_singltable_child_based_on_branch_category(branch_param, cat
     # child = frappe.qb.DocType("Asset Master Child")
     query = (
         frappe.qb.from_(parent)
-        .select(parent.branch, parent.category, parent.item, parent.standard_stock)
+        .select(parent.branch_id, parent.category, parent.item, parent.standard_stock)
         .where(parent.category == category_param)
         .where(parent.branch_id == branch_param)
     )

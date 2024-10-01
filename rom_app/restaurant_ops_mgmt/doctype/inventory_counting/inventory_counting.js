@@ -70,6 +70,8 @@ frappe.ui.form.on("Inventory Counting Child", {
 		let counted_quantity = 0;
 		let cal_val = 0;
 		let cal_amount = 0;
+		let counted_quantity_temp = 0;
+		let clos_stock = 0;
 
 		price = parseFloat(d.price);
 		counted_quantity_temp = parseFloat(d.quantity);
