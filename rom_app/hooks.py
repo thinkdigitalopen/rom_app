@@ -15,13 +15,13 @@ fixtures = [
         "filters": [
             [
                 "name", "in", [
-                    "Rom_Dashboard_Role",
-                    "Rom_Admin_Role",
                     "Rom_Chef_Role",
-                    "Rom_RM_Role",
                     "Rom_DM_Role",
-                    "Rom_Store_Role",
                     "Rom_Cash_Role"
+                    "Rom_Store_Role",
+                    "Rom_RM_Role",
+                    "Rom_Dashboard_Role",
+                    "Rom_Admin_Role"
                 ]
             ]
         ]
@@ -31,13 +31,13 @@ fixtures = [
         "filters": [
             [
                 "role", "in", [
-                    "Rom_Dashboard_Role",
-                    "Rom_Admin_Role",
                     "Rom_Chef_Role",
-                    "Rom_RM_Role",
                     "Rom_DM_Role",
-                    "Rom_Store_Role",
                     "Rom_Cash_Role"
+                    "Rom_Store_Role",
+                    "Rom_RM_Role",
+                    "Rom_Dashboard_Role",
+                    "Rom_Admin_Role"
                 ]
             ]
         ]
@@ -81,8 +81,6 @@ fixtures = [
     #     ]
     # },
 ]
-
-
 
 # Includes in <head>
 # ------------------
@@ -215,8 +213,8 @@ app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
 
 scheduler_events = {
     "cron": {
-        "*/5 * * * *":
-            ["rom_app.scheduled_tasks.inventory_summary"]
+        "*/5 * * * *": ["rom_app.scheduled_tasks.inventory_summary"],
+        "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
     }
     }
 

@@ -610,3 +610,11 @@ def log_into_developlog(log_text):
             'log': log_text,
         })
     doc.insert()
+
+
+@frappe.whitelist()
+def test_scheduler():
+    current_date = datetime.today()
+    print(' ############################################ \n')
+    print(' ############################################ \n')
+    print(' test_scheduler - current_date \n', current_date)

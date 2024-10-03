@@ -27,6 +27,7 @@ class ChefIndentByDept(Document):
                     item.issued_qty = issu_qty_entry_minus
                     print(item.issued_qty)
 
+
     def get_the_record_count(self, branch_id, user_name, date_obj):
         rec_count = frappe.db.count('Chef Indent By Dept', filters={
             'user_name': user_name,
@@ -106,15 +107,16 @@ class ChefIndentByDept(Document):
             if (self.rm_approval == 1):
                 print('self.rm_approval == 1')
                 frappe.throw("Editing approved record is not permitted")
-#       find the document branch name
-#         doc_branch_id = self.branch_id
-#         print('doc_branch_id', doc_branch_id)
-# #       find current user branch name
-#         user_branch_id = self.find_user_branch()
-#         print('user_branch_id', user_branch_id)
-#         if (doc_branch_id != user_branch_id):
-#             frappe.throw("Editing other branch record is not permitted")
 
+    #     # find the document branch name
+    #     doc_branch_id = self.branch_id
+    #     print('doc_branch_id', doc_branch_id)
+    #     # find current user branch name
+    #     user_branch_id = self.find_user_branch()
+    #     print('user_branch_id', user_branch_id)
+    #     if (doc_branch_id != user_branch_id):
+    #         frappe.throw("Editing other branch record is not permitted")
+    #
     # def find_user_branch(self):
     #     user_email = frappe.session.user
     #     sql = """
