@@ -44,6 +44,7 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -103,7 +104,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-26 13:42:30.296087",
+ "modified": "2024-10-05 20:01:08.156364",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only",

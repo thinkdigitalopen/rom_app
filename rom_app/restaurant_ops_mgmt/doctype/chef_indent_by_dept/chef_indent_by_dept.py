@@ -27,7 +27,6 @@ class ChefIndentByDept(Document):
                     item.issued_qty = issu_qty_entry_minus
                     print(item.issued_qty)
 
-
     def get_the_record_count(self, branch_id, user_name, date_obj):
         rec_count = frappe.db.count('Chef Indent By Dept', filters={
             'user_name': user_name,
