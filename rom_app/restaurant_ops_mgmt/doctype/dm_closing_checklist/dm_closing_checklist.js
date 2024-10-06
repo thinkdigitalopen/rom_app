@@ -7,7 +7,12 @@ frappe.ui.form.on("Dm Closing Checklist", {
 		disable_drag_drop(frm);
 	},
 
-		onload(frm) {
+	onload(frm) {
+				disable_drag_drop(frm);
+
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		if (frm.is_new()) {
 
 			let useremail = frappe.user.get_emails();

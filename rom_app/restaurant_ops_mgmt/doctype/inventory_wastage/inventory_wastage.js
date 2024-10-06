@@ -10,8 +10,13 @@ frappe.ui.form.on("Inventory Wastage", {
 	}
 	},
 	refresh(frm) {
+		disable_drag_drop(frm);
 	},
-		onload(frm) {
+	onload(frm) {
+		disable_drag_drop(frm);
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		console.log("onload");
 		if (frm.is_new()) {
 			console.log('is new - true')

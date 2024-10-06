@@ -17,6 +17,10 @@ refresh(frm) {
 		disable_drag_drop(frm);
 	},
 	onload(frm) {
+			disable_drag_drop(frm);
+		 $('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
 			if(doc.raw_material_text) {
 				return doc.raw_material_text;

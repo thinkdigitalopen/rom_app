@@ -3,6 +3,9 @@ frappe.ui.form.on("Menu", {
 
 	},
 	onload(frm) {
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		if (frm.is_new()) {
 
 			console.log('is_new');

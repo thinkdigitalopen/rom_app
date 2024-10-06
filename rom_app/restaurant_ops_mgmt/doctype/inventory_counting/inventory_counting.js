@@ -11,9 +11,14 @@ frappe.ui.form.on("Inventory Counting", {
 	  }
 	},
 	refresh(frm) {
+		disable_drag_drop(frm);
 
 	},
 	onload(frm) {
+		disable_drag_drop(frm);
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		if (frm.is_new()) {
 			console.log('is_new');
 			let useremail = frappe.user.get_emails();
@@ -97,3 +102,7 @@ frappe.ui.form.on("Inventory Counting Child", {
 		frm.compute_total(frm);
 	},
 });
+
+function disable_drag_drop(frm) {
+		frm.page.body.find('[data-fieldname="items"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
+	}

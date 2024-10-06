@@ -10,6 +10,9 @@ frappe.ui.form.on("Asset Count", {
 
 	},
 	onload(frm) {
+				disable_drag_drop(frm);
+			$('span.sidebar-toggle-btn').hide();
+			$('.col-lg-2.layout-side-section').hide();
 
 			//frm.set_value('category', '1');
 			//frm.set_value('category', 'Kitchen');

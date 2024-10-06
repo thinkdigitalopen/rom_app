@@ -12,6 +12,10 @@ frappe.ui.form.on("Chef Production", {
 		disable_drag_drop_chicken_category_list(frm);
 	},
 	onload(frm) {
+		disable_drag_drop_briyani_category_list(frm);
+		disable_drag_drop_chicken_category_list(frm);
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
 		if (frm.is_new()) {
 
 			console.log('is_new');
@@ -91,8 +95,6 @@ frappe.ui.form.on("Chef Production", {
 
 
 		};
-		disable_drag_drop_briyani_category_list(frm);
-		disable_drag_drop_chicken_category_list(frm);
     },
 });
 

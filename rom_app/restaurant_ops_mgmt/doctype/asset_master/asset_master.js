@@ -5,6 +5,9 @@ frappe.ui.form.on("Asset Master", {
 	},
 	onload(frm)
 	{
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 		if (frm.is_new()) {
 			console.log('is_new');
 			let useremail = frappe.user.get_emails();

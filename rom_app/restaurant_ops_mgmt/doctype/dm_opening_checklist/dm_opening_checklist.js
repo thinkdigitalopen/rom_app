@@ -7,6 +7,9 @@ frappe.ui.form.on("Dm Opening Checklist", {
 	},
 
 	onload(frm) {
+			disable_drag_drop(frm);
+			$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
 		if (frm.is_new()) {
 			let useremail = frappe.user.get_emails();
 			let email = useremail[0];
@@ -49,5 +52,5 @@ frappe.ui.form.on("Dm Opening Checklist", {
 });
 
 function disable_drag_drop(frm) {
-		frm.page.body.find('[data-fieldname="dm_open_questions"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
+		frm.page.body.find('[data-fieldname="dm_open_questions"] [data-idx] .data-row .sortable-handle').removeClass('sortable-handle');
 	}
