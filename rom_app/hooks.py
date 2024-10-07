@@ -17,11 +17,12 @@ fixtures = [
                 "name", "in", [
                     "Rom_Chef_Role",
                     "Rom_DM_Role",
-                    "Rom_Cash_Role"
+                    "Rom_Cash_Role",
                     "Rom_Store_Role",
                     "Rom_RM_Role",
                     "Rom_Dashboard_Role",
-                    "Rom_Admin_Role"
+                    "Rom_Admin_Role",
+                    "Rom_Dev_Role",
                 ]
             ]
         ]
@@ -33,53 +34,16 @@ fixtures = [
                 "role", "in", [
                     "Rom_Chef_Role",
                     "Rom_DM_Role",
-                    "Rom_Cash_Role"
+                    "Rom_Cash_Role",
                     "Rom_Store_Role",
                     "Rom_RM_Role",
                     "Rom_Dashboard_Role",
-                    "Rom_Admin_Role"
+                    "Rom_Admin_Role",
+                    "Rom_Dev_Role",
                 ]
             ]
         ]
     },
-    # {
-    #     "dt": "User",
-    #     "filters": [
-    #             ["name", "in",
-    #              frappe.get_all("Has Role",
-    #                             filters={"role": ["in",
-    #                                               ["Rom_Dashboard_Role",
-    #                                                "Rom_Admin_Role",
-    #                                                "Rom_Chef_Role",
-    #                                                "Rom_RM_Role",
-    #                                                "Rom_DM_Role",
-    #                                                "Rom_Store_Role",
-    #                                                "Rom_Cash_Role"]]},
-    #                             pluck="parent")]
-    #     ]
-    # },
-
-    # {
-    #     "dt": "Role Permission for Page and Report",
-    #     "filters": [
-    #         [
-    #             "report", "in", [
-    #                 "Chef Opening Checklist Register",
-    #                 "Chef Closing Checklist Register",
-    #                 "Chef Indent Register",
-    #                 "Chef Production Register",
-    #                 "Cutlery Inventory Count Register",
-    #                 "NC Report Register",
-    #                 "Breakages Report Register",
-    #                 "Dm Opening Checklist Register",
-    #                 "Dm Closing Checklist Register",
-    #                 "Incident Report Register",
-    #                 "Sales Report Register",
-    #                 "Discount Form Register"
-    #             ]
-    #         ]
-    #     ]
-    # },
 ]
 
 # Includes in <head>
@@ -293,4 +257,3 @@ scheduler_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
