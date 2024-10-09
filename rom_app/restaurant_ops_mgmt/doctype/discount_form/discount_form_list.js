@@ -1,5 +1,6 @@
-frappe.listview_settings['Inventory Summary'] = {
+frappe.listview_settings['Discount Form'] = {
         refresh: function(listview) {
                 $(".layout-side-section").hide();
+
         }
 };

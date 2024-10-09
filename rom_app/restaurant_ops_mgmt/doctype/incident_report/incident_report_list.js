@@ -1,5 +1,6 @@
-frappe.listview_settings['Inventory Summary'] = {
+frappe.listview_settings['Incident Report'] = {
         refresh: function(listview) {
                 $(".layout-side-section").hide();
+
         }
 };
