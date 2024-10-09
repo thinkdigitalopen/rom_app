@@ -73,10 +73,13 @@ def inventory_summary():
     # df_string = df_print.to_string(header=False, index=False, index_names=False).split('\n')
     # df_string_nl = [','.join(x.split()) + '\n' for x in df_string]
     # print(df_string_nl)
-    df_str = df_print.apply("    ".join, axis=1).tolist()
-    print('******************* df_str ******************')
-    print(df_str)
-    return df_str
+    len_of_rows = len(df_print)
+    print("total rows - ", len_of_rows)
+    if (len_of_rows > 0):
+        df_str = df_print.apply("    ".join, axis=1).tolist()
+        print('******************* df_str ******************')
+        print(df_str)
+    return "No Record Found"
 
 
 #  -------- 1 transfer raw material to inventory summary ------------
