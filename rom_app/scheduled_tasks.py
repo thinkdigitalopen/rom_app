@@ -79,6 +79,8 @@ def inventory_summary():
         df_str = df_print.apply("    ".join, axis=1).tolist()
         print('******************* df_str ******************')
         print(df_str)
+        return df_str
+
     return "No Record Found"
 
 

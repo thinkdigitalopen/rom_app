@@ -178,10 +178,9 @@ app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
 scheduler_events = {
     "cron": {
         "*/5 * * * *": ["rom_app.scheduled_tasks.inventory_summary"],
-        "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
     }
     }
-
+# "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
 # Testing
 # -------
 
