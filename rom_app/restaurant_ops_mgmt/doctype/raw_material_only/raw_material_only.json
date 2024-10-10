@@ -33,7 +33,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Unit",
-   "options": "Bag\nBot\nBox\nCase\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
+   "options": "Bag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
    "reqd": 1
   },
   {
@@ -104,7 +104,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 17:26:21.941646",
+ "modified": "2024-10-10 21:57:01.797089",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only",
