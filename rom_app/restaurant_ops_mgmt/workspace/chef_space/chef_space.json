@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"HUUqy_WGS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Chef Space</span>\",\"col\":12}},{\"id\":\"8VVuXjY0Ny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":7}},{\"id\":\"CjwtjwG6kT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"WkHpcclDpR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production\",\"col\":7}},{\"id\":\"LI1fOtu3hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"n-JRK9enjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":7}},{\"id\":\"UC3-4_UlQz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"IZvi3GZT76\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}}]",
+ "content": "[{\"id\":\"HUUqy_WGS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Chef Space</span>\",\"col\":12}},{\"id\":\"8VVuXjY0Ny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":7}},{\"id\":\"CjwtjwG6kT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"WkHpcclDpR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production\",\"col\":7}},{\"id\":\"LI1fOtu3hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"n-JRK9enjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":7}},{\"id\":\"UC3-4_UlQz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"IZvi3GZT76\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}},{\"id\":\"k90SlrtEpv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}}]",
  "creation": "2024-07-20 08:21:09.729604",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Chef Space",
  "links": [],
- "modified": "2024-09-28 14:41:04.580994",
+ "modified": "2024-10-11 00:24:14.609701",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Space",
@@ -29,6 +29,14 @@
  ],
  "sequence_id": 2.0,
  "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Raw Material Only",
+   "link_to": "Raw Material Only",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Green",
    "doc_view": "List",
