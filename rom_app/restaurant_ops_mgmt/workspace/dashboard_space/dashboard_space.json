@@ -45,35 +45,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Restaurant Mgr Reports",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Discount Form",
-   "link_count": 0,
-   "link_to": "Discount Form Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "NC Report",
-   "link_count": 0,
-   "link_to": "NC Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Chef Reports",
    "link_count": 4,
    "link_type": "DocType",
@@ -295,9 +266,49 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Restaurant Mgr Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Discount Form",
+   "link_count": 0,
+   "link_to": "Discount Form Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "NC Report",
+   "link_count": 0,
+   "link_to": "NC Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "RM Closing Checklist",
+   "link_count": 0,
+   "link_to": "RM Closing Checklist Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "RM Closing Checklist",
+   "type": "Link"
   }
  ],
- "modified": "2024-09-25 23:40:09.282610",
+ "modified": "2024-10-10 14:30:37.539441",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dashboard Space",

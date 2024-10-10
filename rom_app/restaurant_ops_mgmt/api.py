@@ -299,3 +299,19 @@ def update_database_usage():
     doc.insert()
     frappe.db.commit()
 
+
+@frappe.whitelist()
+def get_rm_closing_checklist_child(branch_param):
+    parent = frappe.qb.DocType("RM Closing Checklist Template")
+    child = frappe.qb.DocType("RM Closing Checklist Template Child")
+
+    query = (
+        frappe.qb.from_(parent)
+        .inner_join(child)
+        .on(parent.name == child.parent)
+        .select(parent.name, parent.branch, child.question)
+        .where(parent.branch == branch_param)
+    )
+
+    result = query.run()
+    return result

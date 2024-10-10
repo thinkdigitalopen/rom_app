@@ -1,18 +1,17 @@
 {
  "actions": [],
  "autoname": "autoincrement",
- "creation": "2024-08-31 11:44:49.582557",
+ "creation": "2024-10-10 12:19:26.201714",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "branch_name",
   "user_name",
-  "menu_item",
-  "column_break_zhop",
+  "column_break_rlgx",
   "date",
-  "unit",
-  "price",
-  "branch_id"
+  "branch_id",
+  "section_break_sorr",
+  "questions"
  ],
  "fields": [
   {
@@ -24,19 +23,11 @@
    "read_only": 1
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
-  {
-   "fieldname": "column_break_zhop",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "User Name",
    "read_only": 1
   },
@@ -46,36 +37,38 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1
   },
   {
-   "fieldname": "menu_item",
+   "fieldname": "branch_id",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
-   "label": "Menu Item",
-   "reqd": 1
+   "in_standard_filter": 1,
+   "label": "Branch Id"
   },
   {
-   "fieldname": "unit",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Unit",
-   "options": "\nNos\nSet\nKg"
+   "fieldname": "column_break_rlgx",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "price",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Price",
-   "reqd": 1
+   "fieldname": "section_break_sorr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "questions",
+   "fieldtype": "Table",
+   "label": "Questions",
+   "options": "RM Closing Checklist Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 11:00:31.087904",
+ "modified": "2024-10-10 13:45:09.368330",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
- "name": "Menu",
+ "name": "RM Closing Checklist",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
@@ -92,9 +85,7 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
- "sort_field": "creation",
+ "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "menu_item"
+ "states": []
 }
