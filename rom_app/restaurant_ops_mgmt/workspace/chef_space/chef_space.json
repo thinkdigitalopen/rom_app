@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"HUUqy_WGS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Chef Space</span>\",\"col\":12}},{\"id\":\"8VVuXjY0Ny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":7}},{\"id\":\"CjwtjwG6kT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"WkHpcclDpR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production\",\"col\":7}},{\"id\":\"LI1fOtu3hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"n-JRK9enjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":7}},{\"id\":\"UC3-4_UlQz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"IZvi3GZT76\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}},{\"id\":\"k90SlrtEpv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}}]",
+ "content": "[{\"id\":\"HUUqy_WGS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Chef Space</span>\",\"col\":12}},{\"id\":\"7WLRCiNphD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chef Opening Checklist\",\"col\":4}},{\"id\":\"dAHYKmv84-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chef Closing Checklist\",\"col\":4}},{\"id\":\"8VVuXjY0Ny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Opening Checklist\",\"col\":7}},{\"id\":\"CjwtjwG6kT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"WkHpcclDpR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production\",\"col\":7}},{\"id\":\"LI1fOtu3hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"n-JRK9enjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Closing Checklist\",\"col\":7}},{\"id\":\"UC3-4_UlQz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"IZvi3GZT76\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}},{\"id\":\"C1J2m7Oj_J\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"k90SlrtEpv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}}]",
  "creation": "2024-07-20 08:21:09.729604",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,20 @@
  "is_hidden": 0,
  "label": "Chef Space",
  "links": [],
- "modified": "2024-10-11 00:24:14.609701",
+ "modified": "2024-10-12 22:34:48.381433",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Space",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Chef Opening Checklist",
+   "number_card_name": "Opening Checklist"
+  },
+  {
+   "label": "Chef Closing Checklist",
+   "number_card_name": "Chef Closing Checklist"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -42,6 +51,14 @@
    "doc_view": "List",
    "label": "Asset Count",
    "link_to": "Asset Count",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
    "stats_filter": "[]",
    "type": "DocType"
   },

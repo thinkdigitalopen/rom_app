@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Manager Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent\",\"col\":7}},{\"id\":\"rMjqEDjRrG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"l2p9NHdc6z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"6QZ857IVw8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"TkAdLtyLGA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"484sbrDrIg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vqQ1ZnXbRd\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Manager Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent\",\"col\":7}},{\"id\":\"rMjqEDjRrG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"l2p9NHdc6z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"6QZ857IVw8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"TkAdLtyLGA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"484sbrDrIg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vqQ1ZnXbRd\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2024-08-26 20:57:34.050043",
  "custom_blocks": [],
  "docstatus": 0,
@@ -53,7 +53,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-10-07 00:04:11.065268",
+ "modified": "2024-10-12 22:14:08.818124",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store Manager Space",
@@ -74,6 +74,14 @@
    "doc_view": "List",
    "label": "Stock Entry",
    "link_to": "Stock Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
    "stats_filter": "[]",
    "type": "DocType"
   },

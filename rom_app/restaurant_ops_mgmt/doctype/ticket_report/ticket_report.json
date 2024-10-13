@@ -11,13 +11,14 @@
   "responsible_person",
   "reported_by",
   "completed",
+  "branch_id",
   "column_break_iipw",
   "date",
   "date_time",
   "department",
   "remarks",
   "photo",
-  "branch_id"
+  "image"
  ],
  "fields": [
   {
@@ -117,11 +118,19 @@
    "label": "Ticket Desc",
    "permlevel": 2,
    "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "max_height": "25px",
+   "options": "photo",
+   "width": "25px"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-28 15:30:41.659500",
+ "modified": "2024-10-12 21:59:52.626468",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",

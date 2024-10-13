@@ -12,13 +12,15 @@
   "quantity",
   "employee",
   "category_id",
+  "branch_id",
   "column_break_iipw",
   "date",
   "user_name",
   "date_time",
   "cost",
   "remarks",
-  "branch_id"
+  "attach_image",
+  "image"
  ],
  "fields": [
   {
@@ -118,11 +120,24 @@
    "in_list_view": 1,
    "label": "Item Price",
    "read_only": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "max_height": "25px",
+   "options": "attach_image",
+   "width": "25px"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-28 16:04:14.259131",
+ "modified": "2024-10-12 22:10:31.958988",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",
