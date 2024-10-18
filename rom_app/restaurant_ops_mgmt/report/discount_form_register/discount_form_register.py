@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'known_to': d.known_to,
             'customer_name': d.customer_name,
             'bill_value': d.bill_value,
@@ -47,8 +47,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -86,7 +86,7 @@ def get_data(filters):
     build_sql = """
         SELECT
         name,
-        branch_name,
+        branch,
         user_name,
         `date`,
         known_to,
@@ -100,7 +100,7 @@ def get_data(filters):
     where_cond = f" WHERE date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
     if "known_to_filter" in conditions:
         where_cond = where_cond + f" AND known_to LIKE '%{conditions['known_to_filter']}%' "
     if "customer_name_filter" in conditions:
@@ -140,7 +140,7 @@ def get_data_by_percentage(filters):
     where_cond = f" WHERE STR_TO_DATE(date, '%Y-%m-%d')  between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

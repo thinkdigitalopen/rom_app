@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "field:branch_name",
  "creation": "2024-07-17 18:18:42.114154",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,7 +16,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Branch Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "branch_location",
@@ -28,11 +30,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-26 16:06:03.036548",
+ "modified": "2024-10-18 15:27:48.904419",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Branch",
- "naming_rule": "Autoincrement",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

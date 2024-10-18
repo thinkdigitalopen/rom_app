@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'category': d.category,
             'item': d.item,
             'production_qty': d.production_qty,
@@ -53,7 +53,7 @@ def get_columns():
 
         },
         {
-            'fieldname': 'branch_name',
+            'fieldname': 'branch',
             'label': 'Branch Name',
             'fieldtype': 'Data',
 
@@ -128,8 +128,7 @@ def get_data(filters):
         parent1.`name`,
         parent1.`date`,
         parent1.`user_name`,
-        parent1.`branch_name`,
-        parent1.`branch_id`,
+        parent1.`branch`,
         'Briyani' as category,
         child1.`briyani_category` as item,
         child1.`product_qtykg` as production_qty,
@@ -151,8 +150,7 @@ def get_data(filters):
         parent2.`name`,
         parent2.`date`,
         parent2.`user_name`,
-        parent2.`branch_name`,
-        parent2.`branch_id`,
+        parent2.`branch`,
         'Chicken' as category,
         child2.`chicken_category` as item,
         child2.`production_qty` as production_qty,
@@ -173,7 +171,7 @@ def get_data(filters):
         """
     where_cond = f" WHERE date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
     if "category_filter" in conditions:
         where_cond = where_cond + f" AND category = '{conditions['category_filter']}' "
     if "item_filter" in conditions:
@@ -217,7 +215,7 @@ def get_data_groupby_briyani(filters):
 
     where_cond = f" WHERE parent1.date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND parent1.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND parent1.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By child1.briyani_category "
 
@@ -248,7 +246,7 @@ def get_data_groupby_chicken(filters):
 
     where_cond = f" WHERE parent2.date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND parent2.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND parent2.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By child2.chicken_category "
 

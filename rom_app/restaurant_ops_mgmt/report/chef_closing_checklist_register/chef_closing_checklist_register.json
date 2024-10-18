@@ -2,37 +2,34 @@
  "add_total_row": 1,
  "columns": [],
  "creation": "2024-08-03 14:27:17.905798",
- "disabled": 0,
+ "disabled": 1,
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 15,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-08-03 14:28:00.473540",
+ "modified": "2024-10-18 07:08:58.736490",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Closing Checklist Register",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "Chef Closing Checklist",
+ "ref_doctype": "FB Closing Checklist",
  "report_name": "Chef Closing Checklist Register",
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "Rom_Chef_Role"
-  },
-  {
-   "role": "Rom_RM_Role"
+   "role": "Rom_FB_Role"
   },
   {
    "role": "System Manager"
   },
   {
-   "role": "Rom_Dashboard_Role"
+   "role": "Rom_Manage_Role"
   },
   {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Op_Role"
   }
  ]
 }

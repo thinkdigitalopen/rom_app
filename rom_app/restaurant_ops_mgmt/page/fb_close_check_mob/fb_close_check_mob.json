@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2024-10-14 07:06:07.703754",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 2,
+ "modified": "2024-10-15 21:39:36.103592",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "fb-close-check-mob",
+ "owner": "Administrator",
+ "page_name": "fb-close-check-mob",
+ "roles": [
+  {
+   "role": "Rom_Op_Role"
+  },
+  {
+   "role": "Administrator"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "FB Clo Chk"
+}

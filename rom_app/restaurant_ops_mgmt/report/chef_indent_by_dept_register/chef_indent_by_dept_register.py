@@ -16,13 +16,13 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'department_name': d.department_name,
-            'raw_material': d.raw_material,
+            'item': d.item,
             'unit': d.unit,
             'req_qty': d.req_qty,
             'issued_qty': d.issued_qty,
-            'rm_approval': d.rm_approval,
+            # 'rm_approval': d.rm_approval,
             'price': d.price,
             'amount': d.amount,
             'remarks':  d.remarks,
@@ -54,8 +54,8 @@ def get_columns():
             'width': '140'
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
             'width': '140'
         },
@@ -66,7 +66,7 @@ def get_columns():
             'width': '140'
         },
         {
-            'fieldname': 'raw_material',
+            'fieldname': 'item',
             'label': 'Raw Material',
             'fieldtype': 'Data',
             'width': '180'
@@ -89,12 +89,12 @@ def get_columns():
             'fieldtype': 'Data',
             'width': '80'
         },
-        {
-            'fieldname': 'rm_approval',
-            'label': 'RM Appr',
-            'fieldtype': 'Data',
-            'width': '80'
-        },
+        # {
+        #     'fieldname': 'rm_approval',
+        #     'label': 'RM Appr',
+        #     'fieldtype': 'Data',
+        #     'width': '80'
+        # },
         {
             'fieldname': 'price',
             'label': 'Price',
@@ -117,33 +117,36 @@ def get_columns():
     ]
 
 
+# ci.rm_approval,
 def get_data(filters):
     conditions = get_conditions(filters)
     print("-------- chef indent register - get data ------------")
     print(conditions)
     build_sql_1 = """
     SELECT
-    ci.`name`, ci.`date`, ci.user_name,	ci.branch_name,	d.department_name,
-    ci.rm_approval, cic.raw_material, cic.unit,	cic.req_qty, cic.issued_qty,
-    cic.price, cic.amount, cic.remarks
+        ci.`name`, ci.`date`, ci.user_name,	ci.branch,	d.department_name,
+        raw.item, cic.unit,	cic.req_qty, cic.issued_qty,
+        cic.price, cic.amount, cic.remarks
     FROM
-    `tabChef Indent By Dept` ci
+        `tabChef Indent By Dept` ci
     INNER JOIN `tabChef Indent By Dept Child` cic on
-    ci.name = cic.parent
+        ci.name = cic.parent
     INNER JOIN `tabDepartment` d on
-    ci.department = d.name
+        ci.department = d.name
+    INNER JOIN `tabRaw Material Only` raw on
+        cic.raw_material = raw.name
         """
     where_cond_1 = f" WHERE ci.`date` between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond_1 = where_cond_1 + f" AND ci.branch_id = '{conditions['branch_filter']}' "
+        where_cond_1 = where_cond_1 + f" AND ci.branch = '{conditions['branch_filter']}' "
     if "department_filter" in conditions:
         where_cond_1 = where_cond_1 + f" AND ci.department = '{conditions['department_filter']}' "
-    if "raw_material_filter" in conditions:
-        where_cond_1 = where_cond_1 + f" AND cic.raw_material LIKE '%{conditions['raw_material_filter']}%' "
+    if "item_filter" in conditions:
+        where_cond_1 = where_cond_1 + f" AND raw.item LIKE '%{conditions['item_filter']}%' "
 
     # build_sql_2 = """
     # SELECT
-    # ci.`name`, ci.`date`, ci.user_name,	ci.branch_name,	d.department_name,	ci.rm_approval,
+    # ci.`name`, ci.`date`, ci.user_name,	ci.branch,	d.department_name,	ci.rm_approval,
     # cic.raw_material, cic.unit, cic.req_qty, cic.issued_qty, cic.remarks
     # FROM
     # `tabChef Indent By Dept` ci
@@ -154,7 +157,7 @@ def get_data(filters):
     #     """
     # where_cond_2 = f" WHERE ci.`date` between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     # if "branch_filter" in conditions:
-    #     where_cond_2 = where_cond_2 + f" AND ci.branch_id = '{conditions['branch_filter']}' "
+    #     where_cond_2 = where_cond_2 + f" AND ci.branch = '{conditions['branch_filter']}' "
     # if "department_filter" in conditions:
     #     where_cond_2 = where_cond_2 + f" AND ci.department = '{conditions['department_filter']}' "
     # if "raw_material_filter" in conditions:
@@ -193,7 +196,7 @@ def get_data_by_group_by_date(filters):
     """
     where_cond_1 = f" WHERE ci.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond_1 = where_cond_1 + f" AND ci.branch_id = '{conditions['branch_filter']}' "
+        where_cond_1 = where_cond_1 + f" AND ci.branch = '{conditions['branch_filter']}' "
     build_sql_1 = f"{build_sql_1}  {where_cond_1}"
     print("-------- build_sql_1 ------------")
     print(build_sql_1)
@@ -206,7 +209,7 @@ def get_data_by_group_by_date(filters):
     # """
     # where_cond_2 = f" WHERE ci.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     # if "branch_filter" in conditions:
-    #     where_cond_2 = where_cond_2 + f" AND ci.branch_id = '{conditions['branch_filter']}' "
+    #     where_cond_2 = where_cond_2 + f" AND ci.branch = '{conditions['branch_filter']}' "
     # build_sql_2 = f"{build_sql_2}  {where_cond_2}"
     #
     # print("-------- build_sql_2 ------------")

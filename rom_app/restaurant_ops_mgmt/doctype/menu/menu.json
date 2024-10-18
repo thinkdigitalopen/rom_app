@@ -5,30 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "menu_item",
+  "group_name",
   "column_break_zhop",
   "date",
   "unit",
-  "price",
-  "branch_id"
+  "price"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
   {
    "fieldname": "column_break_zhop",
    "fieldtype": "Column Break"
@@ -52,6 +38,7 @@
    "fieldname": "menu_item",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Menu Item",
    "reqd": 1
   },
@@ -68,11 +55,29 @@
    "in_list_view": 1,
    "label": "Price",
    "reqd": 1
+  },
+  {
+   "fieldname": "group_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Group Name",
+   "options": "Menu Group"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 11:00:31.087904",
+ "modified": "2024-10-18 19:46:18.925885",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Menu",

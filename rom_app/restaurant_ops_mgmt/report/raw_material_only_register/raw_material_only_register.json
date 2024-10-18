@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 20,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-09-16 00:42:32.509391",
+ "modified": "2024-10-18 06:57:24.395068",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only Register",
@@ -29,19 +29,16 @@
    "role": "Rom_Store_Role"
   },
   {
-   "role": "Rom_Chef_Role"
+   "role": "Rom_FB_Role"
   },
   {
-   "role": "Rom_Dashboard_Role"
+   "role": "Rom_Manage_Role"
   },
   {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Op_Role"
   },
   {
    "role": "Rom_Cash_Role"
-  },
-  {
-   "role": "Rom_RM_Role"
   }
  ]
 }

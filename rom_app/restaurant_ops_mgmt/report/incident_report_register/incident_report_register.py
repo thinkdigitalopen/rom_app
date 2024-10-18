@@ -16,14 +16,13 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'customer_name': d.customer_name,
             'table_no': d.table_no,
             'incident_date_time': d.incident_date_time,
             'captain_name': d.captain_name,
             'menu_item': d.menu_item,
             'menu_item_price': d.menu_item_price,
-            # 'handled_by': d.handled_by,
             'type_of_complaint': d.type_of_complaint,
             'action_for_complaint': d.action_for_complaint,
             'result_of_action': d.result_of_action,
@@ -54,8 +53,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -130,7 +129,7 @@ def get_data(filters):
     ir.name,
     ir.date,
     ir.user_name,
-    ir.branch_name,
+    ir.branch,
     ir.customer_name,
     ir.table_no,
     ir.incident_date_time,
@@ -153,7 +152,7 @@ def get_data(filters):
     where_cond = f" WHERE ir.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ir.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ir.branch = '{conditions['branch_filter']}' "
 
     if "customer_name_filter" in conditions:
         where_cond = where_cond + f" AND ir.customer_name LIKE '%{conditions['customer_name_filter']}%' "
@@ -209,7 +208,7 @@ def get_data_by_count(filters):
     where_cond = f" WHERE ir.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ir.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ir.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

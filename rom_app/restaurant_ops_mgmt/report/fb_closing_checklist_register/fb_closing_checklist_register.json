@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-10-16 15:33:34.755470",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 5,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-10-18 06:56:12.357247",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "FB Closing Checklist Register",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "FB Closing Checklist",
+ "report_name": "FB Closing Checklist Register",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Rom_FB_Role"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Rom_Manage_Role"
+  },
+  {
+   "role": "Rom_Op_Role"
+  },
+  {
+   "role": "Administrator"
+  }
+ ]
+}

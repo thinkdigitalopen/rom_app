@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "serial_no",
-  "child_table"
+  "child_table",
+  "label1"
  ],
  "fields": [
   {
@@ -19,11 +20,17 @@
    "fieldtype": "Table",
    "label": "Child Table",
    "options": "TestDocChild"
+  },
+  {
+   "default": "vasa",
+   "fieldname": "label1",
+   "fieldtype": "Small Text",
+   "label": "label1"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 22:39:52.754560",
+ "modified": "2024-10-14 17:28:20.434336",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "TestDoc",

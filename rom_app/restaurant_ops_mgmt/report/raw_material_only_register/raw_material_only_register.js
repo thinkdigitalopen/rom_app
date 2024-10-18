@@ -14,5 +14,11 @@ frappe.query_reports["Raw Material Only Register"] = {
 			"label": "Raw Material",
 			"fieldtype": "Data",
 		},
+		{
+			"fieldname": "group_name_filter",
+			"label": "RM Group",
+			"fieldtype": "Link",
+			"options": "Raw Material Group",
+		},
 	]
 };

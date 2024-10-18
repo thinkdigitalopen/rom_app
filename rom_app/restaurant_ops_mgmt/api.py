@@ -1,45 +1,76 @@
 import frappe
 from datetime import datetime
-import json
-
-
-@frappe.whitelist()
-def get_chef_opening_checklist_child(branch_param):
-    parent = frappe.qb.DocType("Chef Opening Checklist Template")
-    child = frappe.qb.DocType("Chef Opening Checklist Template Child")
-
-    query = (
-        frappe.qb.from_(parent)
-        .inner_join(child)
-        .on(parent.name == child.parent)
-        .select(parent.name, parent.chef_open_template_branch, child.template_question)
-        .where(parent.chef_open_template_branch == branch_param)
-    )
-
-    result = query.run()
-    return result
-
-
-@frappe.whitelist()
-def get_dm_opening_checklist_child(branch_param):
-    parent = frappe.qb.DocType("Dm Opening Checklist Template")
-    child = frappe.qb.DocType("Dm Opening Checklist Template Child")
-
-    query = (
-        frappe.qb.from_(parent)
-        .inner_join(child)
-        .on(parent.name == child.parent)
-        .select(parent.name, parent.dm_open_template_branch, child.template_question)
-        .where(parent.dm_open_template_branch == branch_param)
-    )
-
-    result = query.run()
-    return result
-
+from . import utils
 
 @frappe.whitelist()
 def testapi():
     return "test api returned"
+
+
+@frappe.whitelist()
+def get_fb_opening_checklist_child(branch_param):
+    print('get_fb_opening_checklist_child =======', branch_param)
+    parent = frappe.qb.DocType("FB Opening Checklist Template")
+    child = frappe.qb.DocType("FB Opening Checklist Template Child")
+    # branch = frappe.qb.DocType("Branch")
+    query = (
+        frappe.qb.from_(parent)
+        .inner_join(child)
+        .on(parent.name == child.parent)
+        .select(parent.name, parent.branch, child.question)
+        .where(parent.branch == branch_param)
+    )
+    sql_text = query.get_sql()
+    print(sql_text)
+    result = query.run()
+    return result
+
+
+@frappe.whitelist()
+def get_fb_closing_checklist_child(branch_param):
+    parent = frappe.qb.DocType("FB Closing Checklist Template")
+    child = frappe.qb.DocType("FB Closing Checklist Template Child")
+
+    query = (
+        frappe.qb.from_(parent)
+        .inner_join(child)
+        .on(parent.name == child.parent)
+        .select(parent.name, parent.branch, child.question)
+        .where(parent.branch == branch_param)
+    )
+
+    result = query.run()
+    return result
+
+
+@frappe.whitelist()
+def get_op_opening_checklist_child(branch_param):
+    parent = frappe.qb.DocType("Op Opening Checklist Template")
+    child = frappe.qb.DocType("Op Opening Checklist Template Child")
+    query = (
+        frappe.qb.from_(parent)
+        .inner_join(child)
+        .on(parent.name == child.parent)
+        .select(parent.name, parent.branch, child.area, child.question)
+        .where(parent.branch == branch_param)
+     )
+    result = query.run()
+    return result
+
+
+@frappe.whitelist()
+def get_op_closing_checklist_child(branch_param):
+    parent = frappe.qb.DocType("Op Closing Checklist Template")
+    child = frappe.qb.DocType("Op Closing Checklist Template Child")
+    query = (
+        frappe.qb.from_(parent)
+        .inner_join(child)
+        .on(parent.name == child.parent)
+        .select(parent.name, parent.branch, child.question)
+        .where(parent.branch == branch_param)
+    )
+    result = query.run()
+    return result
 
 
 @frappe.whitelist()
@@ -60,77 +91,25 @@ def testapi2():
 
 
 @frappe.whitelist()
-def get_chef_closing_checklist_child(branch_param):
-    parent = frappe.qb.DocType("Chef Closing Checklist Template")
-    child = frappe.qb.DocType("Chef Closing Checklist Template Child")
-
-    query = (
-        frappe.qb.from_(parent)
-        .inner_join(child)
-        .on(parent.name == child.parent)
-        .select(parent.name, parent.chef_close_template_branch, child.template_question)
-        .where(parent.chef_close_template_branch == branch_param)
-    )
-
-    result = query.run()
+def get_the_branch_for_the_user(emailid):
+    branch = utils.find_user_branch()
+    current_date = datetime.today().date()
+    result = {
+            "branch": branch,
+            "current_date": current_date
+            }
     return result
 
 
 @frappe.whitelist()
-def get_dm_closing_checklist_child(branch_param):
-    parent = frappe.qb.DocType("Dm Closing Checklist Template")
-    child = frappe.qb.DocType("Dm Closing Checklist Template Child")
-
-    query = (
-        frappe.qb.from_(parent)
-        .inner_join(child)
-        .on(parent.name == child.parent)
-        .select(parent.name, parent.dm_close_template_branch, child.template_question)
-        .where(parent.dm_close_template_branch == branch_param)
-    )
-
-    result = query.run()
+def get_the_branch_for_the_user_based_on_email_id(emailid):
+    branch = utils.find_user_branch_based_on_email(emailid)
+    current_date = datetime.today().date()
+    result = {
+            "branch": branch,
+            "current_date": current_date
+            }
     return result
-
-#
-# @frappe.whitelist()
-# def return_T_if_Chef_Opening_entry_per_day_per_user_per_branch_exist(p_username,p_branch):
-#     p_username = 'chefuser1'
-#     p_branch = 1
-#     p_day = '2024-07-23'
-#     rec_count = 0
-#     p_day = datetime.today()
-#
-#     rec_count = frappe.db.count('Chef Opening Checklist', filters={
-#         'user_name': p_username,
-#         'chef_open_branch': p_branch,
-#         'chef_open_date': p_day
-#     }
-#     )
-#
-#     if rec_count > 0:
-#         return True
-#
-#     return False
-
-
-@frappe.whitelist()
-def get_the_branch_name_for_the_user(emailid):
-    branch_id = frappe.db.get_value(
-        "User to Branch Assignment",
-        {"user": emailid},
-        "branch"
-        )
-
-    branch_name = frappe.db.get_value(
-        "Branch",
-        {"name": branch_id},
-        "branch_name",
-        )
-
-    result = {"branch_id": branch_id, "branch_name": branch_name}
-    return result
-
 
 @frappe.whitelist()
 def get_the_branch_name_for_the_user2(emailid):
@@ -234,19 +213,18 @@ def get_asset_master_child_based_on_branch_category(branch_param, category_param
 
 
 @frappe.whitelist()
-def get_asset_master_singltable_child_based_on_branch_category(branch_param, category_param):
+def get_asset_master_singltable_child_based_on_branch(branch_param):
     # branch_param = 1
     # category_param = 1
     parent = frappe.qb.DocType("Asset Master")
     print("branch_param")
     print(branch_param)
-    print(category_param)
+    # print(category_param)
     # child = frappe.qb.DocType("Asset Master Child")
     query = (
         frappe.qb.from_(parent)
         .select(parent.branch_id, parent.category, parent.item, parent.standard_stock)
-        .where(parent.category == category_param)
-        .where(parent.branch_id == branch_param)
+        .where(parent.branch == branch_param)
     )
     result = query.run()
     sql_text = query.get_sql()

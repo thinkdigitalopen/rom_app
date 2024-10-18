@@ -16,8 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
-            'category_name': d.category_name,
+            'branch': d.branch,
             'item': d.item,
             'standard_stock': d.standard_stock,
             'current_stock': d.current_stock,
@@ -47,13 +46,8 @@ def get_columns():
             'fieldtype': 'Date',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
-            'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'category_name',
-            'label': 'Category Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -89,8 +83,7 @@ def get_data(filters):
     ic.name,
     ic.date,
     ic.user_name,
-    ic.branch_name,
-    ic.category_name,
+    ic.branch,
     icc.item,
     icc.standard_stock,
     icc.current_stock,
@@ -103,7 +96,7 @@ def get_data(filters):
         """
     where_cond = f" WHERE ic.`date` between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ic.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ic.branch = '{conditions['branch_filter']}' "
     if "category_filter" in conditions:
         where_cond = where_cond + f" AND ic.category_id = '{conditions['category_filter']}' "
     if "item_filter" in conditions:
@@ -144,7 +137,7 @@ def get_data_by_difference(filters):
         """
     where_cond = f" WHERE ic.`date` between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ic.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ic.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By ic.date "
     order_by = " ORDER BY ic.date DESC "

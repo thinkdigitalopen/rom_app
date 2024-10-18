@@ -89,10 +89,11 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 		fieldtype: 'Button',
 		fieldname: 'submit_button',
 		click: function ()  {
-			chef_opening_checklist_audit('on-submit');
-			chef_closing_checklist_audit('on-submit');
-			dm_opening_checklist_audit('on-submit');
-			dm_closing_checklist_audit('on-submit');
+			//chart1
+			fb_opening_checklist_audit('on-submit');
+			fb_closing_checklist_audit('on-submit');
+			op_opening_checklist_audit('on-submit');
+			op_closing_checklist_audit('on-submit');
 			chef_production_register('on-submit');
 			sales_report_register('on-submit');
 			sales_by_payment_mode('on-submit');
@@ -194,12 +195,9 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		let from_date = filters.from_date_filter;
 		let to_date = filters.to_date_filter;
 
-
 		let path_report_name = "/app/query-report/{report_name}?";
 		let path_cond ="from_date_filter={from_date_filter}&to_date_filter={to_date_filter}";
 		let path_branch="&branch_filter={branch_filter}";
-
-
 
 		path_report_name = path_report_name.replace("{report_name}", report_name);
 
@@ -212,7 +210,6 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		console.log('path_report_name',path_report_name);
 		console.log('path_cond',path_cond);
 		console.log('report_url',report_url);
-
 
 		console.log('filters', filters);
 		if (filters.hasOwnProperty("branch_filter")) {
@@ -228,14 +225,12 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		console.log(report_url);
 		window.open(report_url,'_blank', 'noopener,noreferrer');
 	}
-
 	// ^^^^^^^^^^^^^^^^   NEW TAB simple end   ^^^^^^^^^^^^^^^^^^
 
 
 
 	// $$$$$$$$$$$$$$$$$$$- chef opening checklist audit - start - $$$$$$$$$$$$$
-
-	let chef_opening_checklist_audit  = function(time_of_invoke){
+	let fb_opening_checklist_audit  = function(time_of_invoke){
 
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
@@ -246,31 +241,30 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 			filters = global_get_filters_on_submit();
 		}
 
-		console.log('-----filters----- chef_opening_checklist_chef_audit ')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.chef_opening_checklist_register.chef_opening_checklist_register.get_data",
+			method: "rom_app.restaurant_ops_mgmt.report.fb_opening_checklist_register.fb_opening_checklist_register.get_data",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
-				console.log(filters);
-				chef_opening_checklist_chef_audit_chart(data, filters);
-				chef_opening_checklist_rm_audit_chart(data, filters);
+				// console.log(filters);
+				// console.log("data ", data);
+				fb_opening_checklist_audit_chart(data, filters);
 			}
 		})
 	}
 
 
-	let chef_opening_checklist_chef_audit_chart  = function(data, filters){
+	let fb_opening_checklist_audit_chart  = function(data, filters){
 
-		console.log("-------------- chef_opening_checklist_chef_audit_chart -------------- ");
+		console.log("-------------- fb_opening_checklist_audit_chart -------------- ");
 		console.log(data);
 		let audit = [];
 		let message = data.message;
 		message.forEach((item) => {
 			console.log(item);
-			audit.push(item.chef_open_child_yes);
+			audit.push(item.audit);
 		});
 		console.log(audit);
 		let audit_yes = itemCounter(audit, 1);
@@ -279,9 +273,9 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 		title: {
-			text: "Chef Audit"
+			text: "FB Opening Checklist Audit"
 		},
-		bindto: "#chef_opening_checklist_chef_audit_chart",
+		bindto: "#fb_opening_checklist_audit_chart",
 		data: {
 			type: "pie",
 			columns: [
@@ -289,49 +283,11 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 				["No", audit_no]
 			],
 			 onclick: function(d, element) {
-				console.log('audit_yes',audit_yes);
-				console.log('audit_no',audit_no);
-				console.log(' chef_opening_checklist_chef_audit_chart ',d, element);
-				let report_name = "Chef Opening Checklist Register";
-				let report_cond = "chef_audit_filter";
-				opening_new_tab(report_name, filters, report_cond, d.id);
-			}
-		}
-		});
-	}
-
-
-
-	let chef_opening_checklist_rm_audit_chart  = function(data, filters){
-		console.log("-------------- chef_opening_checklist_rm_audit_chart -------------- ");
-		console.log(data);
-		let audit = [];
-		let message = data.message;
-		message.forEach((item) => {
-			console.log(item);
-			audit.push(item.rm_audit);
-		});
-		console.log(audit);
-		let audit_yes = itemCounter(audit, 1);
-		let audit_no = itemCounter(audit, 0);
-
-		var chart = bb.generate({
-		title: {
-			text: "RM Audit"
-		},
-		bindto: "#chef_opening_checklist_rm_audit_chart",
-		data: {
-			type: "pie",
-			columns: [
-				["Yes", audit_yes],
-				["No", audit_no]
-			],
-			 onclick: function(d, element) {
-				console.log('audit_yes',audit_yes);
-				console.log('audit_no',audit_no);
-				console.log(' chef_opening_checklist_rm_audit_chart',d, element);
-				let report_name = "Chef Opening Checklist Register";
-				let report_cond = "rm_audit_filter";
+				// console.log('audit_yes',audit_yes);
+				// console.log('audit_no',audit_no);
+				// console.log(' fb_opening_checklist_audit_chart ',d, element);
+				let report_name = "FB Opening Checklist Register";
+				let report_cond = "audit_filter";
 				opening_new_tab(report_name, filters, report_cond, d.id);
 			},
 			colors: {
@@ -341,13 +297,11 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		}
 		});
 	}
-
 	// $$$$$$$$$$$$$$$$$$$- chef opening checklist audit - end- $$$$$$$$$$$$$
 
 
    // #################chef closing checklist audit - start########################################
-
-	let chef_closing_checklist_audit  = function(time_of_invoke){
+	let fb_closing_checklist_audit  = function(time_of_invoke){
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
 			console.log('on-load');
@@ -360,25 +314,25 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		console.log('-----filters----- chef_closing_checklist_chef_audit ')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.chef_closing_checklist_register.chef_closing_checklist_register.get_data",
+			method: "rom_app.restaurant_ops_mgmt.report.fb_closing_checklist_register.fb_closing_checklist_register.get_data",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
-				chef_closing_checklist_chef_audit_chart(data, filters);
-				chef_closing_checklist_rm_audit_chart(data, filters);
+				fb_closing_checklist_audit_chart(data, filters);
+				// chef_closing_checklist_rm_audit_chart(data, filters);
 			}
 		})
 	}
 
-	let chef_closing_checklist_chef_audit_chart  = function(data, filters){
-	console.log("-------------- chef_closing_checklist_chef_audit_chart -------------- ");
+	let fb_closing_checklist_audit_chart  = function(data, filters){
+	console.log("-------------- fb_closing_checklist_audit_chart -------------- ");
 		console.log(data);
 		let audit = [];
 		let message = data.message;
 		message.forEach((item) => {
 			console.log(item);
-			audit.push(item.chef_close_child_yes);
+			audit.push(item.audit);
 		});
 		console.log(audit);
 		let audit_yes = itemCounter(audit, 1);
@@ -386,9 +340,9 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "Chef Audit"
+			text: "FB Closing Checklist Audit"
 			},
-			bindto: "#chef_closing_checklist_chef_audit_chart",
+			bindto: "#fb_closing_checklist_audit_chart",
 			data: {
 				type: "pie",
 				columns: [
@@ -396,67 +350,27 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 					["No", audit_no]
 				],
 				onclick: function(d, element) {
-					console.log('audit_yes',audit_yes);
-					console.log('audit_no',audit_no);
-					console.log(' chef_closing_checklist_chef_audit_chart',d, element);
-					let report_name = "Chef Closing Checklist Register";
-					let report_cond = "chef_audit_filter";
-					opening_new_tab(report_name, filters, report_cond, d.id);
-				}
-			}
-		});
-	}
-
-	let chef_closing_checklist_rm_audit_chart  = function(data, filters){
-		console.log("-------------- chef_closing_checklist_rm_audit_chart -------------- ");
-		console.log(data);
-		let audit = [];
-		let message = data.message;
-		message.forEach((item) => {
-			console.log(item);
-			audit.push(item.rm_audit);
-		});
-		console.log(audit);
-		let audit_yes = itemCounter(audit, 1);
-		let audit_no = itemCounter(audit, 0);
-
-		var chart = bb.generate({
-			title: {
-			text: "RM Audit"
-			},
-			bindto: "#chef_closing_checklist_rm_audit_chart",
-			data: {
-				type: "pie",
-				columns: [
-					["Yes", audit_yes],
-					["No", audit_no]
-				],
-				onclick: function(d, element) {
-					console.log('audit_yes',audit_yes);
-					console.log('audit_no',audit_no);
-					console.log(' chef_closing_checklist_rm_audit_chart',d, element);
-					let report_name = "Chef Closing Checklist Register";
-					let report_cond = "rm_audit_filter";
+					// console.log('audit_yes',audit_yes);
+					// console.log('audit_no',audit_no);
+					// console.log(' fb_closing_checklist_audit_chart',d, element);
+					let report_name = "FB Closing Checklist Register";
+					let report_cond = "audit_filter";
 					opening_new_tab(report_name, filters, report_cond, d.id);
 				},
-				colors: {
-					Yes: "#2e8b57",
-					No: "#ff6347"
-				}
+			colors: {
+				Yes: "#2e8b57",
+				No: "#ff6347"
+			}
 			}
 		});
 	}
-
-
    // ################# chef closing checklist audit - end ########################################
 
 
 
 
 //  ===================== dm opening checklist audit - start ===================================
-
-
-	let dm_opening_checklist_audit  = function(time_of_invoke){
+	let op_opening_checklist_audit  = function(time_of_invoke){
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
 			console.log('on-load');
@@ -469,26 +383,24 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		console.log('-----filters----- dm_opening_checklist_dm_audit ')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.dm_opening_checklist_register.dm_opening_checklist_register.get_data",
+			method: "rom_app.restaurant_ops_mgmt.report.op_opening_checklist_register.op_opening_checklist_register.get_data",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
-				dm_opening_checklist_dm_audit_chart(data);
-				dm_opening_checklist_rm_audit_chart(data);
+				op_opening_checklist_audit_chart(data);
 			}
 		})
 	}
 
-
-		let dm_opening_checklist_dm_audit_chart  = function(data){
-		console.log("-------------- dm_opening_checklist_dm_audit_chart -------------- ");
+		let op_opening_checklist_audit_chart  = function(data){
+		console.log("-------------- op_opening_checklist_audit_chart -------------- ");
 		console.log(data);
 		let audit = [];
 		let message = data.message;
 		message.forEach((item) => {
 			console.log(item);
-			audit.push(item.dm_open_child_yes);
+			audit.push(item.audit);
 		});
 		console.log(audit);
 		let audit_yes = itemCounter(audit, 1);
@@ -496,9 +408,9 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "DM Audit"
+			text: "Op Opening Checklist Audit"
 			},
-			bindto: "#dm_opening_checklist_dm_audit_chart",
+			bindto: "#op_opening_checklist_audit_chart",
 			data: {
 				type: "pie",
 				columns: [
@@ -506,51 +418,11 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 					["No", audit_no]
 				],
 				onclick: function(d, element) {
-					console.log('audit_yes',audit_yes);
-					console.log('audit_no',audit_no);
-					console.log(' dm_opening_checklist_dm_audit_chart  ',d, element);
-					let report_name = "Dm Opening Checklist Register";
-					let report_cond = "dm_open_child_yes";
-					opening_new_tab(report_name, filters, report_cond, d.id);
-				}
-			}
-		});
-	}
-
-
-
-
-	let dm_opening_checklist_rm_audit_chart  = function(data){
-		console.log("-------------- dm_opening_checklist_rm_audit_chart -------------- ");
-		console.log(data);
-		let audit = [];
-		let message = data.message;
-		message.forEach((item) => {
-			console.log(item);
-			audit.push(item.rm_audit);
-		});
-		console.log(audit);
-		let audit_yes = itemCounter(audit, 1);
-		let audit_no = itemCounter(audit, 0);
-		console.log('audit_yes',audit_yes);
-		console.log('audit_no',audit_no);
-		var chart = bb.generate({
-			title: {
-			text: "RM Audit"
-			},
-			bindto: "#dm_opening_checklist_rm_audit_chart",
-			data: {
-				type: "pie",
-				columns: [
-					["Yes", audit_yes],
-					["No", audit_no]
-				],
-				onclick: function(d, element) {
-					console.log('audit_yes',audit_yes);
-					console.log('audit_no',audit_no);
-					console.log(' dm_opening_checklist_rm_audit_chart ',d, element);
-					let report_name = "Dm Opening Checklist Register";
-					let report_cond = "rm_audit_filter";
+					// console.log('audit_yes',audit_yes);
+					// console.log('audit_no',audit_no);
+					// console.log(' op_opening_checklist_audit_chart  ',d, element);
+					let report_name = "Op Opening Checklist Register";
+					let report_cond = "audit_filter";
 					opening_new_tab(report_name, filters, report_cond, d.id);
 				},
 			colors: {
@@ -560,14 +432,11 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 			}
 		});
 	}
-
-
-
 	//  ====================  dm opening checklist audit - end ===================================
 
 	//  *****************  dm closing checklist audit - start  ***********************************
 
-	let dm_closing_checklist_audit  = function(time_of_invoke){
+	let op_closing_checklist_audit  = function(time_of_invoke){
 		let filters = "";
 		if(time_of_invoke == 'on-load'){
 			console.log('on-load');
@@ -580,26 +449,24 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 		console.log('-----filters----- dm_closing_checklist_dm_audit ')
 		console.log(filters);
 		frappe.call({
-			method: "rom_app.restaurant_ops_mgmt.report.dm_closing_checklist_register.dm_closing_checklist_register.get_data",
+			method: "rom_app.restaurant_ops_mgmt.report.op_closing_checklist_register.op_closing_checklist_register.get_data",
 			args: {
 				'filters':filters
 			},
 			callback: function(data) {
-				dm_closing_checklist_dm_audit_chart(data);
-				dm_closing_checklist_rm_audit_chart(data);
+				op_closing_checklist_audit_chart(data);
 			}
 		})
 	}
 
-
-	let dm_closing_checklist_dm_audit_chart  = function(data){
-		console.log("-------------- dm_closing_checklist_dm_audit_chart -------------- ");
+	let op_closing_checklist_audit_chart  = function(data){
+		console.log("-------------- op_closing_checklist_audit_chart -------------- ");
 		console.log(data);
 		let audit = [];
 		let message = data.message;
 		message.forEach((item) => {
 			console.log(item);
-			audit.push(item.dm_close_child_yes);
+			audit.push(item.audit);
 		});
 		console.log(audit);
 		let audit_yes = itemCounter(audit, 1);
@@ -607,9 +474,9 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "DM Audit"
+			text: "Op Closing Checklist Audit"
 			},
-			bindto: "#dm_closing_checklist_dm_audit_chart",
+			bindto: "#op_closing_checklist_audit_chart",
 			data: {
 				type: "pie",
 				columns: [
@@ -617,55 +484,18 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 					["No", audit_no]
 				],
 				onclick: function(d, element) {
-					console.log('audit_yes',audit_yes);
-					console.log('audit_no',audit_no);
-					console.log(' dm_closing_checklist_dm_audit_chart ',d, element);
-					let report_name = "Dm Closing Checklist Register";
-					let report_cond = "dm_close_child_yes";
+					// console.log('audit_yes',audit_yes);
+					// console.log('audit_no',audit_no);
+					// console.log(' op_closing_checklist_audit_chart ',d, element);
+					let report_name = "Op Closing Checklist Register";
+					let report_cond = "audit_filter";
 					opening_new_tab(report_name, filters, report_cond, d.id);
-				}
-			}
-		});
-	}
-
-
-	let dm_closing_checklist_rm_audit_chart  = function(data){
-		console.log("-------------- dm_closing_checklist_rm_audit_chart -------------- ");
-		console.log(data);
-		let audit = [];
-		let message = data.message;
-		message.forEach((item) => {
-			console.log(item);
-			audit.push(item.rm_audit);
-		});
-		console.log(audit);
-		let audit_yes = itemCounter(audit, 1);
-		let audit_no = itemCounter(audit, 0);
-
-		var chart = bb.generate({
-		title: {
-		text: "RM Audit"
-		},
-		bindto: "#dm_closing_checklist_rm_audit_chart",
-		data: {
-			type: "pie",
-			columns: [
-				["Yes", audit_yes],
-				["No", audit_no]
-			],
-			onclick: function(d, element) {
-				console.log('audit_yes',audit_yes);
-				console.log('audit_no',audit_no);
-				console.log(' dm_closing_checklist_rm_audit_chart ',d, element);
-				let report_name = "Dm Closing Checklist Register";
-				let report_cond = "rm_audit_filter";
-				opening_new_tab(report_name, filters, report_cond, d.id);
-			},
+				},
 			colors: {
 				Yes: "#2e8b57",
 				No: "#ff6347"
 			}
-		}
+			}
 		});
 	}
    //  ***********************  dm closing checklist audit - end   **************************************
@@ -1570,11 +1400,12 @@ let chef_indent_by_quantity  = function(time_of_invoke){
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	$(frappe.render_template("single_page_chart", {})).appendTo(page.body);
-	chef_opening_checklist_audit('on-load');
-	chef_closing_checklist_audit('on-load');
-	dm_opening_checklist_audit('on-load');
-	dm_closing_checklist_audit('on-load');
-
+	//chart1
+	fb_opening_checklist_audit('on-load');
+	fb_closing_checklist_audit('on-load');
+	op_opening_checklist_audit('on-load');
+	op_closing_checklist_audit('on-load');
+ //
 	chef_production_register('on-load');
 	sales_report_register('on-load');
 	sales_by_payment_mode('on-load');

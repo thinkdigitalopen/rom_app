@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 1,
+ "idx": 20,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-08-04 20:16:46.409973",
+ "modified": "2024-10-18 07:07:04.426013",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Discount Form Register",
@@ -20,22 +20,19 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "Rom_RM_Role"
-  },
-  {
    "role": "System Manager"
   },
   {
-   "role": "Rom_Dashboard_Role"
+   "role": "Rom_Manage_Role"
   },
   {
-   "role": "Rom_Chef_Role"
+   "role": "Rom_FB_Role"
   },
   {
    "role": "Rom_Admin_Role"
   },
   {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Op_Role"
   }
  ]
 }

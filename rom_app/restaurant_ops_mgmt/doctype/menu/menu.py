@@ -6,7 +6,7 @@ class Menu(Document):
     def before_insert(self):
         print('before_insert')
         rec_count = frappe.db.count(self.doctype, filters={
-            'branch_id': self.branch_id,
+            'branch': self.branch,
             'menu_item': self.menu_item,
         })
         if (rec_count == 1):
@@ -19,13 +19,13 @@ class Menu(Document):
         if (rec_already_exist == 1):
             print('update -=-=-=-=-=')
             db_doc = frappe.get_doc(self.doctype, self.name)
-            print('cur-db ', db_doc.name, db_doc.branch_id, db_doc.menu_item,)
-            print('self   ', self.name, self.branch_id, self.menu_item,)
-            get_fields = ['name', 'branch_id', 'menu_item']
+            print('cur-db ', db_doc.name, db_doc.branch, db_doc.menu_item,)
+            print('self   ', self.name, self.branch, self.menu_item,)
+            get_fields = ['name', 'branch', 'menu_item']
 
             result_list = frappe.db.get_list(self.doctype,
                                              filters={
-                                                 'branch_id': self.branch_id,
+                                                 'branch': self.branch,
                                                  'menu_item': self.menu_item},
                                              fields=get_fields, as_list=True)
             print(result_list)

@@ -5,13 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "ticket_desc",
   "responsible_person",
   "reported_by",
   "completed",
-  "branch_id",
   "column_break_iipw",
   "date",
   "date_time",
@@ -21,14 +20,6 @@
   "image"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
   {
    "default": "user_fullname",
    "fieldname": "user_name",
@@ -40,7 +31,7 @@
    "fieldname": "responsible_person",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Responsible Person",
+   "label": "Resp. Person",
    "permlevel": 2,
    "reqd": 1
   },
@@ -59,8 +50,7 @@
    "fieldtype": "Check",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Completed",
-   "permlevel": 1
+   "label": "Completed"
   },
   {
    "fieldname": "column_break_iipw",
@@ -105,12 +95,6 @@
    "permlevel": 2
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
-  {
    "fieldname": "ticket_desc",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -126,11 +110,21 @@
    "max_height": "25px",
    "options": "photo",
    "width": "25px"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-12 21:59:52.626468",
+ "modified": "2024-10-19 03:22:36.712940",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",

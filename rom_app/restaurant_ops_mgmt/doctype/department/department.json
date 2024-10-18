@@ -24,12 +24,13 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
+   "read_only": 1,
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 12:51:58.365547",
+ "modified": "2024-10-18 18:13:46.780034",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Department",

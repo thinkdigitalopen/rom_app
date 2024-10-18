@@ -5,7 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "customer_name",
   "table_no",
@@ -19,8 +19,7 @@
   "action_for_complaint",
   "result_of_action",
   "responsible_department",
-  "remarks",
-  "branch_id"
+  "remarks"
  ],
  "fields": [
   {
@@ -106,20 +105,6 @@
    "label": "Remarks"
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
-  {
    "fieldname": "menu_item",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -132,11 +117,21 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Menu Item Price"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-28 17:57:30.872277",
+ "modified": "2024-10-18 21:28:48.232305",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Incident Report",
@@ -163,18 +158,9 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Rom_DM_Role",
+   "role": "Rom_Op_Role",
    "share": 1,
    "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Rom_RM_Role",
-   "share": 1
   }
  ],
  "show_title_field_in_link": 1,

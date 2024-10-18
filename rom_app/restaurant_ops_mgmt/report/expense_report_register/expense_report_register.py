@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'expense_desc': d.expense_desc,
             'expense_amount': d.expense_amount,
             'responsible_person': d.responsible_person,
@@ -46,8 +46,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -82,7 +82,7 @@ def get_data(filters):
     expense.name,
     expense.date,
     expense.user_name,
-    expense.branch_name,
+    expense.branch,
     expense.expense_desc,
     expense.expense_amount,
     expense.responsible_person,
@@ -93,7 +93,7 @@ def get_data(filters):
     where_cond = f" WHERE expense.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND expense.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND expense.branch = '{conditions['branch_filter']}' "
     if "expense_desc_filter" in conditions:
         where_cond = where_cond + f" AND expense.expense_desc LIKE '%{conditions['expense_desc_filter']}%' "
     if "responsible_person_filter" in conditions:
@@ -133,7 +133,7 @@ def get_data_by_count(filters):
     where_cond = f" WHERE expense.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND expense.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND expense.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

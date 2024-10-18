@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'target': d.target,
             'actual_sales': d.actual_sales,
             'no_of_bills': d.no_of_bills,
@@ -53,8 +53,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -120,7 +120,7 @@ def get_data(filters):
     name,
     date,
     user_name,
-    branch_name,
+    branch,
     target,
     actual_sales,
     no_of_bills,
@@ -137,7 +137,7 @@ def get_data(filters):
         """
     where_cond = f" WHERE date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
 
     build_sql = f"{build_sql}  {where_cond}"
     print("-------- full sql ------------")
@@ -177,7 +177,7 @@ def get_data_group_by_date(filters):
         """
     where_cond = f" WHERE date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

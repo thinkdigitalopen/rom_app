@@ -16,14 +16,15 @@ def execute(filters=None):
         row = frappe._dict({
             'name': d.name,
             'date': d.date,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'item': d.item,
             'unit': d.unit,
             'price': d.price,
             'opening_stock': d.opening_stock,
             'opening_amount': d.opening_amount,
             'closing_stock': d.closing_stock,
-            'min_stock': d.min_stock
+            'min_stock': d.min_stock,
+            'group_name': d.group_name
         })
         data.append(row)
 
@@ -44,7 +45,7 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
+            'fieldname': 'branch',
             'label': 'Branch',
             "fieldtype": "Data",
         },
@@ -83,6 +84,11 @@ def get_columns():
             'fieldname': 'min_stock',
             'label': 'Min Stock',
             'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'group_name',
+            'label': 'RM Group',
+            'fieldtype': 'Data',
         }
     ]
 
@@ -100,10 +106,16 @@ def get_data(filters):
 
 def build_sql(conditions):
     sql = """
-    SELECT raw.name,   bra.branch_name,  raw.item, raw.unit, raw.price,
-    raw.opening_stock, raw.opening_amount, raw.closing_stock,
-    raw.min_stock, raw.`date` FROM `tabRaw Material Only` raw
-    INNER JOIN `tabBranch` bra ON branch = bra.name
+    SELECT
+        raw.name,  raw.branch,  raw.item, raw.unit, raw.price,
+        raw.opening_stock, raw.opening_amount, raw.closing_stock,
+        raw.min_stock, raw.`date`, rawgrp.group_name
+    FROM
+        `tabRaw Material Only` raw
+    LEFT JOIN
+        `tabRaw Material Group` rawgrp
+     ON
+       raw.rm_group = rawgrp.name
     """
     full_sql = get_where_filter(sql, conditions)
     return full_sql
@@ -112,9 +124,11 @@ def build_sql(conditions):
 def get_where_filter(sql, conditions):
     where_cond = " WHERE  1=1 "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND raw.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
-        where_cond = where_cond + f" AND item  LIKE '%{conditions['raw_material_filter']}%'  "
+        where_cond = where_cond + f" AND raw.item  LIKE '%{conditions['raw_material_filter']}%'  "
+    if "group_name_filter" in conditions:
+        where_cond = where_cond + f" AND raw.rm_group = '{conditions['group_name_filter']}' "
     sql = f"{sql}  {where_cond}"
     return sql
 

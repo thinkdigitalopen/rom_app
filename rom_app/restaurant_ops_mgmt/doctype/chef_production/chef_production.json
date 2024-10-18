@@ -5,9 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
-  "branch_id",
   "column_break_rpev",
   "date",
   "briyani_category_wastage_amount",
@@ -17,19 +16,6 @@
   "chicken_category_list"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name"
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
   {
    "default": "user_fullname",
    "fieldname": "user_name",
@@ -81,11 +67,21 @@
    "in_standard_filter": 1,
    "label": "Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-29 21:53:51.259813",
+ "modified": "2024-10-18 22:05:55.524706",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Production",
@@ -109,5 +105,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "branch_name"
+ "title_field": "date"
 }

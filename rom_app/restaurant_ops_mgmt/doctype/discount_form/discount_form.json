@@ -5,12 +5,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "known_to",
   "customer_name",
   "customer_phone",
-  "branch_id",
   "column_break_slgp",
   "date",
   "bill_value",
@@ -19,14 +18,6 @@
   "discounted_price"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
   {
    "default": "user_fullname",
    "fieldname": "user_name",
@@ -41,12 +32,6 @@
    "in_list_view": 1,
    "label": "Customer Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
   },
   {
    "fieldname": "column_break_slgp",
@@ -78,7 +63,7 @@
    "default": "0",
    "fieldname": "discount_percentage",
    "fieldtype": "Int",
-   "label": "Discount Percentage",
+   "label": "Discount %",
    "read_only": 1
   },
   {
@@ -93,18 +78,28 @@
    "fieldname": "discounted_price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Discoun Price",
+   "label": "Disc. Price",
    "read_only": 1
   },
   {
    "fieldname": "customer_phone",
    "fieldtype": "Data",
    "label": "Customer Phone"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 18:31:10.334601",
+ "modified": "2024-10-18 21:33:01.703834",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Discount Form",
@@ -120,18 +115,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Rom_RM_Role",
    "share": 1,
    "write": 1
   }

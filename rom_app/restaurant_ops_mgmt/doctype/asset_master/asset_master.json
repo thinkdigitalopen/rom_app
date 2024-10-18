@@ -5,12 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
-  "category",
+  "branch",
   "item",
+  "category",
+  "column_break_ihrc",
   "standard_stock",
-  "price",
-  "branch_id"
+  "price"
  ],
  "fields": [
   {
@@ -19,51 +19,48 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Category",
-   "options": "Category",
-   "reqd": 1
+   "options": "Category"
   },
   {
    "fieldname": "item",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item",
    "reqd": 1
   },
   {
-   "default": "0",
    "fieldname": "standard_stock",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Standard Stock"
+   "label": "Standard Stock",
+   "reqd": 1
   },
   {
-   "default": "0",
    "fieldname": "price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Price"
+   "label": "Price",
+   "reqd": 1
   },
   {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
+   "fieldname": "column_break_ihrc",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
+   "fieldname": "branch",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Branch Id",
-   "read_only": 1
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 16:03:31.599206",
+ "modified": "2024-10-18 19:57:25.305150",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Master",

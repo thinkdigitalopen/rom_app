@@ -1,0 +1,177 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"HUUqy_WGS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Food and Beverage Space<br></span>\",\"col\":12}},{\"id\":\"VnZ8Rg8wTp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays FB Open Checklist Audit %\",\"col\":4}},{\"id\":\"2wW2qMxz8I\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays FB Close Checklist Audit %\",\"col\":4}},{\"id\":\"npl7itpDei\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8VVuXjY0Ny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Opening Checklist\",\"col\":4}},{\"id\":\"CjwtjwG6kT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"WkHpcclDpR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production\",\"col\":4}},{\"id\":\"LI1fOtu3hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":4}},{\"id\":\"n-JRK9enjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Closing Checklist\",\"col\":4}},{\"id\":\"UC3-4_UlQz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":4}},{\"id\":\"C1J2m7Oj_J\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"k90SlrtEpv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"_V8fu61E7u\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Mobile <br></b></span>\",\"col\":12}},{\"id\":\"UhW1TGKFsF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile FB Opening Checklist\",\"col\":4}},{\"id\":\"OhCXi3Wk0k\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile FB Closing Checklist \",\"col\":4}},{\"id\":\"aaH8Z6-_5o\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"dd96sQy-y9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Opening Checklist Register\",\"col\":4}},{\"id\":\"n8WLJRxR_d\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"TB3a7ot-cy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production Register\",\"col\":4}},{\"id\":\"zrhcEi_2K4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept Register\",\"col\":4}},{\"id\":\"4AD2I_Phhe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Closing Checklist Register\",\"col\":4}},{\"id\":\"8g0goDsr5s\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report Register\",\"col\":4}},{\"id\":\"S23bxt0tlW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"3-1HLRQxjH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only Register\",\"col\":4}},{\"id\":\"I2x-NGn2fb\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "creation": "2024-07-20 08:21:09.729604",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "upload-lg",
+ "idx": 2,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Food and Beverage",
+ "links": [],
+ "modified": "2024-10-18 23:59:09.592413",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Food and Beverage",
+ "number_cards": [
+  {
+   "label": "Todays FB Open Checklist Audit %",
+   "number_card_name": "Todays FB Open Checklist Audited"
+  },
+  {
+   "label": "Todays FB Close Checklist Audit %",
+   "number_card_name": "Todays FB Close Checklist Audited"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Rom_FB_Role"
+  }
+ ],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Mobile FB Opening Checklist",
+   "link_to": "fb-open-check-mob",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FB Opening Checklist",
+   "link_to": "FB Opening Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Chef Production Register",
+   "link_to": "Chef Production Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Ticket Report Register",
+   "link_to": "Ticket Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FB Opening Checklist Register",
+   "link_to": "FB Opening Checklist Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Raw Material Only",
+   "link_to": "Raw Material Only",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Mobile FB Closing Checklist ",
+   "link_to": "fb-close-check-mob",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FB Closing Checklist",
+   "link_to": "FB Closing Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Chef Indent By Dept Register",
+   "link_to": "Chef Indent By Dept Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Breakages Report Register",
+   "link_to": "Breakages Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FB Closing Checklist Register",
+   "link_to": "FB Closing Checklist Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report Register",
+   "link_to": "NC Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Raw Material Only Register",
+   "link_to": "Raw Material Only Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Ticket Report",
+   "link_to": "Ticket Report",
+   "stats_filter": "[[\"Ticket Report\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Chef Production",
+   "link_to": "Chef Production",
+   "stats_filter": "[[\"Chef Production\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Chef Indent By Dept",
+   "link_to": "Chef Indent By Dept",
+   "stats_filter": "[[\"Chef Indent By Dept\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Breakages Report",
+   "link_to": "Breakages Report",
+   "stats_filter": "[[\"Breakages Report\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Food and Beverage"
+}

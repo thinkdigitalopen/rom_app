@@ -22,12 +22,6 @@ frappe.query_reports["Asset Count Register"] = {
 			"options": "Branch",
 		},
 		{
-			"fieldname": "category_filter",
-			"label": "Category",
-			"fieldtype": "Link",
-			"options": "Category",
-		},
-		{
 			"fieldname": "item_filter",
 			"label": "Item",
 			"fieldtype": "Data",

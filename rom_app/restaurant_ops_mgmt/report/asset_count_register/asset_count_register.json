@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 19,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-09-25 23:39:41.492446",
+ "modified": "2024-10-18 06:56:48.608660",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Count Register",
@@ -23,17 +23,13 @@
    "role": "System Manager"
   },
   {
-   "role": "Rom_Chef_Role"
+   "role": "Rom_FB_Role"
   },
   {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Op_Role"
   },
   {
-   "role": "Rom_RM_Role"
-  },
-  {
-   "role": "Rom_Dashboard_Role"
+   "role": "Rom_Manage_Role"
   }
- ],
- "timeout": 0
+ ]
 }

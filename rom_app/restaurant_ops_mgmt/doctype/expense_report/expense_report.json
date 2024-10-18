@@ -5,15 +5,14 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "expense_desc",
   "expense_amount",
   "responsible_person",
   "column_break_mwme",
-  "user_name",
   "date",
-  "remarks",
-  "branch_id"
+  "user_name",
+  "remarks"
  ],
  "fields": [
   {
@@ -22,8 +21,7 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date",
-   "read_only": 1
+   "label": "Date"
   },
   {
    "default": "user_fullname",
@@ -53,20 +51,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
-  {
    "fieldname": "remarks",
    "fieldtype": "Data",
    "label": "Remarks"
@@ -76,11 +60,21 @@
    "fieldtype": "Data",
    "label": "Responsible Person",
    "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 16:08:48.984638",
+ "modified": "2024-10-18 20:10:52.399771",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Expense Report",
@@ -104,6 +98,6 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "branch_name",
+ "title_field": "expense_desc",
  "track_changes": 1
 }

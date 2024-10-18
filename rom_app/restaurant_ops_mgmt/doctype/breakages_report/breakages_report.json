@@ -5,14 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
-  "category_name",
+  "branch",
   "item",
   "item_price",
+  "category",
   "quantity",
   "employee",
-  "category_id",
-  "branch_id",
   "column_break_iipw",
   "date",
   "user_name",
@@ -24,22 +22,8 @@
  ],
  "fields": [
   {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_iipw",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
   },
   {
    "fieldname": "item",
@@ -102,18 +86,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "category_name",
-   "fieldtype": "Data",
-   "label": "Category Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "category_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Category Id"
-  },
-  {
    "fetch_from": "item.price",
    "fieldname": "item_price",
    "fieldtype": "Currency",
@@ -133,11 +105,30 @@
    "fieldname": "attach_image",
    "fieldtype": "Attach Image",
    "label": "Attach Image"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item.category",
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Category"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-12 22:10:31.958988",
+ "modified": "2024-10-18 21:47:49.221955",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",

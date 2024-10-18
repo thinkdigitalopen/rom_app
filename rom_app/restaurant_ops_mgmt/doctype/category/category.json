@@ -6,7 +6,6 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
-  "category_type",
   "category_name"
  ],
  "fields": [
@@ -24,20 +23,14 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Branch",
-   "options": "Branch"
-  },
-  {
-   "fieldname": "category_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Category Type",
-   "options": "\nKitchen\nDining"
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 14:33:53.105010",
+ "modified": "2024-10-18 18:01:51.119132",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Category",

@@ -6,8 +6,7 @@ class AssetMaster(Document):
     def before_insert(self):
         print('before_insert')
         rec_count = frappe.db.count(self.doctype, filters={
-            'branch_id': self.branch_id,
-            'category': self.category,
+            'branch': self.branch,
             'item': self.item,
         })
         if (rec_count == 1):
@@ -20,18 +19,17 @@ class AssetMaster(Document):
         if (rec_already_exist == 1):
             print('update -=-=-=-=-=')
             db_doc = frappe.get_doc(self.doctype, self.name)
-            print('cur-db ', db_doc.name, db_doc.branch_id, db_doc.category,
-                  db_doc.item, db_doc.standard_stock, db_doc.price)
-            print('self   ', self.name, self.branch_id, self.category,
-                  self.item, self.standard_stock, self.price)
+            # print('cur-db ', db_doc.name, db_doc.branch, db_doc.category,
+            #       db_doc.item, db_doc.standard_stock, db_doc.price)
+            # print('self   ', self.name, self.branch, self.category,
+            #       self.item, self.standard_stock, self.price)
 
-            get_fields = ['name', 'branch_id', 'category',
+            get_fields = ['name', 'branch', 'category',
                           'item', 'standard_stock', 'price']
 
             result_list = frappe.db.get_list(self.doctype,
                                              filters={
-                                                 'branch_id': self.branch_id,
-                                                 'category': self.category,
+                                                 'branch': self.branch,
                                                  'item': self.item},
                                              fields=get_fields, as_list=True)
             print(result_list)

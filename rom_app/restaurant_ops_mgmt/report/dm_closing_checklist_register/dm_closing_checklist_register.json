@@ -2,20 +2,20 @@
  "add_total_row": 1,
  "columns": [],
  "creation": "2024-08-03 16:16:02.277115",
- "disabled": 0,
+ "disabled": 1,
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 9,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-08-03 16:16:02.277115",
+ "modified": "2024-10-18 07:08:04.198510",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dm Closing Checklist Register",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "Dm Closing Checklist",
+ "ref_doctype": "Op Closing Checklist",
  "report_name": "Dm Closing Checklist Register",
  "report_type": "Script Report",
  "roles": [
@@ -23,16 +23,13 @@
    "role": "System Manager"
   },
   {
-   "role": "Rom_RM_Role"
+   "role": "Rom_Op_Role"
   },
   {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Manage_Role"
   },
   {
-   "role": "Rom_Dashboard_Role"
-  },
-  {
-   "role": "Rom_Chef_Role"
+   "role": "Rom_FB_Role"
   },
   {
    "role": "Administrator"

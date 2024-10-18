@@ -9,7 +9,7 @@
  "idx": 66,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-08-28 15:10:50.677502",
+ "modified": "2024-10-18 07:09:21.953549",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent Register",
@@ -23,16 +23,13 @@
    "role": "System Manager"
   },
   {
-   "role": "Rom_Dashboard_Role"
+   "role": "Rom_Manage_Role"
   },
   {
-   "role": "Rom_RM_Role"
+   "role": "Rom_FB_Role"
   },
   {
-   "role": "Rom_Chef_Role"
-  },
-  {
-   "role": "Rom_DM_Role"
+   "role": "Rom_Op_Role"
   }
  ]
 }

@@ -9,21 +9,18 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-08-28 15:59:43.902568",
+ "modified": "2024-10-18 07:11:26.261526",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "chef_script_report1",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "Chef Opening Checklist",
+ "ref_doctype": "FB Opening Checklist",
  "report_name": "chef_script_report1",
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "Rom_Chef_Role"
-  },
-  {
-   "role": "Rom_RM_Role"
+   "role": "Rom_FB_Role"
   },
   {
    "role": "System Manager"

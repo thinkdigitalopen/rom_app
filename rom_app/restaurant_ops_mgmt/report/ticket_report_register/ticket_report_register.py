@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'department_name': d.department_name,
             'ticket_desc': d.ticket_desc,
             'date_time': d.date_time,
@@ -49,7 +49,7 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
+            'fieldname': 'branch',
             'label': 'Branch Name',
             'fieldtype': 'Data',
         },
@@ -100,7 +100,7 @@ def get_data(filters):
     ticket.name,
     ticket.date,
     ticket.user_name,
-    ticket.branch_name,
+    ticket.branch,
     dep.department_name,
     ticket.ticket_desc,
     ticket.date_time,
@@ -118,7 +118,7 @@ def get_data(filters):
     where_cond = f" WHERE ticket.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ticket.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ticket.branch = '{conditions['branch_filter']}' "
     if "department_filter" in conditions:
         where_cond = where_cond + f" AND ticket.department = '{conditions['department_filter']}' "
     if "ticket_desc_filter" in conditions:
@@ -167,7 +167,7 @@ def get_data_by_count(filters):
     where_cond = f" WHERE ticket.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND ticket.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND ticket.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

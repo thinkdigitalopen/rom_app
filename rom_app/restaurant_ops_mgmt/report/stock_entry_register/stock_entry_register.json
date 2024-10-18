@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 3,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-09-25 22:03:13.157437",
+ "modified": "2024-10-18 06:57:00.129769",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry Register",
@@ -26,11 +26,7 @@
    "role": "Rom_Store_Role"
   },
   {
-   "role": "Rom_Dashboard_Role"
-  },
-  {
-   "role": "Rom_RM_Role"
+   "role": "Rom_Manage_Role"
   }
- ],
- "timeout": 0
+ ]
 }

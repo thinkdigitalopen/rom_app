@@ -6,7 +6,7 @@ frappe.ui.form.on("Ticket Report", {
 
 		$('span.sidebar-toggle-btn').hide();
         $('.col-lg-2.layout-side-section').hide();
-
+/*
 		if (frm.is_new()) {
 
 			console.log('is_new');
@@ -48,6 +48,6 @@ frappe.ui.form.on("Ticket Report", {
 					};
 				});
 
-		}
+		}*/
 	},
 });

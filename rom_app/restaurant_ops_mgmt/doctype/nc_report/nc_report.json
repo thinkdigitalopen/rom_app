@@ -5,7 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "nc",
   "responsible_person",
@@ -17,17 +17,9 @@
   "department",
   "remarks",
   "photo",
-  "branch_id"
+  "image"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
   {
    "default": "user_fullname",
    "fieldname": "user_name",
@@ -58,12 +50,6 @@
    "fieldname": "remarks",
    "fieldtype": "Data",
    "label": "Remarks"
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id"
   },
   {
    "fieldname": "department",
@@ -107,11 +93,26 @@
    "fieldname": "completed",
    "fieldtype": "Check",
    "label": "Completed"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "photo"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-15 10:55:57.862678",
+ "modified": "2024-10-18 20:11:46.766686",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "NC Report",

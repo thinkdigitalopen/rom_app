@@ -16,7 +16,7 @@ def execute(filters=None):
             'name': d.name,
             'date': d.date,
             'user_name': d.user_name,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'category_name': d.category_name,
             'item': d.item,
             'quantity': d.quantity,
@@ -48,13 +48,13 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
             'fieldname': 'category_name',
-            'label': 'Category Name',
+            'label': 'Category',
             'fieldtype': 'Data',
         },
         {
@@ -84,6 +84,7 @@ def get_columns():
         },
     ]
 
+
 @frappe.whitelist()
 def get_data(filters):
     conditions = get_conditions(filters)
@@ -91,35 +92,34 @@ def get_data(filters):
     print(conditions)
     build_sql = """
     SELECT
-    br.name,
-    br.`date`,
-    br.user_name,
-    br.branch_name,
-    br.date_time,
-    br.branch_id,
-    cm.item ,
-    br.quantity,
-    br.employee,
-    br.cost,
-    br.remarks,
-    br.category_name,
-    br.category_id
+        br.name,
+        br.`date`,
+        br.user_name,
+        br.branch,
+        br.date_time,
+        cm.item ,
+        br.quantity,
+        br.employee,
+        br.cost,
+        br.remarks,
+        cat.category_name
     FROM
-    `tabBreakages Report` br
-    INNER JOIN
-    `tabAsset Master` cm
-    ON
-    br.item = cm.name
+        `tabBreakages Report` br
+    LEFT JOIN
+        `tabAsset Master` cm
+    ON   br.item = cm.name
+    LEFT JOIN
+         tabCategory cat
+    ON   br.category = cat.name
         """
     where_cond = f" WHERE br.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND br.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND br.branch = '{conditions['branch_filter']}' "
     if "asset_master__filter" in conditions:
         where_cond = where_cond + f" AND cm.name = '{conditions['asset_master__filter']}' "
     if "employee_filter" in conditions:
         where_cond = where_cond + f" AND br.employee LIKE '%{conditions['employee_filter']}%' "
-
 
     build_sql = f"{build_sql}  {where_cond}"
     print("-------- full sql ------------")
@@ -156,7 +156,7 @@ def get_data_by_group_by_date(filters):
         """
     where_cond = f" WHERE br.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND br.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND br.branch = '{conditions['branch_filter']}' "
 
     group_by = " GROUP By date "
     order_by = " ORDER BY date DESC "

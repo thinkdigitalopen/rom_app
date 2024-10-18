@@ -15,12 +15,11 @@ fixtures = [
         "filters": [
             [
                 "name", "in", [
-                    "Rom_Chef_Role",
-                    "Rom_DM_Role",
+                    "Rom_FB_Role",
+                    "Rom_Op_Role",
                     "Rom_Cash_Role",
                     "Rom_Store_Role",
-                    "Rom_RM_Role",
-                    "Rom_Dashboard_Role",
+                    "Rom_Manage_Role",
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
                 ]
@@ -32,12 +31,11 @@ fixtures = [
         "filters": [
             [
                 "role", "in", [
-                    "Rom_Chef_Role",
-                    "Rom_DM_Role",
+                    "Rom_FB_Role",
+                    "Rom_Op_Role",
                     "Rom_Cash_Role",
                     "Rom_Store_Role",
-                    "Rom_RM_Role",
-                    "Rom_Dashboard_Role",
+                    "Rom_Manage_Role",
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
                 ]

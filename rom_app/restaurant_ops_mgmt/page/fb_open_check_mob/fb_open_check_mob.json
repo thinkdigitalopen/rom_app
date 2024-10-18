@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2024-10-14 07:02:36.978238",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 2,
+ "modified": "2024-10-14 16:23:21.015188",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "fb-open-check-mob",
+ "owner": "Administrator",
+ "page_name": "fb-open-check-mob",
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Rom_FB_Role"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "FB Opn Chk"
+}

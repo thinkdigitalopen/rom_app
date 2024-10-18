@@ -1,0 +1,79 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":4}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"wAS-Vpl_pt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept Register\",\"col\":4}},{\"id\":\"XOdMwBrmgr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only Register\",\"col\":4}},{\"id\":\"IH3dpjcK0T\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
+ "creation": "2024-08-26 20:57:34.050043",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-energy-points",
+ "idx": 4,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Store",
+ "links": [],
+ "modified": "2024-10-18 20:32:46.555849",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Store",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Rom_Store_Role"
+  }
+ ],
+ "sequence_id": 9.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Chef Indent By Dept Register",
+   "link_to": "Chef Indent By Dept Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report Register",
+   "link_to": "NC Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Chef Indent By Dept",
+   "link_to": "Chef Indent By Dept",
+   "stats_filter": "[[\"Chef Indent By Dept\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Raw Material Only Register",
+   "link_to": "Raw Material Only Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Raw Material Only",
+   "link_to": "Raw Material Only",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Store"
+}
