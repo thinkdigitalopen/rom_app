@@ -121,6 +121,8 @@ frappe.pages['fb-open-check-mob'].on_page_load = function(wrapper) {
 
 	function get_fb_opening_checklist_child_mobile(basic_user_details){
 		console.log("start - get_fb_opening_checklist_child_mobile");
+		console.log("start - basic_user_details", basic_user_details);
+
 		// 'parent_name': 4,
 		// 'date': datetime.date(2024, 10, 14),
 		// 'user_name': 'fb1',
