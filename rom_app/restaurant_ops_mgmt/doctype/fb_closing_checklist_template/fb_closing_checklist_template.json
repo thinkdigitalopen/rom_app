@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-07-21 15:55:07.942007",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -28,11 +29,11 @@
   }
  ],
  "links": [],
- "modified": "2024-10-18 18:50:43.496346",
+ "modified": "2024-10-20 23:25:32.815848",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Closing Checklist Template",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-08-28 19:04:23.714936",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -33,15 +34,13 @@
    "fieldname": "standard_stock",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Standard Stock",
-   "reqd": 1
+   "label": "Standard Stock"
   },
   {
    "fieldname": "price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Price",
-   "reqd": 1
+   "label": "Price"
   },
   {
    "fieldname": "column_break_ihrc",
@@ -60,11 +59,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 19:57:25.305150",
+ "modified": "2024-10-21 00:15:38.211128",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Master",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {

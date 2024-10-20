@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-08-31 11:44:49.582557",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -77,11 +78,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 19:46:18.925885",
+ "modified": "2024-10-20 23:26:58.703877",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Menu",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {

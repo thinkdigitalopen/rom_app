@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-10-16 21:08:22.285527",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -30,11 +31,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 18:00:49.993659",
+ "modified": "2024-10-20 22:58:38.568670",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Group",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {

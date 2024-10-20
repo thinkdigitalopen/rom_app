@@ -161,7 +161,7 @@ def process_stock_entry(df_inventory, df_stock_entry):
         #       unit, ' -- ', price, ' -- ', ord_qty, '-- ', date)
         df_filter = df_inventory.loc[(df_inventory['branch'] == branch)
                                      & (df_inventory['raw_material'] ==
-                                        int(raw_material))]
+                                        raw_material)]
         # print('df_filter', df_filter)
         index_val = df_filter.index[0]
         # print('index_val', index_val)
@@ -212,7 +212,7 @@ def process_indents(df_inventory, df_indnets):
         # print("**********************************")
         df_filter = df_inventory.loc[
             (df_inventory['branch'] == branch)
-            & (df_inventory['raw_material'] == int(raw_material))]
+            & (df_inventory['raw_material'] == raw_material)]
         print('df_filter', df_filter)
         index_val = df_filter.index[0]
         print('index_val', index_val)
@@ -261,7 +261,7 @@ def process_wastages(df_inventory, df_wastages):
         df_filter = df_inventory.loc[
                                  (df_inventory['branch'] == branch)
                                  &
-                                 (df_inventory['raw_material'] == int(raw_material))
+                                 (df_inventory['raw_material'] == raw_material)
                                  ]
         index_val = df_filter.index[0]
         quantity = df_filter.loc[index_val, 'quantity']
@@ -311,7 +311,7 @@ def process_inv_counting(df_inventory, df_inv_counting):
         # print("**********************************")
         df_filter = df_inventory.loc[(df_inventory['branch'] == branch)
                                      & (df_inventory['raw_material'] ==
-                                     int(raw_material))]
+                                     raw_material)]
         # print('df_filter', df_filter)
         index_val = df_filter.index[0]
         filtered_quantity = df_filter.loc[index_val, 'quantity']
@@ -366,7 +366,7 @@ def process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials):
             # astype
             df_filter = df_inv_by_date.loc[
                                  (df_inv_by_date['branch'] == branch) &
-                                 (df_inv_by_date['raw_material'] == int(raw_material))
+                                 (df_inv_by_date['raw_material'] == raw_material)
                                  ]
             if not df_filter.empty:
                 # print('df_filter no empty')
@@ -394,7 +394,7 @@ def process_cumulative_data(df_inventory, df_inv_by_date, df_raw_materials):
             df_filter_raw = df_raw_materials.loc[
                                  (df_raw_materials['branch'] == branch)
                                  &
-                                 (df_raw_materials['raw_material'] == int(raw_material))
+                                 (df_raw_materials['raw_material'] == raw_material)
                                  ]
             index_val_raw = df_filter_raw.index[0]
             opening_stock = df_filter_raw.loc[index_val_raw, 'opening_stock']
@@ -437,7 +437,7 @@ def bulk_insert_inventory_summary(df_inventory):
             'doctype': 'Inventory Summary',
             'branch': branch,
             'date': date,
-            'raw_material': int(raw_material),
+            'raw_material': raw_material,
             'quantity': quantity,
             'closing_quantity': closing_quantity,
             'price': price,
@@ -464,7 +464,7 @@ def update_raw_material_table_closing_stock(df_inventory):
         # print('  branch -', branch, '  date -', date, '  raw_material -',
         #       raw_material, '  quantity -', quantity, '  closing_quantity -',
         #       closing_quantity,  'price -', price, '  unit-', unit)
-        frappe.db.set_value('Raw Material Only', int(raw_material),
+        frappe.db.set_value('Raw Material Only', raw_material,
                             'closing_stock', closing_quantity)
 
 

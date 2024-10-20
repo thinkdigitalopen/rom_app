@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-10-14 01:36:50.737189",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -28,11 +29,11 @@
   }
  ],
  "links": [],
- "modified": "2024-10-18 18:49:07.978196",
+ "modified": "2024-10-20 23:25:11.675945",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Opening Checklist Template",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,6 +1,6 @@
 frappe.ui.form.on("Development Work", {
 	refresh(frm) {
-		frm.add_custom_button('Count Inventory', function(){
+		frm.add_custom_button('Run Scheduler', function(){
 
 			// ------------------Inventory Counting---------------------------
 
@@ -32,7 +32,7 @@ frappe.ui.form.on("Development Work", {
 	//--------------------------------------------------------------------
 
 	//--------------------------------------------------------------------
-	frm.add_custom_button('Delete Stock Rel Data', function(){
+	frm.add_custom_button('Del Stock+ Data', function(){
 	let api_url = "rom_app.clean_data.delete_stock_related_data"
 		frappe.call({
 			method: api_url,
@@ -43,6 +43,17 @@ frappe.ui.form.on("Development Work", {
     }, );
 	//--------------------------------------------------------------------
 
+	//--------------------------------------------------------------------
+	// frm.add_custom_button('Reset Auto Incr', function(){
+	// let api_url = "rom_app.clean_data.reset_auto_increment"
+	// 	frappe.call({
+	// 		method: api_url,
+	// 		callback: function(res) {
+	// 			console.log(res);
+	// 		}
+	// 	});
+ //    }, );
+	//--------------------------------------------------------------------
 
 
 	},

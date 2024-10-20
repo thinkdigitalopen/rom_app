@@ -25,14 +25,14 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Area",
-   "options": "\nHand Wash\nCash Counter\nDining Area\nReception Area",
+   "options": "\nHand Wash\nWashroom\nDinning\nPantry Check\nCash Counter\nReception",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-15 23:44:06.798325",
+ "modified": "2024-10-21 00:38:41.335896",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Op Opening Checklist Template Child",

@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "UUID",
  "creation": "2024-07-20 10:59:40.957884",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -28,11 +29,11 @@
   }
  ],
  "links": [],
- "modified": "2024-10-18 18:55:12.439195",
+ "modified": "2024-10-20 23:26:26.155382",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Op Opening Checklist Template",
- "naming_rule": "Autoincrement",
+ "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
   {
