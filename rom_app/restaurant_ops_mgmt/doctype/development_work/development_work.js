@@ -19,17 +19,31 @@ frappe.ui.form.on("Development Work", {
 
 		//--------------------------------------------------------------------
 
-			frm.add_custom_button('Read Config', function(){
+	frm.add_custom_button('Read Config', function(){
 
-			let api_url = "rom_app.scheduled_tasks.test_read_config"
-			frappe.call({
-				method: api_url,
-				callback: function(res) {
-					console.log(res);
-				}
-			});
-
+	let api_url = "rom_app.scheduled_tasks.test_read_config"
+		frappe.call({
+			method: api_url,
+			callback: function(res) {
+				console.log(res);
+			}
+		});
     }, );
+	//--------------------------------------------------------------------
+
+	//--------------------------------------------------------------------
+	frm.add_custom_button('Delete Stock Rel Data', function(){
+	let api_url = "rom_app.clean_data.delete_stock_related_data"
+		frappe.call({
+			method: api_url,
+			callback: function(res) {
+				console.log(res);
+			}
+		});
+    }, );
+	//--------------------------------------------------------------------
+
+
 
 	},
 });

@@ -612,24 +612,21 @@ def test_scheduler():
 
 @frappe.whitelist()
 def test_read_config():
-    current_date = datetime.today()
+    current_date = datetime.now()
     print(' ############################################ \n')
     print(' ############################################ \n')
     print(' test_scheduler - current_date \n', current_date)
-
     conf = frappe.local.conf
     print('frappe.local.conf -> ', conf)
-
     # print(' ############################################ \n')
     # local = frappe.local
     # print(local)
     # # pprint(vars(local))
     # print(local.__dir__())
-
     print(' ############################################ \n')
     site = frappe.local.site
     print('frappe.local.site -> ', site)
-
-    res = frappe.response
+    res = f"current_date  {current_date} conf {conf}   site {site}"
     print('frappe.response -> ', res.__dir__())
     print('frappe.response -> ', vars(frappe.response))
+    return res
