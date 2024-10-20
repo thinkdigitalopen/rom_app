@@ -18,7 +18,7 @@ class StockEntry(Document):
         ON par.name = chi.parent
         INNER JOIN `tabRaw Material Only` raw
         ON raw.name = chi.raw_material
-        WHERE par.branch_id = {} AND par.stock_entry_template = {}
+        WHERE par.branch = '{}' AND par.stock_entry_template = {}
         """
         sql = sql.format(branch, stock_entry_template)
         print(sql)

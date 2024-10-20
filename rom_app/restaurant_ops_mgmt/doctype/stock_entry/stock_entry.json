@@ -5,9 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "stock_entry_template",
-  "branch_id",
   "column_break_oiog",
   "date",
   "user_name",
@@ -16,21 +15,6 @@
   "raw_material_from_template"
  ],
  "fields": [
-  {
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "branch_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Branch Id",
-   "read_only": 1
-  },
   {
    "default": "Today",
    "fieldname": "date",
@@ -65,6 +49,7 @@
   },
   {
    "columns": 1,
+   "default": "0",
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -77,11 +62,21 @@
    "in_list_view": 1,
    "label": "Stock Entry Template",
    "options": "Stock Entry Template Type"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 21:46:55.375679",
+ "modified": "2024-10-20 15:24:33.330552",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",
@@ -105,5 +100,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "branch_name"
+ "title_field": "date"
 }

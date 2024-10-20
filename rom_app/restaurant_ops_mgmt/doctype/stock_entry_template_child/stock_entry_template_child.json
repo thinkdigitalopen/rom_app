@@ -7,9 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "raw_material",
-  "unit",
-  "price",
-  "opening_stock"
+  "unit"
  ],
  "fields": [
   {
@@ -25,30 +23,14 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Unit",
-   "options": "Bag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "raw_material.price",
-   "fieldname": "price",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Price",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "raw_material.opening_stock",
-   "fieldname": "opening_stock",
-   "fieldtype": "Float",
-   "label": "Opening Stock",
+   "options": "\nBag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-11 01:39:50.006142",
+ "modified": "2024-10-20 15:16:40.975066",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry Template Child",

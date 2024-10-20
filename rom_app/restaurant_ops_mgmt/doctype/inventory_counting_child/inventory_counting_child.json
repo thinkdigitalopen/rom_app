@@ -12,8 +12,7 @@
   "quantity",
   "diff",
   "amount",
-  "clos_stock",
-  "remarks"
+  "clos_stock"
  ],
  "fields": [
   {
@@ -32,7 +31,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Unit",
-   "options": "Bag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
+   "options": "\nBag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray",
    "read_only": 1
   },
   {
@@ -42,12 +41,6 @@
    "in_list_view": 1,
    "label": "Count Qty",
    "reqd": 1
-  },
-  {
-   "columns": 1,
-   "fieldname": "remarks",
-   "fieldtype": "Data",
-   "label": "Remarks"
   },
   {
    "columns": 1,
@@ -88,7 +81,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-11 01:59:37.127620",
+ "modified": "2024-10-20 15:46:39.238053",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Counting Child",

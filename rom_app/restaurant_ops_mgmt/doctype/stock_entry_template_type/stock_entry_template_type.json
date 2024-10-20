@@ -16,6 +16,7 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -29,7 +30,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 18:35:21.647092",
+ "modified": "2024-10-20 14:50:03.000137",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry Template Type",

@@ -15,9 +15,7 @@
   "opening_stock",
   "opening_amount",
   "closing_stock",
-  "min_stock",
-  "indent_unit",
-  "po_unit"
+  "min_stock"
  ],
  "fields": [
   {
@@ -111,23 +109,11 @@
    "in_standard_filter": 1,
    "label": "RM Group",
    "options": "Raw Material Group"
-  },
-  {
-   "fieldname": "indent_unit",
-   "fieldtype": "Select",
-   "label": "Indent Unit",
-   "options": "\nBag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray"
-  },
-  {
-   "fieldname": "po_unit",
-   "fieldtype": "Select",
-   "label": "PO Unit",
-   "options": "\nBag\nBot\nBox\nCase\nGm\nKg\nLtr\nKattu\nMl\nNos\nPcs\nPkt\nTin\nTray"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-19 03:05:02.117211",
+ "modified": "2024-10-19 14:04:58.533606",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only",

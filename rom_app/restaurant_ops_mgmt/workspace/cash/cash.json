@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"6kdo0vO27G\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Cash Space</span>\",\"col\":12}},{\"id\":\"1e7vbqQVH2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":4}},{\"id\":\"S2Vg5WZg6F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":4}},{\"id\":\"YkeF_Dcun3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"gf4XrC1Enl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"MBoe38Vsif\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report Register\",\"col\":4}},{\"id\":\"YUiLF7hPwO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report Register\",\"col\":4}},{\"id\":\"EdELqEL6NM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
+ "content": "[{\"id\":\"6kdo0vO27G\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Cash Space</span>\",\"col\":12}},{\"id\":\"1e7vbqQVH2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":7}},{\"id\":\"S2Vg5WZg6F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":7}},{\"id\":\"RHHhAiugSM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"YkeF_Dcun3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"gf4XrC1Enl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"MBoe38Vsif\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report Register\",\"col\":4}},{\"id\":\"YUiLF7hPwO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report Register\",\"col\":4}},{\"id\":\"4Tqfw5qtMi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"EdELqEL6NM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
  "creation": "2024-08-26 19:56:44.402204",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Cash",
  "links": [],
- "modified": "2024-10-18 20:27:42.232685",
+ "modified": "2024-10-20 14:33:06.624331",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Cash",
@@ -47,10 +47,25 @@
   {
    "color": "Green",
    "doc_view": "List",
+   "label": "Ticket Report",
+   "link_to": "Ticket Report",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
    "label": "Sales Report",
    "link_to": "Sales Report",
    "stats_filter": "[[\"Sales Report\",\"creation\",\"Timespan\",\"today\",false]]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Ticket Report Register",
+   "link_to": "Ticket Report Register",
+   "type": "Report"
   },
   {
    "color": "Grey",

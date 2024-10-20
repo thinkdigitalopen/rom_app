@@ -22,6 +22,7 @@ fixtures = [
                     "Rom_Manage_Role",
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
+                    "Rom_MasterData_Role",
                 ]
             ]
         ]
@@ -38,6 +39,7 @@ fixtures = [
                     "Rom_Manage_Role",
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
+                    "Rom_MasterData_Role",
                 ]
             ]
         ]
@@ -173,11 +175,11 @@ app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#     "cron": {
-#         "*/5 * * * *": ["rom_app.scheduled_tasks.inventory_summary"],
-#     }
-#     }
+scheduler_events = {
+    "cron": {
+        "*/5 * * * *": ["rom_app.scheduled_tasks.inventory_summary"],
+    }
+    }
 # "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
 # Testing
 # -------

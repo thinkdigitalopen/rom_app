@@ -10,14 +10,14 @@ def execute(filters=None):
     data, columns = [], []
     columns = get_columns()
     cs_data = get_data(filters)
-    # branch_id date raw_material quantity price unit closing_quantity
+    # branch date raw_material quantity price unit closing_quantity
     data = []
     for d in cs_data:
         row = frappe._dict({
             'trans_type': d.trans_type,
             'name': d.name,
             'date': d.date,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'user_name': d.user_name,
             'raw_material': d.raw_material,
             'unit': d.unit,
@@ -50,7 +50,7 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
+            'fieldname': 'branch',
             'label': 'Branch',
             'fieldtype': 'Data',
         },
@@ -131,7 +131,7 @@ def find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invco
 def build_sql_se(conditions):
     sql = """
     SELECT "Stock" as trans_type,
-    par.name, par.date, par.branch_name,  par.user_name,
+    par.name, par.date, par.branch,  par.user_name,
     raw.item as raw_material, chi.unit, chi.ord_qty as qty,
     chi.unit_price AS price, chi.amount, chi.clos_qty as closing_qty
     FROM `tabStock Entry` par
@@ -145,7 +145,7 @@ def build_sql_se(conditions):
 def build_sql_indent(conditions):
     sql = """
     SELECT "Indent" as trans_type,
-    par.`name`, par.`date`, 	par.branch_name,	par.user_name,
+    par.`name`, par.`date`, 	par.branch,	par.user_name,
     raw.item as raw_material, chi.unit, chi.issued_qty as qty,
     chi.price, chi.amount, chi.closing_qty as closing_qty
     FROM `tabChef Indent By Dept` par
@@ -159,7 +159,7 @@ def build_sql_indent(conditions):
 def build_sql_waste(conditions):
     sql = """
     SELECT  "Waste" as trans_type,
-    par.name, par.date, par.branch_name, par.user_name,
+    par.name, par.date, par.branch, par.user_name,
     raw.item as raw_material, chi.unit, chi.wastage_qty as qty,
     chi.unit_price as price , chi.amount, chi.clos_stock as closing_qty
     FROM `tabInventory Wastage` par
@@ -173,7 +173,7 @@ def build_sql_waste(conditions):
 def build_sql_invcount(conditions):
     sql = """
     SELECT  "InvCount" as trans_type,
-    par.name,  par.date, par.branch_name,  par.user_name,
+    par.name,  par.date, par.branch,  par.user_name,
     raw.item as raw_material,   chi.unit,  chi.diff as qty,
     chi.price,  chi.amount, chi.clos_stock as closing_qty
     FROM  `tabInventory Counting`  par
@@ -187,9 +187,9 @@ def build_sql_invcount(conditions):
 def get_where_filter(sql, conditions):
     where_cond = f" WHERE par.`date` between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND par.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
-        where_cond = where_cond + f" AND raw_material = '{conditions['raw_material_filter']}' "
+        where_cond = where_cond + f" AND chi.raw_material = '{conditions['raw_material_filter']}' "
     sql = f"{sql}  {where_cond}"
     return sql
 

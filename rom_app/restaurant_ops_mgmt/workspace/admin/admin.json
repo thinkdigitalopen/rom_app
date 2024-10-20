@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"RLrxSEV-I6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Admin Space</span><br>\",\"col\":12}},{\"id\":\"1l8ytFwbaO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Food and Beverage<br></b></span>\",\"col\":12}},{\"id\":\"6hCHtJ9bP1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Opening Checklist Template\",\"col\":4}},{\"id\":\"aAQD85PYVG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Closing Checklist Template\",\"col\":4}},{\"id\":\"qkt_Ejzmxz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production Temp\",\"col\":4}},{\"id\":\"kgzN7rpvYO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":4}},{\"id\":\"XpstyJyGLi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Operation</b></span>\",\"col\":12}},{\"id\":\"W9NVyW5Vx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Template\",\"col\":4}},{\"id\":\"Q9YcTZpmH7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Template\",\"col\":4}},{\"id\":\"bDuXi-NvqG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu Group\",\"col\":4}},{\"id\":\"5-AwumlF6R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu\",\"col\":4}},{\"id\":\"hhm1qwk_fG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Category\",\"col\":4}},{\"id\":\"5oYVddCQXM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master\",\"col\":4}},{\"id\":\"-Dev-Aq_af\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Store<br></b></span>\",\"col\":12}},{\"id\":\"OlJ88NRc3c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":4}},{\"id\":\"-I6tHnqAF2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"iDaJRClEjY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data <br></b></span>\",\"col\":12}},{\"id\":\"B4VyawkvTi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branch\",\"col\":4}},{\"id\":\"Q3rNApfAt2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":4}},{\"id\":\"-F0TQqV3iU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rom Settings\",\"col\":4}},{\"id\":\"3CYfsfQPel\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>User Config</b></span><i><span class=\\\"h4\\\"><b><br></b></span></i>\",\"col\":12}},{\"id\":\"L9xL4sPBmE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}}]",
+ "content": "[{\"id\":\"RLrxSEV-I6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Admin Space</span><br>\",\"col\":12}},{\"id\":\"1l8ytFwbaO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Food and Beverage<br></b></span>\",\"col\":12}},{\"id\":\"6hCHtJ9bP1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Opening Checklist Template\",\"col\":4}},{\"id\":\"aAQD85PYVG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FB Closing Checklist Template\",\"col\":4}},{\"id\":\"qkt_Ejzmxz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Production Temp\",\"col\":4}},{\"id\":\"kgzN7rpvYO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":4}},{\"id\":\"XpstyJyGLi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Operation</b></span>\",\"col\":12}},{\"id\":\"W9NVyW5Vx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Template\",\"col\":4}},{\"id\":\"Q9YcTZpmH7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Template\",\"col\":4}},{\"id\":\"bDuXi-NvqG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu Group\",\"col\":4}},{\"id\":\"5-AwumlF6R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu\",\"col\":4}},{\"id\":\"hhm1qwk_fG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Category\",\"col\":4}},{\"id\":\"5oYVddCQXM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master\",\"col\":4}},{\"id\":\"-Dev-Aq_af\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Store<br></b></span>\",\"col\":12}},{\"id\":\"OlJ88NRc3c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":4}},{\"id\":\"-I6tHnqAF2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":4}},{\"id\":\"5Z_-2US9_n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template\",\"col\":4}},{\"id\":\"fRPXxTZol7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template Type\",\"col\":4}},{\"id\":\"iDaJRClEjY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data <br></b></span>\",\"col\":12}},{\"id\":\"B4VyawkvTi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branch\",\"col\":4}},{\"id\":\"Q3rNApfAt2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":4}},{\"id\":\"-F0TQqV3iU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rom Settings\",\"col\":4}},{\"id\":\"3CYfsfQPel\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>User Config</b></span><i><span class=\\\"h4\\\"><b><br></b></span></i>\",\"col\":12}},{\"id\":\"L9xL4sPBmE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}}]",
  "creation": "2024-07-20 08:22:34.182065",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Admin",
  "links": [],
- "modified": "2024-10-19 07:06:58.154455",
+ "modified": "2024-10-20 13:21:04.287813",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Admin",
@@ -91,6 +91,14 @@
   {
    "color": "Green",
    "doc_view": "List",
+   "label": "Stock Entry Template",
+   "link_to": "Stock Entry Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
    "label": "Raw Material Group",
    "link_to": "Raw Material Group",
    "stats_filter": "[]",
@@ -101,6 +109,14 @@
    "doc_view": "List",
    "label": "Op Closing Checklist Template",
    "link_to": "Op Closing Checklist Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Stock Entry Template Type",
+   "link_to": "Stock Entry Template Type",
    "stats_filter": "[]",
    "type": "DocType"
   },

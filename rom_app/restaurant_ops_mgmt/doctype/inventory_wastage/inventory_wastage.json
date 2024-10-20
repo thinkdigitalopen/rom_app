@@ -5,24 +5,15 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "branch_name",
+  "branch",
   "user_name",
   "column_break_uiuf",
   "date",
-  "branch_id",
   "total_price",
   "section_break_gyaf",
   "items"
  ],
  "fields": [
-  {
-   "columns": 1,
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Branch Name",
-   "read_only": 1
-  },
   {
    "fieldname": "column_break_uiuf",
    "fieldtype": "Column Break"
@@ -47,12 +38,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "branch_id",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Branch Id"
-  },
-  {
    "fieldname": "section_break_gyaf",
    "fieldtype": "Section Break"
   },
@@ -64,17 +49,27 @@
   },
   {
    "columns": 1,
+   "default": "0",
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Price",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 22:08:53.240078",
+ "modified": "2024-10-20 15:35:48.201861",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Wastage",
@@ -94,8 +89,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "branch_name"
+ "title_field": "date"
 }

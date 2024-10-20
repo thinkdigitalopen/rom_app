@@ -9,13 +9,13 @@ def execute(filters=None):
     data, columns = [], []
     columns = get_columns()
     cs_data = get_data(filters)
-    # branch_id date raw_material quantity price unit closing_quantity
+    # branch date raw_material quantity price unit closing_quantity
     data = []
     for d in cs_data:
         row = frappe._dict({
             'name': d.name,
             'date': d.date,
-            'branch_name': d.branch_name,
+            'branch': d.branch,
             'raw_material': d.raw_material,
             'quantity': d.quantity,
             'unit': d.unit,
@@ -44,8 +44,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'branch_name',
-            'label': 'Branch Name',
+            'fieldname': 'branch',
+            'label': 'Branch',
             'fieldtype': 'Data',
         },
         {
@@ -101,7 +101,7 @@ def get_data(filters):
     inv.name,
     inv.date,
     raw.item as raw_material,
-    bra.branch_name,
+    inv.branch,
     inv.quantity,
     inv.price,
     inv.unit,
@@ -111,12 +111,12 @@ def get_data(filters):
     (inv.closing_quantity - raw.min_stock) as cs_ms
     FROM `tabInventory Summary` inv
     INNER JOIN `tabRaw Material Only` raw ON inv.raw_material = raw.name
-    INNER JOIN `tabBranch` bra ON inv.branch_id = bra.name
         """
+    # INNER JOIN `tabBranch` bra ON inv.branch = bra.name
     where_cond = f" WHERE inv.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND inv.branch_id = '{conditions['branch_filter']}' "
+        where_cond = where_cond + f" AND inv.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
         where_cond = where_cond + f" AND inv.raw_material = '{conditions['raw_material_filter']}' "
 

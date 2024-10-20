@@ -114,7 +114,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
         // from_date_filter=2024-09-14&to_date_filter=2024-09-15&
         // branch_filter=8&raw_material_filter=11&trans_type_filter=Waste
 
-		//display text =  Purchase Order  Chef Indent  Inventory Wastage  Inventory Counting
+		//display text =  Stock Entry  Chef Indent  Inventory Wastage  Inventory Counting
 		// trans_type_filter= PO Indent Waste InvCount
 
 		let report_cond2_path = "&{report_cond2}={report_cond_result2}";
@@ -232,8 +232,8 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 
 	let transaction_type_convert_text_to_keyword = function(display_text){
 		keyword = ""
-		if (display_text == 'Purchase Order')
-			keyword = "PO";
+		if (display_text == 'Stock Entry')
+			keyword = "SE";
 
 		if (display_text == 'Chef Indent')
 			keyword = "Indent";
@@ -509,7 +509,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
         // from_date_filter=2024-09-14&to_date_filter=2024-09-15&
         // branch_filter=8&raw_material_filter=11&trans_type_filter=Waste
 
-		//display text =  Purchase Order  Chef Indent  Inventory Wastage  Inventory Counting
+		//display text =  Stock Entry  Chef Indent  Inventory Wastage  Inventory Counting
 		// trans_type_filter= PO Indent Waste InvCount
 
 		let category_filter = "Total Amount";
@@ -605,7 +605,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 		console.log('inv_po', inv_po);
 
 		var chart = bb.generate({
-			title: {text: "Inventory PO by Date"},
+			title: {text: "Stock Entry by Date"},
 			data: {
 			type: "bar",
 			onclick: function(arg1){
@@ -616,7 +616,7 @@ frappe.pages['inventory-view'].on_page_load = function(wrapper) {
 				console.log(item_filter); // Mutton briyani
 				console.log(arg1.value);
 				//opening_new_tab(report_name, filters, "category_filter", category_filter, "item_filter", item_filter);
-				filters = Object.assign({}, filters, {trans_type_filter:'PO'});
+				filters = Object.assign({}, filters, {trans_type_filter:'SE'});
 				opening_new_tab_simple(report_name, filters, item_filter);
 			},
 			columns: [inv_po,],

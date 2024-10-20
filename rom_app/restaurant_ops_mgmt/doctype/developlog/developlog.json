@@ -5,19 +5,52 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "log"
+  "date",
+  "source",
+  "start",
+  "end",
+  "remarks"
  ],
  "fields": [
   {
-   "fieldname": "log",
-   "fieldtype": "Text",
+   "fieldname": "date",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Log"
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start"
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "End"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-16 13:00:39.642552",
+ "modified": "2024-10-20 18:12:16.109853",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "DevelopLog",
@@ -37,7 +70,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "date"
 }
