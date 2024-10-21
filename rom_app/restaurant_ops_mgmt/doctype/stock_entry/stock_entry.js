@@ -163,11 +163,9 @@ refresh(frm) {
 		let unit_price_temp = 0;
 		let cal_val = 0;
 
-		if(parseInt(d.ord_qty)>=0)
-			ord_qty_temp = d.ord_qty;
 
-		if(parseInt(d.unit_price)>=0)
-			unit_price_temp = d.unit_price;
+		ord_qty_temp = d.ord_qty;
+		unit_price_temp = d.unit_price;
 
 		cal_val = ord_qty_temp * unit_price_temp;
 
@@ -196,6 +194,30 @@ refresh(frm) {
 		console.log('d->', d);
 		frappe.model.set_value(cdt, cdn, 'unit_price', d.unit_price_text);
 		//total_price_temp
+		frm.compute_total(frm);
+
+    },
+	unit_price: function(frm,cdt,cdn) {
+		console.log('unit_price')
+        var d = locals[cdt][cdn];
+		console.log('d->', d);
+		//frappe.model.set_value(cdt, cdn, 'unit_price', d.unit_price_text);
+		//total_price_temp
+
+		let ord_qty_temp = 0;
+		let unit_price_temp = 0;
+		let cal_val = 0;
+		ord_qty_temp = d.ord_qty;
+		unit_price_temp = d.unit_price;
+		cal_val = ord_qty_temp * unit_price_temp;
+
+		console.log('balance_portion_temp->', ord_qty_temp);
+		console.log('rateportion_temp->',unit_price_temp);
+		console.log('cal_val->', cal_val);
+
+		frappe.model.set_value(cdt, cdn, 'amount', cal_val);
+
+
 		frm.compute_total(frm);
 
     },
