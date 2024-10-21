@@ -32,7 +32,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Resp. Person",
-   "permlevel": 2,
    "reqd": 1
   },
   {
@@ -41,7 +40,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Reported by",
-   "permlevel": 2,
    "reqd": 1
   },
   {
@@ -69,7 +67,6 @@
    "fieldname": "date_time",
    "fieldtype": "Datetime",
    "label": "Date Time",
-   "permlevel": 2,
    "reqd": 1
   },
   {
@@ -79,20 +76,17 @@
    "in_standard_filter": 1,
    "label": "Department",
    "options": "Department",
-   "permlevel": 2,
    "reqd": 1
   },
   {
    "fieldname": "remarks",
    "fieldtype": "Data",
-   "label": "Remarks",
-   "permlevel": 2
+   "label": "Remarks"
   },
   {
    "fieldname": "photo",
    "fieldtype": "Attach",
-   "label": "Photo",
-   "permlevel": 2
+   "label": "Photo"
   },
   {
    "fieldname": "ticket_desc",
@@ -100,7 +94,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Ticket Desc",
-   "permlevel": 2,
    "reqd": 1
   },
   {
@@ -124,7 +117,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-19 03:22:36.712940",
+ "modified": "2024-10-22 00:19:23.523917",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",
@@ -140,6 +133,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }
