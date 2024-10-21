@@ -26,7 +26,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-14 21:28:21.576021",
+ "modified": "2024-10-21 05:33:23.778983",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Rom Settings",
@@ -42,6 +42,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }
