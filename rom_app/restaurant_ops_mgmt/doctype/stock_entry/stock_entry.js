@@ -81,70 +81,73 @@ refresh(frm) {
 	},
 
 
-	stock_entry_template: function(frm) {
-		if(frm.doc.stock_entry_template) {
-			console.log('stock_entry_template - succeeded ');
-			console.log(frm.doc.stock_entry_template);
-			let stock_entry_template_temp = frm.doc.stock_entry_template;
-			let branch = frm.doc.branch;
-
-			//-- frappe call start --
-			frm.call({
-				doc: frm.doc,
-				method: 'get_raw_material',
-				args: {
-					branch: branch,
-					stock_entry_template: stock_entry_template_temp
-				},
-				freeze:true,
-				freeze_message: "Processing",
-				callback: function(r){
-					if (r.message) {
-						let msg = r.message;
-
-						console.log(msg);
-						console.log('lenght',msg.length);
-						frm.doc.raw_material_from_template = [];
-						if (msg.length == 0){
-							frappe.show_alert("Raw materials are unavailable.");
-						}
-						else
-						{
-							$.each(msg, function(_i, e){
-								let entry = frm.add_child("raw_material_from_template");
-								//entry.raw_material = e[0];
-								console.log('before',entry);
-								console.log('***********************************');
-								console.log(e);
-								let raw_material_number =  Number(e[0]);
-								//entry.raw_material =  raw_material_number;
-								console.log(raw_material_number);
-								//entry.raw_material =  e[0];
-								entry.raw_material =  raw_material_number;
-								console.log(entry);
-								entry.unit = e[1];
-								entry.unit_price = e[2];
-								entry.raw_material_text = e[3];
-								entry.clos_qty = e[4];
-								console.log('after',entry);
-							});
-
-
-
-						}
-						frm.refresh_field("raw_material_from_template");
-
-					}
-				}
-		    });
-			//-- frappe call end --
-		}
-		else {
-			console.log('stock_entry_template - failed ');
-			frm.doc.raw_material_from_template = [];
-			//refresh_field("raw_material_from_template");
-		}
-	},
+	// stock_entry_template: function(frm) {
+	// 	if(frm.doc.stock_entry_template) {
+	// 		console.log('stock_entry_template - succeeded ');
+	// 		console.log(frm.doc.stock_entry_template);
+	// 		let stock_entry_template_temp = frm.doc.stock_entry_template;
+	// 		let branch = frm.doc.branch;
+ //
+	// 		//-- frappe call start --
+	// 		frm.call({
+	// 			doc: frm.doc,
+	// 			method: 'get_raw_material',
+	// 			args: {
+	// 				branch: branch,
+	// 				stock_entry_template: stock_entry_template_temp
+	// 			},
+	// 			freeze:true,
+	// 			freeze_message: "Processing",
+	// 			callback: function(r){
+	// 				if (r.message) {
+	// 					let msg = r.message;
+ //
+	// 					console.log(msg);
+	// 					console.log('lenght',msg.length);
+	// 					frm.doc.raw_material_from_template = [];
+	// 					if (msg.length == 0){
+	// 						frappe.show_alert("Raw materials are unavailable.");
+	// 					}
+	// 					else
+	// 					{
+	// 						$.each(msg, function(_i, e){
+	// 							let entry = frm.add_child("raw_material_from_template");
+	// 							//entry.raw_material = e[0];
+	// 							console.log('before',entry);
+	// 							console.log('***********************************');
+	// 							console.log(e);
+	// 							let raw_material_number =  Number(e[0]);
+	// 							//entry.raw_material =  raw_material_number;
+	// 							console.log(raw_material_number);
+	// 							//entry.raw_material =  e[0];
+	// 							entry.raw_material =  raw_material_number;
+	// 							console.log(entry);
+	// 							//pricechange
+	// 							entry.unit = e[1];
+	// 							entry.unit_price = e[2];
+	// 							//pricechange
+	// 							entry.unit_price_text = e[2];
+	// 							entry.raw_material_text = e[3];
+	// 							entry.clos_qty = e[4];
+	// 							console.log('after',entry);
+	// 						});
+ //
+ //
+ //
+	// 					}
+	// 					frm.refresh_field("raw_material_from_template");
+ //
+	// 				}
+	// 			}
+	// 	    });
+	// 		//-- frappe call end --
+	// 	}
+	// 	else {
+	// 		console.log('stock_entry_template - failed ');
+	// 		frm.doc.raw_material_from_template = [];
+	// 		//refresh_field("raw_material_from_template");
+	// 	}
+	// },
 
 });
 
@@ -186,7 +189,16 @@ refresh(frm) {
 	raw_material_from_template_remove:function (frm, cdt, cdn) {
 		console.log('raw_materials_remove');
 		frm.compute_total(frm);
-	},
+	}, //pricechange
+	unit_price_text: function(frm,cdt,cdn) {
+		console.log('unit_price_text')
+        var d = locals[cdt][cdn];
+		console.log('d->', d);
+		frappe.model.set_value(cdt, cdn, 'unit_price', d.unit_price_text);
+		//total_price_temp
+		frm.compute_total(frm);
+
+    },
 });
 
 

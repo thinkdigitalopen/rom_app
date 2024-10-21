@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"SlqS6VBdPe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template\",\"col\":7}},{\"id\":\"U0O8vqIfLk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template Type\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"wAS-Vpl_pt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept Register\",\"col\":4}},{\"id\":\"DCYLKwBs9n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Register\",\"col\":4}},{\"id\":\"XOdMwBrmgr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only Register\",\"col\":4}},{\"id\":\"xvKvRYGZs_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage Register\",\"col\":4}},{\"id\":\"-PhgOdY4rD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting Register\",\"col\":4}},{\"id\":\"YmfA-f4e7d\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary Register\",\"col\":4}},{\"id\":\"LGOj9sXbYl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Transaction Register\",\"col\":4}},{\"id\":\"9Oc5-NgsaW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"IH3dpjcK0T\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"wAS-Vpl_pt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept Register\",\"col\":4}},{\"id\":\"DCYLKwBs9n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Register\",\"col\":4}},{\"id\":\"XOdMwBrmgr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only Register\",\"col\":4}},{\"id\":\"xvKvRYGZs_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage Register\",\"col\":4}},{\"id\":\"-PhgOdY4rD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting Register\",\"col\":4}},{\"id\":\"YmfA-f4e7d\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary Register\",\"col\":4}},{\"id\":\"LGOj9sXbYl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Transaction Register\",\"col\":4}},{\"id\":\"9Oc5-NgsaW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"IH3dpjcK0T\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
  "creation": "2024-08-26 20:57:34.050043",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Store",
  "links": [],
- "modified": "2024-10-20 22:24:01.313190",
+ "modified": "2024-10-21 12:24:37.613032",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store",
@@ -84,14 +84,6 @@
    "type": "DocType"
   },
   {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Stock Entry Template",
-   "link_to": "Stock Entry Template",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
    "color": "Grey",
    "doc_view": "List",
    "label": "Inventory Wastage Register",
@@ -149,14 +141,6 @@
    "label": "Raw Material Only Register",
    "link_to": "Raw Material Only Register",
    "type": "Report"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Stock Entry Template Type",
-   "link_to": "Stock Entry Template Type",
-   "stats_filter": "[]",
-   "type": "DocType"
   },
   {
    "color": "Green",
