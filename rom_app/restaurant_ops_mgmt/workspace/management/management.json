@@ -192,6 +192,35 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Dashboard",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations Board",
+   "link_count": 0,
+   "link_to": "single-page-chart",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Inventory Board",
+   "link_count": 0,
+   "link_to": "inventory-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Store Reports",
    "link_count": 6,
    "link_type": "DocType",
@@ -230,7 +259,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Inventory Counting",
    "link_count": 0,
    "link_to": "Inventory Counting Register",
@@ -257,38 +286,9 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Dashboard",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Operations Board",
-   "link_count": 0,
-   "link_to": "single-page-chart",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Inventory Board",
-   "link_count": 0,
-   "link_to": "inventory-view",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-10-20 15:54:58.567986",
+ "modified": "2024-10-22 01:12:42.893753",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Management",
