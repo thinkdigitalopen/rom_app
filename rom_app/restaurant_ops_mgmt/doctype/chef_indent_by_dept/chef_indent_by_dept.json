@@ -31,7 +31,8 @@
    "in_standard_filter": 1,
    "label": "Department",
    "options": "Department",
-   "permlevel": 2
+   "permlevel": 2,
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ydrh",
@@ -77,7 +78,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 23:00:10.471278",
+ "modified": "2024-10-21 15:05:06.847585",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",

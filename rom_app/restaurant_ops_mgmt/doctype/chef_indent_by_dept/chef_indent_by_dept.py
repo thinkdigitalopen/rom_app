@@ -50,7 +50,7 @@ class ChefIndentByDept(Document):
         JOIN `tabRaw Material Only` rawmat
         ON	rawmat.name = child.raw_material
         WHERE parent.branch = '{}'
-        AND parent.department = {};
+        AND parent.department = '{}';
         """
         sql = sql.format(branch, department)
         print(sql)
@@ -72,7 +72,7 @@ class ChefIndentByDept(Document):
         JOIN `tabRaw Material Only` trmo
         ON child.raw_material  = trmo.name
         WHERE parent.branch = '{}'
-        AND parent.department = {};
+        AND parent.department = '{}';
         """
         sql = sql.format(branch, department)
         print(sql)

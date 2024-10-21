@@ -1,6 +1,5 @@
 frappe.ui.form.on("Chef Indent By Dept", {
 	before_save: function(frm){
-		// console.log('before save');
 
 	},
 	setup: function(frm){
@@ -12,14 +11,18 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		frm.set_value("total_price", total_price);
         refresh_field('raw_materials');
       }
+
 	},
 	refresh: function(frm) {
 		disable_drag_drop(frm);
-
+		// load items
+		 frm.add_custom_button(__('Load items from template'), function(){
+			 load_items_from_template_method(frm); }, );
+		// load items
 	},
 	onload: function(frm) {
 		disable_drag_drop(frm);
-		  $('span.sidebar-toggle-btn').hide();
+		$('span.sidebar-toggle-btn').hide();
         $('.col-lg-2.layout-side-section').hide();
 
 		frappe.form.link_formatters['Raw Material Only'] = function(value, doc) {
@@ -30,119 +33,12 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		 }
 
 		if (frm.is_new()) {
-		// 	console.log('is_new');
-  //
-		// 	let useremail = frappe.user.get_emails();
-		// 	let email = useremail[0];
-  //
-		// 	let api_url = "rom_app.restaurant_ops_mgmt.api.get_the_branch_name_for_the_user"
-  //
-		// 	//------------------------------------
-		// 	frappe.call({
-		// 	method: api_url,
-		// 	args: {emailid: email},
-		// 	callback: function(res) {
-		// 		let branch__id = res.message.branch;
-		// 		let branch__name = res.message.branch_name;
-		// 		frm.set_value('branch', branch__id);
-		// 		frm.set_value('branch_name', branch__name);
-		// 		frm.set_df_property('branch_name', 'read_only', 1);
-		// 		frm.set_query("department", function() {
-		// 			return {
-		// 				"filters": {
-		// 					"branch": branch__id,
-		// 				}
-		// 			};
-		// 		});
-  //
-		// 		frm.fields_dict["raw_materials"].grid.get_field("raw_material").get_query = function(doc) {
-		// 			return {
-		// 				filters: {
-		// 					'branch': branch__id,
-		// 				}
-		// 			}
-		// 		};
-  //
-  //
-		// 	}
-		// 	});
-		// }
-		// else{
-			// let branch__id = frm.doc.branch;
-		// 	console.log('else part --> branch__id-', branch__id);
-		// // 	frm.set_query("department", function() {
-		// // 			return {
-		// // 				"filters": {
-		// // 					"branch": branch__id
-		// // 				}
-		// // 			};
-		// // 	});
-  // //
-		// 	frm.fields_dict["raw_materials"].grid.get_field("raw_material").get_query = function(doc) {
-		// 			return {
-		// 				filters: {
-		// 					'branch': branch__id,
-		// 				}
-		// 			}
-		// 		};
-  // //
+
 		 }
 	},
 
 	department: function(frm) {
-		console.log("frm",frm);
-		console.log("frm.doc.department=",frm.doc.department);
-		if(frm.doc.department) {
-			let branch_selected = frm.doc.branch;
-			let dept_selected = frm.doc.department;
-			console.log('branch_selected=',branch_selected);
-			console.log('dept_selected=',dept_selected);
-
-			//resolve_title_by_calling_api();
-			//-- frappe call start --
-
-			frm.call({
-				doc: frm.doc,
-				method: 'get_raw_material_with_id',
-				args: {
-					branch: branch_selected,
-					department: dept_selected
-				},
-				freeze:true,
-				freeze_message: "Processing",
-				callback: function(r){
-					if (r.message) {
-						let msg = r.message;
-
-						console.log(msg);
-						console.log('lenght',msg.length);
-						frm.doc.raw_materials = []
-						if (msg.length == 0){
-							frappe.show_alert("The template records for the department could not be found.");
-						}
-						else
-						{
-							// ---- load start ------
-							$.each(msg, function(_i, e){
-								let entry = frm.add_child("raw_materials");
-								entry.raw_material = e[0];
-								entry.unit = e[1];
-								entry.raw_material_title = e[2];
-								entry.price = e[3];
-								entry.closing_qty = e[4];
-							});
-							// ------ load end --------
-						}
-						refresh_field("raw_materials");
-					}
-				}
-			});
-
-
-			//-- frappe call end --
-		} else {
-			console.log("no value in department ");
-		}
+		console.log('department select');
 	}
 });
 
@@ -195,5 +91,69 @@ function disable_drag_drop(frm) {
 		frm.page.body.find('[data-fieldname="raw_materials"] [data-idx] .data-row  .sortable-handle').removeClass('sortable-handle');
 	}
 
+function load_items_from_template_method(frm){
+		if(frm.doc.department) {
+
+			let branch_selected = frm.doc.branch;
+			let dept_selected = frm.doc.department;
+			console.log('branch_selected=',branch_selected);
+			console.log('dept_selected=',dept_selected);
+
+			//resolve_title_by_calling_api();
+			//-- frappe call start --
+
+			frm.call({
+				doc: frm.doc,
+				method: 'get_raw_material_with_id',
+				args: {
+					branch: branch_selected,
+					department: dept_selected
+				},
+				freeze:true,
+				freeze_message: "Processing",
+				callback: function(r){
+					if (r.message) {
+						let msg = r.message;
+
+						console.log(msg);
+						console.log('lenght',msg.length);
+						frm.doc.raw_materials = []
+						if (msg.length == 0){
+							frappe.show_alert("The template records for the department could not be found.");
+						}
+						else
+						{
+							// ---- load start ------
+							$.each(msg, function(_i, e){
+								let entry = frm.add_child("raw_materials");
+								entry.raw_material = e[0];
+								entry.unit = e[1];
+								entry.raw_material_title = e[2];
+								entry.price = e[3];
+								entry.closing_qty = e[4];
+							});
+							// ------ load end --------
+						}
+						refresh_field("raw_materials");
+					}
+				}
+			});
 
 
+			//-- frappe call end --
+		} else {
+			let msg = frappe.msgprint({
+					title: 'Info',
+					indicator: 'green',
+					message: 'Please select the department',
+					 primary_action:{
+						'label': 'Close',
+						action(values) {
+							msg.hide();
+						}
+					}
+				});
+
+			console.log("no value in department ");
+		}
+	}
