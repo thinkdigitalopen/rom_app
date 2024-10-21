@@ -43,7 +43,7 @@ def get_columns():
         {
             'fieldname': 'user_name',
             'label': 'User Name',
-            'fieldtype': 'Date',
+            'fieldtype': 'Data',
         },
         {
             'fieldname': 'branch',
