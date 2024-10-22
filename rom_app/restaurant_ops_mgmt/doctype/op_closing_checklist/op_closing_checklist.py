@@ -7,7 +7,7 @@ class OpClosingChecklist(Document):
     def before_insert(self):
         branch = self.branch
         user_name = self.user_name
-        current_date = datetime.today().date()
+        current_date = self.date
         rec_count = self.get_the_record_count(branch, user_name, current_date)
         if (rec_count > 0):
             frappe.throw("You are limited to adding just one record per day.")
