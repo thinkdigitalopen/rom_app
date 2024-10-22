@@ -2,6 +2,7 @@ import frappe
 from datetime import datetime
 from . import utils
 
+
 @frappe.whitelist()
 def testapi():
     return "test api returned"
@@ -111,12 +112,61 @@ def get_the_branch_for_the_user_based_on_email_id(emailid):
             }
     return result
 
+
 @frappe.whitelist()
-def get_the_branch_name_for_the_user2(emailid):
-    branch_id = "1"
-    branch_name = "name"
-    result = {branch_id, branch_name}
-    return result
+def check_the_user_has_the_selected_dept_role(emailid, department_id):
+    print('emailid ', emailid)
+    print('department_id ', department_id)
+    branch = utils.find_user_branch_based_on_email(emailid)
+    print('branch ', branch)
+
+    build_sql = """
+    SELECT
+        td.role
+    FROM
+        tabDepartment td
+    WHERE
+        td.branch = '{branch}' AND td.name = '{department_id}'
+    """
+
+    build_sql = build_sql.replace("{branch}", branch)
+    build_sql = build_sql.replace("{department_id}", department_id)
+    print("-------- full sql ------------")
+    print(build_sql)
+    data = frappe.db.sql(build_sql, as_dict=True)
+    dept_role = data[0].role
+    print('dept_role ', dept_role)
+    user_roles = frappe.get_roles(frappe.session.user)
+    print(type(user_roles))
+    print(user_roles)
+    role_count = user_roles.count(dept_role)
+    if (role_count > 0):
+        print('found_role ', role_count)
+        return True
+    else:
+        print('not found_role ')
+    return False
+    # user_has_chef_role = user_roles.count('Rom_Chef_Role')
+    # print('============================')
+    # print(user_roles)
+    # print(user_has_chef_role)
+    # print('self.rm_approval')
+    # print(self.rm_approval)
+    # print(type(self.rm_approval))
+    # if (user_has_chef_role >= 1):
+    #     print('user_has_chef_role >= 1')
+    #     if (self.rm_approval == 1):
+    #         print('self.rm_approval == 1')
+    #         frappe.throw("Editing approved record is not permitted")
+    return data
+
+
+# @frappe.whitelist()
+# def get_the_branch_name_for_the_user2(emailid):
+#     branch_id = "1"
+#     branch_name = "name"
+#     result = {branch_id, branch_name}
+#     return result
 
 
 @frappe.whitelist()

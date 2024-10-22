@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"-WIeLytqkA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Operation Space<br></span>\",\"col\":12}},{\"id\":\"YWnPaYvnL9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist Audited %\",\"col\":4}},{\"id\":\"2E8qDxo0EL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Close Checklist Audited %\",\"col\":4}},{\"id\":\"rlpzCJaZeQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eoxm6t2gNN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist\",\"col\":7}},{\"id\":\"19pVrV76kS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":7}},{\"id\":\"AlEbJPbP_a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"rCoGcVr7XB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"Ij1qVqGgs7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist\",\"col\":7}},{\"id\":\"GWDQcopPtF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"Mv-il9N7wc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":7}},{\"id\":\"jQnWfCoyNx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}},{\"id\":\"zL1-nGTUTL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Mobile <br></b></span>\",\"col\":12}},{\"id\":\"3diGPafPJF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Opening Checklist\",\"col\":4}},{\"id\":\"fx7RwSPPdk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Closing Checklist\",\"col\":4}},{\"id\":\"9x5lRmjYNA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"CGXlAXd98W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Register\",\"col\":4}},{\"id\":\"0UoCOViGxF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Report Register\",\"col\":4}},{\"id\":\"vGpSWTZhrP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"XcarzGpNUd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report Register\",\"col\":4}},{\"id\":\"WdwFdpkc1w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Register\",\"col\":4}},{\"id\":\"9jhIKs3hIs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count Register\",\"col\":4}},{\"id\":\"i85Ve4gPbi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"kaBbg3mkyE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form Register\",\"col\":4}}]",
+ "content": "[{\"id\":\"-WIeLytqkA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Operation Space<br></span>\",\"col\":12}},{\"id\":\"YWnPaYvnL9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist Audited %\",\"col\":4}},{\"id\":\"2E8qDxo0EL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Close Checklist Audited %\",\"col\":4}},{\"id\":\"rlpzCJaZeQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"6T-Rvax1to\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ToDo\",\"col\":3}},{\"id\":\"eoxm6t2gNN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist\",\"col\":7}},{\"id\":\"19pVrV76kS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":7}},{\"id\":\"AlEbJPbP_a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"rCoGcVr7XB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":7}},{\"id\":\"Ij1qVqGgs7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist\",\"col\":7}},{\"id\":\"GWDQcopPtF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"Mv-il9N7wc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":7}},{\"id\":\"jQnWfCoyNx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":7}},{\"id\":\"zL1-nGTUTL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Mobile <br></b></span>\",\"col\":12}},{\"id\":\"3diGPafPJF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Opening Checklist\",\"col\":4}},{\"id\":\"fx7RwSPPdk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Closing Checklist\",\"col\":4}},{\"id\":\"9x5lRmjYNA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"CGXlAXd98W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Register\",\"col\":4}},{\"id\":\"0UoCOViGxF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Report Register\",\"col\":4}},{\"id\":\"vGpSWTZhrP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"XcarzGpNUd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report Register\",\"col\":4}},{\"id\":\"WdwFdpkc1w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Register\",\"col\":4}},{\"id\":\"9jhIKs3hIs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count Register\",\"col\":4}},{\"id\":\"i85Ve4gPbi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"kaBbg3mkyE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form Register\",\"col\":4}}]",
  "creation": "2024-07-20 08:21:34.614118",
  "custom_blocks": [],
  "docstatus": 0,
@@ -8,12 +8,12 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "color-rank",
- "idx": 4,
+ "idx": 6,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Operation",
  "links": [],
- "modified": "2024-10-20 12:52:25.311161",
+ "modified": "2024-10-22 21:32:07.161259",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Operation",
@@ -65,6 +65,14 @@
    "doc_view": "List",
    "label": "Op Closing Checklist",
    "link_to": "Op Closing Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "ToDo",
+   "link_to": "ToDo",
    "stats_filter": "[]",
    "type": "DocType"
   },

@@ -23,6 +23,7 @@ fixtures = [
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
                     "Rom_MasterData_Role",
+                    "Rom_HR_Role",
                 ]
             ]
         ]
@@ -40,6 +41,7 @@ fixtures = [
                     "Rom_Admin_Role",
                     "Rom_Dev_Role",
                     "Rom_MasterData_Role",
+                    "Rom_HR_Role",
                 ]
             ]
         ]
