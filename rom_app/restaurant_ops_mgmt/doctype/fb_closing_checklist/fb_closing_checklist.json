@@ -42,8 +42,7 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date",
-   "read_only": 1
+   "label": "Date"
   },
   {
    "fieldname": "branch",
@@ -58,7 +57,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 20:35:44.749456",
+ "modified": "2024-10-23 02:16:01.685423",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Closing Checklist",

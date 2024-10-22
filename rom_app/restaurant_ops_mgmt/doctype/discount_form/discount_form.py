@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class DiscountForm(Document):
-    def on_update(self):
+    def validate(self):
         current_date = datetime.today().date()
         doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
         if (current_date > doc_save_date):

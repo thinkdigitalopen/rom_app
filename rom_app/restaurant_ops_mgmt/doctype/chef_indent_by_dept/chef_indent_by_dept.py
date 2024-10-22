@@ -87,7 +87,7 @@ class ChefIndentByDept(Document):
     #     print('item_data')
     #     return 'item_data'
 
-    def on_update(self):
+    def validate(self):
         current_date = datetime.today().date()
         doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
         if (current_date > doc_save_date):
