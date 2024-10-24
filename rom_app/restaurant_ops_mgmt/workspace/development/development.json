@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"BE7yQ022cf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Development Space<br></span>\",\"col\":12}},{\"id\":\"EG9OtsVMFq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DocType\",\"col\":4}},{\"id\":\"wdSt9_5eEB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":4}},{\"id\":\"HT6uNkDAsb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Page\",\"col\":4}},{\"id\":\"RSWAdFNz1o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role\",\"col\":4}},{\"id\":\"a-DWODx-wZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workspace\",\"col\":4}},{\"id\":\"yVOm8Pg5Cr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Number Card\",\"col\":4}},{\"id\":\"UqFwV3Xy-r\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assignment Rule\",\"col\":4}},{\"id\":\"zXSTWgneFy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"System Settings\",\"col\":4}},{\"id\":\"jp1prei7mO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":4}},{\"id\":\"Sp-oVPuCZQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Navbar Settings\",\"col\":4}},{\"id\":\"QAkXWRLJv2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Import\",\"col\":4}},{\"id\":\"Edp85v-b8j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Export\",\"col\":4}},{\"id\":\"bn13CpgTHc\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"pWCGXfQREs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permissions Manager\",\"col\":4}},{\"id\":\"yqdVM1P3rm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permission for Page and Report\",\"col\":4}},{\"id\":\"QghH9I7Kfz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"4LBq1goFQf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Inspector\",\"col\":4}},{\"id\":\"A5yK3QZCKx\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8s9tSj5WWI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Development Work\",\"col\":4}},{\"id\":\"0KItHIocFb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DevelopLog\",\"col\":4}},{\"id\":\"Ny9cXFcf-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dev Asset\",\"col\":4}}]",
+ "content": "[{\"id\":\"BE7yQ022cf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Development Space<br></span>\",\"col\":12}},{\"id\":\"pWCGXfQREs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permissions Manager\",\"col\":4}},{\"id\":\"yqdVM1P3rm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permission for Page and Report\",\"col\":4}},{\"id\":\"QghH9I7Kfz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"4LBq1goFQf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Inspector\",\"col\":4}},{\"id\":\"X691x-fcIw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"RSWAdFNz1o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role\",\"col\":4}},{\"id\":\"wdSt9_5eEB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":4}},{\"id\":\"HT6uNkDAsb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Page\",\"col\":4}},{\"id\":\"EG9OtsVMFq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DocType\",\"col\":4}},{\"id\":\"a-DWODx-wZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workspace\",\"col\":4}},{\"id\":\"yVOm8Pg5Cr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Number Card\",\"col\":4}},{\"id\":\"zXSTWgneFy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"System Settings\",\"col\":4}},{\"id\":\"jp1prei7mO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":4}},{\"id\":\"Sp-oVPuCZQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Navbar Settings\",\"col\":4}},{\"id\":\"QAkXWRLJv2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Import\",\"col\":4}},{\"id\":\"Edp85v-b8j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Export\",\"col\":4}},{\"id\":\"bn13CpgTHc\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8s9tSj5WWI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Development Work\",\"col\":4}},{\"id\":\"0KItHIocFb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DevelopLog\",\"col\":4}},{\"id\":\"Ny9cXFcf-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dev Asset\",\"col\":4}}]",
  "creation": "2024-08-28 08:13:30.289878",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Development",
  "links": [],
- "modified": "2024-10-24 10:57:39.235756",
+ "modified": "2024-10-24 21:38:26.134721",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Development",
@@ -59,14 +59,6 @@
    "doc_view": "List",
    "label": "Page",
    "link_to": "Page",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Assignment Rule",
-   "link_to": "Assignment Rule",
    "stats_filter": "[]",
    "type": "DocType"
   },
