@@ -1,0 +1,52 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"_aGfX0iRa1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sample</span>\",\"col\":12}},{\"id\":\"uqqmsl47Vd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc\",\"col\":4}},{\"id\":\"QdKsogAHwq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc Register\",\"col\":4}}]",
+ "creation": "2024-10-24 10:27:32.530044",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "solid-info",
+ "idx": 2,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Sample",
+ "links": [],
+ "modified": "2024-10-24 20:02:25.970299",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Sample",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Rom_Sample_Role"
+  }
+ ],
+ "sequence_id": 13.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "SampleDoc",
+   "link_to": "SampleDoc",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "SampleDoc Register",
+   "link_to": "SampleDoc Register",
+   "type": "Report"
+  }
+ ],
+ "title": "Sample"
+}
