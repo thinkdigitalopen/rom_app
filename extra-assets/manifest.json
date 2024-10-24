@@ -19,10 +19,10 @@
    "display":"standalone",
    "dir":"auto",
    "lang":"en-US",
-   "name":"hpreposoft",
+   "name":"Heavens Park",
    "short_name":"hpreposoft",
    "start_url":"https://hpreposoft.com/app",
    "scope":"https://hpreposoft.com",
-   "id":"hpreposoft",
-   "description":"hpreposoft"
+   "id":"HeavensPark",
+   "description":"Heavens Park"
 }

@@ -1,0 +1,72 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-24 11:50:08.869138",
+  "name": "pgelmi3cq6",
+  "page": null,
+  "ref_doctype": "SampleDoc",
+  "report": "SampleDoc Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Sample_Role"
+   },
+   {
+    "role": "Rom_HR_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-24 17:12:36.592246",
+  "name": "arteth2ptj",
+  "page": "sample-page",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Sample_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_HR_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ }
+]

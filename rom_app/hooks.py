@@ -24,6 +24,7 @@ fixtures = [
                     "Rom_Dev_Role",
                     "Rom_MasterData_Role",
                     "Rom_HR_Role",
+                    "Rom_Sample_Role",
                 ]
             ]
         ]
@@ -42,10 +43,28 @@ fixtures = [
                     "Rom_Dev_Role",
                     "Rom_MasterData_Role",
                     "Rom_HR_Role",
+                    "Rom_Sample_Role",
                 ]
             ]
         ]
     },
+    {
+        "dt": "Custom Role",
+        "or_filters": {
+                        "page": ["in",  ["sample-page"]],
+                        "report": ["in", ["SampleDoc Register"]],
+                     }
+    },
+    {
+        "dt": "Has Role",
+        "filters": [
+            [
+                "role", "in", [
+                    "Rom_Sample_Role"
+                ]
+            ]
+        ]
+    }
 ]
 
 # Includes in <head>

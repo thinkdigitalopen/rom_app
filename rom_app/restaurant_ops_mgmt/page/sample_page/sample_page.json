@@ -1,0 +1,32 @@
+{
+ "content": null,
+ "creation": "2024-10-24 15:50:21.220855",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-10-24 17:16:50.937397",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "sample-page",
+ "owner": "Administrator",
+ "page_name": "sample-page",
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Rom_Admin_Role"
+  },
+  {
+   "role": "Rom_FB_Role"
+  },
+  {
+   "role": "Rom_Cash_Role"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Sample Page"
+}

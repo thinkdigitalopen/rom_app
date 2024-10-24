@@ -1,0 +1,32 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2024-10-24 11:15:07.548067",
+  "name": "odn63tnugl",
+  "parent": "sampleuser@email.com",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Rom_Sample_Role"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2024-10-24 17:12:36.592246",
+  "name": "bultnksklo",
+  "parent": "arteth2ptj",
+  "parentfield": "roles",
+  "parenttype": "Custom Role",
+  "role": "Rom_Sample_Role"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2024-10-24 11:50:08.869138",
+  "name": "61norqu65n",
+  "parent": "pgelmi3cq6",
+  "parentfield": "roles",
+  "parenttype": "Custom Role",
+  "role": "Rom_Sample_Role"
+ }
+]
