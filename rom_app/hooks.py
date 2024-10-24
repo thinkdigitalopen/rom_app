@@ -54,16 +54,6 @@ fixtures = [
                         "page": ["in",  ["sample-page"]],
                         "report": ["in", ["SampleDoc Register"]],
                      }
-    },
-    {
-        "dt": "Has Role",
-        "filters": [
-            [
-                "role", "in", [
-                    "Rom_Sample_Role"
-                ]
-            ]
-        ]
     }
 ]
 
