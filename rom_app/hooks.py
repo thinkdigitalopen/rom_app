@@ -51,8 +51,38 @@ fixtures = [
     {
         "dt": "Custom Role",
         "or_filters": {
-                        "page": ["in",  ["sample-page"]],
-                        "report": ["in", ["SampleDoc Register"]],
+                        "page": ["in",  [
+                            "single-page-chart",
+                            "inventory-view",
+                            "checklist_matrix",
+                            "fb-open-check-mob",
+                            "fb-close-check-mob",
+                            "op-open-check-mob",
+                            "op-close-check-mob",
+                            "sample-page",
+                            ]],
+                        "report": ["in", [
+                            "FB Opening Checklist Register",
+                            "FB Closing Checklist Register",
+                            "Chef Indent By Dept Register",
+                            "Chef Production Register",
+                            "Op Opening Checklist Register",
+                            "Op Closing Checklist Register",
+                            "Incident Report Register",
+                            "Discount Form Register",
+                            "Asset Count Register",
+                            "Sales Report Register",
+                            "Expense Report Register",
+                            "Breakages Report Register",
+                            "Ticket Report Register",
+                            "NC Report Register",
+                            "Raw Material Only Register",
+                            "Stock Entry Register",
+                            "Inventory Wastage Register",
+                            "Inventory Counting Register",
+                            "Inventory Summary Register",
+                            "SampleDoc Register",
+                        ]],
                      }
     }
 ]
@@ -61,10 +91,18 @@ fixtures = [
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/rom_app/css/billboard.css"
-app_include_js = ["/assets/rom_app/js/d3.v6.min.js",
+app_include_css = [
+                   "/assets/rom_app/css/billboard.css",
+                   "/assets/rom_app/css/frappe-datatable.min.css"
+                   ]
+app_include_js = [
+                  "/assets/rom_app/js/d3.v6.min.js",
                   "/assets/rom_app/js/billboard.js",
-                  "/assets/rom_app/js/utils_link_formatters.js"]
+                  "/assets/rom_app/js/utils_link_formatters.js",
+                  "/assets/rom_app/js/frappe-datatable.min.js",
+                  "/assets/rom_app/js/Sortable.min.js",
+                  "/assets/rom_app/js/clusterize.js",
+                  ]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/rom_app/css/rom_app.css"

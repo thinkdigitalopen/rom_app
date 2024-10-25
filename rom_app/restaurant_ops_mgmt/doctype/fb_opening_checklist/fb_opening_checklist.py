@@ -4,14 +4,14 @@ from datetime import datetime
 
 
 class FBOpeningChecklist(Document):
-    def before_insert(self):
-        print('before_insert')
-        branch = self.branch
-        user_name = self.user_name
-        current_date = self.date
-        rec_count = self.get_the_record_count(branch, user_name, current_date)
-        if (rec_count > 0):
-            frappe.throw("You are limited to adding just one record per day.")
+    # def before_insert(self):
+    #     print('before_insert')
+    #     branch = self.branch
+    #     user_name = self.user_name
+    #     current_date = self.date
+    #     rec_count = self.get_the_record_count(branch, user_name, current_date)
+    #     if (rec_count > 0):
+    #         frappe.throw("You are limited to adding just one record per day.")
 
     # def on_update(self):
     #     print('on_update')

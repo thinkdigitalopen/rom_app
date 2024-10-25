@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2024-10-24 23:51:18.111542",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-10-24 23:51:18.111542",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "checklist-matrix",
+ "owner": "Administrator",
+ "page_name": "checklist-matrix",
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Rom_Manage_Role"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Checklist Matrix"
+}

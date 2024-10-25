@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "audit",
-  "question"
+  "question",
+  "question_hid"
  ],
  "fields": [
   {
@@ -24,12 +25,19 @@
    "in_list_view": 1,
    "label": "Question",
    "read_only": 1
+  },
+  {
+   "fieldname": "question_hid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Question Hid"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-14 03:40:57.417099",
+ "modified": "2024-10-24 23:39:46.786542",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Opening Checklist Child",

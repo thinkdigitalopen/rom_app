@@ -2,3 +2,31 @@
 # yarn lockfile v1
 
 
+clusterize@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/clusterize/-/clusterize-0.1.2.tgz"
+  integrity sha512-pShORVKb49yvGrPHJbqd9sp43CANPfF4rSflyFq01DA74M+C0aDYkPj1eNxCtq0gdgUgpFzOJAyE4eDXRlrAVw==
+
+frappe-datatable@^1.17.16:
+  version "1.17.16"
+  resolved "https://registry.npmjs.org/frappe-datatable/-/frappe-datatable-1.17.16.tgz"
+  integrity sha512-BJgWFX8msHZcS1mw2xbuaY1YdH1dBXUIuREVmqH5z1p78GusPaDV8sbWskTS5yVBUklMrMq2VfBTUsJXjvl+wg==
+  dependencies:
+    hyperlist "^1.0.0-beta"
+    lodash "^4.17.5"
+    sortablejs "^1.7.0"
+
+hyperlist@^1.0.0-beta:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/hyperlist/-/hyperlist-1.0.0.tgz"
+  integrity sha512-1qAjO29EJW/mPyqY+9wFjruD2YWur1dPsPYmt9RvMX6P+8Cr2UmT75MCWjjK+1/4Jxc3sm/G3Kr8DzGgEDRG+Q==
+
+lodash@^4.17.5:
+  version "4.17.21"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
+sortablejs@^1.7.0:
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/sortablejs/-/sortablejs-1.15.3.tgz"
+  integrity sha512-zdK3/kwwAK1cJgy1rwl1YtNTbRmc8qW/+vgXf75A7NHag5of4pyI6uK86ktmQETyWRH7IGaE73uZOOBcGxgqZg==

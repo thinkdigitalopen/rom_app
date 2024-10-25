@@ -18,7 +18,7 @@ def get_fb_opening_checklist_child(branch_param):
         frappe.qb.from_(parent)
         .inner_join(child)
         .on(parent.name == child.parent)
-        .select(parent.name, parent.branch, child.question)
+        .select(parent.name, parent.branch, child.question, child.name)
         .where(parent.branch == branch_param)
     )
     sql_text = query.get_sql()
