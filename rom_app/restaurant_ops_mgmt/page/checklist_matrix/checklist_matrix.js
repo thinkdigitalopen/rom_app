@@ -5,150 +5,123 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 		single_column: true
 	});
 
-	insert_datatable_holder_div();
-	build_header_ui();
+ 	insert_datatable_holder_div();
+ 	build_header_ui();
 
-	function insert_datatable_holder_div(){
-		    $("<div class='datatable'></div>").appendTo('.layout-main-section');
+	function insert_datatable_holder_div()
+	{
+		$("<div class='datatable'></div>").appendTo('.layout-main-section');
 	}
-	function draw_datatable(dict){
 
-		let dataarray = [];
-		let columns = [];
-		let l_row = 0;
-		let l_col = 0;
+	function draw_datatable_json(dict)
+	{
+		console.log(' draw_datatable_json ');
+		console.log(dict);
 
-		let dict_length = dict.length;
-		console.log('dict_length');
-		console.log(dict_length);
+		array2d = convert_arr_object_to_2d_array(dict);
+		console.log(array2d);
 
-		let trans_array_col_length = 0;
-		$.each(dict, function(_i, e){
-			console.log('_i');
-			console.log(_i);
-			console.log(e);
-			let column	= { name: _i, editable:false, focusable:false };
-			columns.push(column);
-			console.log('l_row ',l_row);
-			dataarray[l_row] = e;
-			l_row = l_row + 1;
+		console.log('columns start');
+		let columns = get_columns_from_2darray(array2d);
+		console.log('columns end ', columns);
 
-			trans_array_col_length = Object.keys(e).length;
+		let columns_frappetable = get_columns_from_2darray_for_frappetable(columns);
+		console.log('columns_frappetable ',columns_frappetable);
+
+		let data_frappetable = get_data_from_2darray_for_frappetable(array2d, columns);
+		console.log(data_frappetable);
+
+		const datatable = new DataTable('.datatable', {
+			columns: columns_frappetable,
+			data: data_frappetable
 		});
-
-		console.log('dataarray');
-		console.log(dataarray);
-
-
-	console.log(columns);
-		console.log(columns.length);
-		let col_len = columns.length;
-
-		console.log(' looping array ');
-
-		//var transarray = [];
-
-		//string transarray[][] = new string[][];
-		var transarray =  Array.apply(null, Array(col_len)).map(e => Array(trans_array_col_length));
-
-		for(var i=0;i<dataarray.length; i++ )
-		{
-			console.log('i',i);
-			console.log(dataarray[i]);
-			var itemarray = dataarray[i];
-
-			console.log( 'item array length - ', Object.keys(itemarray).length);
-
-			console.log('--- itemarray  loop START -- ',i);
-			let j = 0;
-			for (let key in itemarray) {
-
-				console.log('key - ', key, itemarray[key]);
-				console.log('temarray[key] - ', itemarray[key]);
-				console.log('i --> j',i,'  ', j);
-				//transarray[i][j] = itemarray[key];
-				transarray[i].push(itemarray[key]);
-				//transarray.push(i, itemarray[key])
-				j = j+1;
-			}
-			console.log('--- itemarray  loop END -- ',i);
-			console.log('transarray');
-			console.log(transarray);
-
-			// for(var j=0;j<itemarray.length; j++ )
-			// {
-			// 	transarray[i][j] = itemarray[j];
-			// }
-		}
-
-		console.log(' transarray');
-		console.log(transarray);
-
-// 		columns = [
-//
-//             {name:'Position', editable:false, focusable:false},
-//             {name:'Salary', editable:false, focusable:false},
-//         ]
-
-		// let data = [];
-		// let row = [];
-		//let row_length = dict.length;
-		//console.log('row_length - ',row_length);
-
-
-/*
-		$.each(dict, function(_i, e)
-		{
-			let row_length = e.length;
-			console.log('row_length - ',row_length);
-			var row = {};
-			for(var m=0;m<row_length; m++)
-			{
-				row[m]=e[m];
-			}
-			console.log('row ',row);
-
-		}
-		);*/
-//data.push(row);
-//
-// 		let rr = {
-//                 'Name':'raj',
-//                 'Position':'supplier',
-//                 'Salary':'100',
-//             }
-//
-//         let rr2 = {
-//                 'Name':'raj2',
-//                 'Position':'supplier2',
-//                 'Salary':'1002',
-//             }
-		// for(i=0;i< )
-		// for(var j=0;j<itemarray.length; j++ )
-		// {
-		// 	transarray[i][j] = itemarray[j];
-		// }
-
-		// data.push(rr);
-		// data.push(rr2);
-
-		// const datatable = new DataTable('.datatable', {
-		// 	columns: columns,
-		// 	data: transarray
-		// });
-		//datatable.refresh(data,columns );
+		datatable.refresh(data_frappetable,columns );
 	}
+
+	function get_data_from_2darray_for_frappetable(array2d, columns)
+	{
+		const rowCount = array2d.length;
+		const  columnCount= array2d[0].length;
+
+		console.log(rowCount);
+		console.log(columnCount);
+
+		let data = [];
+		let key = 0;
+		let val = 0;
+		for(var i=0; i<rowCount; i++ )
+		{
+			//skip the first row because it has headers
+			if (i == 0) continue;
+			let row = {};
+			for(var j=0; j<columnCount; j++ )
+			{
+				key = columns[j];
+				val =  array2d[i][j];
+
+				if (val == 1) val = '&#10003;';
+				if (val == 0) val = '';
+
+				row[key] = val;
+			}
+			data.push(row);
+		}
+
+		return data;
+	}
+
+	function convert_arr_object_to_2d_array(arr)
+	{
+		const dates = Object.keys(arr).filter(key => key !== 'name' && key !== 'question');
+		const headers = ['name', 'question', ...dates];
+
+		const result = [headers];
+		for (let i = 0; i < Object.keys(arr.name).length; i++)
+		{
+			const row = [
+				arr.name[i],
+				arr.question[i],
+				...dates.map(date => arr[date][i])
+			];
+			result.push(row);
+		}
+		return result;
+	}
+
+	function get_columns_from_2darray_for_frappetable(columns)
+	{
+		let columns_frappe = [];
+
+		for(var i=0; i<columns.length; i++)
+		{
+			let column	= { name: columns[i] , editable:false, focusable:false };
+			columns_frappe.push(column);
+		}
+
+		return columns_frappe;
+	}
+
+	function get_columns_from_2darray(arr)
+	{
+		const rowCount = arr.length;
+		console.log(rowCount);
+
+		const columnCount = arr[0].length;
+		console.log(columnCount);
+
+		let columns = [];
+		let header_row = arr[0];
+
+		for(var j=0; j<columnCount; j++)
+		{
+			columns.push(header_row[j]);
+		}
+		return columns;
+	}
+
 
 	function get_data(){
 		let api_url = "rom_app.restaurant_ops_mgmt.api_checklist_matrix.get_checklist_matrix_data";
-		// frappe.call({
-		// 	method: api_url,
-		// 	args: {'branch': '', 'checklist_type': '', 'from_date': '','to_date': ''},
-		// 	async: false;
-		// 	callback: function(res) {
-		// 		console.log(res);
-		// 	}
-		// });
 		let result_data = [];
 		frappe.call({
 			method: api_url,
@@ -162,13 +135,13 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 			callback: function(res) {
 				console.log(res);
 				result_data = res.message;
-
 			}
 		});
 		return result_data;
 	}
 
-	function build_header_ui(){
+	function build_header_ui()
+	{
 
 		let from_date = global_get_from_date();
 		let to_date = global_get_to_date();
@@ -189,7 +162,7 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 					fieldtype: "Select",
 					fieldname: "field_checklist",
 					options: [
-						'',
+						' ',
 						'FB Opening',
 						'FB Closing',
 						'Op Opening',
@@ -219,17 +192,19 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 						console.log('clicked');
 						let res = get_data();
 						console.log(res);
-						draw_datatable(res);
+						draw_datatable_json(res);
 					}
 				});
 	 }
 
-	 function global_get_to_date(){
+	function global_get_to_date()
+	{
 		var from_date_temp = frappe.datetime.now_date();
 		return from_date_temp;
 	}
 
-	function global_get_from_date(){
+	function global_get_from_date()
+	{
 		var from_date_temp = global_get_to_date();
 		var from_date_minus_one = new Date(frappe.datetime.str_to_obj(from_date_temp));
 		from_date_minus_one.setDate(from_date_minus_one.getDate() - 1);
@@ -237,8 +212,8 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 		let date_only = from_date_minus_one.getDate();
 		let month_only = from_date_minus_one.getMonth() + 1;
 		if (month_only.toString().length == 1) {
-            month_only = "0" + month_only;
-        }
+			month_only = "0" + month_only;
+		}
 		let year_only = from_date_minus_one.getFullYear();
 
 		var from_date_minus_one_opt = year_only + "-" + month_only + "-" + date_only;
@@ -251,4 +226,7 @@ frappe.pages['checklist-matrix'].on_page_load = function(wrapper) {
 		console.log("from_date_minus_one_opt", from_date_minus_one_opt);
 		return from_date_minus_one_opt;
 	}
+
 }
+
+

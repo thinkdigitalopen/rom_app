@@ -1,6 +1,7 @@
 import frappe
 import pandas as pd
 from datetime import datetime
+import json
 
 
 def get_fb_opening_checklist_from_template():
@@ -114,4 +115,7 @@ def get_checklist_matrix_data(branch, checklist_type, from_date, to_date):
     print(df_template)
     df_dict = df_template.to_dict()
     print(df_dict)
+    response = json.dumps(df_dict)
+    print('response')
+    print(response)
     return df_dict
