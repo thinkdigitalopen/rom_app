@@ -163,65 +163,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Operation Reports",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Opening",
-   "link_count": 0,
-   "link_to": "Op Opening Checklist Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Closing",
-   "link_count": 0,
-   "link_to": "Op Closing Checklist Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Incident",
-   "link_count": 0,
-   "link_to": "Incident Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Discount Form",
-   "link_count": 0,
-   "link_to": "Discount Form Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Asset Count",
-   "link_count": 0,
-   "link_to": "Asset Count Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Common Reports",
    "link_count": 3,
    "link_type": "DocType",
@@ -286,9 +227,68 @@
    "link_type": "Page",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operation Reports",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Opening",
+   "link_count": 0,
+   "link_to": "Op Opening Checklist Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Closing",
+   "link_count": 0,
+   "link_to": "Op Closing Checklist Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Incident",
+   "link_count": 0,
+   "link_to": "Incident Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Discount Form",
+   "link_count": 0,
+   "link_to": "Discount Form Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Asset Count",
+   "link_count": 0,
+   "link_to": "Asset Count Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-10-27 18:12:59.407863",
+ "modified": "2024-10-30 01:57:49.284910",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Management",

@@ -16,6 +16,35 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Common Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Ticket Report",
+   "link_count": 0,
+   "link_to": "Ticket Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "NC Report",
+   "link_count": 0,
+   "link_to": "NC Report Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Stock Reports",
    "link_count": 7,
    "link_type": "DocType",
@@ -24,7 +53,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Raw Material Only",
    "link_count": 0,
    "link_to": "Raw Material Only Register",
@@ -91,38 +120,9 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Common Reports",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Ticket Report",
-   "link_count": 0,
-   "link_to": "Ticket Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "NC Report",
-   "link_count": 0,
-   "link_to": "NC Report Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-10-29 22:40:26.318375",
+ "modified": "2024-10-30 01:55:32.199470",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store",
