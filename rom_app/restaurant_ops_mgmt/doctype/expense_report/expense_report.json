@@ -74,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 20:10:52.399771",
+ "modified": "2024-10-30 01:14:42.289125",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Expense Report",
@@ -98,6 +98,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "expense_desc",
- "track_changes": 1
+ "title_field": "expense_desc"
 }

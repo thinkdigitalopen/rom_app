@@ -9,29 +9,69 @@ frappe.ui.form.on("Ticket Report", {
 	onload(frm) {
 		$('span.sidebar-toggle-btn').hide();
         $('.col-lg-2.layout-side-section').hide();
+		if (frm.is_new()) {
+			console.log(' ******************* frm is new true ************** ');
+			frm.set_df_property("completed", "read_only", true);
+		}
+		else
+		{
+			let useremaillist = frappe.user.get_emails();
+			let useremail = useremaillist[0];
+			let owner = frm.doc.owner;
+			console.log(' useremail ', useremail);
+			console.log(' createdby ', owner);
+			if(useremail != owner){
+				frm.set_df_property("department", "read_only", true);
+			}
+		}
 	},
 	validate(frm) {
 		console.log('validate');
-		let completed = frm.doc.completed;
-		if(completed == true){
+		if (!frm.is_new())
+		{
+			let completed = frm.doc.completed;
+			// if(completed == true){
 			console.log(' complete = true');
 			result = find_user_is_from_the_dept(frm);
 			if (result){
 				console.log(' find user = true');
 				return true;
 			}
-			else {
-				console.log(' find user = false');
-				frm.set_value('completed', false);
-				warn_message(frm);
+			else
+			{
+				console.log(" validate - else part");
+				let useremaillist = frappe.user.get_emails();
+				let useremail = useremaillist[0];
+				let owner = frm.doc.owner;
+				console.log(' useremail ', useremail);
+				console.log(' createdby ', owner);
+				if(useremail != owner){
+					console.log(' find user = false');
+					frm.set_value('completed', false);
+					warn_message(frm);
+				}
 			}
 		}
-		else
-		{
-			console.log(' complete = false');
-		}
+		// }
+		// else
+		// {
+		// 	console.log(' complete = false');
+		// }
 	 }
 });
+
+// function disable_completed_field_if_not_the_right_dept(frm){
+// 		result = find_user_is_from_the_dept(frm);
+// 		if (result){
+// 			console.log(' find user = true');
+// 		}
+// 		else {
+// 			console.log(' find user = false');
+// 			frm.set_df_property("completed", "read_only", true);
+// 			// frm.set_value('completed', false);
+// 			// warn_message(frm);
+// 		}
+// }
 
 function find_user_is_from_the_dept(frm){
 	let useremail = frappe.user.get_emails();

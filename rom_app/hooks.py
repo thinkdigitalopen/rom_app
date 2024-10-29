@@ -101,9 +101,8 @@ app_include_js = [
                   "/assets/rom_app/js/utils_link_formatters.js",
                   "/assets/rom_app/js/frappe-datatable.min.js",
                   "/assets/rom_app/js/Sortable.min.js",
-                  "/assets/rom_app/js/clusterize.js",
                   ]
-
+# "/assets/rom_app/js/clusterize.js",
 # include js, css files in header of web template
 # web_include_css = "/assets/rom_app/css/rom_app.css"
 # web_include_js = "/assets/rom_app/js/rom_app.js"

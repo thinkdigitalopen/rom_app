@@ -36,7 +36,6 @@
   {
    "fieldname": "reported_by",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Reported by",
    "reqd": 1
   },
@@ -115,7 +114,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 22:18:06.361790",
+ "modified": "2024-10-30 01:17:49.880101",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",
@@ -140,6 +139,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "ticket_desc",
- "track_changes": 1
+ "title_field": "ticket_desc"
 }

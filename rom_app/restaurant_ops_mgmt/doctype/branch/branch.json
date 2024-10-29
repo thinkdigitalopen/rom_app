@@ -30,7 +30,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 15:27:48.904419",
+ "modified": "2024-10-30 01:13:09.209937",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Branch",
@@ -54,6 +54,5 @@
  "sort_field": "creation",
  "sort_order": "ASC",
  "states": [],
- "title_field": "branch_name",
- "track_changes": 1
+ "title_field": "branch_name"
 }

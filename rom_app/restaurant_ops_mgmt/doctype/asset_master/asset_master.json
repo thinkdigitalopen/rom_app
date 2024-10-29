@@ -59,7 +59,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-21 00:15:38.211128",
+ "modified": "2024-10-30 01:13:04.039727",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Master",
@@ -83,6 +83,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "item",
- "track_changes": 1
+ "title_field": "item"
 }

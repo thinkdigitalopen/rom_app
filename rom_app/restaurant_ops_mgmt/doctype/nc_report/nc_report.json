@@ -112,7 +112,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-18 20:11:46.766686",
+ "modified": "2024-10-30 01:15:52.437872",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "NC Report",
@@ -136,6 +136,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "nc",
- "track_changes": 1
+ "title_field": "nc"
 }

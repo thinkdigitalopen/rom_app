@@ -57,7 +57,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-23 02:16:01.685423",
+ "modified": "2024-10-30 01:15:01.070192",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Closing Checklist",
@@ -81,6 +81,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "date",
- "track_changes": 1
+ "title_field": "date"
 }
