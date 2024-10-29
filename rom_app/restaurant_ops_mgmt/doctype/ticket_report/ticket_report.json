@@ -30,7 +30,6 @@
   {
    "fieldname": "responsible_person",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Resp. Person",
    "reqd": 1
   },
@@ -116,7 +115,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-22 22:10:40.602286",
+ "modified": "2024-10-29 22:18:06.361790",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",

@@ -2,6 +2,9 @@
 
 frappe.ui.form.on("Ticket Report", {
 	refresh(frm) {
+		$('span.sidebar-toggle-btn').hide();
+        $('.col-lg-2.layout-side-section').hide();
+
 	},
 	onload(frm) {
 		$('span.sidebar-toggle-btn').hide();

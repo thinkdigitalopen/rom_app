@@ -158,7 +158,7 @@ def check_the_user_has_the_selected_dept_role(emailid, department_id):
     #     if (self.rm_approval == 1):
     #         print('self.rm_approval == 1')
     #         frappe.throw("Editing approved record is not permitted")
-    return data
+    # return data
 
 
 # @frappe.whitelist()

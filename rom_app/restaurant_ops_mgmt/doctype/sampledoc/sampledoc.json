@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "full_name",
-  "city"
+  "city",
+  "child_table"
  ],
  "fields": [
   {
@@ -20,11 +21,17 @@
    "fieldname": "city",
    "fieldtype": "Data",
    "label": "City"
+  },
+  {
+   "fieldname": "child_table",
+   "fieldtype": "Table",
+   "label": "Child Table",
+   "options": "SampleDoc Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-23 23:22:25.415413",
+ "modified": "2024-10-27 22:08:23.856113",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "SampleDoc",

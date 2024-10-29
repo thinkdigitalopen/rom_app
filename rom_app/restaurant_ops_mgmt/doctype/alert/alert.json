@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-10-29 14:25:37.623599",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branch",
+  "ticket_desc",
+  "reference",
+  "column_break_zryu",
+  "ticket_date",
+  "reported_by",
+  "assigned_by",
+  "assigned_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ticket_desc",
+   "fieldtype": "Data",
+   "label": "Ticket Desc"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Data",
+   "label": "Assigned By"
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Data",
+   "label": "Reported by"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Link",
+   "label": "Reference",
+   "options": "Ticket Report"
+  },
+  {
+   "fieldname": "column_break_zryu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket_date",
+   "fieldtype": "Date",
+   "label": "Ticket Date"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Data",
+   "label": "Assigned To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-29 15:01:30.139519",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Alert",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ticket_desc"
+}

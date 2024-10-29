@@ -1,6 +1,9 @@
 import frappe
-from datetime import datetime
-import json
+
+
+def find_session_user_email():
+    user_email = frappe.session.user
+    return user_email
 
 
 def find_user_branch():

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"RfkQv3gz0C\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ToDo\",\"col\":7}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"Yp-a6wcOnk\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock Reports\",\"col\":4}},{\"id\":\"kYJspEX_Vr\",\"type\":\"card\",\"data\":{\"card_name\":\"Common Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"8VUNm1c613\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":7}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"Yp-a6wcOnk\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock Reports\",\"col\":4}},{\"id\":\"kYJspEX_Vr\",\"type\":\"card\",\"data\":{\"card_name\":\"Common Reports\",\"col\":4}}]",
  "creation": "2024-08-26 20:57:34.050043",
  "custom_blocks": [],
  "docstatus": 0,
@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "color-energy-points",
- "idx": 4,
+ "idx": 5,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Store",
@@ -122,11 +122,16 @@
    "type": "Link"
   }
  ],
- "modified": "2024-10-24 11:24:44.884802",
+ "modified": "2024-10-29 22:40:26.318375",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Open Tickets Assigned",
+   "number_card_name": "Open Tickets Assigned"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -163,11 +168,11 @@
    "type": "DocType"
   },
   {
-   "color": "Red",
+   "color": "Green",
    "doc_view": "List",
-   "label": "ToDo",
-   "link_to": "ToDo",
-   "stats_filter": "[]",
+   "label": "Ticket Report",
+   "link_to": "Ticket Report",
+   "stats_filter": "[[\"Ticket Report\",\"completed\",\"=\",0,false]]",
    "type": "DocType"
   },
   {
@@ -184,14 +189,6 @@
    "label": "Inventory Wastage",
    "link_to": "Inventory Wastage",
    "stats_filter": "[[\"Inventory Wastage\",\"creation\",\"Timespan\",\"today\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Ticket Report",
-   "link_to": "Ticket Report",
-   "stats_filter": "[]",
    "type": "DocType"
   },
   {

@@ -2,6 +2,995 @@
  {
   "docstatus": 0,
   "doctype": "Custom Role",
+  "modified": "2024-10-22 12:24:54.940265",
+  "name": "17bmuh0umb",
+  "page": null,
+  "ref_doctype": "Chef Production",
+  "report": "Chef Production Register",
+  "roles": [
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:15:03.661933",
+  "name": "hn679s4tg8",
+  "page": "single-page-chart",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:28:48.524892",
+  "name": "vr2sp1s2jd",
+  "page": null,
+  "ref_doctype": "Inventory Summary",
+  "report": "Inventory Summary Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:28:17.459164",
+  "name": "vrgv1p4908",
+  "page": null,
+  "ref_doctype": "Inventory Wastage",
+  "report": "Inventory Wastage Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:28:32.595316",
+  "name": "vrkvva9j5b",
+  "page": null,
+  "ref_doctype": "Inventory Counting",
+  "report": "Inventory Counting Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:14:38.805870",
+  "name": "6q77qn403d",
+  "page": "inventory-view",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Dashboard Manager"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:26:02.317773",
+  "name": "gvorbvfa9a",
+  "page": null,
+  "ref_doctype": "Raw Material Only",
+  "report": "Raw Material Only Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:15:55.619828",
+  "name": "thse3gj04v",
+  "page": "fb-close-check-mob",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "System Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:27:28.685510",
+  "name": "h3r8h2j5g6",
+  "page": null,
+  "ref_doctype": "Sales Report",
+  "report": "Sales Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:25:50.160145",
+  "name": "h4c55l6sq3",
+  "page": null,
+  "ref_doctype": "NC Report",
+  "report": "NC Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:25:10.057280",
+  "name": "hco6bro3fv",
+  "page": null,
+  "ref_doctype": "Chef Indent By Dept",
+  "report": "Chef Indent By Dept Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:15:36.560414",
+  "name": "hp55vjc3mr",
+  "page": "fb-open-check-mob",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "System Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:16:20.327217",
+  "name": "hpirtl9sg2",
+  "page": "op-open-check-mob",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "System Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:17:15.073789",
+  "name": "hpoi80kob2",
+  "page": "op-close-check-mob",
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "System Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:18:13.452484",
+  "name": "hqjlhr6brb",
+  "page": null,
+  "ref_doctype": "FB Opening Checklist",
+  "report": "FB Opening Checklist Register",
+  "roles": [
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:18:28.863391",
+  "name": "hqr09iq7jf",
+  "page": null,
+  "ref_doctype": "FB Closing Checklist",
+  "report": "FB Closing Checklist Register",
+  "roles": [
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:18:42.418123",
+  "name": "hqv81b5gak",
+  "page": null,
+  "ref_doctype": "Op Opening Checklist",
+  "report": "Op Opening Checklist Register",
+  "roles": [
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:21:36.393386",
+  "name": "hr33uk49pe",
+  "page": null,
+  "ref_doctype": "Op Closing Checklist",
+  "report": "Op Closing Checklist Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Administrator"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:24:37.967965",
+  "name": "huebpt49fl",
+  "page": null,
+  "ref_doctype": "Ticket Report",
+  "report": "Ticket Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:25:33.695766",
+  "name": "huvp922ltf",
+  "page": null,
+  "ref_doctype": "Breakages Report",
+  "report": "Breakages Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:26:22.062526",
+  "name": "hvesul3m1i",
+  "page": null,
+  "ref_doctype": "Incident Report",
+  "report": "Incident Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:26:48.256102",
+  "name": "hvn2cbp9uv",
+  "page": null,
+  "ref_doctype": "Asset Count",
+  "report": "Asset Count Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:27:15.174490",
+  "name": "hvvf4j6gp6",
+  "page": null,
+  "ref_doctype": "Discount Form",
+  "report": "Discount Form Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:27:40.327870",
+  "name": "i07boreeab",
+  "page": null,
+  "ref_doctype": "Expense Report",
+  "report": "Expense Report Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Store_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-10-22 12:28:01.189073",
+  "name": "i0drnjkr9h",
+  "page": null,
+  "ref_doctype": "Stock Entry",
+  "report": "Stock Entry Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_Cash_Role"
+   },
+   {
+    "role": "Rom_Dev_Role"
+   },
+   {
+    "role": "Rom_FB_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_Op_Role"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
   "modified": "2024-10-24 11:50:08.869138",
   "name": "pgelmi3cq6",
   "page": null,
