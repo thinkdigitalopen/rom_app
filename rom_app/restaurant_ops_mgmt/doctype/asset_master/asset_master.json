@@ -11,7 +11,9 @@
   "category",
   "column_break_ihrc",
   "standard_stock",
-  "price"
+  "price",
+  "attach_image",
+  "image"
  ],
  "fields": [
   {
@@ -55,11 +57,22 @@
    "options": "Branch",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "attach_image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 01:13:04.039727",
+ "modified": "2024-10-30 19:34:28.645328",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Master",

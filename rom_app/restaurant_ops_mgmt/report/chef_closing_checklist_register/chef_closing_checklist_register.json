@@ -9,7 +9,7 @@
  "idx": 15,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-10-18 07:08:58.736490",
+ "modified": "2024-10-30 20:04:35.122838",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Closing Checklist Register",
@@ -20,16 +20,7 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "Rom_FB_Role"
-  },
-  {
    "role": "System Manager"
-  },
-  {
-   "role": "Rom_Manage_Role"
-  },
-  {
-   "role": "Rom_Op_Role"
   }
  ]
 }

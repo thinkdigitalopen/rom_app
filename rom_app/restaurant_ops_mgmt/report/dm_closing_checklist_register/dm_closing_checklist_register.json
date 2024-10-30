@@ -9,7 +9,7 @@
  "idx": 9,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-10-18 07:08:04.198510",
+ "modified": "2024-10-30 20:04:10.754435",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Dm Closing Checklist Register",
@@ -21,18 +21,6 @@
  "roles": [
   {
    "role": "System Manager"
-  },
-  {
-   "role": "Rom_Op_Role"
-  },
-  {
-   "role": "Rom_Manage_Role"
-  },
-  {
-   "role": "Rom_FB_Role"
-  },
-  {
-   "role": "Administrator"
   }
  ]
 }

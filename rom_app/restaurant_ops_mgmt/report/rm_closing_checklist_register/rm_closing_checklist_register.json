@@ -9,7 +9,7 @@
  "idx": 5,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-10-18 06:56:36.587060",
+ "modified": "2024-10-30 20:05:55.981256",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "RM Closing Checklist Register",
@@ -19,24 +19,6 @@
  "report_name": "RM Closing Checklist Register",
  "report_type": "Script Report",
  "roles": [
-  {
-   "role": "Rom_FB_Role"
-  },
-  {
-   "role": "Rom_Op_Role"
-  },
-  {
-   "role": "Rom_Cash_Role"
-  },
-  {
-   "role": "Rom_Store_Role"
-  },
-  {
-   "role": "Rom_Manage_Role"
-  },
-  {
-   "role": "Rom_Admin_Role"
-  },
   {
    "role": "System Manager"
   }
