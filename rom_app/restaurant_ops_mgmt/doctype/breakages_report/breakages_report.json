@@ -60,7 +60,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "date_time",
@@ -128,7 +128,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 03:17:43.586171",
+ "modified": "2024-10-31 00:48:02.185577",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",

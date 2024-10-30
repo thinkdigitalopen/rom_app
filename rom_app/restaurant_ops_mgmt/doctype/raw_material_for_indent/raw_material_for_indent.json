@@ -30,7 +30,9 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "department",
@@ -58,7 +60,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-21 02:20:50.560990",
+ "modified": "2024-10-31 00:54:13.281944",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material For Indent",

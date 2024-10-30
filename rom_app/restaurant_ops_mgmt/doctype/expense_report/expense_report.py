@@ -1,22 +1,15 @@
 import frappe
 from frappe.model.document import Document
 from datetime import datetime
+from frappe.utils import date_diff
 
 
 class ExpenseReport(Document):
-    pass
-    # def on_update(self):
-    #     current_date = datetime.today().date()
-    #     doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
-    #     if (current_date == doc_save_date):
-    #         pass
-    #     else:
-    #         frappe.throw("Editing records from the past is not permitted")
-
-    # def get_the_record_count(self, branch_id, user_name, date_obj):
-    #     rec_count = frappe.db.count('Expense Report', filters={
-    #         'user_name': user_name,
-    #         'branch_id': branch_id,
-    #         'date': date_obj
-    #     })
-    #     return rec_count
+    def before_save(self):
+        doc_date = self.date
+        current_date = datetime.today().date()
+        date_difference = date_diff(current_date, doc_date)
+        if (date_difference > 7):
+            frappe.throw("You cannot save the record with a past date")
+        if (date_difference < 0):
+            frappe.throw("You shouldn't save the record with a future date")

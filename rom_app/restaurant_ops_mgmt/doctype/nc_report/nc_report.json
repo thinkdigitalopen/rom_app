@@ -38,7 +38,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "date_time",
@@ -112,7 +112,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 01:15:52.437872",
+ "modified": "2024-10-31 00:50:56.601431",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "NC Report",

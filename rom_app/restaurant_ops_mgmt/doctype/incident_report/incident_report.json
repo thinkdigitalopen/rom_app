@@ -46,8 +46,6 @@
   {
    "fieldname": "incident_date_time",
    "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Incident Time",
    "reqd": 1
   },
@@ -69,7 +67,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "type_of_complaint",
@@ -131,7 +129,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 03:19:12.043694",
+ "modified": "2024-10-31 01:11:49.294932",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Incident Report",

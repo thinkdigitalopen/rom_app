@@ -24,8 +24,10 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "columns": 1,
@@ -69,7 +71,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-20 15:35:48.201861",
+ "modified": "2024-10-31 00:54:44.714041",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Wastage",

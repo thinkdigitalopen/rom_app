@@ -1,27 +1,15 @@
 import frappe
-from datetime import datetime
 from frappe.model.document import Document
+from datetime import datetime
+from frappe.utils import date_diff
 
 
 class ChefProduction(Document):
-    def before_insert(self):
-        branch = self.branch
-        user_name = self.user_name
+    def before_save(self):
+        doc_date = self.date
         current_date = datetime.today().date()
-        rec_count = self.get_the_record_count(branch, user_name, current_date)
-        if (rec_count > 0):
-            frappe.throw("You are limited to adding just one record per day.")
-
-    def validate(self):
-        current_date = datetime.today().date()
-        doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
-        if (current_date > doc_save_date):
-            frappe.throw("Editing records from the past is not permitted")
-
-    def get_the_record_count(self, branch, user_name, date_obj):
-        rec_count = frappe.db.count('Chef Production', filters={
-            'user_name': user_name,
-            'branch': branch,
-            'date': date_obj
-        })
-        return rec_count
+        date_difference = date_diff(current_date, doc_date)
+        if (date_difference > 7):
+            frappe.throw("You cannot save the record with a past date")
+        if (date_difference < 0):
+            frappe.throw("You shouldn't save the record with a future date")

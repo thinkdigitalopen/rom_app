@@ -22,7 +22,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "department",
@@ -78,7 +79,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-21 15:05:06.847585",
+ "modified": "2024-10-31 00:52:35.455549",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",
