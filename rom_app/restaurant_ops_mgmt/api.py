@@ -195,12 +195,29 @@ def get_chef_production_checklist_child_chicken(branch_param):
         frappe.qb.from_(parent)
         .inner_join(child)
         .on(parent.name == child.parent)
-        .select(parent.name, parent.branch, child.chicken_category, child.uom, child.rate)
+        .select(parent.name, parent.branch, child.chicken_category, child.portion, child.rateportion)
         .where(parent.branch == branch_param)
     )
 
     result = query.run()
     return result
+
+
+# @frappe.whitelist()
+# def get_chef_production_checklist_child_chicken(branch_param):
+#     parent = frappe.qb.DocType("Chef Production Temp")
+#     child = frappe.qb.DocType("Chef Prod Child Chicken Temp")
+#
+#     query = (
+#         frappe.qb.from_(parent)
+#         .inner_join(child)
+#         .on(parent.name == child.parent)
+#         .select(parent.name, parent.branch, child.chicken_category, child.uom, child.rate)
+#         .where(parent.branch == branch_param)
+#     )
+#
+#     result = query.run()
+#     return result
 
 
 # @frappe.whitelist()

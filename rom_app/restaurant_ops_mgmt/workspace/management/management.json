@@ -232,7 +232,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Operation Reports",
-   "link_count": 5,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -286,9 +286,29 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Asset Master",
+   "link_count": 0,
+   "link_to": "Asset Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Menu",
+   "link_count": 0,
+   "link_to": "Menu",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-10-30 01:57:49.284910",
+ "modified": "2024-10-31 12:50:42.220712",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Management",

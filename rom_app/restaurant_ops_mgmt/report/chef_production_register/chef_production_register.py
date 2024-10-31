@@ -23,7 +23,6 @@ def execute(filters=None):
             'portions': d.portions,
             'port_x_qty': d.port_x_qty,
             'wastage_qty': d.wastage_qty,
-            'wastage_uom': d.wastage_uom,
             'rate': d.rate,
             'wastage_amount': d.wastage_amount,
         })
@@ -93,12 +92,6 @@ def get_columns():
 
         },
         {
-            'fieldname': 'wastage_uom',
-            'label': 'Waste. UOM',
-            'fieldtype': 'Data',
-
-        },
-        {
             'fieldname': 'rate',
             'label': 'Rate',
             'fieldtype': 'Data',
@@ -135,7 +128,6 @@ def get_data(filters):
         child1.`portion` as portions,
         child1.`portion_x_prod_qty` as port_x_qty,
         child1.`balance_portion` as wastage_qty,
-        "" as wastage_uom,
         child1.`rateportion` as rate,
         child1.`wastage_amount` as wastage_amount
     FROM
@@ -153,13 +145,12 @@ def get_data(filters):
         parent2.`branch`,
         'Chicken' as category,
         child2.`chicken_category` as item,
-        child2.`production_qty` as production_qty,
-        '' as portions,
-        '' as port_x_qty,
-        child2.`wastage_pcs` as wastage_qty,
-        child2.`uom` as wastage_uom,
-        child2.`rate` as rate,
-        child2.`wastage_amt` as wastage_amount
+        child2.`product_qtykg` as production_qty,
+        child2.`portion` as portions,
+        child2.`portion_x_prod_qty` as port_x_qty,
+        child2.`balance_portion` as wastage_qty,
+        child2.`rateportion` as rate,
+        child2.`wastage_amount` as wastage_amount
     FROM
         `tabChef Production` parent2
     JOIN `tabChef Prod Child Chicken` child2
@@ -236,7 +227,7 @@ def get_data_groupby_chicken(filters):
     print(conditions)
     build_sql = """
     SELECT
-    child2.chicken_category as item, sum(child2.`wastage_amt`) as wastage_amount
+    child2.chicken_category as item, sum(child2.`wastage_amount`) as wastage_amount
     FROM
     `tabChef Production` parent2
     JOIN `tabChef Prod Child Chicken` child2
