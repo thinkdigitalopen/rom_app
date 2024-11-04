@@ -1,6 +1,7 @@
 import frappe
 from datetime import datetime
 from . import utils
+from frappe.utils import getdate
 
 
 @frappe.whitelist()
@@ -106,9 +107,16 @@ def get_the_branch_for_the_user(emailid):
 def get_the_branch_for_the_user_based_on_email_id(emailid):
     branch = utils.find_user_branch_based_on_email(emailid)
     current_date = datetime.today().date()
+    print("^^^^^^^^^^^^^^^^^^^^")
+    print(current_date)
+    # today_date = getdate()
+    current_date = utils.format_date_based_on_system_settings(current_date)
+    # print(today_date)
+    seven_dates = utils.get_seven_dates_from_current_date()
     result = {
             "branch": branch,
-            "current_date": current_date
+            "current_date": current_date,
+            'seven_dates': seven_dates
             }
     return result
 

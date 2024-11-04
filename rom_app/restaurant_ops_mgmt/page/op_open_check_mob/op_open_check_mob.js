@@ -5,18 +5,18 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 		single_column: true
 	});
 
+	load_the_first_screen();
 	page.set_primary_action('Save', () => save_form());
 	page.set_secondary_action('Refresh', () => refresh_form());
 
 	function save_form(){
 		console.log(' save_form ');
+
 		let values = page.get_form_values();
-
-		console.log(values);
-
-		let size = Object.keys(values).length;
-		console.log('size', size);
-		if (size == 0){
+		console.log(typeof values);
+		object_length = Object.keys(values).length;
+		console.log('object_length - ',object_length);
+		if (object_length == 0){
 			return;
 		}
 
@@ -35,54 +35,25 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 					 primary_action:{
 						'label': 'Close',
 						action(values) {
+							console.log(values);
 							msg.hide();
 						}
 					}
 				});
 			}
 		});
-
-
 	}
 
 	function refresh_form(){
-		console.log('refresh_form');
-		let values = page.get_form_values();
-		console.log(values);
-		let size = Object.keys(values).length;
-		console.log('size', size);
-
-		if (size != 0){
-			window.location.reload(true);
-		}
+		window.location.reload(true);
 	}
 
-	get_op_opening_checklist_child();
-
-
-	function get_op_opening_checklist_child() {
+	function load_the_first_screen() {
 		let email = get_user_email();
 		let basic_user_details = get_the_basic_user_details(email);
 		console.log("basic_user_details ***** ", basic_user_details);
-
-		let areas = get_distict_area_for_branch(basic_user_details);
-		console.log(areas);
-		parent_name = find_out_if_the_record_exist_otherwise_create_one(basic_user_details);
-		console.log("parent_name ***** ", parent_name);
-		console.log("basic_user_details ***** ", basic_user_details);
-		basic_user_details = add_parent_name_to_the_basic_user_details(basic_user_details, parent_name);
-		console.log('basic_user_details-parent-name ', basic_user_details);
-		build_home_ui_for_area(areas, basic_user_details);
-
-
-		// get_op_opening_checklist_child_mobile(basic_user_details);
-
-	 }
-
-	 function add_parent_name_to_the_basic_user_details(basic_user_details, parent_name){
-		 basic_user_details.parent_name = parent_name;
-		 return basic_user_details;
-	 }
+		build_action_button_ui_for_seven_dates(basic_user_details);
+	}
 
 	function get_user_email(){
 		let useremail = frappe.user.get_emails();
@@ -96,6 +67,7 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 
 		let branch;
 		let current_date;
+		let seven_dates;
 
 		frappe.call({
 			method: api_url,
@@ -104,6 +76,7 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 			callback: function(res) {
 				branch = res.message.branch;
 				current_date = res.message.current_date;
+				seven_dates =  res.message.seven_dates;
 			}
 		});
 
@@ -114,32 +87,112 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 			current_date: current_date,
 			email_id: email,
 			user_name: user_name,
+			seven_dates: seven_dates
 		}
-		console.log(basic_user_details);
 		return basic_user_details;
 	}
 
-	function find_out_if_the_record_exist_otherwise_create_one(user_details) {
-		let api_url = "rom_app.restaurant_ops_mgmt.api_mobile_opo.op_opening_check_today_record_exits_otherwise_create_one";
-		let parent_name = 0;
+	function build_action_button_ui_for_seven_dates(basic_user_details){
+		basic_user_details.seven_dates.forEach(function (item, index) {
+			console.log('item', item);
+			page.add_action_item(item, () => load_items_for_the_date(item, basic_user_details));
+		});
+		let html_text =  "<h5>Pick the date from the top menu</h5> "
+		page.add_field({
+			options: html_text,
+			fieldtype: 'HTML',
+			fieldname: 'html_field',
+		});
+	}
+
+	function load_items_for_the_date(load_date, basic_user_details) {
+		console.log('load_items_for_the_date');
+		console.log('load_date ', load_date);
+		basic_user_details.load_date = load_date;
+		console.log('basic_user_details ', basic_user_details);
+		// page.set_title(load_date)
+		console.log(' %%%%%%%%%%%% clear fields %%%%%%%%%%%% ');
+		page.clear_fields();
+		basic_user_details = get_op_opening_checklist_child(load_date, basic_user_details);
+		let areas = get_distict_area_for_branch(basic_user_details);
+		console.log(areas);
+		build_home_ui_for_area(areas, basic_user_details);
+	}
+
+	function get_op_opening_checklist_child(load_date, basic_user_details) {
+		console.log(" $$$$$$$$$ ");
+		console.log(" load_date ", load_date);
+
+		rec_result = find_out_if_the_record_exist(load_date, basic_user_details);
+		console.log("parent_name ***** ", rec_result);
+		console.log("basic_user_details ***** ", basic_user_details);
+		//add parent_name to the basic_user_details
+		basic_user_details.parent_name = rec_result.parent_name;
+		basic_user_details.load_date = load_date;
+		console.log('basic_user_details-parent-name ', basic_user_details);
+		// get_op_opening_checklist_child_mobile(basic_user_details);
+		return basic_user_details;
+	 }
+
+	function find_out_if_the_record_exist(load_date, user_details) {
+		let api_url = "rom_app.restaurant_ops_mgmt.api_mobile_opo.op_opening_check_record_exits_otherwise_create_one";
+		let ret_message = {};
 		frappe.call({
 			method: api_url,
 			args: {
 				branch: user_details.branch,
-			    current_date: user_details.current_date,
+				current_date: user_details.current_date,
 				email_id: user_details.email_id,
-				user_name: user_details.user_name
+				user_name: user_details.user_name,
+				load_date: load_date
 			},
 			async: false,
 			callback: function(res) {
 				console.log("find_out_if_the_record_exist--->", res);
-				parent_name = res.message;
+				ret_message = res.message;
 			}
 		});
-		return parent_name;
+		return ret_message;
+	}
+
+	function build_read_only_fields_on_ui(basic_user_details){
+
+		let branch_lable = "Branch : " + basic_user_details.branch;
+		page.add_field({
+					default: branch_lable,
+					fieldtype: 'Data',
+					fieldname: 'field_branch',
+					read_only: 1
+				});
+
+		let user_label = "User : " + basic_user_details.user_name;
+		page.add_field({
+					default: user_label,
+					fieldtype: 'Data',
+					fieldname: 'field_user',
+					read_only: 1
+				});
+
+		let current_date_lable = "Date : " + basic_user_details.load_date;
+		page.add_field({
+					default: current_date_lable,
+					fieldtype: 'Data',
+					fieldname: 'field_current_date',
+					read_only: 1,
+				});
+
+		let parent_id_lable = "Parent Id : " + basic_user_details.parent_name;
+			page.add_field({
+						default: parent_id_lable,
+						fieldtype: 'Data',
+						fieldname: 'field_parent_name',
+						read_only: 1,
+						hidden: 1
+			});
 	}
 
 	function get_distict_area_for_branch(user_details) {
+		console.log('get_distict_area_for_branch', user_details);
 		let areas = {};
 		let api_url = "rom_app.restaurant_ops_mgmt.api_mobile_opo.get_distinct_area_for_branch";
 
@@ -160,16 +213,7 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 		return areas_arr;
 	}
 
-	function convert_area_to_array(areas){
-		let areas_array = [];
 
-		areas.forEach(function (item, index) {
-			console.log(item, index);
-			console.log(item.area);
-			areas_array.push(item.area);
-		})
-		return areas_array;
-	};
 
 
 	function build_home_ui_for_area(areas, basic_user_details) {
@@ -178,7 +222,6 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 
 		areas.forEach(function (item, index) {
 			console.log('item', item);
-
 			page.add_inner_button(item, () => load_items_for_the_area(item, basic_user_details));
 			//page.add_inner_button(item , () => load_items_for_the_area(item, basic_user_details));
 		});
@@ -189,7 +232,6 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 			fieldtype: 'HTML',
 			fieldname: 'html_field',
 		});
-
 	}
 
 	function load_items_for_the_area(area, basic_user_details) {
@@ -205,64 +247,10 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 	}
 
 
-	function get_items_based_on_the_area(area, basic_user_details) {
-		let items_based_on_area = [];
-		let api_url = "rom_app.restaurant_ops_mgmt.api_mobile_opo.get_op_opening_checklist_child_mobile_area";
-		console.log('basic_user_details', basic_user_details);
-		console.log('area', area);
-		frappe.call({
-			method: api_url,
-			args: {
-				branch_param: basic_user_details.branch,
-				area_param: area
-			},
-			async: false,
-			callback: function(res) {
-				items_based_on_area = res.message;
-				console.log("res --->", res);
-				console.log("items_bsed_on_area --->", items_based_on_area);
-			}
-		});
-		return items_based_on_area;
-	}
 
 
 
-	function build_read_only_fields_on_ui(basic_user_details){
 
-		let branch_lable = "Branch : " + basic_user_details.branch;
-		page.add_field({
-					default: branch_lable,
-					fieldtype: 'Data',
-					fieldname: 'field_branch',
-					read_only: 1
-				});
-
-		let user_label = "User : " + basic_user_details.user_name;
-		page.add_field({
-					default: user_label,
-					fieldtype: 'Data',
-					fieldname: 'field_user',
-					read_only: 1
-				});
-
-		let current_date_lable = "Date : " + basic_user_details.current_date;
-		page.add_field({
-					default: current_date_lable,
-					fieldtype: 'Data',
-					fieldname: 'field_current_date',
-					read_only: 1,
-				});
-
-		let parent_id_lable = "Parent Id : " + basic_user_details.parent_name;
-			page.add_field({
-						default: parent_id_lable,
-						fieldtype: 'Data',
-						fieldname: 'field_parent_name',
-						read_only: 1,
-						hidden: 1
-			});
-	}
 
 
 	function build_check_fields_on_ui(items_based_on_area){
@@ -289,9 +277,40 @@ frappe.pages['op-open-check-mob'].on_page_load = function(wrapper) {
 				default: child_audit
 			});
 		});
-		console.log("frappe callback end - get_op_opening_checklist_child_mobile");
+		console.log("()()()()()()");
 	}
 
+	function get_items_based_on_the_area(area, basic_user_details) {
+		let items_based_on_area = [];
+		let api_url = "rom_app.restaurant_ops_mgmt.api_mobile_opo.get_op_opening_checklist_child_mobile_area";
+		console.log('basic_user_details', basic_user_details);
+		console.log('area', area);
+		frappe.call({
+			method: api_url,
+			args: {
+				branch_param: basic_user_details.branch,
+				area_param: area,
+				load_date:  basic_user_details.load_date,
+			},
+			async: false,
+			callback: function(res) {
+				items_based_on_area = res.message;
+				console.log("res --->", res);
+				console.log("items_bsed_on_area --->", items_based_on_area);
+			}
+		});
+		return items_based_on_area;
+	}
 
+	function convert_area_to_array(areas){
+		let areas_array = [];
+
+		areas.forEach(function (item, index) {
+			console.log(item, index);
+			console.log(item.area);
+			areas_array.push(item.area);
+		})
+		return areas_array;
+	};
 }
 

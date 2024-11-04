@@ -2,6 +2,7 @@ import frappe
 from frappe.model.document import Document
 from datetime import datetime
 from frappe.utils import date_diff
+from ... import utils
 
 
 class FBOpeningChecklist(Document):
@@ -10,10 +11,12 @@ class FBOpeningChecklist(Document):
         user_name = self.user_name
         doc_date = self.date
         current_date = datetime.today().date()
+        print("<< == == before_insert == == >> ")
+        print(" doc_date ", doc_date)
+        print(" current_date ", current_date)
         date_difference = date_diff(current_date, doc_date)
         rec_count = self.get_the_record_count(branch, user_name, doc_date)
-        # print(" ==+>", branch, user_name,  doc_date, current_date,
-        #       date_difference, rec_count)
+        print(" ==+>", branch, user_name,  doc_date, current_date, date_difference, rec_count)
         if (self.is_new()):
             # print('is_new')
             if (rec_count == 0):

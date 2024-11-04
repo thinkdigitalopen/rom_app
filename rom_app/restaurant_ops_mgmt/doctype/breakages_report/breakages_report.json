@@ -117,6 +117,7 @@
    "reqd": 1
   },
   {
+   "columns": 4,
    "fetch_from": "item.category",
    "fieldname": "category",
    "fieldtype": "Link",
@@ -128,7 +129,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 00:48:02.185577",
+ "modified": "2024-11-03 00:21:39.010991",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",
