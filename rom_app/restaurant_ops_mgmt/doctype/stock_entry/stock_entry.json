@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
+  "stock__entry_template",
   "column_break_oiog",
   "date",
   "user_name",
@@ -65,11 +66,17 @@
    "options": "Branch",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "stock__entry_template",
+   "fieldtype": "Link",
+   "label": "Stock  Entry Template",
+   "options": "Stock Entry Template"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 00:52:46.069878",
+ "modified": "2024-11-05 02:08:59.813558",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",

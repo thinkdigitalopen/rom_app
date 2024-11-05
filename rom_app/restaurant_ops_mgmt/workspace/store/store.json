@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"8VUNm1c613\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":7}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"5d2QEliHoj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Transaction Register\",\"col\":6}}]",
+ "content": "[{\"id\":\"57mqhTDTbQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Store Space</span>\",\"col\":12}},{\"id\":\"8VUNm1c613\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":7}},{\"id\":\"B58owYUKZb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chef Indent By Dept\",\"col\":7}},{\"id\":\"ybnFYi14V8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":7}},{\"id\":\"kaAVDi2qTV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":7}},{\"id\":\"JuXDggzDcH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Wastage\",\"col\":7}},{\"id\":\"zAucacZZ6W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Counting\",\"col\":7}},{\"id\":\"X9wrASfxrt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Only\",\"col\":7}},{\"id\":\"_tPXhe8Y8Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material For Indent\",\"col\":7}},{\"id\":\"cTwvWdML7n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Group\",\"col\":7}},{\"id\":\"IcR-E3xR1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary\",\"col\":7}},{\"id\":\"5g7PhaQfdh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":7}},{\"id\":\"Lr9K2aNefU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template\",\"col\":7}},{\"id\":\"i6HPy0mXqp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry Template Type\",\"col\":7}},{\"id\":\"RZoAK9wMXR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports <br></b></span>\",\"col\":12}},{\"id\":\"5d2QEliHoj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Transaction Register\",\"col\":5}},{\"id\":\"y5-OnM_2Ec\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary Register\",\"col\":4}}]",
  "creation": "2024-08-26 20:57:34.050043",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,88 +12,8 @@
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Store",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Reports",
-   "link_count": 7,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Raw Material Only",
-   "link_count": 0,
-   "link_to": "Raw Material Only Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Stock Entry",
-   "link_count": 0,
-   "link_to": "Stock Entry Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Chef Indent By Dept",
-   "link_count": 0,
-   "link_to": "Chef Indent By Dept Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Inventory Wastage",
-   "link_count": 0,
-   "link_to": "Inventory Wastage Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Inventory Counting",
-   "link_count": 0,
-   "link_to": "Inventory Counting Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Inventory Transaction",
-   "link_count": 0,
-   "link_to": "Inventory Transaction Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Inventory Summary",
-   "link_count": 0,
-   "link_to": "Inventory Summary Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  }
- ],
- "modified": "2024-10-31 01:07:50.662770",
+ "links": [],
+ "modified": "2024-11-05 02:13:07.466366",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store",
@@ -156,6 +76,21 @@
   {
    "color": "Green",
    "doc_view": "List",
+   "label": "Stock Entry Template",
+   "link_to": "Stock Entry Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Inventory Summary Register",
+   "link_to": "Inventory Summary Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
    "label": "Stock Entry",
    "link_to": "Stock Entry",
    "stats_filter": "[[\"Stock Entry\",\"creation\",\"Timespan\",\"today\",false]]",
@@ -167,6 +102,14 @@
    "label": "Inventory Wastage",
    "link_to": "Inventory Wastage",
    "stats_filter": "[[\"Inventory Wastage\",\"creation\",\"Timespan\",\"today\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Stock Entry Template Type",
+   "link_to": "Stock Entry Template Type",
+   "stats_filter": "[]",
    "type": "DocType"
   },
   {
