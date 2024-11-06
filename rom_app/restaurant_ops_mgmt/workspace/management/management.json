@@ -289,11 +289,11 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Asset Master",
    "link_count": 0,
-   "link_to": "Asset Master",
-   "link_type": "DocType",
+   "link_to": "Asset Master Register",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   },
@@ -308,7 +308,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-10-31 12:50:42.220712",
+ "modified": "2024-11-06 18:38:24.893724",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Management",

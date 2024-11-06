@@ -4,7 +4,7 @@ frappe.ui.form.on("Asset Count", {
 		frm.set_df_property('items', 'cannot_add_rows', true);
         frm.set_df_property('items', 'cannot_delete_rows', true);
         frm.set_df_property('items', 'cannot_delete_all_rows', true);
-		disable_drag_drop(frm);
+		//disable_drag_drop(frm);
 
 		//frm.set_df_property('category', 'read_only', 1)
 
@@ -147,14 +147,24 @@ function get_asset_master_items(frm, branch__id) {
 			//let category = e[2];
 			let item = e[2];
 			let standard_stock = e[3];
-			//let category_name = e[5];
+			let current_stock = e[3];
+			let group_name = e[4];
+			let asset_master_name = e[5];
+			let asset_master_image = e[6];
+			let asset_group_id = e[7];
 
-			console.log(item, standard_stock);
+			console.log(item, standard_stock, group_name);
 
 			let entry = frm.add_child("items");
-			//entry.category = category_name;
 			entry.item = item;
 			entry.standard_stock = standard_stock;
+			entry.current_stock = current_stock;
+			entry.group_name = group_name;
+			entry.asset_master_name = asset_master_name;
+			entry.asset_master_image = asset_master_image;
+			entry.difference = 0;
+			entry.asset_group_id = asset_group_id;
+
 		});
 		refresh_field("items");
 		}

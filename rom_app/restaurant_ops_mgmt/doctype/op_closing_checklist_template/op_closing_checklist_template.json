@@ -28,8 +28,9 @@
    "options": "Op Closing Checklist Template Child"
   }
  ],
+ "hide_toolbar": 1,
  "links": [],
- "modified": "2024-10-30 01:16:11.745745",
+ "modified": "2024-11-07 01:51:59.775189",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Op Closing Checklist Template",

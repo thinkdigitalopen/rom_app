@@ -29,9 +29,10 @@
    "options": "SampleDoc Child"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 22:08:23.856113",
+ "modified": "2024-11-07 01:54:08.025530",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "SampleDoc",

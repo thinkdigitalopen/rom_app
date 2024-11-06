@@ -56,9 +56,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-19 00:38:42.151290",
+ "modified": "2024-11-07 01:44:01.285576",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Count",

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"-WIeLytqkA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Operation Space<br></span>\",\"col\":12}},{\"id\":\"ELvr2KV3GA\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}},{\"id\":\"YWnPaYvnL9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist Audited %\",\"col\":4}},{\"id\":\"2E8qDxo0EL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Close Checklist Audited %\",\"col\":4}},{\"id\":\"rlpzCJaZeQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eoxm6t2gNN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist\",\"col\":4}},{\"id\":\"19pVrV76kS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":4}},{\"id\":\"Mv-il9N7wc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":4}},{\"id\":\"AlEbJPbP_a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"rCoGcVr7XB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":4}},{\"id\":\"GWDQcopPtF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"hmssdBkNmT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master\",\"col\":4}},{\"id\":\"jQnWfCoyNx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":4}},{\"id\":\"NfA5reqmN3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu\",\"col\":4}},{\"id\":\"Ij1qVqGgs7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist\",\"col\":4}},{\"id\":\"zL1-nGTUTL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Mobile <br></b></span>\",\"col\":12}},{\"id\":\"3diGPafPJF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Opening Checklist\",\"col\":4}},{\"id\":\"fx7RwSPPdk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Closing Checklist\",\"col\":4}},{\"id\":\"TjrfLHgowr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report</b></span>\",\"col\":12}},{\"id\":\"_FY6elkKWO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Register\",\"col\":4}},{\"id\":\"iq_jRKHcBp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Report Register\",\"col\":4}},{\"id\":\"MjIKVDZVx4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"kE_H5ys62L\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report Register\",\"col\":4}},{\"id\":\"HDXfio7245\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Register\",\"col\":4}},{\"id\":\"U7UOvKQ4k6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"xNskALyCX5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form Register\",\"col\":4}},{\"id\":\"-qywJB5JyW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count Register\",\"col\":4}}]",
+ "content": "[{\"id\":\"-WIeLytqkA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Operation Space<br></span>\",\"col\":12}},{\"id\":\"ELvr2KV3GA\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}},{\"id\":\"YWnPaYvnL9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist Audited %\",\"col\":4}},{\"id\":\"2E8qDxo0EL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Close Checklist Audited %\",\"col\":4}},{\"id\":\"rlpzCJaZeQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eoxm6t2gNN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist\",\"col\":4}},{\"id\":\"19pVrV76kS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Form\",\"col\":4}},{\"id\":\"Mv-il9N7wc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form\",\"col\":4}},{\"id\":\"AlEbJPbP_a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"rCoGcVr7XB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report\",\"col\":4}},{\"id\":\"GWDQcopPtF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"hmssdBkNmT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master\",\"col\":4}},{\"id\":\"qhNPIdYdFL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master Group\",\"col\":4}},{\"id\":\"jQnWfCoyNx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count\",\"col\":4}},{\"id\":\"NfA5reqmN3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu\",\"col\":4}},{\"id\":\"XUmHB6Lz4o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Menu Group\",\"col\":4}},{\"id\":\"Ij1qVqGgs7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist\",\"col\":4}},{\"id\":\"zL1-nGTUTL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Mobile <br></b></span>\",\"col\":12}},{\"id\":\"3diGPafPJF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Opening Checklist\",\"col\":4}},{\"id\":\"fx7RwSPPdk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mobile Op Closing Checklist\",\"col\":4}},{\"id\":\"TjrfLHgowr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report</b></span>\",\"col\":12}},{\"id\":\"_FY6elkKWO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Opening Checklist Register\",\"col\":4}},{\"id\":\"iq_jRKHcBp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incident Report Register\",\"col\":4}},{\"id\":\"xNskALyCX5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Form Register\",\"col\":4}},{\"id\":\"MjIKVDZVx4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"kE_H5ys62L\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Breakages Report Register\",\"col\":4}},{\"id\":\"U7UOvKQ4k6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"PtagqXgaSz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Master Register\",\"col\":4}},{\"id\":\"-qywJB5JyW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Count Register\",\"col\":4}},{\"id\":\"HDXfio7245\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Op Closing Checklist Register\",\"col\":4}}]",
  "creation": "2024-07-20 08:21:34.614118",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Operation",
  "links": [],
- "modified": "2024-11-05 23:19:05.840955",
+ "modified": "2024-11-07 02:29:23.339464",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Operation",
@@ -60,6 +60,13 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Asset Master Register",
+   "link_to": "Asset Master Register",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Op Opening Checklist Register",
    "link_to": "Op Opening Checklist Register",
    "type": "Report"
@@ -70,6 +77,22 @@
    "label": "Ticket Report Register",
    "link_to": "Ticket Report Register",
    "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Asset Master Group",
+   "link_to": "Asset Master Group",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Menu Group",
+   "link_to": "Menu Group",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Green",

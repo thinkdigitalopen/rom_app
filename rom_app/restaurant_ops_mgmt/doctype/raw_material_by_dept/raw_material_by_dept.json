@@ -53,9 +53,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-23 14:24:16.549794",
+ "modified": "2024-11-07 01:52:46.571948",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material By Dept",

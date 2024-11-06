@@ -10,6 +10,7 @@
   "stock__entry_template",
   "column_break_oiog",
   "date",
+  "bill_date",
   "user_name",
   "total_price",
   "section_break_wqyo",
@@ -82,11 +83,17 @@
    "label": "Vendor",
    "options": "Vendor",
    "reqd": 1
+  },
+  {
+   "fieldname": "bill_date",
+   "fieldtype": "Date",
+   "label": "Bill Date"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-05 16:28:25.977878",
+ "modified": "2024-11-07 02:18:22.288166",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",

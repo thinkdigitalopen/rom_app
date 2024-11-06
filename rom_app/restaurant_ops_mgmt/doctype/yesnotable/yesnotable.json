@@ -22,9 +22,10 @@
    "options": "\nYes\nNo"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-03 13:41:37.972837",
+ "modified": "2024-11-07 01:55:24.190949",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "YesNoTable",

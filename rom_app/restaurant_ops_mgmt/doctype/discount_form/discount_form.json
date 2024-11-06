@@ -97,9 +97,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 01:43:17.202849",
+ "modified": "2024-11-07 01:46:32.480636",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Discount Form",

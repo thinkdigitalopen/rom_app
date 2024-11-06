@@ -76,9 +76,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-20 23:26:58.703877",
+ "modified": "2024-11-07 01:51:13.265491",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Menu",

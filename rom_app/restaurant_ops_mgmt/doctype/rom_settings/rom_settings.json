@@ -24,9 +24,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-21 05:33:23.778983",
+ "modified": "2024-11-07 01:53:40.232483",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Rom Settings",

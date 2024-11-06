@@ -37,7 +37,7 @@
    "fieldname": "portion",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Portion/Kg",
+   "label": "Portion",
    "read_only": 1
   },
   {
@@ -79,7 +79,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-31 16:21:25.226251",
+ "modified": "2024-11-07 02:11:49.782907",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Prod Child Chicken",

@@ -48,9 +48,10 @@
    "label": "End"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-20 18:12:16.109853",
+ "modified": "2024-11-07 01:48:52.850212",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "DevelopLog",

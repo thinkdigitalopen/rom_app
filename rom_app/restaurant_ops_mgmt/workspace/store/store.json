@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Store",
  "links": [],
- "modified": "2024-11-05 23:20:53.607249",
+ "modified": "2024-11-07 02:31:17.207598",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Store",
@@ -83,6 +83,14 @@
    "doc_view": "List",
    "label": "Raw Material For Indent",
    "link_to": "Raw Material For Indent",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -168,14 +176,6 @@
    "label": "Inventory Summary",
    "link_to": "Inventory Summary",
    "stats_filter": "[[\"Inventory Summary\",\"creation\",\"Timespan\",\"today\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "NC Report",
-   "link_to": "NC Report",
-   "stats_filter": "[]",
    "type": "DocType"
   },
   {

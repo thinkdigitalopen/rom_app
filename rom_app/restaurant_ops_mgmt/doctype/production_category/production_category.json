@@ -24,9 +24,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-30 15:23:02.893611",
+ "modified": "2024-11-07 01:52:20.919187",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Production Category",

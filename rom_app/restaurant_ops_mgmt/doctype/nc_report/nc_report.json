@@ -110,9 +110,10 @@
    "read_only": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 00:50:56.601431",
+ "modified": "2024-11-07 01:51:43.784494",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "NC Report",

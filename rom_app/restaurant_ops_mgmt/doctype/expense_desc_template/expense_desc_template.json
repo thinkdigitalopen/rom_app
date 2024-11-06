@@ -29,9 +29,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-05 23:15:27.099001",
+ "modified": "2024-11-07 01:49:32.167866",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Expense Desc Template",

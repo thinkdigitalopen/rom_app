@@ -2,20 +2,14 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "UUID",
- "creation": "2024-07-21 15:55:07.942007",
+ "creation": "2024-11-06 21:27:06.354520",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "branch",
-  "questions"
+  "group_name"
  ],
  "fields": [
-  {
-   "fieldname": "questions",
-   "fieldtype": "Table",
-   "label": "Questions",
-   "options": "FB Closing Checklist Template Child"
-  },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
@@ -24,16 +18,24 @@
    "label": "Branch",
    "options": "Branch",
    "read_only": 1,
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
+  },
+  {
+   "fieldname": "group_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Group Name",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:49:53.280822",
+ "modified": "2024-11-07 01:44:29.038570",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
- "name": "FB Closing Checklist Template",
+ "name": "Asset Master Group",
  "naming_rule": "UUID",
  "owner": "Administrator",
  "permissions": [
@@ -52,7 +54,7 @@
  ],
  "show_title_field_in_link": 1,
  "sort_field": "creation",
- "sort_order": "ASC",
+ "sort_order": "DESC",
  "states": [],
- "title_field": "branch"
+ "title_field": "group_name"
 }

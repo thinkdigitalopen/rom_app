@@ -26,9 +26,10 @@
    "label": "Person Name"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-05 23:53:39.618636",
+ "modified": "2024-11-07 01:53:32.819981",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Responsible Person Template",

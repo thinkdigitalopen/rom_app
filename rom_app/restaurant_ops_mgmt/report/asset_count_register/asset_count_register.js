@@ -1,7 +1,7 @@
 
 frappe.query_reports["Asset Count Register"] = {
 	"filters": [
-	{
+		{
 			"fieldname": "from_date_filter",
 			"label": "From Date *",
 			"fieldtype": "Date",
@@ -15,7 +15,7 @@ frappe.query_reports["Asset Count Register"] = {
 			"default": frappe.datetime.now_date(),
 			"mandatory": 1,
 		},
-			{
+		{
 			"fieldname": "branch_filter",
 			"label": "Branch",
 			"fieldtype": "Link",
@@ -25,6 +25,12 @@ frappe.query_reports["Asset Count Register"] = {
 			"fieldname": "item_filter",
 			"label": "Item",
 			"fieldtype": "Data",
+		},
+		{
+			"fieldname": "group_filter",
+			"label": "Group",
+			"fieldtype": "Link",
+			"options": "Asset Master Group",
 		},
 	]
 };

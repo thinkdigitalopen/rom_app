@@ -127,9 +127,10 @@
    "options": "Category"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-03 00:21:39.010991",
+ "modified": "2024-11-07 01:44:57.213913",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Breakages Report",

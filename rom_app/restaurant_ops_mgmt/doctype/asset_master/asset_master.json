@@ -9,6 +9,7 @@
   "branch",
   "item",
   "category",
+  "asset_group",
   "column_break_ihrc",
   "standard_stock",
   "price",
@@ -68,11 +69,21 @@
    "fieldtype": "Image",
    "label": "Image",
    "options": "attach_image"
+  },
+  {
+   "fieldname": "asset_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset Group",
+   "options": "Asset Master Group"
   }
  ],
+ "hide_toolbar": 1,
+ "image_field": "attach_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 19:34:28.645328",
+ "modified": "2024-11-06 21:32:02.555655",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Master",

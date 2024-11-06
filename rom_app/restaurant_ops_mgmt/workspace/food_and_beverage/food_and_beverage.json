@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Food and Beverage",
  "links": [],
- "modified": "2024-11-05 23:17:17.312309",
+ "modified": "2024-11-07 02:31:44.301440",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Food and Beverage",
@@ -52,14 +52,6 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "FB Opening Checklist",
-   "link_to": "FB Opening Checklist",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
    "label": "FB Opening Checklist Register",
    "link_to": "FB Opening Checklist Register",
    "type": "Report"
@@ -81,6 +73,22 @@
   {
    "color": "Green",
    "doc_view": "List",
+   "label": "FB Opening Checklist",
+   "link_to": "FB Opening Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
    "label": "Ticket Report",
    "link_to": "Ticket Report",
    "stats_filter": "[[\"Ticket Report\",\"completed\",\"=\",0,false]]",
@@ -92,14 +100,6 @@
    "label": "Mobile FB Closing Checklist ",
    "link_to": "fb-close-check-mob",
    "type": "Page"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "FB Closing Checklist",
-   "link_to": "FB Closing Checklist",
-   "stats_filter": "[]",
-   "type": "DocType"
   },
   {
    "color": "Grey",
@@ -123,19 +123,19 @@
    "type": "Report"
   },
   {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "FB Closing Checklist",
+   "link_to": "FB Closing Checklist",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
    "color": "Grey",
    "doc_view": "List",
    "label": "NC Report Register",
    "link_to": "NC Report Register",
    "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "NC Report",
-   "link_to": "NC Report",
-   "stats_filter": "[]",
-   "type": "DocType"
   },
   {
    "color": "Green",

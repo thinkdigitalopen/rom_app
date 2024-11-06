@@ -38,9 +38,10 @@
    "options": "Role"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-22 22:20:34.464425",
+ "modified": "2024-11-07 01:46:23.714963",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Department",

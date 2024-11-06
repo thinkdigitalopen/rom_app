@@ -56,9 +56,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 12:21:04.232791",
+ "modified": "2024-11-07 01:50:01.421819",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Opening Checklist",

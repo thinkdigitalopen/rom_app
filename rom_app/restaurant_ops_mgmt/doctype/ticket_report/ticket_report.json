@@ -112,9 +112,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-30 23:26:09.149655",
+ "modified": "2024-11-07 01:54:53.079753",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",

@@ -28,8 +28,9 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "links": [],
- "modified": "2024-10-30 01:15:17.006332",
+ "modified": "2024-11-07 01:50:12.574727",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "FB Opening Checklist Template",

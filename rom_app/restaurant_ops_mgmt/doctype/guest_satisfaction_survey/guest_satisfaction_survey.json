@@ -109,9 +109,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 16:25:10.657906",
+ "modified": "2024-11-07 01:50:35.225825",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Guest Satisfaction Survey",

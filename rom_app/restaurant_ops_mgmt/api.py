@@ -289,18 +289,23 @@ def get_asset_master_child_based_on_branch_category(branch_param, category_param
 
 @frappe.whitelist()
 def get_asset_master_singltable_child_based_on_branch(branch_param):
-    # branch_param = 1
-    # category_param = 1
     parent = frappe.qb.DocType("Asset Master")
+    child = frappe.qb.DocType("Asset Master Group")
     print("branch_param")
     print(branch_param)
     # print(category_param)
     # child = frappe.qb.DocType("Asset Master Child")
     query = (
         frappe.qb.from_(parent)
-        .select(parent.branch, parent.category, parent.item, parent.standard_stock)
+        .left_join(child)
+        .on(parent.asset_group == child.name)
+        .select(parent.branch, parent.category, parent.item,
+                parent.standard_stock,
+                child.group_name, parent.name, parent.attach_image,
+                child.name.as_('asset_group_id')
+                )
         .where(parent.branch == branch_param)
-    )
+            )
     result = query.run()
     sql_text = query.get_sql()
     print(sql_text)
