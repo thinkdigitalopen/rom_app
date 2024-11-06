@@ -53,7 +53,8 @@ def get_columns():
         {
             'fieldname': 'expense_desc',
             'label': 'Expense Desc',
-            'fieldtype': 'Data',
+            'fieldtype': 'Link',
+            'options': 'Expense Desc Template',
         },
         {
             'fieldname': 'expense_amount',
@@ -63,7 +64,8 @@ def get_columns():
         {
             'fieldname': 'responsible_person',
             'label': 'Res. person',
-            'fieldtype': 'Data',
+            'fieldtype': 'Link',
+            'options': 'Responsible Person Template',
         },
         {
             'fieldname': 'remarks',
@@ -83,21 +85,24 @@ def get_data(filters):
     expense.date,
     expense.user_name,
     expense.branch,
-    expense.expense_desc,
+    exptemp.expense_desc as expense_desc,
     expense.expense_amount,
-    expense.responsible_person,
+    resptemp.person_name as responsible_person,
     expense.remarks
-    FROM
-    `tabExpense Report` expense
+    FROM `tabExpense Report` expense
+    INNER JOIN `tabExpense Desc Template` exptemp
+    ON expense.expense_desc = exptemp.name
+    INNER JOIN `tabResponsible Person Template` resptemp
+    ON expense.responsible_person = resptemp.name
         """
     where_cond = f" WHERE expense.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
         where_cond = where_cond + f" AND expense.branch = '{conditions['branch_filter']}' "
     if "expense_desc_filter" in conditions:
-        where_cond = where_cond + f" AND expense.expense_desc LIKE '%{conditions['expense_desc_filter']}%' "
+        where_cond = where_cond + f" AND expense.expense_desc = '{conditions['expense_desc_filter']}' "
     if "responsible_person_filter" in conditions:
-        where_cond = where_cond + f" AND expense.responsible_person LIKE '%{conditions['responsible_person_filter']}%' "
+        where_cond = where_cond + f" AND expense.responsible_person = '{conditions['responsible_person_filter']}' "
 
     build_sql = f"{build_sql}  {where_cond}"
     print("-------- full sql ------------")

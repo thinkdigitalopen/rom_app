@@ -23,12 +23,14 @@ frappe.query_reports["Expense Report Register"] = {
 		{
 			"fieldname": "expense_desc_filter",
 			"label": "Expense Desc",
-			"fieldtype": "Data"
+			"fieldtype": "Link",
+			"options": "Expense Desc Template",
 		},
 		{
 			"fieldname": "responsible_person_filter",
 			"label": "Responsible Person",
-			"fieldtype": "Data"
+			"fieldtype": "Link",
+			"options": "Responsible Person Template",
 		}
 	]
 };

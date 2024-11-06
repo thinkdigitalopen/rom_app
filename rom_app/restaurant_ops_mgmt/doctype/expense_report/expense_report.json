@@ -35,9 +35,11 @@
   },
   {
    "fieldname": "expense_desc",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Expense Desc",
+   "options": "Expense Desc Template",
    "reqd": 1
   },
   {
@@ -58,9 +60,9 @@
   },
   {
    "fieldname": "responsible_person",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Responsible Person",
-   "reqd": 1
+   "options": "Responsible Person Template"
   },
   {
    "fieldname": "branch",
@@ -75,7 +77,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 00:51:59.917971",
+ "modified": "2024-11-05 23:54:47.386205",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Expense Report",
