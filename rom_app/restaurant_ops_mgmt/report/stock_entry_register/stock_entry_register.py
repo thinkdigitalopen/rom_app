@@ -16,14 +16,15 @@ def execute(filters=None):
         row = frappe._dict({
             'name': d.name,
             'date': d.date,
+            'bill_date': d.bill_date,
+            'receive_date': d.receive_date,
             'branch': d.branch,
             'user_name': d.user_name,
             'raw_material': d.raw_material,
             'unit': d.unit,
             'ord_qty': d.ord_qty,
             'price': d.price,
-            'total_price': d.total_price,
-            'clos_qty': d.clos_qty
+            'total_price': d.total_price
         })
         data.append(row)
 
@@ -41,6 +42,16 @@ def get_columns():
         {
             'fieldname': 'date',
             'label': 'Date',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'bill_date',
+            'label': 'Bill Date',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'Receive Date',
+            'label': 'Receive Date',
             'fieldtype': 'Data',
         },
         {
@@ -78,11 +89,6 @@ def get_columns():
             'fieldname': 'total_price',
             'label': 'Total Price',
             'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'clos_qty',
-            'label': 'Closing Stock',
-            'fieldtype': 'Data',
         }
     ]
 
@@ -96,13 +102,14 @@ def get_data(filters):
         par.name,
         par.branch,
         par.date,
+        par.bill_date,
+        par.receive_date,
         par.user_name,
         raw.item as raw_material,
         chi.unit,
         chi.ord_qty,
         chi.unit_price as price,
-        chi.amount as total_price,
-        chi.clos_qty
+        chi.amount as total_price
     FROM
         `tabStock Entry` par
     INNER JOIN `tabStock Entry Child` chi ON

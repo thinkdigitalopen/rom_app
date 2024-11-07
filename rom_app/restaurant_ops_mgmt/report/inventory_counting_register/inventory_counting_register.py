@@ -26,6 +26,7 @@ def execute(filters=None):
         })
         data.append(row)
 
+    print(data)
     return columns, data
 
 
@@ -35,7 +36,7 @@ def get_columns():
             'fieldname': 'name',
             'label': 'Id',
             'fieldtype': 'Link',
-            'options': 'Inventory Wastage',
+            'options': 'Inventory Counting',
         },
         {
             'fieldname': 'date',
@@ -64,8 +65,8 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'quantity': 'quantity',
-            'label': 'New Qty',
+            'fieldname': 'quantity',
+            'label': 'Count Qty',
             'fieldtype': 'Data',
         },
         {
@@ -93,7 +94,7 @@ def get_data(filters):
         par.user_name,
         raw.item as raw_material,
         chi.unit,
-        chi.quantity,
+        chi.quantity as quantity,
         chi.price,
         chi.clos_stock
     FROM

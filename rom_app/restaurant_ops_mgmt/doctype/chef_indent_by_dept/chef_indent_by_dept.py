@@ -19,13 +19,20 @@ class ChefIndentByDept(Document):
         print('^^^^^^^^^^^^^^^^^^^')
         print(self.raw_materials)
         for item in self.raw_materials:
-            print(item.issu_qty_entry)
-            print(item.issued_qty)
-            if (item.issu_qty_entry):
+            print('------------------------------ - ')
+            if (item.issu_qty_entry is None):
+                return
+            print('item.issu_qty_entry - ', item.issu_qty_entry)
+            # print('item.issued_qty - ', item.issued_qty)
+            if (item.issu_qty_entry == 0):
+                print('==0')
+                issu_qty_entry_minus = 0
+            else:
+                print('!=0')
                 issu_qty_entry_minus = -1 * item.issu_qty_entry
-                if (issu_qty_entry_minus != item.issued_qty):
-                    item.issued_qty = issu_qty_entry_minus
-                    print(item.issued_qty)
+            print('issu_qty_entry_minus ', issu_qty_entry_minus)
+            item.issued_qty = issu_qty_entry_minus
+            print('item.issued_qty ', item.issued_qty)
 
     def get_the_record_count(self, branch, user_name, date_obj):
         rec_count = frappe.db.count('Chef Indent By Dept', filters={

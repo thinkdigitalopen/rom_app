@@ -23,7 +23,6 @@ def execute(filters=None):
             'req_qty': d.req_qty,
             'issued_qty': d.issued_qty,
             'rm_approval': d.rm_approval,
-            'remarks':  d.remarks,
         })
         data.append(row)
 
@@ -92,14 +91,7 @@ def get_columns():
             'label': 'RM Appr',
             'fieldtype': 'Data',
             'width': '80'
-        },
-        {
-            'fieldname': 'remarks',
-            'label': 'Remarks',
-            'fieldtype': 'Data',
-            'width': '160',
-            "align": 'left',
-        },
+        }
     ]
 
 
@@ -110,7 +102,7 @@ def get_data(filters):
     build_sql_1 = """
     SELECT
     ci.`name`, ci.`date`, ci.user_name,	ci.branch_name,	d.department_name, ci.rm_approval,
-    cic.raw_material, cic.unit,	cic.req_qty, cic.issued_qty, cic.remarks
+    cic.raw_material, cic.unit,	cic.req_qty, cic.issued_qty
     FROM
     `tabChef Indent By Dept` ci
     INNER JOIN `tabChef Indent By Dept Child` cic on
@@ -129,7 +121,7 @@ def get_data(filters):
     build_sql_2 = """
     SELECT
     ci.`name`, ci.`date`, ci.user_name,	ci.branch_name,	d.department_name,	ci.rm_approval,
-    cic.raw_material, cic.unit, cic.req_qty, cic.issued_qty, cic.remarks
+    cic.raw_material, cic.unit, cic.req_qty, cic.issued_qty
     FROM
     `tabChef Indent By Dept` ci
     INNER JOIN `tabChef Indent By Dept Child Additional` cic on

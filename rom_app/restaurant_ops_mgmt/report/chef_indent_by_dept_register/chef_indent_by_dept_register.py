@@ -24,8 +24,7 @@ def execute(filters=None):
             'issued_qty': d.issued_qty,
             # 'rm_approval': d.rm_approval,
             'price': d.price,
-            'amount': d.amount,
-            'remarks':  d.remarks,
+            'amount': d.amount
         })
         data.append(row)
 
@@ -106,14 +105,7 @@ def get_columns():
             'label': 'Amount',
             'fieldtype': 'Data',
             'width': '80'
-        },
-        {
-            'fieldname': 'remarks',
-            'label': 'Remarks',
-            'fieldtype': 'Data',
-            'width': '160',
-            "align": 'left',
-        },
+        }
     ]
 
 
@@ -126,7 +118,7 @@ def get_data(filters):
     SELECT
         ci.`name`, ci.`date`, ci.user_name,	ci.branch,	d.department_name,
         raw.item, cic.unit,	cic.req_qty, cic.issued_qty,
-        cic.price, cic.amount, cic.remarks
+        cic.price, cic.amount
     FROM
         `tabChef Indent By Dept` ci
     INNER JOIN `tabChef Indent By Dept Child` cic on

@@ -32,9 +32,9 @@ frappe.ui.form.on("Chef Indent By Dept", {
 			return value;
 		 }
 
-		if (frm.is_new()) {
-
-		 }
+		// if (frm.is_new()) {
+  //
+		//  }
 	},
 
 	department: function(frm) {
@@ -58,15 +58,30 @@ frappe.ui.form.on("Chef Indent By Dept", {
 		let amount = 0;
 		let cal_val = 0;
 		let price = 0;
+		//let float_issu_qty_entry = parseFloat(d.issu_qty_entry);
+		//console.log(' float_issu_qty_entry - ', float_issu_qty_entry);
+		//if(d.issu_qty_entry > 0) {
+			console.log(' d.issu_qty_entry ', d.issu_qty_entry);
 
-		// if(parseFloat(d.issued_qty)>=0) {
-			issued_qty = (-1) * d.issu_qty_entry;
+
+			if (d.issu_qty_entry == 0){
+				issued_qty = 0;
+			} else {
+				issued_qty = (-1) * d.issu_qty_entry;
+			}
+
+			console.log(' after issued_qty', issued_qty);
+
 			console.log('issued_qty ->',issued_qty);
 			console.log('cdt ->',cdt);
 			console.log('cdn ->',cdn);
-			frappe.model.set_value(cdt, cdn, "issued_qty", issued_qty);
+			//frappe.model.set_value(cdt, cdn, "issued_qty", issued_qty);
 			//refresh_field("raw_materials");
 		// }
+		//  else {
+		// 	 console.log(' equal to 0');
+		// 	 frappe.model.set_value(cdt, cdn, "issued_qty", 0);
+		//  }
 
 		// if(parseFloat(d.price)>=0)
 			price = d.price;
@@ -130,7 +145,7 @@ function load_items_from_template_method(frm){
 								entry.unit = e[1];
 								entry.raw_material_title = e[2];
 								entry.price = e[3];
-								entry.closing_qty = e[4];
+								//entry.closing_qty = e[4];
 							});
 							// ------ load end --------
 						}

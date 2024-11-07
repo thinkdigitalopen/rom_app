@@ -49,6 +49,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -80,7 +81,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:45:39.076690",
+ "modified": "2024-11-07 22:47:14.528349",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",

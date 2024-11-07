@@ -15,6 +15,10 @@ refresh(frm) {
 		// frm.set_df_property('raw_material_list', 'cannot_delete_rows', true);
 		// frm.set_df_property('raw_material_list', 'cannot_delete_all_rows', true);
 		disable_drag_drop(frm);
+		frm.add_custom_button(__('Load items from template'), function(){
+			load_items_from_template_method(frm);
+			},
+							  );
 	},
 	onload(frm) {
 		disable_drag_drop(frm);
@@ -240,3 +244,73 @@ function disable_drag_drop(frm) {
 //         }
 //     }
 // }
+
+
+function load_items_from_template_method(frm){
+		if(frm.doc.stock_entry_template) {
+
+			let branch_selected = frm.doc.branch;
+			let template_selected = frm.doc.stock_entry_template;
+			console.log('branch_selected=',branch_selected);
+			console.log('template_selected=',template_selected);
+
+			//resolve_title_by_calling_api();
+			//-- frappe call start --
+
+			frm.call({
+				doc: frm.doc,
+				method: 'get_raw_material_with_id',
+				args: {
+					branch: branch_selected,
+					template: template_selected
+				},
+				freeze:true,
+				freeze_message: "Processing",
+				callback: function(r){
+					if (r.message) {
+						let msg = r.message;
+
+						console.log(msg);
+						console.log('lenght',msg.length);
+						frm.doc.raw_material_from_template = []
+						if (msg.length == 0){
+							frappe.show_alert("The template records for the department could not be found.");
+						}
+						else
+						{
+							// ---- load start ------
+							$.each(msg, function(_i, e){
+								let entry = frm.add_child("raw_material_from_template");
+								entry.raw_material = e[3];
+								entry.unit = e[1];
+								entry.unit_price = e[2];
+
+								entry.raw_material_text = e[0];
+								entry.unit_price_text = e[2];
+
+							});
+							// ------ load end --------
+						}
+						refresh_field("raw_material_from_template");
+					}
+				}
+			});
+
+
+			//-- frappe call end --
+		} else {
+			let msg = frappe.msgprint({
+					title: 'Info',
+					indicator: 'green',
+					message: 'Please select the department',
+					 primary_action:{
+						'label': 'Close',
+						action(values) {
+							msg.hide();
+						}
+					}
+				});
+
+			console.log("no value in department ");
+		}
+	}

@@ -6,12 +6,13 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
+  "user_name",
   "vendor",
-  "stock__entry_template",
+  "stock_entry_template",
   "column_break_oiog",
   "date",
   "bill_date",
-  "user_name",
+  "receive_date",
   "total_price",
   "section_break_wqyo",
   "raw_material_from_template"
@@ -35,8 +36,6 @@
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "User Name",
    "read_only": 1
   },
@@ -70,12 +69,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "stock__entry_template",
-   "fieldtype": "Link",
-   "label": "Stock  Entry Template",
-   "options": "Stock Entry Template"
-  },
-  {
    "fieldname": "vendor",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -87,13 +80,26 @@
   {
    "fieldname": "bill_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Bill Date"
+  },
+  {
+   "fieldname": "receive_date",
+   "fieldtype": "Date",
+   "label": "Receive Date"
+  },
+  {
+   "fieldname": "stock_entry_template",
+   "fieldtype": "Link",
+   "label": "Stock Entry Template",
+   "options": "Stock Entry Template Type"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 02:18:22.288166",
+ "modified": "2024-11-07 18:18:57.872825",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",
@@ -117,5 +123,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "date"
+ "title_field": "vendor"
 }

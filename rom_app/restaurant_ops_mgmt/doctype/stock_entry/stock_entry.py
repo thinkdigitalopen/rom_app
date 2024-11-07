@@ -45,3 +45,36 @@ class StockEntry(Document):
             print(" se - price  ", item.unit_price)
             doc.price = item.unit_price
             doc.save()
+
+    @frappe.whitelist()
+    def get_raw_material_with_id(self, branch, template):
+        print("inside python")
+        sql = """
+        SELECT
+            rawmat.item,
+            child.unit,
+            rawmat.price,
+            rawmat.name
+        FROM
+           `tabStock Entry Template` parent
+        JOIN
+           `tabStock Entry Template Child` child
+        ON
+            parent.name = child.parent
+        JOIN
+            `tabRaw Material Only` rawmat
+        ON
+            rawmat.name = child.raw_material
+        WHERE
+            parent.branch = '{}'
+        AND
+            parent.stock_entry_template = '{}'
+        ORDER BY child.idx ASC
+        """
+        sql = sql.format(branch, template)
+        print(sql)
+        item_data = frappe.db.sql(sql, as_dict=0)
+        res_length = len(item_data)
+        print(res_length)
+        print(item_data)
+        return item_data

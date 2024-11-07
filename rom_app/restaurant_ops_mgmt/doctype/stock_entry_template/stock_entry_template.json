@@ -68,7 +68,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:54:29.263490",
+ "modified": "2024-11-07 13:12:16.505248",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry Template",
@@ -92,5 +92,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "date"
+ "title_field": "stock_entry_template"
 }
