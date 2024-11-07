@@ -138,7 +138,6 @@ def get_data_by_percentage(filters):
         `tabDiscount Form`
         """
     where_cond = f" WHERE STR_TO_DATE(date, '%Y-%m-%d')  between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
-
     if "branch_filter" in conditions:
         where_cond = where_cond + f" AND branch = '{conditions['branch_filter']}' "
 
