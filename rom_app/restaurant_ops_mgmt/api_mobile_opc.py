@@ -12,7 +12,6 @@ def get_op_closing_checklist_child_mobile(branch_param, load_date):
     print('load_date ', load_date)
     load_date = utils.format_date_from_dmY_to_Ymd(load_date)
     print(' utils.format_date_from_dmY_to_Ymd(load_date) ', load_date)
-
     build_sql = """
     SELECT
         coc.name as parent_name,

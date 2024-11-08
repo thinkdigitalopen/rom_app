@@ -6,37 +6,72 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 	});
 
 	var filters = {};
-	var from_date;
-	var to_date;
+	// var from_date;
+	// var to_date;
 	var branch;
 	var all_value;
+	//var date_from_server={};
+
+	let get_date_from_server = function()
+	{
+		console.log('************ get_date_from_server() *******************');
+		let result_data = {};
+		let api_url = "rom_app.restaurant_ops_mgmt.api.get_date_for_report_filter";
+		frappe.call({
+			method: api_url,
+			args: {},
+			async: false,
+			callback: function(res) {
+				console.log(res);
+				result_data = res.message;
+			}
+		});
+		//date_from_server = result_data;
+		console.log('************ ##### *******************', result_data);
+
+		return result_data;
+	}
+
+	var date_from_server = get_date_from_server();
+	var from_date = date_from_server.previous_date;
+	var to_date = date_from_server.today;
+
 
 	var global_get_to_date = function (){
-		var from_date_temp = frappe.datetime.now_date();
-		return from_date_temp;
+		console.log('************ global_get_to_date *******************');
+		console.log(to_date);
+		// console.log(date_from_server.previous_date);
+
+		return to_date;
+		// var from_date_temp = frappe.datetime.now_date();
+		// return from_date_temp;
+
 	}
 
 	var global_get_from_date = function (){
-		var from_date_temp = global_get_to_date();
-		var from_date_minus_one = new Date(frappe.datetime.str_to_obj(from_date_temp));
-		from_date_minus_one.setDate(from_date_minus_one.getDate() - 1);
-
-		let date_only = from_date_minus_one.getDate();
-		let month_only = from_date_minus_one.getMonth() + 1;
-		if (month_only.toString().length == 1) {
-            month_only = "0" + month_only;
-        }
-		let year_only = from_date_minus_one.getFullYear();
-
-		var from_date_minus_one_opt = year_only + "-" + month_only + "-" + date_only;
-
-		console.log("^^^^^^^^^^^^^^^^^^^^^^^");
-		console.log(" date_only=",date_only);
-		console.log(" month_only=",month_only);
-		console.log(" year_only=",year_only);
-
-		console.log("from_date_minus_one_opt", from_date_minus_one_opt);
-		return from_date_minus_one_opt;
+		console.log('************ global_get_from_date *******************');
+		console.log(from_date);
+		return from_date;
+		// var from_date_temp = global_get_to_date();
+		// var from_date_minus_one = new Date(frappe.datetime.str_to_obj(from_date_temp));
+		// from_date_minus_one.setDate(from_date_minus_one.getDate() - 1);
+  //
+		// let date_only = from_date_minus_one.getDate();
+		// let month_only = from_date_minus_one.getMonth() + 1;
+		// if (month_only.toString().length == 1) {
+  //           month_only = "0" + month_only;
+  //       }
+		// let year_only = from_date_minus_one.getFullYear();
+  //
+		// var from_date_minus_one_opt = year_only + "-" + month_only + "-" + date_only;
+  //
+		// console.log("^^^^^^^^^^^^^^^^^^^^^^^");
+		// console.log(" date_only=",date_only);
+		// console.log(" month_only=",month_only);
+		// console.log(" year_only=",year_only);
+  //
+		// console.log("from_date_minus_one_opt", from_date_minus_one_opt);
+		// return from_date_minus_one_opt;
 	}
 
 	var global_get_filters = function (){
@@ -107,7 +142,6 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 			ticket_report_register_by_count('on-submit');
 			expense_report_register_by_amount('on-submit');
 			chef_indent_by_quantity('on-submit');
-
 		}
 	});
 
@@ -322,7 +356,7 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 				fb_closing_checklist_audit_chart(data, filters);
 				// chef_closing_checklist_rm_audit_chart(data, filters);
 			}
-		})
+		});
 	}
 
 	let fb_closing_checklist_audit_chart  = function(data, filters){
@@ -1405,7 +1439,7 @@ let chef_indent_by_quantity  = function(time_of_invoke){
 	fb_closing_checklist_audit('on-load');
 	op_opening_checklist_audit('on-load');
 	op_closing_checklist_audit('on-load');
- //
+
 	chef_production_register('on-load');
 	sales_report_register('on-load');
 	sales_by_payment_mode('on-load');

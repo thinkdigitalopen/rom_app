@@ -1,12 +1,33 @@
 import frappe
-from datetime import datetime
+from datetime import datetime, timedelta
 from . import utils
-from frappe.utils import getdate
+from frappe.utils import getdate, formatdate
 
 
 @frappe.whitelist()
 def testapi():
     return "test api returned"
+
+
+@frappe.whitelist()
+def get_date_for_report_filter():
+    today = datetime.today().date()
+    previous_date = today - timedelta(days=1)
+    print("Today's date:", today)
+    print("Previous date:", previous_date)
+    print(" *************************************** ")
+    # today_str = today.strftime("%d-%m-%Y")
+    # previous_date_str = previous_date.strftime("%d-%m-%Y")
+    # date_obj = {
+    #     'today': today_str,
+    #     'previous_date': previous_date_str
+    #            }
+    date_obj = {
+        'today': today,
+        'previous_date': previous_date
+               }
+    print("get_date_for_report_filter date:", date_obj)
+    return date_obj
 
 
 @frappe.whitelist()
