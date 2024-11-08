@@ -41,25 +41,21 @@ def get_columns():
             'fieldname': 'date',
             'label': 'Date',
             'fieldtype': 'Data',
-
         },
         {
             'fieldname': 'user_name',
             'label': 'User Name',
             'fieldtype': 'Data',
-
         },
         {
             'fieldname': 'branch',
             'label': 'Branch Name',
             'fieldtype': 'Data',
-
         },
         {
             'fieldname': 'category',
             'label': 'Category',
             'fieldtype': 'Data',
-
         },
         {
             'fieldname': 'item',
@@ -183,7 +179,6 @@ def get_data_groupby_briyani(filters):
     ON
     parent1.`name` = child1.`parent`
     """
-
     where_cond = f" WHERE parent1.date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
     if "branch_filter" in conditions:
         where_cond = where_cond + f" AND parent1.branch = '{conditions['branch_filter']}' "
