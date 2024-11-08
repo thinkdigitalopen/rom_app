@@ -14,7 +14,7 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 
 	let get_date_from_server = function()
 	{
-		console.log('************ get_date_from_server() *******************');
+		//console.log('************ get_date_from_server() *******************');
 		let result_data = {};
 		let api_url = "rom_app.restaurant_ops_mgmt.api.get_date_for_report_filter";
 		frappe.call({
@@ -27,8 +27,7 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 			}
 		});
 		//date_from_server = result_data;
-		console.log('************ ##### *******************', result_data);
-
+		//console.log('************ ##### *******************', result_data);
 		return result_data;
 	}
 
@@ -36,42 +35,12 @@ frappe.pages['single-page-chart'].on_page_load = function(wrapper) {
 	var from_date = date_from_server.previous_date;
 	var to_date = date_from_server.today;
 
-
 	var global_get_to_date = function (){
-		console.log('************ global_get_to_date *******************');
-		console.log(to_date);
-		// console.log(date_from_server.previous_date);
-
 		return to_date;
-		// var from_date_temp = frappe.datetime.now_date();
-		// return from_date_temp;
-
 	}
 
 	var global_get_from_date = function (){
-		console.log('************ global_get_from_date *******************');
-		console.log(from_date);
 		return from_date;
-		// var from_date_temp = global_get_to_date();
-		// var from_date_minus_one = new Date(frappe.datetime.str_to_obj(from_date_temp));
-		// from_date_minus_one.setDate(from_date_minus_one.getDate() - 1);
-  //
-		// let date_only = from_date_minus_one.getDate();
-		// let month_only = from_date_minus_one.getMonth() + 1;
-		// if (month_only.toString().length == 1) {
-  //           month_only = "0" + month_only;
-  //       }
-		// let year_only = from_date_minus_one.getFullYear();
-  //
-		// var from_date_minus_one_opt = year_only + "-" + month_only + "-" + date_only;
-  //
-		// console.log("^^^^^^^^^^^^^^^^^^^^^^^");
-		// console.log(" date_only=",date_only);
-		// console.log(" month_only=",month_only);
-		// console.log(" year_only=",year_only);
-  //
-		// console.log("from_date_minus_one_opt", from_date_minus_one_opt);
-		// return from_date_minus_one_opt;
 	}
 
 	var global_get_filters = function (){
@@ -307,7 +276,7 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 		title: {
-			text: "FB Opening Checklist Audit"
+			text: "FB Opening Checklist"
 		},
 		bindto: "#fb_opening_checklist_audit_chart",
 		data: {
@@ -374,7 +343,7 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "FB Closing Checklist Audit"
+			text: "FB Closing Checklist"
 			},
 			bindto: "#fb_closing_checklist_audit_chart",
 			data: {
@@ -442,7 +411,7 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "Op Opening Checklist Audit"
+			text: "Op Opening Checklist"
 			},
 			bindto: "#op_opening_checklist_audit_chart",
 			data: {
@@ -508,7 +477,7 @@ let opening_new_tab_simple = function (report_name, filters, date_clicked){
 
 		var chart = bb.generate({
 			title: {
-			text: "Op Closing Checklist Audit"
+			text: "Op Closing Checklist"
 			},
 			bindto: "#op_closing_checklist_audit_chart",
 			data: {

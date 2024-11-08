@@ -10,7 +10,7 @@
  "idx": 1,
  "is_public": 1,
  "is_standard": 1,
- "label": "Todays FB Close Checklist Audited %",
+ "label": "Todays FB Close Checklist",
  "method": "rom_app.restaurant_ops_mgmt.api_number_card_fb.get_fb_closing_checklist",
  "modified": "2024-10-18 23:55:36.385907",
  "modified_by": "Administrator",
