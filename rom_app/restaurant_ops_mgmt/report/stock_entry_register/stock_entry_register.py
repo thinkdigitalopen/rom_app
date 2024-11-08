@@ -20,6 +20,7 @@ def execute(filters=None):
             'receive_date': d.receive_date,
             'branch': d.branch,
             'user_name': d.user_name,
+            'template_type_name': d.template_type_name,
             'raw_material': d.raw_material,
             'unit': d.unit,
             'ord_qty': d.ord_qty,
@@ -65,6 +66,11 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
+            'fieldname': 'template_type_name',
+            'label': 'Vendor',
+            'fieldtype': 'Data',
+        },
+        {
             'fieldname': 'raw_material',
             'label': 'Raw Material',
             'fieldtype': 'Data',
@@ -105,6 +111,7 @@ def get_data(filters):
         par.bill_date,
         par.receive_date,
         par.user_name,
+        tv.template_type_name,
         raw.item as raw_material,
         chi.unit,
         chi.ord_qty,
@@ -116,6 +123,8 @@ def get_data(filters):
         chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON
         chi.raw_material = raw.name
+    LEFT JOIN  tabVendor tv ON
+        par.vendor = tv.name
     """
     where_cond = f" WHERE par.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
 
@@ -123,6 +132,8 @@ def get_data(filters):
         where_cond = where_cond + f" AND par.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
         where_cond = where_cond + f" AND raw_material = '{conditions['raw_material_filter']}' "
+    if "vendor_filter" in conditions:
+        where_cond = where_cond + f" AND par.vendor = '{conditions['vendor_filter']}' "
 
     order_by = "ORDER BY name DESC"
     build_sql = f"{build_sql}  {where_cond}  {order_by}"

@@ -25,6 +25,12 @@ frappe.query_reports["Stock Entry Register"] = {
 			"label": "Raw Material",
 			"fieldtype": "Link",
 			"options": "Raw Material Only",
+		},
+		{
+			"fieldname": "vendor_filter",
+			"label": "Vendor",
+			"fieldtype": "Link",
+			"options": "Vendor",
 		}
 	]
 };
