@@ -24,7 +24,6 @@ def execute(filters=None):
             'qty': d.qty,
             'price': d.price,
             'amount': d.amount,
-            'closing_qty': d.closing_qty,
             'link': d.link
         })
         data.append(row)
@@ -84,11 +83,6 @@ def get_columns():
             'fieldname': 'amount',
             'label': 'Amount',
             'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'closing_qty',
-            'label': 'Closing Stock',
-            'fieldtype': 'Data',
         }
     ]
 
@@ -133,7 +127,7 @@ def build_sql_se(conditions):
     SELECT "Stock" as trans_type,
     par.name, par.date, par.branch,  par.user_name,
     raw.item as raw_material, chi.unit, chi.ord_qty as qty,
-    chi.unit_price AS price, chi.amount, chi.clos_qty as closing_qty
+    chi.unit_price AS price, chi.amount
     FROM `tabStock Entry` par
     INNER JOIN `tabStock Entry Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
@@ -147,7 +141,7 @@ def build_sql_indent(conditions):
     SELECT "Indent" as trans_type,
     par.`name`, par.`date`, 	par.branch,	par.user_name,
     raw.item as raw_material, chi.unit, chi.issued_qty as qty,
-    chi.price, chi.amount, chi.closing_qty as closing_qty
+    chi.price, chi.amount
     FROM `tabChef Indent By Dept` par
     INNER JOIN `tabChef Indent By Dept Child` chi on par.name = chi.parent
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
@@ -161,7 +155,7 @@ def build_sql_waste(conditions):
     SELECT  "Waste" as trans_type,
     par.name, par.date, par.branch, par.user_name,
     raw.item as raw_material, chi.unit, chi.wastage_qty as qty,
-    chi.unit_price as price , chi.amount, chi.clos_stock as closing_qty
+    chi.unit_price as price , chi.amount
     FROM `tabInventory Wastage` par
     INNER JOIN `tabInventory Wastage Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
@@ -175,7 +169,7 @@ def build_sql_invcount(conditions):
     SELECT  "InvCount" as trans_type,
     par.name,  par.date, par.branch,  par.user_name,
     raw.item as raw_material,   chi.unit,  chi.diff as qty,
-    chi.price,  chi.amount, chi.clos_stock as closing_qty
+    chi.price,  chi.amount
     FROM  `tabInventory Counting`  par
     INNER JOIN `tabInventory Counting Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name

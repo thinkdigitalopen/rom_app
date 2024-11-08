@@ -81,6 +81,8 @@ fixtures = [
                             "Inventory Wastage Register",
                             "Inventory Counting Register",
                             "Inventory Summary Register",
+                            "Asset Master Register",
+                            "Menu Register",
                             "SampleDoc Register",
                         ]],
                      }
