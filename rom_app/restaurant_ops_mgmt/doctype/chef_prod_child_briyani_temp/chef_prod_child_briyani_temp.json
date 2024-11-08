@@ -7,7 +7,6 @@
  "engine": "InnoDB",
  "field_order": [
   "briyani_category",
-  "portion",
   "rateportion"
  ],
  "fields": [
@@ -16,14 +15,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Briyani Category",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "portion",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Portion",
    "reqd": 1
   },
   {
@@ -38,7 +29,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-31 13:05:20.439819",
+ "modified": "2024-11-08 13:45:39.611628",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Prod Child Briyani Temp",

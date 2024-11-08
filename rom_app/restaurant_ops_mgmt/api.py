@@ -186,7 +186,7 @@ def get_chef_production_checklist_child_briyani(branch_param):
         frappe.qb.from_(parent)
         .inner_join(child)
         .on(parent.name == child.parent)
-        .select(parent.name, parent.branch, child.briyani_category, child.portion, child.rateportion)
+        .select(parent.name, parent.branch, child.briyani_category, child.rateportion)
         .where(parent.branch == branch_param)
     )
 
@@ -203,7 +203,7 @@ def get_chef_production_checklist_child_chicken(branch_param):
         frappe.qb.from_(parent)
         .inner_join(child)
         .on(parent.name == child.parent)
-        .select(parent.name, parent.branch, child.chicken_category, child.portion, child.rateportion)
+        .select(parent.name, parent.branch, child.chicken_category, child.rateportion)
         .where(parent.branch == branch_param)
     )
 

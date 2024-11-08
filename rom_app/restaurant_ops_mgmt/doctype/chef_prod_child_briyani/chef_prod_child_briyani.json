@@ -9,21 +9,10 @@
   "briyani_category",
   "product_qtykg",
   "balance_portion",
-  "portion",
-  "portion_x_prod_qty",
   "rateportion",
   "wastage_amount"
  ],
  "fields": [
-  {
-   "columns": 1,
-   "fieldname": "portion",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Portion",
-   "options": "0",
-   "read_only": 1
-  },
   {
    "columns": 1,
    "fieldname": "rateportion",
@@ -67,21 +56,12 @@
    "in_list_view": 1,
    "label": "Briyani Category",
    "read_only": 1
-  },
-  {
-   "columns": 1,
-   "fieldname": "portion_x_prod_qty",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Port X Qty",
-   "options": "0",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-07 02:11:29.602565",
+ "modified": "2024-11-08 14:05:05.376087",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Prod Child Briyani",

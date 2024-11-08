@@ -46,6 +46,7 @@
    "options": "Chef Prod Child Chicken"
   },
   {
+   "default": "0",
    "fieldname": "briyani_category_wastage_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -53,6 +54,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "chicken_category_wastage_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -82,7 +84,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:46:15.454095",
+ "modified": "2024-11-08 14:07:04.960629",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Production",

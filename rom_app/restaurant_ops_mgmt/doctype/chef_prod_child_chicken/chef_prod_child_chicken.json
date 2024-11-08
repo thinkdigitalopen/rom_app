@@ -9,8 +9,6 @@
   "chicken_category",
   "product_qtykg",
   "balance_portion",
-  "portion",
-  "portion_x_prod_qty",
   "rateportion",
   "wastage_amount"
  ],
@@ -31,22 +29,6 @@
    "label": "Prod Qty",
    "options": "0",
    "reqd": 1
-  },
-  {
-   "columns": 1,
-   "fieldname": "portion",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Portion",
-   "read_only": 1
-  },
-  {
-   "columns": 1,
-   "fieldname": "portion_x_prod_qty",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Port X Qty",
-   "read_only": 1
   },
   {
    "columns": 1,
@@ -79,7 +61,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-07 02:11:49.782907",
+ "modified": "2024-11-08 14:05:22.553167",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Prod Child Chicken",
