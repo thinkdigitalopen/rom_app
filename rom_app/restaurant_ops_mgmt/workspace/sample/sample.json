@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_aGfX0iRa1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sample</span>\",\"col\":12}},{\"id\":\"uqqmsl47Vd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc\",\"col\":4}},{\"id\":\"QdKsogAHwq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc Register\",\"col\":4}},{\"id\":\"K70JammIiG\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ahR80GBmW3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist\",\"col\":4}},{\"id\":\"IUGgKyz95E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist\",\"col\":4}},{\"id\":\"BDr4BHJRxC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays FB Open Checklist\",\"col\":4}},{\"id\":\"bvoumxeHu7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays FB Close Checklist\",\"col\":4}},{\"id\":\"kHqKj85F7m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}}]",
+ "content": "[{\"id\":\"_aGfX0iRa1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sample</span>\",\"col\":12}},{\"id\":\"uqqmsl47Vd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc\",\"col\":4}},{\"id\":\"QdKsogAHwq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc Register\",\"col\":4}},{\"id\":\"K70JammIiG\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"jRAOMVp-7z\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0hHC9ECONi\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2024-10-24 10:27:32.530044",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,28 +13,11 @@
  "is_hidden": 0,
  "label": "Sample",
  "links": [],
- "modified": "2024-11-09 10:53:12.072620",
+ "modified": "2024-11-09 11:18:19.061219",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Sample",
- "number_cards": [
-  {
-   "label": "Todays Op Open Checklist",
-   "number_card_name": "Todays Op Open Checklist"
-  },
-  {
-   "label": "Todays FB Open Checklist",
-   "number_card_name": "Todays FB Open Checklist"
-  },
-  {
-   "label": "Todays FB Close Checklist",
-   "number_card_name": "Todays FB Close Checklist"
-  },
-  {
-   "label": "Open Tickets Assigned",
-   "number_card_name": "Open Tickets Assigned"
-  }
- ],
+ "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
