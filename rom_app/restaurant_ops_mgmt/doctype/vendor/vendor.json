@@ -25,14 +25,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Template Type Name",
+   "label": "Vendor Name",
    "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:55:11.916033",
+ "modified": "2024-11-09 15:17:47.851830",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Vendor",
