@@ -31,7 +31,7 @@ def get_op_opening_checklist():
 
 @frappe.whitelist()
 def get_op_closing_checklist():
-    print('get_op_opening_checklist - number card =======')
+    print('get_op_closing_checklist - number card =======')
     if (frappe.session.user == 'Administrator'):
         ret_val = {"value": 0}
         return ret_val
