@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_aGfX0iRa1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sample</span>\",\"col\":12}},{\"id\":\"uqqmsl47Vd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc\",\"col\":4}},{\"id\":\"QdKsogAHwq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc Register\",\"col\":4}}]",
+ "content": "[{\"id\":\"_aGfX0iRa1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sample</span>\",\"col\":12}},{\"id\":\"uqqmsl47Vd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc\",\"col\":7}},{\"id\":\"QdKsogAHwq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SampleDoc Register\",\"col\":7}},{\"id\":\"ahR80GBmW3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Todays Op Open Checklist\",\"col\":4}}]",
  "creation": "2024-10-24 10:27:32.530044",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,16 @@
  "is_hidden": 0,
  "label": "Sample",
  "links": [],
- "modified": "2024-10-24 20:02:25.970299",
+ "modified": "2024-11-09 10:36:24.211864",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Sample",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Todays Op Open Checklist",
+   "number_card_name": "Todays Op Open Checklist"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
