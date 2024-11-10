@@ -1063,5 +1063,31 @@
     "role": "Rom_MasterData_Role"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2024-11-11 02:47:06.050612",
+  "name": "mn1kkplnus",
+  "page": null,
+  "ref_doctype": "Inventory Summary",
+  "report": "Inventory Transaction Register",
+  "roles": [
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_Manage_Role"
+   },
+   {
+    "role": "Rom_Admin_Role"
+   },
+   {
+    "role": "Rom_MasterData_Role"
+   }
+  ]
  }
 ]
