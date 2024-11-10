@@ -24,6 +24,7 @@
    "default": "user_fullname",
    "fieldname": "user_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "User Name",
    "read_only": 1
   },
@@ -108,14 +109,13 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
-   "read_only": 1,
    "reqd": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:54:53.079753",
+ "modified": "2024-11-10 22:16:38.905452",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Ticket Report",

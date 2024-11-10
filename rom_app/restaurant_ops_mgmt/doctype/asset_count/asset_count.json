@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
+  "all_differences_filled",
   "column_break_wmqj",
   "date",
   "user_name",
@@ -54,12 +55,20 @@
    "options": "Branch",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "all_differences_filled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "All Differences Filled"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:44:01.285576",
+ "modified": "2024-11-10 11:55:01.459403",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Asset Count",

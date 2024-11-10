@@ -1,0 +1,69 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"-YMT5SZNcx\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">HR</span>\",\"col\":12}},{\"id\":\"qXMgBsse6A\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}},{\"id\":\"3CQoDMlwss\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transaction <br></b></span>\",\"col\":12}},{\"id\":\"enkCCKKJoO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"BGfymEoa-b\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"IASXMuaER8\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report <br></b></span>\",\"col\":12}},{\"id\":\"nY4nNxss0F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"vfNUO7HVkr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}}]",
+ "creation": "2024-11-11 00:04:30.837144",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "HR",
+ "links": [],
+ "modified": "2024-11-11 00:46:06.130072",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "HR",
+ "number_cards": [
+  {
+   "label": "Open Tickets Assigned",
+   "number_card_name": "Open Tickets Assigned"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Rom_HR_Role"
+  }
+ ],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Ticket Report Register",
+   "link_to": "Ticket Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Ticket Report",
+   "link_to": "Ticket Report",
+   "stats_filter": "[[\"Ticket Report\",\"completed\",\"=\",0,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "NC Report Register",
+   "link_to": "NC Report Register",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "NC Report",
+   "link_to": "NC Report",
+   "stats_filter": "[[\"NC Report\",\"completed\",\"=\",0,false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "HR"
+}

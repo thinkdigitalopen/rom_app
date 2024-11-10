@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Admin",
  "links": [],
- "modified": "2024-11-08 01:49:34.934095",
+ "modified": "2024-11-11 00:05:18.697904",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Admin",
@@ -30,7 +30,7 @@
    "role": "Administrator"
   }
  ],
- "sequence_id": 11.0,
+ "sequence_id": 10.0,
  "shortcuts": [
   {
    "color": "Green",

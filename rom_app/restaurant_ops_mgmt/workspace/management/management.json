@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"Ddpyn2rQhB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Management Space<br></span>\",\"col\":12}},{\"id\":\"jNUc1OfQ5O\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}},{\"id\":\"zt1QEct5Pu\",\"type\":\"card\",\"data\":{\"card_name\":\"Food & Beverage Reports\",\"col\":4}},{\"id\":\"78WkuG1wHY\",\"type\":\"card\",\"data\":{\"card_name\":\"Operation Reports\",\"col\":4}},{\"id\":\"DozMf5zGse\",\"type\":\"card\",\"data\":{\"card_name\":\"Cash Reports\",\"col\":4}},{\"id\":\"GiNLd_sqfq\",\"type\":\"card\",\"data\":{\"card_name\":\"Store Reports\",\"col\":4}},{\"id\":\"YN2ZnovPZR\",\"type\":\"card\",\"data\":{\"card_name\":\"Common Reports\",\"col\":4}},{\"id\":\"V0aiDD5Dgy\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "content": "[{\"id\":\"Ddpyn2rQhB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Management Space<br></span>\",\"col\":12}},{\"id\":\"ZtvNJpJpSn\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transaction <br></b></span>\",\"col\":12}},{\"id\":\"dLhccKobif\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"MPTId_zumt\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report <br></b></span>\",\"col\":12}},{\"id\":\"jNUc1OfQ5O\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}},{\"id\":\"zt1QEct5Pu\",\"type\":\"card\",\"data\":{\"card_name\":\"Food & Beverage Reports\",\"col\":4}},{\"id\":\"YN2ZnovPZR\",\"type\":\"card\",\"data\":{\"card_name\":\"Common Reports\",\"col\":4}},{\"id\":\"78WkuG1wHY\",\"type\":\"card\",\"data\":{\"card_name\":\"Operation Reports\",\"col\":4}},{\"id\":\"DozMf5zGse\",\"type\":\"card\",\"data\":{\"card_name\":\"Cash Reports\",\"col\":4}},{\"id\":\"GiNLd_sqfq\",\"type\":\"card\",\"data\":{\"card_name\":\"Store Reports\",\"col\":4}}]",
  "creation": "2024-08-01 19:03:12.196385",
  "custom_blocks": [],
  "docstatus": 0,
@@ -308,7 +308,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-11-07 12:10:54.912210",
+ "modified": "2024-11-11 00:05:18.621560",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Management",
@@ -322,7 +322,16 @@
    "role": "Rom_Manage_Role"
   }
  ],
- "sequence_id": 10.0,
- "shortcuts": [],
+ "sequence_id": 9.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Ticket Report",
+   "link_to": "Ticket Report",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Management"
 }

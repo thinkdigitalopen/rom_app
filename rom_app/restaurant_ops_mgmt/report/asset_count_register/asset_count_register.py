@@ -23,6 +23,7 @@ def execute(filters=None):
             'standard_stock': d.standard_stock,
             'current_stock': d.current_stock,
             'difference':  d.difference,
+            'diff_filled':  d.diff_filled,
             'asset_master_image':  d.asset_master_image
         })
         data.append(row)
@@ -84,6 +85,11 @@ def get_columns():
             'fieldtype': 'Int',
         },
         {
+            'fieldname': 'diff_filled',
+            'label': 'Diff Filled',
+            'fieldtype': 'Check',
+        },
+        {
             'fieldname': 'asset_master_image',
             'label': 'Image',
             'fieldtype': 'Image',
@@ -106,6 +112,7 @@ def get_data(filters):
     icc.standard_stock,
     icc.current_stock,
     icc.difference,
+    icc.diff_filled,
     icc.asset_master_image
     FROM
     `tabAsset Count` ic
@@ -122,6 +129,8 @@ def get_data(filters):
         where_cond = where_cond + f" AND icc.item LIKE '%{conditions['item_filter']}%' "
     if "group_filter" in conditions:
         where_cond = where_cond + f" AND icc.asset_group_id = '{conditions['group_filter']}' "
+    if "diff_filled_filter" in conditions:
+        where_cond = where_cond + f" AND icc.diff_filled = '{conditions['diff_filled_filter']}' "
 
     order_by = " ORDER BY ic.date DESC, icc.idx ASC "
 

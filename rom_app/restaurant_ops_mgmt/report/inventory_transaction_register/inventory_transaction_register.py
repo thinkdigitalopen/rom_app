@@ -218,8 +218,10 @@ def get_conditions(filters):
 
 def formate_the_url(domain_name, trans_type, trans_id):
     part_url = get_url_path_based_on_trans_type(trans_type)
-    farmate_part_url_with_id = f"{domain_name}/app/{part_url}/{trans_id}"
+    # farmate_part_url_with_id = f"{domain_name}/app/{part_url}/{trans_id}"
+    farmate_part_url_with_id = f"/app/{part_url}/{trans_id}"
     anchor = f"<a href='{farmate_part_url_with_id}' target='_blank'>{trans_id}</a>"
+    print(anchor)
     return anchor
 
 

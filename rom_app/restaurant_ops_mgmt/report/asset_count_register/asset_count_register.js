@@ -32,5 +32,10 @@ frappe.query_reports["Asset Count Register"] = {
 			"fieldtype": "Link",
 			"options": "Asset Master Group",
 		},
+		{
+			"fieldname": "diff_filled_filter",
+			"label": "Diff Filled",
+			"fieldtype": "Check"
+		},
 	]
 };

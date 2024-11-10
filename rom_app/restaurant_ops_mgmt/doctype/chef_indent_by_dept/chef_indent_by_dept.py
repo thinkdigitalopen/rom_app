@@ -1,16 +1,19 @@
 import frappe
 from frappe.model.document import Document
 from datetime import datetime
+import rom_app.scheduled_tasks
+from frappe.utils import now
+from frappe.utils import date_diff
 
 
 class ChefIndentByDept(Document):
-    # def before_insert(self):
-    #     branch = self.branch
-    #     user_name = self.user_name
-    #     current_date = datetime.today().date()
-    #     rec_count = self.get_the_record_count(branch, user_name, current_date)
-    #     if (rec_count > 0):
-    #         frappe.throw("You are limited to adding just one record per day.")
+    def validate(self):
+        doc_date = self.date
+        current_date = datetime.today().date()
+        date_difference = date_diff(current_date, doc_date)
+        print('date_difference ', date_difference)
+        if (date_difference > 0):
+            frappe.throw("You cannot save the record with a past date")
 
     def before_save(self):
         print('before save python')
@@ -94,11 +97,14 @@ class ChefIndentByDept(Document):
     #     print('item_data')
     #     return 'item_data'
 
-    def validate(self):
-        current_date = datetime.today().date()
-        doc_save_date = datetime.strptime(self.date, '%Y-%m-%d').date()
-        if (current_date > doc_save_date):
-            frappe.throw("Editing records from the past is not permitted")
+
+
+    def on_update(self):
+        print(' >> on_update << ')
+        print(self)
+        print("Formatted date and time:", now())
+        frappe.enqueue(rom_app.scheduled_tasks.inventory_summary, queue='long')
+
         # user_roles = frappe.get_roles(frappe.session.user)
         # # user_has_rm_role = user_roles.count('Rom_RM_Role')
         # user_has_chef_role = user_roles.count('Rom_Chef_Role')

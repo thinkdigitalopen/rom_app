@@ -1,6 +1,8 @@
 import frappe
 from datetime import datetime
 from frappe.model.document import Document
+import rom_app.scheduled_tasks
+from frappe.utils import now
 
 
 class StockEntry(Document):
@@ -45,6 +47,12 @@ class StockEntry(Document):
             print(" se - price  ", item.unit_price)
             doc.price = item.unit_price
             doc.save()
+
+    def on_update(self):
+        print(' >> on_update << ')
+        print(self)
+        print("Formatted date and time:", now())
+        frappe.enqueue(rom_app.scheduled_tasks.inventory_summary, queue='long')
 
     @frappe.whitelist()
     def get_raw_material_with_id(self, branch, template):

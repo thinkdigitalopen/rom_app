@@ -147,7 +147,13 @@ def check_the_user_has_the_selected_dept_role(emailid, department_id):
     print('emailid ', emailid)
     print('department_id ', department_id)
     branch = utils.find_user_branch_based_on_email(emailid)
-    print('branch ', branch)
+    print('branch <><> ', branch)
+
+    if (branch is None):
+        multi_branch_support = check_user_has_multi_branch_support(emailid)
+        if (multi_branch_support is True):
+            return True
+        return False
 
     build_sql = """
     SELECT
@@ -157,7 +163,6 @@ def check_the_user_has_the_selected_dept_role(emailid, department_id):
     WHERE
         td.branch = '{branch}' AND td.name = '{department_id}'
     """
-
     build_sql = build_sql.replace("{branch}", branch)
     build_sql = build_sql.replace("{department_id}", department_id)
     print("-------- full sql ------------")
@@ -231,6 +236,15 @@ def get_chef_production_checklist_child_chicken(branch_param):
     result = query.run()
     return result
 
+
+def check_user_has_multi_branch_support(user_email):
+    multi_branch_support_user = frappe.db.get_value('Rom Settings',
+                                     {'settings_name': 'MultiBranchSupportUser'},
+                                     ['settings_value'])
+    print('multi_branch_support_user ---> ', multi_branch_support_user)
+    if (len(multi_branch_support_user) > 0):
+        return True
+    return False
 
 # @frappe.whitelist()
 # def get_chef_production_checklist_child_chicken(branch_param):

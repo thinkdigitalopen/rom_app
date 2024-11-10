@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Sample",
  "links": [],
- "modified": "2024-11-09 11:18:19.061219",
+ "modified": "2024-11-11 00:05:18.941440",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Sample",
@@ -30,7 +30,7 @@
    "role": "Rom_Sample_Role"
   }
  ],
- "sequence_id": 13.0,
+ "sequence_id": 14.0,
  "shortcuts": [
   {
    "color": "Grey",

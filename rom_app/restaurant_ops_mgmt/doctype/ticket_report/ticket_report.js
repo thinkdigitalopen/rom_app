@@ -57,7 +57,20 @@ frappe.ui.form.on("Ticket Report", {
 		// {
 		// 	console.log(' complete = false');
 		// }
-	 }
+	 },
+	branch: function(frm) {
+		let branch = frm.doc.branch;
+		console.log(' branch selected- ', branch);
+		frm.set_value('department', '');
+			frm.set_query("department", function() {
+					return {
+						"filters": {
+							"branch": branch,
+						}
+					};
+				});
+
+	}
 });
 
 // function disable_completed_field_if_not_the_right_dept(frm){

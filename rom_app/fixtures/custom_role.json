@@ -356,7 +356,7 @@
  {
   "docstatus": 0,
   "doctype": "Custom Role",
-  "modified": "2024-10-22 12:25:50.160145",
+  "modified": "2024-11-11 00:35:59.124479",
   "name": "h4c55l6sq3",
   "page": null,
   "ref_doctype": "NC Report",
@@ -388,6 +388,9 @@
    },
    {
     "role": "Rom_MasterData_Role"
+   },
+   {
+    "role": "Rom_HR_Role"
    }
   ]
  },
@@ -725,7 +728,7 @@
  {
   "docstatus": 0,
   "doctype": "Custom Role",
-  "modified": "2024-10-22 12:24:37.967965",
+  "modified": "2024-11-11 00:35:47.651668",
   "name": "huebpt49fl",
   "page": null,
   "ref_doctype": "Ticket Report",
@@ -757,6 +760,9 @@
    },
    {
     "role": "Rom_Store_Role"
+   },
+   {
+    "role": "Rom_HR_Role"
    }
   ]
  },

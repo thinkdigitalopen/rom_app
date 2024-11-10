@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"6kdo0vO27G\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Cash Space</span>\",\"col\":12}},{\"id\":\"WWtNwwMaHj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}},{\"id\":\"1HHwvnsMRF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transaction <br></b></span>\",\"col\":12}},{\"id\":\"1e7vbqQVH2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":4}},{\"id\":\"RHHhAiugSM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"YkeF_Dcun3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"S2Vg5WZg6F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":4}},{\"id\":\"wGqyDHXW3M\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report <br></b></span>\",\"col\":12}},{\"id\":\"uKmXU7D9HI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report Register\",\"col\":4}},{\"id\":\"1qdfd14e0T\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report Register\",\"col\":4}},{\"id\":\"nYeyGp0IK8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"FCiNYf11Z1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"6nhlZsBIhw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Setup <br></b></span>\",\"col\":12}},{\"id\":\"rZjTCxKy9v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Desc Template\",\"col\":4}},{\"id\":\"OKgTsUmFk7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Responsible Person Template\",\"col\":4}}]",
+ "content": "[{\"id\":\"6kdo0vO27G\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Cash Space</span>\",\"col\":12}},{\"id\":\"WWtNwwMaHj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Tickets Assigned\",\"col\":4}},{\"id\":\"1HHwvnsMRF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transaction <br></b></span>\",\"col\":12}},{\"id\":\"1e7vbqQVH2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report\",\"col\":4}},{\"id\":\"S2Vg5WZg6F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report\",\"col\":4}},{\"id\":\"RHHhAiugSM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report\",\"col\":4}},{\"id\":\"YkeF_Dcun3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report\",\"col\":4}},{\"id\":\"wGqyDHXW3M\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report <br></b></span>\",\"col\":12}},{\"id\":\"uKmXU7D9HI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Report Register\",\"col\":4}},{\"id\":\"1qdfd14e0T\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Report Register\",\"col\":4}},{\"id\":\"nYeyGp0IK8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket Report Register\",\"col\":4}},{\"id\":\"FCiNYf11Z1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NC Report Register\",\"col\":4}},{\"id\":\"6nhlZsBIhw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Setup <br></b></span>\",\"col\":12}},{\"id\":\"rZjTCxKy9v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Desc Template\",\"col\":4}},{\"id\":\"OKgTsUmFk7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Responsible Person Template\",\"col\":4}}]",
  "creation": "2024-08-26 19:56:44.402204",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Cash",
  "links": [],
- "modified": "2024-11-09 11:24:02.137484",
+ "modified": "2024-11-11 00:05:18.274849",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Cash",
@@ -32,7 +32,7 @@
    "role": "Rom_Cash_Role"
   }
  ],
- "sequence_id": 8.0,
+ "sequence_id": 3.0,
  "shortcuts": [
   {
    "color": "Grey",

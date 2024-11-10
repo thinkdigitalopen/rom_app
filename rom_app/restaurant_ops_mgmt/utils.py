@@ -36,6 +36,8 @@ def find_user_branch_based_on_email(email):
     res_length = len(item_data)
     print(res_length)
     print(item_data)
+    if (res_length == 0):
+        return None
     return item_data[0][0]
 
 

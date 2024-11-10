@@ -27,7 +27,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:53:40.232483",
+ "modified": "2024-11-10 21:56:12.672524",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Rom Settings",
@@ -48,7 +48,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "settings_name"
 }

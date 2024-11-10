@@ -26,7 +26,6 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -41,7 +40,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:46:23.714963",
+ "modified": "2024-11-10 14:37:27.186689",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Department",
