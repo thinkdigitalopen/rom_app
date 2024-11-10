@@ -50,5 +50,17 @@ frappe.ui.form.on("NC Report", {
    //
 			// }
 		},
+		branch: function(frm) {
+			let branch = frm.doc.branch;
+			console.log(' branch selected- ', branch);
+			frm.set_value('department', '');
+				frm.set_query("department", function() {
+						return {
+							"filters": {
+								"branch": branch,
+							}
+						};
+					});
+		}
 });
 
