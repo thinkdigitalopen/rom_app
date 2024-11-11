@@ -30,7 +30,7 @@ frappe.query_reports["Inventory Transaction Register"] = {
 			"fieldname": "trans_type_filter",
 			"label": "Transaction Type",
 			"fieldtype": "Select",
-			"options": "\nSE\nIndent\nWaste\nInvCount"
+			"options": "\nSE\nIndent\nWaste"
 		},
 	]
 };

@@ -225,12 +225,12 @@ app_include_js = [
 
 # Scheduled Tasks
 # ---------------
-
-scheduler_events = {
-    "cron": {
-        "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
-    }
-    }
+scheduler_events = {}
+# scheduler_events = {
+#     "cron": {
+#         "59 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
+#     }
+#     }
 # "58 23 * * *": ["rom_app.scheduled_tasks.inventory_summary"],
 # Testing
 # -------

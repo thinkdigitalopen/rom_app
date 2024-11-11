@@ -94,8 +94,9 @@ def get_data(filters):
     sql_se = build_sql_se(conditions)
     sql_indent = build_sql_indent(conditions)
     sql_waste = build_sql_waste(conditions)
-    sql_invcount = build_sql_invcount(conditions)
-    full_sql = find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invcount)
+    # sql_invcount = build_sql_invcount(conditions)
+    # full_sql = find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invcount)
+    full_sql = find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste)
     print("-------- full sql ------------")
     print(full_sql)
     data = frappe.db.sql(full_sql, as_dict=True)
@@ -105,7 +106,7 @@ def get_data(filters):
     return data_with_anchor
 
 
-def find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invcount):
+def find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste):
     print('find_transtype_only_sql')
 
     if "trans_type_filter" in conditions:
@@ -116,9 +117,10 @@ def find_transtype_only_sql(conditions, sql_se, sql_indent, sql_waste, sql_invco
             return sql_indent
         elif filter_val == 'Waste':
             return sql_waste
-        elif filter_val == 'InvCount':
-            return sql_invcount
-    full_sql = f"{sql_se}  UNION  {sql_indent}  UNION  {sql_waste}  UNION  {sql_invcount}"
+        # elif filter_val == 'InvCount':
+        #     return sql_invcount
+    # full_sql = f"{sql_se}  UNION  {sql_indent}  UNION  {sql_waste}  UNION  {sql_invcount}"
+    full_sql = f"{sql_se}  UNION  {sql_indent}  UNION  {sql_waste}"
     return full_sql
 
 
@@ -163,19 +165,19 @@ def build_sql_waste(conditions):
     full_sql = get_where_filter(sql, conditions)
     return full_sql
 
-
-def build_sql_invcount(conditions):
-    sql = """
-    SELECT  "InvCount" as trans_type,
-    par.name,  par.date, par.branch,  par.user_name,
-    raw.item as raw_material,   chi.unit,  chi.diff as qty,
-    chi.price,  chi.amount
-    FROM  `tabInventory Counting`  par
-    INNER JOIN `tabInventory Counting Child` chi ON chi.parent = par.name
-    INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
-    """
-    full_sql = get_where_filter(sql, conditions)
-    return full_sql
+#
+# def build_sql_invcount(conditions):
+#     sql = """
+#     SELECT  "InvCount" as trans_type,
+#     par.name,  par.date, par.branch,  par.user_name,
+#     raw.item as raw_material,   chi.unit,  chi.quantity as qty,
+#     chi.price,  chi.amount
+#     FROM  `tabInventory Counting`  par
+#     INNER JOIN `tabInventory Counting Child` chi ON chi.parent = par.name
+#     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+#     """
+#     full_sql = get_where_filter(sql, conditions)
+#     return full_sql
 
 
 def get_where_filter(sql, conditions):
@@ -232,8 +234,8 @@ def get_url_path_based_on_trans_type(trans_type):
         return 'chef-indent-by-dept'
     elif trans_type == 'Waste':
         return 'inventory-wastage'
-    elif trans_type == 'InvCount':
-        return 'inventory-counting'
+    # elif trans_type == 'InvCount':
+    #     return 'inventory-counting'
 
 
 def get_domain_name_of_the_site():

@@ -3,6 +3,7 @@ from datetime import datetime
 from frappe.model.document import Document
 import rom_app.scheduled_tasks
 from frappe.utils import now
+from ... import utils
 
 
 class StockEntry(Document):
@@ -52,7 +53,14 @@ class StockEntry(Document):
         print(' >> on_update << ')
         print(self)
         print("Formatted date and time:", now())
-        frappe.enqueue(rom_app.scheduled_tasks.inventory_summary, queue='long')
+        user_email = frappe.session.user
+        branch = utils.find_user_branch_based_on_email(user_email)
+        print("on_update - branch:", branch)
+        # rom_app.scheduled_tasks.inventory_summary(branch)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            param_branch=branch)
 
     @frappe.whitelist()
     def get_raw_material_with_id(self, branch, template):

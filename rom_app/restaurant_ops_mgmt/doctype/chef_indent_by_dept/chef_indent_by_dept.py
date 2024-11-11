@@ -4,6 +4,7 @@ from datetime import datetime
 import rom_app.scheduled_tasks
 from frappe.utils import now
 from frappe.utils import date_diff
+from ... import utils
 
 
 class ChefIndentByDept(Document):
@@ -97,14 +98,17 @@ class ChefIndentByDept(Document):
     #     print('item_data')
     #     return 'item_data'
 
-
-
     def on_update(self):
         print(' >> on_update << ')
         print(self)
         print("Formatted date and time:", now())
-        frappe.enqueue(rom_app.scheduled_tasks.inventory_summary, queue='long')
-
+        user_email = frappe.session.user
+        branch = utils.find_user_branch_based_on_email(user_email)
+        print("on_update - branch:", branch)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            param_branch=branch)
         # user_roles = frappe.get_roles(frappe.session.user)
         # # user_has_rm_role = user_roles.count('Rom_RM_Role')
         # user_has_chef_role = user_roles.count('Rom_Chef_Role')

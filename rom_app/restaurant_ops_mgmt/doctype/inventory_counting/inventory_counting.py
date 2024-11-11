@@ -3,6 +3,7 @@ from frappe.model.document import Document
 from datetime import datetime
 import rom_app.scheduled_tasks
 from frappe.utils import now
+from ... import utils
 
 
 class InventoryCounting(Document):
@@ -16,4 +17,11 @@ class InventoryCounting(Document):
         print(' >> on_update << ')
         print(self)
         print("Formatted date and time:", now())
-        frappe.enqueue(rom_app.scheduled_tasks.inventory_summary, queue='long')
+        user_email = frappe.session.user
+        branch = utils.find_user_branch_based_on_email(user_email)
+        print("on_update - branch:", branch)
+        # rom_app.scheduled_tasks.inventory_summary(branch)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            param_branch=branch)
