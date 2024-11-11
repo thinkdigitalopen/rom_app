@@ -24,7 +24,8 @@ def execute(filters=None):
             'qty': d.qty,
             'price': d.price,
             'amount': d.amount,
-            'link': d.link
+            'link': d.link,
+            'rm_group': d.rm_group,
         })
         data.append(row)
 
@@ -83,6 +84,11 @@ def get_columns():
             'fieldname': 'amount',
             'label': 'Amount',
             'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'rm_group',
+            'label': 'RM Group',
+            'fieldtype': 'Data',
         }
     ]
 
@@ -129,10 +135,12 @@ def build_sql_se(conditions):
     SELECT "Stock" as trans_type,
     par.name, par.date, par.branch,  par.user_name,
     raw.item as raw_material, chi.unit, chi.ord_qty as qty,
-    chi.unit_price AS price, chi.amount
+    chi.unit_price AS price, chi.amount,
+    rmgrp.group_name  as rm_group
     FROM `tabStock Entry` par
     INNER JOIN `tabStock Entry Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+    LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
     """
     full_sql = get_where_filter(sql, conditions)
     return full_sql
@@ -143,10 +151,12 @@ def build_sql_indent(conditions):
     SELECT "Indent" as trans_type,
     par.`name`, par.`date`, 	par.branch,	par.user_name,
     raw.item as raw_material, chi.unit, chi.issued_qty as qty,
-    chi.price, chi.amount
+    chi.price, chi.amount,
+    rmgrp.group_name  as rm_group
     FROM `tabChef Indent By Dept` par
     INNER JOIN `tabChef Indent By Dept Child` chi on par.name = chi.parent
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+    LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
     """
     full_sql = get_where_filter(sql, conditions)
     return full_sql
@@ -157,10 +167,13 @@ def build_sql_waste(conditions):
     SELECT  "Waste" as trans_type,
     par.name, par.date, par.branch, par.user_name,
     raw.item as raw_material, chi.unit, chi.wastage_qty as qty,
-    chi.unit_price as price , chi.amount
+    chi.unit_price as price , chi.amount,
+    rmgrp.group_name  as rm_group
     FROM `tabInventory Wastage` par
     INNER JOIN `tabInventory Wastage Child` chi ON chi.parent = par.name
     INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+    LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
+
     """
     full_sql = get_where_filter(sql, conditions)
     return full_sql
@@ -186,6 +199,8 @@ def get_where_filter(sql, conditions):
         where_cond = where_cond + f" AND par.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
         where_cond = where_cond + f" AND chi.raw_material = '{conditions['raw_material_filter']}' "
+    if "rmgroup_filter" in conditions:
+        where_cond = where_cond + f" AND raw.rm_group = '{conditions['rmgroup_filter']}' "
     sql = f"{sql}  {where_cond}"
     return sql
 

@@ -25,6 +25,12 @@ frappe.query_reports["Inventory Summary Register"] = {
 			"label": "Raw Material",
 			"fieldtype": "Link",
 			"options": "Raw Material Only",
+		},
+		{
+			"fieldname": "rmgroup_filter",
+			"label": "RM Group",
+			"fieldtype": "Link",
+			"options": "Raw Material Group",
 		}
 	]
 };

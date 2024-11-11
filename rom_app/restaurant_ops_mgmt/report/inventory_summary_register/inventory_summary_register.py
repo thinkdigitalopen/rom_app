@@ -17,6 +17,7 @@ def execute(filters=None):
             'date': d.date,
             'branch': d.branch,
             'raw_material': d.raw_material,
+            'rm_group': d.rm_group,
             'quantity': d.quantity,
             'unit': d.unit,
             'price': d.price,
@@ -53,6 +54,11 @@ def get_columns():
             'label': 'Raw Material',
             'fieldtype': 'Data',
             'width': 400
+        },
+        {
+            'fieldname': 'rm_group',
+            'label': 'RM Group',
+            'fieldtype': 'Data',
         },
         {
             'fieldname': 'quantity',
@@ -101,6 +107,7 @@ def get_data(filters):
     inv.name,
     inv.date,
     raw.item as raw_material,
+    rmgrp.group_name  as rm_group,
     inv.branch,
     inv.quantity,
     inv.price,
@@ -111,6 +118,7 @@ def get_data(filters):
     (inv.closing_quantity - raw.min_stock) as cs_ms
     FROM `tabInventory Summary` inv
     INNER JOIN `tabRaw Material Only` raw ON inv.raw_material = raw.name
+    LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
         """
     # INNER JOIN `tabBranch` bra ON inv.branch = bra.name
     where_cond = f" WHERE inv.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
@@ -119,6 +127,8 @@ def get_data(filters):
         where_cond = where_cond + f" AND inv.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
         where_cond = where_cond + f" AND inv.raw_material = '{conditions['raw_material_filter']}' "
+    if "rmgroup_filter" in conditions:
+        where_cond = where_cond + f" AND raw.rm_group = '{conditions['rmgroup_filter']}' "
 
     build_sql = f"{build_sql}  {where_cond}"
     print("-------- full sql ------------")

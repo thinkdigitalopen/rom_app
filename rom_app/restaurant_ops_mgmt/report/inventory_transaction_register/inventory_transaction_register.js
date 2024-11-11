@@ -32,5 +32,11 @@ frappe.query_reports["Inventory Transaction Register"] = {
 			"fieldtype": "Select",
 			"options": "\nSE\nIndent\nWaste"
 		},
+		{
+			"fieldname": "rmgroup_filter",
+			"label": "RM Group",
+			"fieldtype": "Link",
+			"options": "Raw Material Group",
+		}
 	]
 };
