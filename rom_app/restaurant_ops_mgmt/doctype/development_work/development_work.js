@@ -4,7 +4,7 @@ frappe.ui.form.on("Development Work", {
 
 			// ------------------Inventory Counting---------------------------
 
-			let api_url = "rom_app.scheduled_tasks.inventory_summary"
+			let api_url = "rom_app.scheduled_tasks.call_inventory_summary"
 			frappe.call({
 				method: api_url,
 				callback: function(res) {

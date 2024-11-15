@@ -9,8 +9,6 @@ def execute(filters=None):
     data, columns = [], []
     columns = get_columns()
     cs_data = get_data(filters)
-    # branch - item -unit -price -date - opening_stock  -
-    # opening_amount - closing_stock - min_stock -
     data = []
     for d in cs_data:
         row = frappe._dict({
@@ -20,9 +18,8 @@ def execute(filters=None):
             'item': d.item,
             'unit': d.unit,
             'price': d.price,
-            'opening_stock': d.opening_stock,
-            'opening_amount': d.opening_amount,
             'closing_stock': d.closing_stock,
+            'closing_amount': d.closing_amount,
             'min_stock': d.min_stock,
             'group_name': d.group_name
         })
@@ -66,18 +63,13 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
-            'fieldname': 'opening_stock',
-            'label': 'Open. Stock',
-            'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'opening_amount',
-            'label': 'Open. Amount',
-            'fieldtype': 'Data',
-        },
-        {
             'fieldname': 'closing_stock',
             'label': 'Close. Stock',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'closing_amount',
+            'label': 'Close. Amount',
             'fieldtype': 'Data',
         },
         {
@@ -108,7 +100,7 @@ def build_sql(conditions):
     sql = """
     SELECT
         raw.name,  raw.branch,  raw.item, raw.unit, raw.price,
-        raw.opening_stock, raw.opening_amount, raw.closing_stock,
+        raw.closing_stock,raw.closing_amount,
         raw.min_stock, raw.`date`, rawgrp.group_name
     FROM
         `tabRaw Material Only` raw

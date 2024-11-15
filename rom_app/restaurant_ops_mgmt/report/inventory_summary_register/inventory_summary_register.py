@@ -4,8 +4,8 @@ import json
 
 
 def execute(filters=None):
-    print("=========================")
-    print(yaml.dump(filters))
+    # print("=========================")
+    # print(yaml.dump(filters))
     data, columns = [], []
     columns = get_columns()
     cs_data = get_data(filters)
@@ -62,7 +62,7 @@ def get_columns():
         },
         {
             'fieldname': 'quantity',
-            'label': 'Today Qty',
+            'label': 'Current Qty',
             'fieldtype': 'Data',
         },
         {
@@ -100,8 +100,8 @@ def get_columns():
 
 def get_data(filters):
     conditions = get_conditions(filters)
-    print("-------- get data ------------")
-    print(conditions)
+    # print("-------- get data ------------")
+    # print(conditions)
     build_sql = """
     SELECT
     inv.name,
@@ -131,8 +131,8 @@ def get_data(filters):
         where_cond = where_cond + f" AND raw.rm_group = '{conditions['rmgroup_filter']}' "
 
     build_sql = f"{build_sql}  {where_cond}"
-    print("-------- full sql ------------")
-    print(build_sql)
+    # print("-------- full sql ------------")
+    # print(build_sql)
     data = frappe.db.sql(build_sql, as_dict=True)
     return data
 

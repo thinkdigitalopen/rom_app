@@ -27,6 +27,11 @@ frappe.query_reports["Inventory Transaction Register"] = {
 			"options": "Raw Material Only",
 		},
 		{
+			"fieldname": "raw_material_like_filter",
+			"label": "Raw Material Like",
+			"fieldtype": "Data",
+		},
+		{
 			"fieldname": "trans_type_filter",
 			"label": "Transaction Type",
 			"fieldtype": "Select",
@@ -37,6 +42,12 @@ frappe.query_reports["Inventory Transaction Register"] = {
 			"label": "RM Group",
 			"fieldtype": "Link",
 			"options": "Raw Material Group",
+		},
+		{
+			"fieldname": "vendor_filter",
+			"label": "Vendor",
+			"fieldtype": "Link",
+			"options": "Vendor",
 		}
 	]
 };

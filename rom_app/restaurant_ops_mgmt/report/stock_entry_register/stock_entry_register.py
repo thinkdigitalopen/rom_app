@@ -16,8 +16,6 @@ def execute(filters=None):
         row = frappe._dict({
             'name': d.name,
             'date': d.date,
-            'bill_date': d.bill_date,
-            'receive_date': d.receive_date,
             'branch': d.branch,
             'user_name': d.user_name,
             'template_type_name': d.template_type_name,
@@ -25,7 +23,10 @@ def execute(filters=None):
             'unit': d.unit,
             'ord_qty': d.ord_qty,
             'price': d.price,
-            'total_price': d.total_price
+            'total_price': d.total_price,
+            'bill_date': d.bill_date,
+            'ref_no': d.ref_no,
+            'remarks': d.remarks
         })
         data.append(row)
 
@@ -43,16 +44,6 @@ def get_columns():
         {
             'fieldname': 'date',
             'label': 'Date',
-            'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'bill_date',
-            'label': 'Bill Date',
-            'fieldtype': 'Data',
-        },
-        {
-            'fieldname': 'Receive Date',
-            'label': 'Receive Date',
             'fieldtype': 'Data',
         },
         {
@@ -95,6 +86,21 @@ def get_columns():
             'fieldname': 'total_price',
             'label': 'Total Price',
             'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'bill_date',
+            'label': 'Bill Date',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'ref_no',
+            'label': 'Ref No',
+            'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'remarks',
+            'label': 'Remarks',
+            'fieldtype': 'Data',
         }
     ]
 
@@ -108,20 +114,21 @@ def get_data(filters):
         par.name,
         par.branch,
         par.date,
-        par.bill_date,
-        par.receive_date,
         par.user_name,
         tv.template_type_name,
         raw.item as raw_material,
         chi.unit,
         chi.ord_qty,
         chi.unit_price as price,
-        chi.amount as total_price
+        chi.amount as total_price,
+        par.bill_date,
+        par.ref_no,
+        par.remarks
     FROM
         `tabStock Entry` par
-    INNER JOIN `tabStock Entry Child` chi ON
+    LEFT JOIN `tabStock Entry Child` chi ON
         chi.parent = par.name
-    INNER JOIN `tabRaw Material Only` raw ON
+    LEFT JOIN `tabRaw Material Only` raw ON
         chi.raw_material = raw.name
     LEFT JOIN  tabVendor tv ON
         par.vendor = tv.name
@@ -131,9 +138,17 @@ def get_data(filters):
     if "branch_filter" in conditions:
         where_cond = where_cond + f" AND par.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
-        where_cond = where_cond + f" AND raw_material = '{conditions['raw_material_filter']}' "
+        where_cond = where_cond + f" AND chi.raw_material = '{conditions['raw_material_filter']}' "
     if "vendor_filter" in conditions:
         where_cond = where_cond + f" AND par.vendor = '{conditions['vendor_filter']}' "
+    if "bill_date_filter" in conditions:
+        where_cond = where_cond + f" AND par.bill_date = '{conditions['bill_date_filter']}' "
+    if "ref_no_filter" in conditions:
+        where_cond = where_cond + f" AND ref_no LIKE '%{conditions['ref_no_filter']}%' "
+    if "remarks_filter" in conditions:
+        where_cond = where_cond + f" AND par.remarks LIKE '%{conditions['remarks_filter']}%' "
+    if "raw_material_like_filter" in conditions:
+        where_cond = where_cond + f" AND raw.item LIKE '%{conditions['raw_material_like_filter']}%' "
 
     order_by = "ORDER BY name DESC"
     build_sql = f"{build_sql}  {where_cond}  {order_by}"

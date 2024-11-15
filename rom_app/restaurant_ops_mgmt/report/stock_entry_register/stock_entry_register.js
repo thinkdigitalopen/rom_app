@@ -14,7 +14,7 @@ frappe.query_reports["Stock Entry Register"] = {
 			"default": frappe.datetime.now_date(),
 			"mandatory": 1,
 		},
-			{
+		{
 			"fieldname": "branch_filter",
 			"label": "Branch",
 			"fieldtype": "Link",
@@ -27,10 +27,31 @@ frappe.query_reports["Stock Entry Register"] = {
 			"options": "Raw Material Only",
 		},
 		{
+			"fieldname": "raw_material_like_filter",
+			"label": "Raw Material Like",
+			"fieldtype": "Data",
+		},
+		{
 			"fieldname": "vendor_filter",
 			"label": "Vendor",
 			"fieldtype": "Link",
 			"options": "Vendor",
+		},
+		{
+			"fieldname": "bill_date_filter",
+			"label": "Bill Date",
+			"fieldtype": "Date"
+		},
+		{
+			"fieldname": "ref_no_filter",
+			"label": "Ref No",
+			"fieldtype": "Data"
+		},
+		{
+			"fieldname": "remarks_filter",
+			"label": "Remarks",
+			"fieldtype": "Data"
 		}
+
 	]
 };

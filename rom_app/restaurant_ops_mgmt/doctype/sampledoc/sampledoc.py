@@ -1,9 +1,14 @@
-# Copyright (c) 2024, Pubs and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class SampleDoc(Document):
-	pass
+    def on_save(self):
+        doc = frappe.get_doc(
+            {
+                'doctype': 'SampleDoc',
+                'full_name': 'John',
+            }
+            )
+        doc.insert()
+

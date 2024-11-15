@@ -9,11 +9,13 @@
   "user_name",
   "vendor",
   "stock_entry_template",
+  "total_price",
   "column_break_oiog",
   "date",
+  "arrival_time",
   "bill_date",
-  "receive_date",
-  "total_price",
+  "ref_no",
+  "remarks",
   "section_break_wqyo",
   "raw_material_from_template"
  ],
@@ -25,7 +27,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -85,21 +86,31 @@
    "label": "Bill Date"
   },
   {
-   "fieldname": "receive_date",
-   "fieldtype": "Date",
-   "label": "Receive Date"
-  },
-  {
    "fieldname": "stock_entry_template",
    "fieldtype": "Link",
    "label": "Stock Entry Template",
    "options": "Stock Entry Template Type"
+  },
+  {
+   "fieldname": "arrival_time",
+   "fieldtype": "Time",
+   "label": "Arrival Time"
+  },
+  {
+   "fieldname": "ref_no",
+   "fieldtype": "Data",
+   "label": "Ref No"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 18:18:57.872825",
+ "modified": "2024-11-13 11:07:46.145344",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",

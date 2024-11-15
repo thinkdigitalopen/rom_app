@@ -13,8 +13,8 @@ class ChefIndentByDept(Document):
         current_date = datetime.today().date()
         date_difference = date_diff(current_date, doc_date)
         print('date_difference ', date_difference)
-        if (date_difference > 0):
-            frappe.throw("You cannot save the record with a past date")
+        if (date_difference > 60):
+            frappe.throw("You cannot save a record that is over 60 days old")
 
     def before_save(self):
         print('before save python')
@@ -105,45 +105,5 @@ class ChefIndentByDept(Document):
         user_email = frappe.session.user
         branch = utils.find_user_branch_based_on_email(user_email)
         print("on_update - branch:", branch)
-        frappe.enqueue(
-            rom_app.scheduled_tasks.inventory_summary,
-            queue='long',
-            param_branch=branch)
-        # user_roles = frappe.get_roles(frappe.session.user)
-        # # user_has_rm_role = user_roles.count('Rom_RM_Role')
-        # user_has_chef_role = user_roles.count('Rom_Chef_Role')
-        # print('============================')
-        # print(user_roles)
-        # print(user_has_chef_role)
-        # print('self.rm_approval')
-        # print(self.rm_approval)
-        # print(type(self.rm_approval))
-        # if (user_has_chef_role >= 1):
-        #     print('user_has_chef_role >= 1')
-        #     if (self.rm_approval == 1):
-        #         print('self.rm_approval == 1')
-        #         frappe.throw("Editing approved record is not permitted")
-
-    #     # find the document branch name
-    #     doc_branch = self.branch
-    #     print('doc_branch', doc_branch)
-    #     # find current user branch name
-    #     user_branch = self.find_user_branch()
-    #     print('user_branch', user_branch)
-    #     if (doc_branch != user_branch):
-    #         frappe.throw("Editing other branch record is not permitted")
-    #
-    # def find_user_branch(self):
-    #     user_email = frappe.session.user
-    #     sql = """
-    #     select userbranch.branch from `tabUser to Branch Assignment` userbranch
-    #     WHERE
-    #     userbranch.user = '{}';
-    #     """
-    #     sql = sql.format(user_email)
-    #     print(sql)
-    #     item_data = frappe.db.sql(sql, as_dict=0)
-    #     res_length = len(item_data)
-    #     print(res_length)
-    #     print(item_data)
-    #     return item_data[0][0]
+        doc_date = self.date
+        rom_app.scheduled_tasks.inventory_summary(branch, doc_date)

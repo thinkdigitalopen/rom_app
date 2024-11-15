@@ -7,7 +7,9 @@
  "field_order": [
   "full_name",
   "city",
-  "child_table"
+  "child_table",
+  "auto_comp",
+  "sele"
  ],
  "fields": [
   {
@@ -27,12 +29,24 @@
    "fieldtype": "Table",
    "label": "Child Table",
    "options": "SampleDoc Child"
+  },
+  {
+   "fieldname": "auto_comp",
+   "fieldtype": "Autocomplete",
+   "label": "Auto Comp",
+   "options": "mumbai\nnew yark\ndelhi\namerica\nsouth america\nsingapore\ngermani"
+  },
+  {
+   "fieldname": "sele",
+   "fieldtype": "Select",
+   "label": "sele",
+   "options": "mumbai\nnew yark\ndelhi\namerica\nsouth america\nsingapore\ngermani"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:54:08.025530",
+ "modified": "2024-11-13 22:59:32.214670",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "SampleDoc",

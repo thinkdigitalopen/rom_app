@@ -37,13 +37,15 @@
    "fieldname": "closing_quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Clos Qty"
+   "label": "Clos Qty",
+   "precision": "3"
   },
   {
    "fieldname": "price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Unit Price"
+   "label": "Unit Price",
+   "precision": "2"
   },
   {
    "fieldname": "unit",
@@ -56,7 +58,8 @@
    "fieldname": "quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Quantity"
+   "label": "Quantity",
+   "precision": "3"
   },
   {
    "fieldname": "price_x_qty",
@@ -84,7 +87,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 01:50:56.727005",
+ "modified": "2024-11-13 21:09:07.381522",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Summary",

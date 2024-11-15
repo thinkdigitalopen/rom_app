@@ -6,10 +6,12 @@
  "engine": "InnoDB",
  "field_order": [
   "branch",
+  "user_name",
   "department",
   "column_break_ydrh",
   "date",
-  "user_name",
+  "receive_date",
+  "remarks",
   "total_price",
   "section_break_fjsc",
   "raw_materials"
@@ -75,12 +77,22 @@
    "options": "Branch",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "receive_date",
+   "fieldtype": "Date",
+   "label": "Receive Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-08 18:04:25.515357",
+ "modified": "2024-11-13 11:18:35.321835",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",
