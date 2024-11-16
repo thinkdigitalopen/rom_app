@@ -28,7 +28,7 @@ class InventoryWastage(Document):
         frappe.enqueue(
             rom_app.scheduled_tasks.inventory_summary,
             queue='long',
-            param_branch=branch, param_date=doc_date)
+            p_branch=branch, p_date=doc_date)
 
     def after_delete(self):
         user_email = frappe.session.user
