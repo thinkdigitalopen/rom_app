@@ -54,8 +54,7 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Price",
-   "precision": "2",
-   "read_only": 1
+   "precision": "2"
   },
   {
    "columns": 1,
@@ -108,7 +107,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 16:55:06.858311",
+ "modified": "2024-11-16 18:51:41.413197",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Raw Material Only",
