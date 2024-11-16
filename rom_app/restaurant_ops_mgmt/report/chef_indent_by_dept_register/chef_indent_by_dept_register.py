@@ -24,7 +24,8 @@ def execute(filters=None):
             'issued_qty': d.issued_qty,
             # 'rm_approval': d.rm_approval,
             'price': d.price,
-            'amount': d.amount
+            'amount': d.amount,
+            'remarks': d.remarks
         })
         data.append(row)
 
@@ -105,6 +106,11 @@ def get_columns():
             'label': 'Amount',
             'fieldtype': 'Data',
             'width': '80'
+        },
+        {
+            'fieldname': 'remarks',
+            'label': 'Remarks',
+            'fieldtype': 'Data',
         }
     ]
 
@@ -118,14 +124,14 @@ def get_data(filters):
     SELECT
         ci.`name`, ci.`date`, ci.user_name,	ci.branch,	d.department_name,
         raw.item, cic.unit,	cic.req_qty, cic.issued_qty,
-        cic.price, cic.amount
+        cic.price, cic.amount, ci.remarks
     FROM
         `tabChef Indent By Dept` ci
-    INNER JOIN `tabChef Indent By Dept Child` cic on
+    LEFT JOIN `tabChef Indent By Dept Child` cic on
         ci.name = cic.parent
-    INNER JOIN `tabDepartment` d on
+    LEFT JOIN `tabDepartment` d on
         ci.department = d.name
-    INNER JOIN `tabRaw Material Only` raw on
+    LEFT JOIN `tabRaw Material Only` raw on
         cic.raw_material = raw.name
         """
     where_cond_1 = f" WHERE ci.`date` between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
@@ -135,6 +141,8 @@ def get_data(filters):
         where_cond_1 = where_cond_1 + f" AND ci.department = '{conditions['department_filter']}' "
     if "item_filter" in conditions:
         where_cond_1 = where_cond_1 + f" AND raw.item LIKE '%{conditions['item_filter']}%' "
+    if "remarks_filter" in conditions:
+        where_cond_1 = where_cond_1 + f" AND ci.remarks LIKE '%{conditions['remarks_filter']}%' "
 
     # build_sql_2 = """
     # SELECT

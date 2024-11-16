@@ -106,11 +106,11 @@ class ChefIndentByDept(Document):
         branch = utils.find_user_branch_based_on_email(user_email)
         print("on_update - branch:", branch)
         doc_date = self.date
-        rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
-        # frappe.enqueue(
-        #     rom_app.scheduled_tasks.inventory_summary,
-        #     queue='long',
-        #     p_branch=branch, p_date=doc_date)
+        # rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            p_branch=branch, p_date=doc_date)
 
     def after_delete(self):
         user_email = frappe.session.user
@@ -120,8 +120,8 @@ class ChefIndentByDept(Document):
         doc_date = doc_date.strftime("%Y-%m-%d")
         print("after delete - branch: docdate", branch, doc_date)
         print(' >> after_delete << <<<<<<<<<<<<<<<<<<< ')
-        rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
-        # frappe.enqueue(
-        #     rom_app.scheduled_tasks.inventory_summary,
-        #     queue='long',
-        #     p_branch=branch, p_date=doc_date)
+        # rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            p_branch=branch, p_date=doc_date)

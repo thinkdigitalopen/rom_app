@@ -31,5 +31,10 @@ frappe.query_reports["Chef Indent By Dept Register"] = {
 			"label": "Raw Material",
 			"fieldtype": "Data"
 		},
+		{
+			"fieldname": "remarks_filter",
+			"label": "Remarks",
+			"fieldtype": "Data"
+		}
 	]
 };

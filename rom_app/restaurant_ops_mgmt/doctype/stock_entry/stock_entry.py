@@ -61,11 +61,11 @@ class StockEntry(Document):
         doc_date = self.date
         # doc_date = doc_date.strftime("%Y-%m-%d")
         print("on_update - branch: docdate", branch, doc_date)
-        rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
-        # frappe.enqueue(
-        #     rom_app.scheduled_tasks.inventory_summary,
-        #     queue='long',
-        #     p_branch=branch, p_date=doc_date)
+        # rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            p_branch=branch, p_date=doc_date)
 
     def after_delete(self):
         user_email = frappe.session.user
@@ -75,11 +75,11 @@ class StockEntry(Document):
         doc_date = doc_date.strftime("%Y-%m-%d")
         print("on_update - branch: docdate", branch, doc_date)
         print(' >> after_delete << <<<<<<<<<<<<<<<<<<< ')
-        rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
-        # frappe.enqueue(
-        #     rom_app.scheduled_tasks.inventory_summary,
-        #     queue='long',
-        #     p_branch=branch, p_date=doc_date)
+        # rom_app.scheduled_tasks.inventory_summary(branch, doc_date)
+        frappe.enqueue(
+            rom_app.scheduled_tasks.inventory_summary,
+            queue='long',
+            p_branch=branch, p_date=doc_date)
 
     @frappe.whitelist()
     def get_raw_material_with_id(self, branch, template):
