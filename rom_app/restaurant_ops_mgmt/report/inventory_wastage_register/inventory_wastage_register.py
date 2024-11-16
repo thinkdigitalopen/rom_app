@@ -24,6 +24,7 @@ def execute(filters=None):
             'unit_price': d.unit_price,
             'amount': d.amount,
             'clos_stock': d.clos_stock,
+            'remarks': d.remarks,
         })
         data.append(row)
 
@@ -83,6 +84,11 @@ def get_columns():
             'fieldname': 'clos_stock',
             'label': 'Close Stock',
             'fieldtype': 'Data',
+        },
+        {
+            'fieldname': 'remarks',
+            'label': 'Remarks',
+            'fieldtype': 'Data',
         }
     ]
 
@@ -102,12 +108,13 @@ def get_data(filters):
         chi.wastage_qty,
         chi.unit_price,
         chi.amount,
-        chi.clos_stock
+        chi.clos_stock,
+        par.remarks
     FROM
         `tabInventory Wastage` par
-    INNER JOIN `tabInventory Wastage Child` chi ON
+    LEFT JOIN `tabInventory Wastage Child` chi ON
         chi.parent = par.name
-    INNER JOIN `tabRaw Material Only` raw ON
+    LEFT JOIN `tabRaw Material Only` raw ON
         chi.raw_material = raw.name
     """
     where_cond = f" WHERE par.date between '{conditions['from_date_filter']}' AND '{conditions['to_date_filter']}' "
@@ -116,6 +123,8 @@ def get_data(filters):
         where_cond = where_cond + f" AND par.branch = '{conditions['branch_filter']}' "
     if "raw_material_filter" in conditions:
         where_cond = where_cond + f" AND raw_material = '{conditions['raw_material_filter']}' "
+    if "remarks_filter" in conditions:
+        where_cond = where_cond + f" AND par.remarks LIKE '%{conditions['remarks_filter']}%' "
 
     order_by = "ORDER BY name DESC"
     build_sql = f"{build_sql}  {where_cond}  {order_by}"

@@ -9,6 +9,7 @@
   "user_name",
   "column_break_uiuf",
   "date",
+  "remarks",
   "total_price",
   "section_break_gyaf",
   "items"
@@ -66,12 +67,17 @@
    "label": "Branch",
    "options": "Branch",
    "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 02:29:10.159552",
+ "modified": "2024-11-16 19:12:37.954180",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Wastage",

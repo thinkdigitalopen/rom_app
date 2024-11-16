@@ -25,6 +25,11 @@ frappe.query_reports["Inventory Wastage Register"] = {
 			"label": "Raw Material",
 			"fieldtype": "Link",
 			"options": "Raw Material Only",
+		},
+		{
+			"fieldname": "remarks_filter",
+			"label": "Remarks",
+			"fieldtype": "Data"
 		}
 	]
 };
