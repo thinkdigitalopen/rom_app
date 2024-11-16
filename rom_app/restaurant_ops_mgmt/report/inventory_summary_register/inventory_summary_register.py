@@ -53,7 +53,7 @@ def get_columns():
             'fieldname': 'raw_material',
             'label': 'Raw Material',
             'fieldtype': 'Data',
-            'width': 400
+            'width': 300
         },
         {
             'fieldname': 'rm_group',

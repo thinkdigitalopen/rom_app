@@ -20,8 +20,8 @@ class SalesReport(Document):
                 # print(' rec_count == 0 ')
                 if (date_difference < 0):
                     frappe.throw("You can't save the record with a future date")
-                if (date_difference > 7):
-                    frappe.throw("You cannot save the record with a past date")
+                if (date_difference > 60):
+                    frappe.throw("You cannot save a record that is over 60 days old")
                 return
             elif (rec_count > 0):
                 # print(' rec_count > 0 ')
@@ -41,15 +41,15 @@ class SalesReport(Document):
         doc_date_changed = self.has_value_changed("date")
         # print('doc_date_changed ', doc_date_changed)
         if (doc_date_changed is False):
-            if (date_difference > 7):
-                frappe.throw("You cannot save the record with a past date")
+            if (date_difference > 60):
+                frappe.throw("You cannot save a record that is over 60 days old")
             return
         # date is edited process
         if (rec_count > 0):
             frappe.throw("You are limited to adding one record per day")
 
-        if (date_difference > 7):
-            frappe.throw("You cannot save the record with a past date")
+        if (date_difference > 60):
+            frappe.throw("You cannot save a record that is over 60 days old")
 
         if (date_difference < 0):
             frappe.throw("You shouldn't save the record with a future date")

@@ -145,7 +145,7 @@ def build_sql_se(conditions):
     rmgrp.group_name  as rm_group,
     ven.template_type_name as vendor_name
     FROM `tabStock Entry` par
-    INNER JOIN `tabStock Entry Child` chi ON chi.parent = par.name
+    LEFT JOIN `tabStock Entry Child` chi ON chi.parent = par.name
     LEFT JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
     LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
     LEFT JOIN tabVendor ven ON par.vendor = ven.name
@@ -164,8 +164,8 @@ def build_sql_indent(conditions):
     rmgrp.group_name  as rm_group,
     '' as vendor_name
     FROM `tabChef Indent By Dept` par
-    INNER JOIN `tabChef Indent By Dept Child` chi on par.name = chi.parent
-    INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+    LEFT JOIN `tabChef Indent By Dept Child` chi on par.name = chi.parent
+    LEFT JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
     LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
     """
     full_sql = get_where_filter(sql, conditions)
@@ -181,8 +181,8 @@ def build_sql_waste(conditions):
     rmgrp.group_name  as rm_group,
     ''  as vendor_name
     FROM `tabInventory Wastage` par
-    INNER JOIN `tabInventory Wastage Child` chi ON chi.parent = par.name
-    INNER JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
+    LEFT JOIN `tabInventory Wastage Child` chi ON chi.parent = par.name
+    LEFT JOIN `tabRaw Material Only` raw ON chi.raw_material = raw.name
     LEFT JOIN `tabRaw Material Group` rmgrp ON raw.rm_group = rmgrp.name
 
     """
