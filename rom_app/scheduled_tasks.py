@@ -4,12 +4,45 @@ from datetime import datetime, timedelta
 from frappe.utils import now
 
 
+# @frappe.whitelist()
+# def rm_make_close_stock_and_close_amount_zero(branch, start_date):
+#     # print(' reset_inventory_summary ')
+#     log_text = 'rm_make_close_stock_and_close_amount_zero ' + now()
+#     frappe.log_error(frappe.get_traceback(), log_text)
+#     branch_all = frappe.get_list('Branch', pluck='name')
+#     # print(branch_all)
+#     cur_date = datetime.now()
+#     formatted_date = cur_date.strftime("%Y-%m-%d")
+#     for i, each_branch in enumerate(branch_all):
+#         # print(each_branch)
+#         frappe.enqueue(
+#             inventory_summary,
+#             queue='long',
+#             p_branch=each_branch, p_date=formatted_date)
+#     return log_text
+
+
+@frappe.whitelist()
+def reset_inventory_summary(branch, start_date):
+    current_date_time = datetime.now()
+    log_text = f"reset_inv_sum {branch} {start_date} {current_date_time}"
+    print(log_text)
+    frappe.log_error("reset_inventory_summary", log_text)
+    formatted_date = start_date
+    # start_date.strftime("%Y-%m-%d")
+    frappe.enqueue(
+        inventory_summary,
+        queue='long',
+        p_branch=branch, p_date=formatted_date)
+    return log_text
+
+
 @frappe.whitelist()
 def call_inventory_summary_morning():
-    # print(' call_inventory_summary ')
-    log_text = 'inv_summm ' + now()
-    # log_into_developlog(log_text)
-    frappe.log_error(frappe.get_traceback(), log_text)
+    current_date_time = datetime.now()
+    log_text = f"inv_sum morning {current_date_time}"
+    print(log_text)
+    frappe.log_error("call_inventory_summary_morning", log_text)
     branch_all = frappe.get_list('Branch', pluck='name')
     # print(branch_all)
     cur_date = datetime.now()
@@ -25,10 +58,10 @@ def call_inventory_summary_morning():
 
 @frappe.whitelist()
 def call_inventory_summary_night():
-    # print(' call_inventory_summary ')
-    log_text = 'inv_summm ' + now()
-    # log_into_developlog(log_text)
-    frappe.log_error(frappe.get_traceback(), log_text)
+    current_date_time = datetime.now()
+    log_text = f"inv_summ night {current_date_time}"
+    print(log_text)
+    frappe.log_error("call_inventory_summary_night", log_text)
     branch_all = frappe.get_list('Branch', pluck='name')
     # print(branch_all)
     cur_date = datetime.now()
@@ -44,6 +77,10 @@ def call_inventory_summary_night():
 
 @frappe.whitelist()
 def inventory_summary(p_branch, p_date):
+    current_date_time = datetime.now()
+    log_text = f"inv_summm {p_branch} {p_date} {current_date_time}"
+    print(log_text)
+    frappe.log_error("inventory_summary", log_text)
     print(' ^^^^^ inventory_summary ^^^^^^^^^^  ########################## ')
     pd.set_option('display.max_columns', None)
     pd.set_option('display.expand_frame_repr', False)
@@ -103,22 +140,7 @@ def inventory_summary(p_branch, p_date):
         update_raw_material_table(df_inventory)
         print("[[7]] update_raw_material_table ")
         print("================ inventory_summary END >>>>>>>>>>>")
-
-        # df_print = df_inventory.astype('string')
-        # print(df_print)
-        # df_string = df_print.to_string(header=False, index=False, index_names=False).split('\n')
-        # df_string_nl = [','.join(x.split()) + '\n' for x in df_string]
-        # print(df_string_nl)
-        # len_of_rows = len(df_print)
-        # print("total rows - ", len_of_rows)
-        # if (len_of_rows > 0):
-        #     df_str = df_print.apply("    ".join, axis=1).tolist()
-        #     print('******************* df_str ******************')
-        #     print(df_str)
-        #     log_scheduler_job('', 'yes', 'record found')
-        #     return df_str
-
-    log_scheduler_job('', 'yes', 'completed')
+    log_scheduler_job('', 'yes', log_text)
     return "Completed"
 
 
@@ -454,11 +476,3 @@ def get_today_date():
 def get_previous_date(p_date):
     previous_date = p_date - timedelta(days=1)
     return previous_date
-
-
-def log_into_developlog(log_text):
-    doc = frappe.get_doc({
-            'doctype': 'DevelopLog',
-            'log': log_text,
-        })
-    doc.insert()
