@@ -9,6 +9,7 @@
   "chicken_category",
   "product_qtykg",
   "balance_portion",
+  "waste_portion",
   "rateportion",
   "wastage_amount"
  ],
@@ -39,6 +40,15 @@
    "options": "0",
    "reqd": 1
   },
+  {
+    "columns": 1,
+    "fieldname": "waste_portion",
+    "fieldtype": "Int",
+    "in_list_view": 1,
+    "label": "Wst Portion",
+    "options": "0",
+    "reqd": 1
+   },
   {
    "columns": 1,
    "fieldname": "rateportion",

@@ -107,23 +107,63 @@ frappe.ui.form.on("Chef Production", {
 
 //  ====================================== Chef Prod Child Briyani
 
+// frappe.ui.form.on("Chef Prod Child Briyani", {
+//     balance_portion:function(frm,cdt,cdn) {
+// 		var d = locals[cdt][cdn];
+
+// 		let balance_portion_temp = 0;
+// 		let rateportion_temp = 0;
+// 		let cal_val = 0;
+
+// 		if(parseInt(d.balance_portion)>=0)	
+// 			balance_portion_temp = d.balance_portion;
+
+// 		if(parseInt(d.rateportion)>=0)
+// 			rateportion_temp = d.rateportion;
+
+// 		cal_val = balance_portion_temp * rateportion_temp;
+
+// 		console.log('balance_portion_temp->', balance_portion_temp);
+// 		console.log('rateportion_temp->',rateportion_temp);
+// 		console.log('cal_val->', cal_val);
+
+// 		frappe.model.set_value(cdt, cdn, 'wastage_amount', cal_val);
+
+// 		console.log('locals->', locals);
+// 		console.log('cdt->', cdt);
+// 		console.log('cdn->', cdn);
+// 		console.log('d->', d);
+
+// 		// briyani category wastage amount total
+// 		console.log('briyani category wastage amount total');
+// 		var waste_total = 0;
+// 		frm.doc.briyani_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
+// 		console.log('waste_total', waste_total);
+// 		frm.set_value("briyani_category_wastage_amount", waste_total);
+// 		refresh_field("briyani_category_wastage_amount");
+
+//     }
+// });
+
+// waste portion
+
 frappe.ui.form.on("Chef Prod Child Briyani", {
-    balance_portion:function(frm,cdt,cdn) {
+    waste_portion:function(frm,cdt,cdn) {
 		var d = locals[cdt][cdn];
 
-		let balance_portion_temp = 0;
+		let waste_portion_temp = 0;
 		let rateportion_temp = 0;
 		let cal_val = 0;
 
-		if(parseInt(d.balance_portion)>=0)
-			balance_portion_temp = d.balance_portion;
+		if(parseInt(d.waste_portion)>=0)	
+			waste_portion_temp = d.waste_portion;
 
 		if(parseInt(d.rateportion)>=0)
 			rateportion_temp = d.rateportion;
 
-		cal_val = balance_portion_temp * rateportion_temp;
+		cal_val = waste_portion_temp * rateportion_temp;
 
-		console.log('balance_portion_temp->', balance_portion_temp);
+		console.log('waste_portion_temp->', waste_portion_temp);
 		console.log('rateportion_temp->',rateportion_temp);
 		console.log('cal_val->', cal_val);
 
@@ -196,23 +236,27 @@ frappe.ui.form.on("Chef Prod Child Briyani", {
 
 //  ====================================== Chef Prod Child Chicken
 
+// ,
+
+// waste portion
+
 frappe.ui.form.on("Chef Prod Child Chicken", {
-    balance_portion:function(frm,cdt,cdn) {
+    waste_portion:function(frm,cdt,cdn) {
 		var d = locals[cdt][cdn];
 
-		let balance_portion_temp = 0;
+		let waste_portion_temp = 0;
 		let rateportion_temp = 0;
 		let cal_val = 0;
 
-		if(parseInt(d.balance_portion)>=0)
-			balance_portion_temp = d.balance_portion;
+		if(parseInt(d.waste_portion)>=0)	
+			waste_portion_temp = d.waste_portion;
 
 		if(parseInt(d.rateportion)>=0)
 			rateportion_temp = d.rateportion;
 
-		cal_val = balance_portion_temp * rateportion_temp;
+		cal_val = waste_portion_temp * rateportion_temp;
 
-		console.log('balance_portion_temp->', balance_portion_temp);
+		console.log('waste_portion_temp->', waste_portion_temp);
 		console.log('rateportion_temp->',rateportion_temp);
 		console.log('cal_val->', cal_val);
 
@@ -224,12 +268,12 @@ frappe.ui.form.on("Chef Prod Child Chicken", {
 		console.log('d->', d);
 
 		// briyani category wastage amount total
-		console.log('chicken_category_wastage_amount');
+		console.log('briyani category wastage amount total');
 		var waste_total = 0;
-		frm.doc.chicken_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
+		frm.doc.briyani_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
 		console.log('waste_total', waste_total);
-		frm.set_value("chicken_category_wastage_amount", waste_total);
-		refresh_field("chicken_category_wastage_amount");
+		frm.set_value("briyani_category_wastage_amount", waste_total);
+		refresh_field("briyani_category_wastage_amount");
 
     }
 });

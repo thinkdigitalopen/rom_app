@@ -20,6 +20,7 @@ def execute(filters=None):
             'category': d.category,
             'item': d.item,
             'production_qty': d.production_qty,
+            'balance_portion': d.balance_portion,
             'wastage_qty': d.wastage_qty,
             'rate': d.rate,
             'wastage_amount': d.wastage_amount,
@@ -68,6 +69,11 @@ def get_columns():
             'fieldtype': 'Data',
         },
         {
+            'fieldname': 'balance_portion',
+            'label': 'Bal. Qty',
+            'fieldtype': 'Data',
+        },
+        {
             'fieldname': 'wastage_qty',
             'label': 'Waste. Qty',
             'fieldtype': 'Data',
@@ -105,7 +111,8 @@ def get_data(filters):
         'Briyani' as category,
         child1.`briyani_category` as item,
         child1.`product_qtykg` as production_qty,
-        child1.`balance_portion` as wastage_qty,
+        child1.`balance_portion` as balance_portion,
+        child1.`waste_portion` as wastage_qty,
         child1.`rateportion` as rate,
         child1.`wastage_amount` as wastage_amount
     FROM
@@ -124,7 +131,8 @@ def get_data(filters):
         'Chicken' as category,
         child2.`chicken_category` as item,
         child2.`product_qtykg` as production_qty,
-        child2.`balance_portion` as wastage_qty,
+        child2.`balance_portion` as balance_portion,
+        child2.`waste_portion` as wastage_qty,        
         child2.`rateportion` as rate,
         child2.`wastage_amount` as wastage_amount
     FROM
