@@ -80,6 +80,7 @@ def get_data(filters):
     conditions = api_report.get_conditions(filters)
     print("-------- get data ------------")
     print(conditions)
+    frappe.log_error('op_opening_checklist_register - condi', conditions)
 
     build_sql = ""
     if (type(filters) is str):
@@ -121,7 +122,9 @@ def get_data(filters):
     where_cond = f" WHERE coc.date between '{conditions['from_date_filter']}' AND  '{conditions['to_date_filter']}' "
 
     if "branch_filter" in conditions:
-        where_cond = where_cond + f" AND coc.branch = '{conditions['branch_filter']}' "
+        branch_filter_text = conditions['branch_filter']
+        where_cond = where_cond + f" AND coc.branch = '{branch_filter_text}' "
+        frappe.log_error('op_opening_checklist_register - branch_filter_text', branch_filter_text)
 
     if "audit_filter" in conditions:
         selection_result = conditions['audit_filter']
