@@ -140,5 +140,6 @@ def get_data(filters):
     build_sql = f"{build_sql}  {where_cond}"
     print("-------- full sql ------------")
     print(build_sql)
+    frappe.log_error('op_opening_checklist_register - sql', build_sql)
     data = frappe.db.sql(build_sql, as_dict=True)
     return data
