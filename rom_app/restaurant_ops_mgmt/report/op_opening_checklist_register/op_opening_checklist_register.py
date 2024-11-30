@@ -77,6 +77,7 @@ def get_columns():
 
 @frappe.whitelist()
 def get_data(filters):
+    frappe.log_error('op_opening_checklist_register - filters', filters)
     conditions = api_report.get_conditions(filters)
     print("-------- get data ------------")
     print(conditions)
