@@ -30,6 +30,7 @@
    "in_list_view": 1,
    "label": "Prod Qty",
    "options": "0",
+   "default": 0,
    "reqd": 1
   },
   {
@@ -39,6 +40,7 @@
    "in_list_view": 1,
    "label": "Bal Portion",
    "options": "0",
+   "default": 0,
    "reqd": 1
   },
   {
@@ -48,6 +50,7 @@
     "in_list_view": 1,
     "label": "Wst Portion",
     "options": "0",
+    "default": 0,
     "reqd": 1
    },
   {
