@@ -25,7 +25,7 @@
   {
    "columns": 1,
    "fieldname": "product_qtykg",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Prod Qty",
    "options": "0",
@@ -34,7 +34,7 @@
   {
    "columns": 1,
    "fieldname": "balance_portion",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Bal Portion",
    "options": "0",
@@ -43,7 +43,7 @@
   {
     "columns": 1,
     "fieldname": "waste_portion",
-    "fieldtype": "Int",
+    "fieldtype": "Float",
     "in_list_view": 1,
     "label": "Wst Portion",
     "options": "0",
