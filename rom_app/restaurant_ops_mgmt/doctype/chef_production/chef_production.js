@@ -267,7 +267,7 @@ frappe.ui.form.on("Chef Prod Child Chicken", {
 		console.log('cdn->', cdn);
 		console.log('d->', d);
 
-		// briyani category wastage amount total
+		// chicken category wastage amount total
 		console.log('chicken_category_wastage_amount');
 		var waste_total = 0;
 		frm.doc.chicken_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
