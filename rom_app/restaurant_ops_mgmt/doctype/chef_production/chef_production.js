@@ -268,12 +268,12 @@ frappe.ui.form.on("Chef Prod Child Chicken", {
 		console.log('d->', d);
 
 		// briyani category wastage amount total
-		console.log('briyani category wastage amount total');
+		console.log('chicken_category_wastage_amount');
 		var waste_total = 0;
-		frm.doc.briyani_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
+		frm.doc.chicken_category_list.forEach(function(d) { waste_total += d.wastage_amount; });
 		console.log('waste_total', waste_total);
-		frm.set_value("briyani_category_wastage_amount", waste_total);
-		refresh_field("briyani_category_wastage_amount");
+		frm.set_value("chicken_category_wastage_amount", waste_total);
+		refresh_field("chicken_category_wastage_amount");
 
     }
 });
