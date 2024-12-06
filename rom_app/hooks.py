@@ -308,3 +308,9 @@ scheduler_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+doc_events = {
+    "Chef Production": {
+        "before_save": "rom_app.restaurant_ops_mgmt.doctype.chef_production.chef_production.update_totals"
+    }
+}

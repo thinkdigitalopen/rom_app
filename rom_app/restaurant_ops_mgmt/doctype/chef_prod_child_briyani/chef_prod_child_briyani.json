@@ -25,6 +25,7 @@
   },
   {
    "columns": 1,
+   "default": "0",
    "fieldname": "product_qtykg",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -35,6 +36,7 @@
   },
   {
    "columns": 1,
+   "default": "0",
    "fieldname": "balance_portion",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -45,6 +47,7 @@
   },
   {
    "columns": 1,
+   "default": "0",
    "fieldname": "waste_portion",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -74,7 +77,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-04 15:39:21.155473",
+ "modified": "2024-12-06 12:02:53.137253",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Prod Child Briyani",
