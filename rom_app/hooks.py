@@ -312,5 +312,8 @@ scheduler_events = {
 doc_events = {
     "Chef Production": {
         "before_save": "rom_app.restaurant_ops_mgmt.doctype.chef_production.chef_production.update_totals"
+    },
+    "Stock Entry":{
+        "before_save": "rom_app.restaurant_ops_mgmt.doctype.stock_entry.stock_entry.update_totals"
     }
 }

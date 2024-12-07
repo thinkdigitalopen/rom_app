@@ -113,3 +113,10 @@ class StockEntry(Document):
         # # print(res_length)
         # # print(item_data)
         return item_data
+
+# Calculate total
+def update_totals(doc, method):
+    # Calculate total amount 
+    doc.total_price = sum(
+        (row.amount or 0) for row in (doc.get("raw_material_from_template") or [])
+    )
