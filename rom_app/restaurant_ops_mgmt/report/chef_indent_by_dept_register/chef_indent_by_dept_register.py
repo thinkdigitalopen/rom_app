@@ -139,6 +139,8 @@ def get_data(filters):
         where_cond_1 = where_cond_1 + f" AND ci.branch = '{conditions['branch_filter']}' "
     if "department_filter" in conditions:
         where_cond_1 = where_cond_1 + f" AND ci.department = '{conditions['department_filter']}' "
+    if "raw_material_filter" in conditions:
+        where_cond_1 = where_cond_1 + f" AND cic.raw_material = '{conditions['raw_material_filter']}' "
     if "item_filter" in conditions:
         where_cond_1 = where_cond_1 + f" AND raw.item LIKE '%{conditions['item_filter']}%' "
     if "remarks_filter" in conditions:

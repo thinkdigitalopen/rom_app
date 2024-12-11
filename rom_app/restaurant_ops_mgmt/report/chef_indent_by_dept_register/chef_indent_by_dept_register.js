@@ -27,8 +27,14 @@ frappe.query_reports["Chef Indent By Dept Register"] = {
 			"options": "Department",
 		},
 		{
-			"fieldname": "item_filter",
+			"fieldname": "raw_material_filter",
 			"label": "Raw Material",
+			"fieldtype": "Link",
+			"options": "Raw Material Only",
+		},
+		{
+			"fieldname": "item_filter",
+			"label": "Raw Material Like",
 			"fieldtype": "Data"
 		},
 		{
