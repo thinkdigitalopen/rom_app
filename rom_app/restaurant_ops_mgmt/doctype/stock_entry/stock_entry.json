@@ -8,13 +8,14 @@
   "branch",
   "user_name",
   "vendor",
-  "stock_entry_template",
   "remarks",
   "column_break_oiog",
   "date",
-  "arrival_time",
-  "bill_date",
   "ref_no",
+  "stock_entry_template",
+  "column_break_xgcq",
+  "bill_date",
+  "arrival_time",
   "total_price",
   "section_break_wqyo",
   "raw_material_from_template"
@@ -106,12 +107,16 @@
    "fieldname": "remarks",
    "fieldtype": "Data",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_xgcq",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-11 12:30:19.939975",
+ "modified": "2024-12-11 12:48:16.958454",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Stock Entry",

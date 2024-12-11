@@ -7,11 +7,12 @@
  "field_order": [
   "branch",
   "user_name",
-  "department",
-  "column_break_ydrh",
-  "date",
-  "receive_date",
   "remarks",
+  "column_break_ydrh",
+  "department",
+  "date",
+  "column_break_keti",
+  "receive_date",
   "total_price",
   "section_break_fjsc",
   "raw_materials"
@@ -89,12 +90,16 @@
    "fieldname": "remarks",
    "fieldtype": "Data",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_keti",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-11 12:25:40.159251",
+ "modified": "2024-12-11 12:45:06.628021",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Chef Indent By Dept",
