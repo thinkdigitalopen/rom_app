@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-01-08 18:27:26.050580",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branch",
+  "update_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "description": "The update date should not set 60 days back from the today's date. The Inventory Summary table will be updated only for the 'Update Date' mentioned here",
+   "fieldname": "update_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Update Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 11:07:52.442536",
+ "modified_by": "Administrator",
+ "module": "Restaurant Ops Mgmt",
+ "name": "Inventory Summary Fast Update",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

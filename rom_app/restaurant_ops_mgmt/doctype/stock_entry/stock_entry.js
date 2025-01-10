@@ -274,7 +274,7 @@ function load_items_from_template_method(frm){
 						console.log('lenght',msg.length);
 						frm.doc.raw_material_from_template = []
 						if (msg.length == 0){
-							frappe.show_alert("The template records for the department could not be found.");
+							frappe.show_alert("The template records for the Stock Entry Template could not be found.");
 						}
 						else
 						{
@@ -302,7 +302,7 @@ function load_items_from_template_method(frm){
 			let msg = frappe.msgprint({
 					title: 'Info',
 					indicator: 'green',
-					message: 'Please select the department',
+					message: 'Please select the Stock Entry Template ',
 					 primary_action:{
 						'label': 'Close',
 						action(values) {
@@ -311,6 +311,6 @@ function load_items_from_template_method(frm){
 					}
 				});
 
-			console.log("no value in department ");
+			console.log("no value in Stock Entry Template  ");
 		}
 	}

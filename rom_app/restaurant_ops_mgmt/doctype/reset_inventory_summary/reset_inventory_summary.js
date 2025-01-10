@@ -42,6 +42,28 @@ frappe.ui.form.on("Reset Inventory Summary", {
 					},);
 				// ------------------reset_inventory_summary---------------------------
 
+				// ------------------reset_inventory_summary---------------------------
+/*
+				let api_url = "rom_app.scheduled_tasks.inventory_summary"
+
+				frappe.call(
+					{
+						method: api_url,
+						args:
+						{
+							p_branch: branch,
+							p_date: start_date
+						},
+						async:false,
+						freeze:true,
+						freeze_message: "Processing",
+						callback: function(res)
+						{
+							console.log(res.message);
+						}
+					},);*/
+				// ------------------reset_inventory_summary---------------------------
+
 		});
 
 		 // }),

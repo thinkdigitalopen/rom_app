@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"BE7yQ022cf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Development Space<br></span>\",\"col\":12}},{\"id\":\"pWCGXfQREs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permissions Manager\",\"col\":4}},{\"id\":\"yqdVM1P3rm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permission for Page and Report\",\"col\":4}},{\"id\":\"QghH9I7Kfz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"4LBq1goFQf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Inspector\",\"col\":4}},{\"id\":\"X691x-fcIw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"-Rn-8ravhc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}},{\"id\":\"RSWAdFNz1o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role\",\"col\":4}},{\"id\":\"wdSt9_5eEB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":4}},{\"id\":\"HT6uNkDAsb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Page\",\"col\":4}},{\"id\":\"EG9OtsVMFq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DocType\",\"col\":4}},{\"id\":\"a-DWODx-wZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workspace\",\"col\":4}},{\"id\":\"yVOm8Pg5Cr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Number Card\",\"col\":4}},{\"id\":\"Sp-oVPuCZQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Navbar Settings\",\"col\":4}},{\"id\":\"zXSTWgneFy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"System Settings\",\"col\":4}},{\"id\":\"jp1prei7mO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":4}},{\"id\":\"Ies6GY92hQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency\",\"col\":4}},{\"id\":\"QAkXWRLJv2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Import\",\"col\":4}},{\"id\":\"Edp85v-b8j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Export\",\"col\":4}},{\"id\":\"_Z2wISZxfD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rom Settings\",\"col\":4}},{\"id\":\"bn13CpgTHc\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8s9tSj5WWI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Development Work\",\"col\":4}},{\"id\":\"Ny9cXFcf-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dev Asset\",\"col\":4}},{\"id\":\"0KItHIocFb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DevelopLog\",\"col\":4}},{\"id\":\"iHuz87VVEX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reset Inventory Summary\",\"col\":4}},{\"id\":\"V5lXyAiuAj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Error Log\",\"col\":4}}]",
+ "content": "[{\"id\":\"BE7yQ022cf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Development Space<br></span>\",\"col\":12}},{\"id\":\"pWCGXfQREs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permissions Manager\",\"col\":4}},{\"id\":\"yqdVM1P3rm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Permission for Page and Report\",\"col\":4}},{\"id\":\"QghH9I7Kfz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"4LBq1goFQf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Inspector\",\"col\":4}},{\"id\":\"X691x-fcIw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"-Rn-8ravhc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}},{\"id\":\"RSWAdFNz1o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role\",\"col\":4}},{\"id\":\"wdSt9_5eEB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":4}},{\"id\":\"HT6uNkDAsb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Page\",\"col\":4}},{\"id\":\"EG9OtsVMFq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DocType\",\"col\":4}},{\"id\":\"a-DWODx-wZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workspace\",\"col\":4}},{\"id\":\"yVOm8Pg5Cr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Number Card\",\"col\":4}},{\"id\":\"Sp-oVPuCZQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Navbar Settings\",\"col\":4}},{\"id\":\"zXSTWgneFy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"System Settings\",\"col\":4}},{\"id\":\"jp1prei7mO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":4}},{\"id\":\"Ies6GY92hQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency\",\"col\":4}},{\"id\":\"QAkXWRLJv2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Import\",\"col\":4}},{\"id\":\"Edp85v-b8j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Export\",\"col\":4}},{\"id\":\"_Z2wISZxfD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rom Settings\",\"col\":4}},{\"id\":\"bn13CpgTHc\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"8s9tSj5WWI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Development Work\",\"col\":4}},{\"id\":\"Ny9cXFcf-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dev Asset\",\"col\":4}},{\"id\":\"0KItHIocFb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DevelopLog\",\"col\":4}},{\"id\":\"iHuz87VVEX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reset Inventory Summary\",\"col\":4}},{\"id\":\"V5lXyAiuAj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Error Log\",\"col\":4}},{\"id\":\"_6kOsVhhlf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"RQ Job\",\"col\":4}},{\"id\":\"QHRJVcA654\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reset Inventory From To\",\"col\":4}},{\"id\":\"d8-pbg50nx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory Summary Fast Update\",\"col\":4}}]",
  "creation": "2024-08-28 08:13:30.289878",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Development",
  "links": [],
- "modified": "2024-11-18 01:00:28.786414",
+ "modified": "2025-01-08 18:45:31.688342",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Development",
@@ -35,8 +35,32 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Inventory Summary Fast Update",
+   "link_to": "Inventory Summary Fast Update",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Reset Inventory From To",
+   "link_to": "Reset Inventory From To",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Navbar Settings",
    "link_to": "Navbar Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "RQ Job",
+   "link_to": "RQ Job",
+   "stats_filter": "[]",
    "type": "DocType"
   },
   {
