@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 @frappe.whitelist()
 def reset_inventory_summary(branch, start_date):
     current_date_time = datetime.now()
-    log_text = f"reset_inv_sum {branch} {start_date} {current_date_time}"
+    log_text = f"reset_inventory_summary {branch} {start_date} {current_date_time}"
     # print(log_text)
     frappe.log_error("reset_inventory_summary", log_text)
     formatted_date = start_date
@@ -56,11 +56,17 @@ def call_inventory_summary_morning_60_days_before():
 
 
 @frappe.whitelist()
+def inventory_summary_for_start_and_end_date_enquee(p_branch, p_date, p_end_date):
+    log_text = f"inventory_summary_for_start_and_end_date_enquee {p_branch} {p_date} {p_end_date}"
+    print(log_text)
+    frappe.enqueue(inventory_summary_for_start_and_end_date,
+                   queue='long', p_branch=p_branch, p_date=p_date, p_end_date=p_end_date)
+    return log_text
+
+
+@frappe.whitelist()
 def inventory_summary_for_start_and_end_date(p_branch, p_date, p_end_date):
     # print("#################inventory_summary_for_start_and_end_date##########")
-    log_text = f"inventory_summary_start end -> {p_branch} {p_date} {p_end_date}"
-    # print(log_text)
-    frappe.log_error("inventory_summary_for_start_and_end_date ", log_text)
     # frappe.log_error("changes", log_text)
     pd.set_option('display.max_columns', None)
     pd.set_option('display.expand_frame_repr', False)
@@ -71,6 +77,9 @@ def inventory_summary_for_start_and_end_date(p_branch, p_date, p_end_date):
         p_date = datetime.strptime(p_date, date_format).date()
     if isinstance(p_end_date, str):
         p_end_date = datetime.strptime(p_end_date, date_format).date()
+
+    log_text = f"inventory_summary_start end -> {p_branch} {p_date} {p_end_date}"
+    frappe.log_error("inventory_summary_for_start_and_end_date ", log_text)
 
     all_dates = collect_all_dates_between_from_and_to_date(p_date, p_end_date)
     # print('p_branch - ', p_branch)
@@ -148,6 +157,15 @@ def call_inventory_summary_morning_for_today_with_one_time_db_write():
             inventory_summary_one_time_db_write,
             queue='long',
             p_branch=each_branch, p_date=formatted_date)
+    return log_text
+
+
+@frappe.whitelist()
+def inventory_summary_one_time_db_write_enquee(p_branch, p_date):
+    log_text = f"inventory_summary_one_time_db_write_enquee {p_branch} {p_date}"
+    print(log_text)
+    frappe.enqueue(inventory_summary_one_time_db_write,
+                   queue='long', p_branch=p_branch, p_date=p_date)
     return log_text
 
 

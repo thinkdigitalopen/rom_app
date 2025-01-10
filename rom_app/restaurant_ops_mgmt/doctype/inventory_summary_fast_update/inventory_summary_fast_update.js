@@ -17,7 +17,7 @@ frm.add_custom_button('Update Inventory Summary for Today ', function(){
 				console.log('branch ',branch);
 				console.log('update date ',end_date);
 
-				let api_url = "rom_app.scheduled_tasks.inventory_summary_one_time_db_write"
+				let api_url = "rom_app.scheduled_tasks.inventory_summary_one_time_db_write_enquee"
 				frappe.call(
 					{
 						method: api_url,
