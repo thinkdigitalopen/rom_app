@@ -12,4 +12,7 @@ class InventorySummaryFastUpdate(Document):
         print('date_difference ', date_difference)
         if (date_difference > 60):
             frappe.throw("You cannot set update before 60 days")
+        if (date_difference < 0):
+            frappe.throw("You cannot set future date")
+
 

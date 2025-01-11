@@ -1,6 +1,7 @@
 import frappe
 import pandas as pd
 from datetime import datetime, timedelta
+from frappe.utils import date_diff
 
 
 @frappe.whitelist()
@@ -162,6 +163,13 @@ def call_inventory_summary_morning_for_today_with_one_time_db_write():
 
 @frappe.whitelist()
 def inventory_summary_one_time_db_write_enquee(p_branch, p_date):
+    current_date = datetime.today().date()
+    date_difference = date_diff(current_date, p_date)
+    print('date_difference ', date_difference)
+    if (date_difference > 60):
+        frappe.throw("You cannot set update before 60 days")
+    if (date_difference < 0):
+        frappe.throw("You cannot set future date")
     log_text = f"inventory_summary_one_time_db_write_enquee {p_branch} {p_date}"
     print(log_text)
     frappe.enqueue(inventory_summary_one_time_db_write,

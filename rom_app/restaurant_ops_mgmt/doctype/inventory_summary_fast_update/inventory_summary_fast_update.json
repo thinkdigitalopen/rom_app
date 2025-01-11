@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "4_step_process_section",
   "branch",
   "update_date"
  ],
@@ -20,18 +21,24 @@
   },
   {
    "default": "Today",
-   "description": "The update date should not set 60 days back from the today's date. The Inventory Summary table will be updated only for the 'Update Date' mentioned here",
+   "description": "The \"Update Date\" must be within the range of today\u2019s date and up to 60 days prior. It cannot be a future date or exceed the 60-day limit in the past. The Inventory Summary table will be updated solely based on the specified \"Update Date\" and will not reflect intermediate dates. If you wish to view the summary for a different date, please adjust the \"Update Date\" accordingly and rerun the process.",
    "fieldname": "update_date",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Update Date",
    "reqd": 1
+  },
+  {
+   "description": "1. Choose the Branch. 2. Choose the Desired Date. 3. Save the record. 4. Click the \"Update Inventory Summary Button\" on top",
+   "fieldname": "4_step_process_section",
+   "fieldtype": "Section Break",
+   "label": "Fast Update - 4 Step Process "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 11:07:52.442536",
+ "modified": "2025-01-11 12:39:59.586788",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Summary Fast Update",

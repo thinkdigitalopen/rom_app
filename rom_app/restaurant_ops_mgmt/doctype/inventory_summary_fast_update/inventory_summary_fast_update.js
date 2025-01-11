@@ -1,7 +1,7 @@
 frappe.ui.form.on("Inventory Summary Fast Update", {
 	refresh(frm) {
 
-frm.add_custom_button('Update Inventory Summary for Today ', function(){
+frm.add_custom_button('Update Inventory Summary ', function(){
 				let branch = frm.doc.branch;
 				let end_date = frm.doc.update_date;
 				if(!branch) {
