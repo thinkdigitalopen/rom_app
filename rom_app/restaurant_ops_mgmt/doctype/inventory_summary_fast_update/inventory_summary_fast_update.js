@@ -36,24 +36,8 @@ frm.add_custom_button('Update Inventory Summary for Today ', function(){
 					},);
 		});
 
+//job button is removed
 
-frm.add_custom_button('Job ', function(){
-				let api_url = "rom_app.scheduled_tasks.call_inventory_summary_morning_for_today_with_one_time_db_write"
-				frappe.call(
-					{
-						method: api_url,
-						args:
-						{
-						},
-						async:false,
-						freeze:true,
-						freeze_message: "Processing",
-						callback: function(res)
-						{
-							console.log(res.message);
-						}
-					},);
-		});
 
 	},
 });

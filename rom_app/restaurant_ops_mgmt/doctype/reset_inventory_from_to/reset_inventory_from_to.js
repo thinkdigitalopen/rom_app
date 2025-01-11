@@ -50,8 +50,26 @@ frappe.ui.form.on("Reset Inventory From To", {
 
 
     // scheduler job - for testing
-	frm.add_custom_button('JOB 60 days BEFORE Reset Inv. Summary ', function(){
+	frm.add_custom_button('Job - 60 days BEFORE Reset Inv. Summary ', function(){
 				let api_url = "rom_app.scheduled_tasks.call_inventory_summary_morning_60_days_before"
+				frappe.call(
+					{
+						method: api_url,
+						args:
+						{
+						},
+						async:false,
+						freeze:true,
+						freeze_message: "Processing",
+						callback: function(res)
+						{
+							console.log(res.message);
+						}
+					},);
+		});
+
+	frm.add_custom_button('Job - Fast Update Morning', function(){
+				let api_url = "rom_app.scheduled_tasks.call_inventory_summary_morning_for_today_with_one_time_db_write"
 				frappe.call(
 					{
 						method: api_url,
