@@ -30,7 +30,7 @@
    "reqd": 1
   },
   {
-   "description": "1. Choose the Branch. 2. Choose the Desired Date. 3. Save the record. 4. Click the \"Update Inventory Summary Button\" on top",
+   "description": "1. Choose the Branch. 2. Choose the Desired Date (usually it is todays's date). 3. Save the record. 4. Click the \"Update Inventory Summary\" Button on the top right",
    "fieldname": "4_step_process_section",
    "fieldtype": "Section Break",
    "label": "Fast Update - 4 Step Process "
@@ -38,7 +38,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-11 12:39:59.586788",
+ "modified": "2025-01-11 12:54:31.780681",
  "modified_by": "Administrator",
  "module": "Restaurant Ops Mgmt",
  "name": "Inventory Summary Fast Update",
