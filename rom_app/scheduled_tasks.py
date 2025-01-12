@@ -79,6 +79,9 @@ def inventory_summary_for_start_and_end_date(p_branch, p_date, p_end_date):
     if isinstance(p_end_date, str):
         p_end_date = datetime.strptime(p_end_date, date_format).date()
 
+    p_date = p_date.date()
+    p_end_date = p_end_date.date()
+
     log_text = f"inventory_summary_start end -> {p_branch} {p_date} {p_end_date}"
     frappe.log_error("inventory_summary_for_start_and_end_date ", log_text)
 

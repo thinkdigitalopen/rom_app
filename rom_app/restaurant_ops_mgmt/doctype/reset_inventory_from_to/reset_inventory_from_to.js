@@ -68,6 +68,8 @@ frappe.ui.form.on("Reset Inventory From To", {
 					},);
 		});
 
+
+
 	frm.add_custom_button('Job - Fast Update Morning', function(){
 				let api_url = "rom_app.scheduled_tasks.call_inventory_summary_morning_for_today_with_one_time_db_write"
 				frappe.call(
