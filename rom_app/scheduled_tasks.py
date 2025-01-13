@@ -45,6 +45,8 @@ def call_inventory_summary_morning_60_days_before():
     p_date = current_date_time - timedelta(days=63)
     p_end_date = current_date_time - timedelta(days=57)
     branch_all = frappe.get_list('Branch', pluck='name')
+    log_text = f"call_inve_sum_mor_60_d_bef  {p_date} {p_end_date}"
+    log_scheduler_job('Inventory Summary START to END', ' ', log_text)
     for i, each_branch in enumerate(branch_all):
         log_text = f" {each_branch} {p_date} {p_end_date} "
         frappe.log_error("60_days_before ", log_text)
@@ -53,13 +55,14 @@ def call_inventory_summary_morning_60_days_before():
             queue='long',
             p_branch=each_branch, p_date=p_date, p_end_date=p_end_date)
 
-    return "call_inventory_summary_morning_60_days_before completed"
+    return "call_inventory_summary_ morning_60_days_before completed"
 
 
 @frappe.whitelist()
 def inventory_summary_for_start_and_end_date_enquee(p_branch, p_date, p_end_date):
-    log_text = f"inventory_summary_for_start_and_end_date_enquee {p_branch} {p_date} {p_end_date}"
+    log_text = f"inv_sum_for_start_end_enq {p_branch} {p_date} {p_end_date}"
     print(log_text)
+    log_scheduler_job('Inventory Summary START to END', ' ', log_text)
     frappe.enqueue(inventory_summary_for_start_and_end_date,
                    queue='long', p_branch=p_branch, p_date=p_date, p_end_date=p_end_date)
     return log_text
@@ -79,8 +82,10 @@ def inventory_summary_for_start_and_end_date(p_branch, p_date, p_end_date):
     if isinstance(p_end_date, str):
         p_end_date = datetime.strptime(p_end_date, date_format).date()
 
-    p_date = p_date.date()
-    p_end_date = p_end_date.date()
+    if isinstance(p_date, datetime):
+        p_date = p_date.date()
+    if isinstance(p_end_date, datetime):
+        p_end_date = p_end_date.date()
 
     log_text = f"inventory_summary_start end -> {p_branch} {p_date} {p_end_date}"
     frappe.log_error("inventory_summary_for_start_and_end_date ", log_text)
@@ -140,7 +145,7 @@ def inventory_summary_for_start_and_end_date(p_branch, p_date, p_end_date):
         update_raw_material_table(df_inventory)
         # print("[[7]] update_raw_material_table ")
         # print("================ inventory_summary END >>>>>>>>>>>")
-    log_scheduler_job('', 'Reset Inventory From To - yes', log_text)
+    log_scheduler_job('', 'Reset Inventory From To ', log_text)
     return "Completed"
 
 
@@ -151,6 +156,7 @@ def call_inventory_summary_morning_for_today_with_one_time_db_write():
     log_text = f"inv_sum morning {current_date_time}"
     # print(log_text)
     frappe.log_error("call_inventory_summary_morning", log_text)
+    log_scheduler_job(' Fast Update job', ' ', log_text)
     branch_all = frappe.get_list('Branch', pluck='name')
     # print(branch_all)
     cur_date = datetime.now()
@@ -175,6 +181,7 @@ def inventory_summary_one_time_db_write_enquee(p_branch, p_date):
         frappe.throw("You cannot set future date")
     log_text = f"inventory_summary_one_time_db_write_enquee {p_branch} {p_date}"
     print(log_text)
+    log_scheduler_job('Fast Update manual', ' ', log_text)
     frappe.enqueue(inventory_summary_one_time_db_write,
                    queue='long', p_branch=p_branch, p_date=p_date)
     return log_text
@@ -197,6 +204,9 @@ def inventory_summary_one_time_db_write(p_branch, p_date):
     date_format = "%Y-%m-%d"
     if isinstance(p_date, str):
         p_date = datetime.strptime(p_date, date_format).date()
+    if isinstance(p_date, datetime):
+        p_date = p_date.date()
+
     all_dates = collect_all_dates_between_from_and_to_date(from_date_60, current_date_time)
     # print('p_branch - ', p_branch)
     # print('from_date_60 - ', from_date_60)
@@ -286,7 +296,7 @@ def inventory_summary_one_time_db_write(p_branch, p_date):
             update_raw_material_table(df_inventory)
             # print("[[7]] update_raw_material_table ")
         # print("================ inventory_summary END >>>>>>>>>>>")
-    log_scheduler_job('', ' Inventory Summary Fast Update - yes', log_text)
+    log_scheduler_job('', ' Fast Update ', log_text)
     return "Completed"
 
 

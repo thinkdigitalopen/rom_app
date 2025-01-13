@@ -27,6 +27,7 @@ frappe.ui.form.on("Reset Inventory From To", {
 				console.log('to_date ',to_date);
 
 				let api_url = "rom_app.scheduled_tasks.inventory_summary_for_start_and_end_date_enquee"
+                // let api_url = "rom_app.scheduled_tasks.inventory_summary_for_start_and_end_date"
 
 				frappe.call(
 					{
